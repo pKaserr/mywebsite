@@ -1,0 +1,57 @@
+$c1-main: #1d1b1b;
+$c2-main: #353333;
+$c3-main: #686868;
+$c4-main: #969595;
+
+$c1-second: #0f7dbd;
+$c2-second: #2e6c48;
+$c3-second: #effcef;
+$c4-second: #ff5454;
+
+$c-white: #fefefe;
+$c-black: #010101;
+$c-grey: #999999;
+$c-darkGrey: #2f2f2f;
+$c-lightGrey: #959595;
+$c-lightGreyInput: #ededed;
+
+$c-success: #5cb85c;
+$c-warn: #f0ad4e;
+$c-error: #d9534f;
+
+$horizontal-gradient: linear-gradient(360deg, #2e6c48 35%, #50b375 100%);
+$vertical-gradient: linear-gradient(270deg, #2e6c48 0%, #50b375 100%);
+$transition: 0.3s;
+$box-shadow: #01010159;
+
+$border-radius: 45px;
+
+/* --------------------------------------------------
+Fonts
+-------------------------------------------------- */
+
+$font-main-1: "Maven Pro Regular";
+$font-main-2: "Maven Pro Bold";
+$font-main-3: "Maven Pro Black";
+
+/* --------------------------------------------------
+Breakpoint Settings
+-------------------------------------------------- */
+
+$media-direction: min; // min / max — default is min (mobile first)
+
+$breakpoints: (
+   "xs": 0,
+   "sm": 576px,
+   "md": 768px,
+   "lg": 992px,
+   "xl": 1200px,
+   "xxl": 1920px,
+);
+
+$bp-xs: 0;
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+$bp-xxl: 1920px;

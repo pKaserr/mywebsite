@@ -1,0 +1,427 @@
+$grid-columns: 10;
+@for $i from 0 through $grid-columns {
+   // padding default
+   .p-#{$i*100} {
+      padding: $i + rem;
+   }
+   .py-#{$i*100} {
+      padding: $i + rem + " " + 0 + rem;
+   }
+   .px-#{$i*100} {
+      padding: 0 + rem + " " + $i + rem;
+   }
+   .pt-#{$i*100} {
+      padding-top: $i + rem;
+   }
+   .pr-#{$i*100} {
+      padding-right: $i + rem;
+   }
+   .pb-#{$i*100} {
+      padding-bottom: $i + rem;
+   }
+   .pl-#{$i*100} {
+      padding-left: $i + rem;
+   }
+
+   // breakpoints
+   .p-xs-#{$i*100} {
+      @include breakpoint("xs") {
+         padding: $i + rem;
+      }
+   }
+   .p-sm-#{$i*100} {
+      @include breakpoint("sm") {
+         padding: $i + rem;
+      }
+   }
+   .p-md-#{$i*100} {
+      @include breakpoint("md") {
+         padding: $i + rem;
+      }
+   }
+   .p-lg-#{$i*100} {
+      @include breakpoint("lg") {
+         padding: $i + rem;
+      }
+   }
+   .p-xl-#{$i*100} {
+      @include breakpoint("xl") {
+         padding: $i + rem;
+      }
+   }
+
+   // y-axis
+   .py-xs-#{$i*100} {
+      @include breakpoint("xs") {
+         padding: $i + rem + " " + 0 + rem;
+      }
+   }
+   .py-sm-#{$i*100} {
+      @include breakpoint("sm") {
+         padding: $i + rem + " " + 0 + rem;
+      }
+   }
+   .py-md-#{$i*100} {
+      @include breakpoint("md") {
+         padding: $i + rem + " " + 0 + rem;
+      }
+   }
+   .py-lg-#{$i*100} {
+      @include breakpoint("lg") {
+         padding: $i + rem + " " + 0 + rem;
+      }
+   }
+   .py-xl-#{$i*100} {
+      @include breakpoint("xl") {
+         padding: $i + rem + " " + 0 + rem;
+      }
+   }
+
+   // x-axis
+   .px-xs-#{$i*100} {
+      @include breakpoint("xs") {
+         padding: 0 + rem + " " + $i + rem;
+      }
+   }
+   .px-sm-#{$i*100} {
+      @include breakpoint("sm") {
+         padding: 0 + rem + " " + $i + rem;
+      }
+   }
+   .px-md-#{$i*100} {
+      @include breakpoint("md") {
+         padding: 0 + rem + " " + $i + rem;
+      }
+   }
+   .px-lg-#{$i*100} {
+      @include breakpoint("lg") {
+         padding: 0 + rem + " " + $i + rem;
+      }
+   }
+   .px-xl-#{$i*100} {
+      @include breakpoint("xl") {
+         padding: 0 + rem + " " + $i + rem;
+      }
+   }
+
+   // left
+   .pl-xs-#{$i*100} {
+      @include breakpoint("xs") {
+         padding-left: $i + rem;
+      }
+   }
+   .pl-sm-#{$i*100} {
+      @include breakpoint("sm") {
+         padding-left: $i + rem;
+      }
+   }
+   .pl-md-#{$i*100} {
+      @include breakpoint("md") {
+         padding-left: $i + rem;
+      }
+   }
+   .pl-lg-#{$i*100} {
+      @include breakpoint("lg") {
+         padding-left: $i + rem;
+      }
+   }
+   .pl-xl-#{$i*100} {
+      @include breakpoint("xl") {
+         padding-left: $i + rem;
+      }
+   }
+
+   // right
+   .pr-xs-#{$i*100} {
+      @include breakpoint("xs") {
+         padding-right: $i + rem;
+      }
+   }
+   .pr-sm-#{$i*100} {
+      @include breakpoint("sm") {
+         padding-right: $i + rem;
+      }
+   }
+   .pr-md-#{$i*100} {
+      @include breakpoint("md") {
+         padding-right: $i + rem;
+      }
+   }
+   .pr-lg-#{$i*100} {
+      @include breakpoint("lg") {
+         padding-right: $i + rem;
+      }
+   }
+   .pr-xl-#{$i*100} {
+      @include breakpoint("xl") {
+         padding-right: $i + rem;
+      }
+   }
+
+   // top
+   .pt-xs-#{$i*100} {
+      @include breakpoint("xs") {
+         padding-top: $i + rem;
+      }
+   }
+   .pt-sm-#{$i*100} {
+      @include breakpoint("sm") {
+         padding-top: $i + rem;
+      }
+   }
+   .pt-md-#{$i*100} {
+      @include breakpoint("md") {
+         padding-top: $i + rem;
+      }
+   }
+   .pt-lg-#{$i*100} {
+      @include breakpoint("lg") {
+         padding-top: $i + rem;
+      }
+   }
+   .pt-xl-#{$i*100} {
+      @include breakpoint("xl") {
+         padding-top: $i + rem;
+      }
+   }
+
+   // bottom
+
+   .pb-xs-#{$i*100} {
+      @include breakpoint("xs") {
+         padding-bottom: $i + rem;
+      }
+   }
+   .pb-sm-#{$i*100} {
+      @include breakpoint("sm") {
+         padding-bottom: $i + rem;
+      }
+   }
+   .pb-md-#{$i*100} {
+      @include breakpoint("md") {
+         padding-bottom: $i + rem;
+      }
+   }
+   .pb-lg-#{$i*100} {
+      @include breakpoint("lg") {
+         padding-bottom: $i + rem;
+      }
+   }
+   .pb-xl-#{$i*100} {
+      @include breakpoint("xl") {
+         padding-bottom: $i + rem;
+      }
+   }
+
+   // margin default
+   .m-#{$i*100} {
+      margin: $i + rem;
+   }
+   .my-#{$i*100} {
+      margin: $i + rem + " " + 0 + rem;
+   }
+   .mx-#{$i*100} {
+      margin: 0 + rem + " " + $i + rem;
+   }
+   .mt-#{$i*100} {
+      margin-top: $i + rem;
+   }
+   .mr-#{$i*100} {
+      margin-right: $i + rem;
+   }
+   .mb-#{$i*100} {
+      margin-bottom: $i + rem;
+   }
+   .ml-#{$i*100} {
+      margin-left: $i + rem;
+   }
+
+   //breakpoints
+   .m-xs-#{$i*100} {
+      @include breakpoint("xs") {
+         margin: $i + rem;
+      }
+   }
+   .m-sm-#{$i*100} {
+      @include breakpoint("sm") {
+         margin: $i + rem;
+      }
+   }
+   .m-md-#{$i*100} {
+      @include breakpoint("md") {
+         margin: $i + rem;
+      }
+   }
+   .m-lg-#{$i*100} {
+      @include breakpoint("lg") {
+         margin: $i + rem;
+      }
+   }
+   .m-xl-#{$i*100} {
+      @include breakpoint("xl") {
+         margin: $i + rem;
+      }
+   }
+
+   // y-axis
+   .my-xs-#{$i*100} {
+      @include breakpoint("xs") {
+         margin: $i + rem + " " + 0 + rem;
+      }
+   }
+   .my-sm-#{$i*100} {
+      @include breakpoint("sm") {
+         margin: $i + rem + " " + 0 + rem;
+      }
+   }
+   .my-md-#{$i*100} {
+      @include breakpoint("md") {
+         margin: $i + rem + " " + 0 + rem;
+      }
+   }
+   .my-lg-#{$i*100} {
+      @include breakpoint("lg") {
+         margin: $i + rem + " " + 0 + rem;
+      }
+   }
+   .my-xl-#{$i*100} {
+      @include breakpoint("xl") {
+         margin: $i + rem + " " + 0 + rem;
+      }
+   }
+
+   // x-axis
+   .mx-xs-#{$i*100} {
+      @include breakpoint("xs") {
+         margin: 0 + rem + " " + $i + rem;
+      }
+   }
+   .mx-sm-#{$i*100} {
+      @include breakpoint("sm") {
+         margin: 0 + rem + " " + $i + rem;
+      }
+   }
+   .mx-md-#{$i*100} {
+      @include breakpoint("md") {
+         margin: 0 + rem + " " + $i + rem;
+      }
+   }
+   .mx-lg-#{$i*100} {
+      @include breakpoint("lg") {
+         margin: 0 + rem + " " + $i + rem;
+      }
+   }
+   .mx-xl-#{$i*100} {
+      @include breakpoint("xl") {
+         margin: 0 + rem + " " + $i + rem;
+      }
+   }
+
+   // left
+   .ml-xs-#{$i*100} {
+      @include breakpoint("xs") {
+         margin-left: $i + rem;
+      }
+   }
+   .ml-sm-#{$i*100} {
+      @include breakpoint("sm") {
+         margin-left: $i + rem;
+      }
+   }
+   .ml-md-#{$i*100} {
+      @include breakpoint("md") {
+         margin-left: $i + rem;
+      }
+   }
+   .ml-lg-#{$i*100} {
+      @include breakpoint("lg") {
+         margin-left: $i + rem;
+      }
+   }
+   .ml-xl-#{$i*100} {
+      @include breakpoint("xl") {
+         margin-left: $i + rem;
+      }
+   }
+
+   // right
+   .mr-xs-#{$i*100} {
+      @include breakpoint("xs") {
+         margin-right: $i + rem;
+      }
+   }
+   .mr-sm-#{$i*100} {
+      @include breakpoint("sm") {
+         margin-right: $i + rem;
+      }
+   }
+   .mr-md-#{$i*100} {
+      @include breakpoint("md") {
+         margin-right: $i + rem;
+      }
+   }
+   .mr-lg-#{$i*100} {
+      @include breakpoint("lg") {
+         margin-right: $i + rem;
+      }
+   }
+   .mr-xl-#{$i*100} {
+      @include breakpoint("xl") {
+         margin-right: $i + rem;
+      }
+   }
+
+   // top
+   .mt-xs-#{$i*100} {
+      @include breakpoint("xs") {
+         margin-top: $i + rem;
+      }
+   }
+   .mt-sm-#{$i*100} {
+      @include breakpoint("sm") {
+         margin-top: $i + rem;
+      }
+   }
+   .mt-md-#{$i*100} {
+      @include breakpoint("md") {
+         margin-top: $i + rem;
+      }
+   }
+   .mt-lg-#{$i*100} {
+      @include breakpoint("lg") {
+         margin-top: $i + rem;
+      }
+   }
+   .mt-xl-#{$i*100} {
+      @include breakpoint("xl") {
+         margin-top: $i + rem;
+      }
+   }
+
+   // bottom
+   .mb-xs-#{$i*100} {
+      @include breakpoint("xs") {
+         margin-bottom: $i + rem;
+      }
+   }
+   .mb-sm-#{$i*100} {
+      @include breakpoint("sm") {
+         margin-bottom: $i + rem;
+      }
+   }
+   .mb-md-#{$i*100} {
+      @include breakpoint("md") {
+         margin-bottom: $i + rem;
+      }
+   }
+   .mb-lg-#{$i*100} {
+      @include breakpoint("lg") {
+         margin-bottom: $i + rem;
+      }
+   }
+   .mb-xl-#{$i*100} {
+      @include breakpoint("xl") {
+         margin-bottom: $i + rem;
+      }
+   }
+}

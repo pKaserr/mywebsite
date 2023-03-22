@@ -1,0 +1,11 @@
+.navbar {
+   display: flex;
+   flex-wrap: wrap;
+   background-color: $c2-main;
+   padding: 1rem;
+   justify-content: flex-end;
+}
+
+.navTitle {
+   flex: 1;
+}

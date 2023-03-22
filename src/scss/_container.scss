@@ -1,0 +1,23 @@
+.container {
+   display: flex;
+   margin: 0 auto;
+   @media (min-width: $bp-xs) {
+      width: 100%;
+      padding: 0;
+   }
+   @media (min-width: $bp-sm) {
+      width: 34rem;
+   }
+   @media (min-width: $bp-md) {
+      width: 35rem;
+   }
+   @media (min-width: $bp-lg) {
+      width: 51rem;
+   }
+   @media (min-width: $bp-xl) {
+      width: 60rem;
+   }
+   @media (min-width: $bp-xxl) {
+      width: 90rem;
+   }
+}

@@ -1,0 +1,33 @@
+.devBtn {
+   &:after {
+      @include breakpoint("xs") {
+         content: "XS";
+      }
+      @include breakpoint("sm") {
+         content: "SM";
+      }
+      @include breakpoint("md") {
+         content: "MD";
+      }
+      @include breakpoint("lg") {
+         content: "LG";
+      }
+      @include breakpoint("xl") {
+         content: "XL";
+      }
+      @include breakpoint("xxl") {
+         content: "XXL";
+      }
+      position: fixed;
+      line-height: 0.9;
+      font-size: 30px;
+      color: #fefefe;
+      background-color: $c1-second;
+      opacity: 0.6;
+      padding: 30px;
+      bottom: 5rem;
+      left: 5rem;
+      border-radius: 30px !important;
+      z-index: 10;
+   }
+}
