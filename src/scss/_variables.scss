@@ -8,6 +8,15 @@ $c2-second: #2e6c48;
 $c3-second: #effcef;
 $c4-second: #ff5454;
 
+$card-green: #326932;
+$card-red: #93312d;
+$card-blue: #5234b1;
+$card-purple: #a12dc9;
+$card-pink: #db45a8; 
+$card-yellow: #dbce45;
+$card-cyan: #288b81;
+$card-brown: #8b4728;
+
 $c-white: #fefefe;
 $c-black: #010101;
 $c-grey: #999999;
@@ -25,6 +34,7 @@ $vertical-gradient: linear-gradient(270deg, #2e6c48 0%, #50b375 100%);
 $transition: 0.3s;
 $box-shadow: #01010159;
 
+$border-radius-cards: 35px;
 $border-radius: 45px;
 $border-radius_image: 15px;
 
@@ -48,7 +58,7 @@ $breakpoints: (
    "md": 768px,
    "lg": 992px,
    "xl": 1200px,
-   "xxl": 1920px,
+   "xxl": 1920px
 );
 
 $bp-xs: 0;

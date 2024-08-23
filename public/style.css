@@ -8014,7 +8014,6 @@ h5,
 h6 {
   margin: 0;
   color: #fefefe;
-  line-height: 0;
 }
 
 .container {
@@ -8264,9 +8263,106 @@ header {
   right: -3.5rem;
 }
 
-.img__head {
-  background-image: url("../../public/assets/img/2019_furtwangen.jpg");
+.img-container {
+  position: relative;
   height: 500px;
   width: 549px;
-  box-shadow: 0 0 20px rgba(242, 34, 34, 0.1);
+  background-image: url("../../public/assets/img/2019_furtwangen.jpg");
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease-in-out;
+}
+
+.card {
+  position: relative;
+  padding: 1rem;
+  color: white;
+  border-radius: 35px;
+  display: inline-block;
+  margin: 1rem 0.5rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease-in-out;
+}
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 35px;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+}
+.card:hover {
+  transform: translate(-10px, -10px);
+}
+.card:hover::after {
+  transform: translate(10px, 10px);
+}
+.card__red {
+  background-color: #93312d;
+}
+.card__blue {
+  background-color: #5234b1;
+}
+.card__green {
+  background-color: #326932;
+}
+.card__purple {
+  background-color: #a12dc9;
+}
+.card__pink {
+  background-color: #db45a8;
+}
+.card__yellow {
+  background-color: #dbce45;
+  color: rgb(35, 35, 35);
+  font-size: 21px;
+}
+.card__cyan {
+  background-color: #288b81;
+}
+.card__brown {
+  background-color: #8b4728;
+}
+.card__half {
+  width: 42%;
+}
+.card__full {
+  width: 95.6%;
+}
+.card__third {
+  width: 28%;
+}
+
+.card__red::after {
+  background-color: #6c2421;
+}
+
+.card__blue::after {
+  background-color: #40288a;
+}
+
+.card__green::after {
+  background-color: #224622;
+}
+
+.card__purple::after {
+  background-color: #80249f;
+}
+
+.card__pink::after {
+  background-color: #c72690;
+}
+
+.card__yellow::after {
+  background-color: #c7b926;
+}
+
+.card__cyan::after {
+  background-color: #1d635c;
+}
+
+.card__brown::after {
+  background-color: #63331d;
 }/*# sourceMappingURL=style.css.map */
