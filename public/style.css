@@ -8260,13 +8260,118 @@ header {
   right: -3.5rem;
 }
 
-.img-container {
+.main_img-container {
   position: relative;
-  height: 500px;
-  width: 549px;
-  background-image: url("../../public/assets/img/2019_furtwangen.jpg");
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  margin-top: 2rem;
+}
+.main_img-img {
+  display: block;
+  width: 300px;
+  padding: 0;
+  margin: 0;
+}
+.main_img-b1 {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background-color: #999999;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+}
+.main_img-b2 {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  background-color: #8c8c8c;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+}
+.main_img-b3 {
+  content: "";
+  position: absolute;
+  z-index: -3;
+  background-color: gray;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+}
+.main_img-b4 {
+  content: "";
+  position: absolute;
+  z-index: -4;
+  background-color: #737373;
+  top: -16px;
+  left: -16px;
+  right: -16px;
+  bottom: -16px;
+}
+.main_img-b5 {
+  content: "";
+  position: absolute;
+  z-index: -5;
+  background-color: #666666;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+}
+.main_img-b6 {
+  content: "";
+  position: absolute;
+  z-index: -6;
+  background-color: #595959;
+  top: -24px;
+  left: -24px;
+  right: -24px;
+  bottom: -24px;
+}
+.main_img-b7 {
+  content: "";
+  position: absolute;
+  z-index: -7;
+  background-color: #4d4d4d;
+  top: -28px;
+  left: -28px;
+  right: -28px;
+  bottom: -28px;
+}
+.main_img-b8 {
+  content: "";
+  position: absolute;
+  z-index: -8;
+  background-color: #404040;
+  top: -32px;
+  left: -32px;
+  right: -32px;
+  bottom: -32px;
+}
+.main_img-b9 {
+  content: "";
+  position: absolute;
+  z-index: -9;
+  background-color: #333333;
+  top: -36px;
+  left: -36px;
+  right: -36px;
+  bottom: -36px;
+}
+.main_img-b10 {
+  content: "";
+  position: absolute;
+  z-index: -10;
+  background-color: #262626;
+  top: -40px;
+  left: -40px;
+  right: -40px;
+  bottom: -40px;
 }
 
 .card {

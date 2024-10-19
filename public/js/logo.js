@@ -8,6 +8,8 @@ window.addEventListener('load', () => {
       [document.querySelector('.header__bcScale--59049'), 5]]
 
    logoBgScaleBtns.forEach(el => {
+      console.log(el);
+      console.log(el[0]);
       el[0].addEventListener('click', () => {
          const allElements = document.querySelectorAll('.header__bgc');
          allElements.forEach(el => {
