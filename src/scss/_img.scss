@@ -1,41 +1,41 @@
-$base_size: -4px;
-$size_increment: -4px;
-$base_color: #AEAEAE;
-$name_mt: 10rem;
+   $base_size: -4px;
+   $size_increment: -4px;
+   $base_color: #AEAEAE;
+   $name_mt: 10rem;
 
-.main_img {
-   &-container {
-      position: relative;
-      display: inline-block;
-      margin: 0;
-      padding: 0;
-      margin-top: 2rem;
-      margin-left: 1rem;
-      width: 82%;
-   }
+   .main_img {
+      &-container {
+         position: relative;
+         display: inline-block;
+         margin: 0;
+         padding: 0;
+         // margin-top: 2rem;
+         // margin-right: 2rem;
+         width: 100%;
+      }
 
-   &-img {
-      display: block;
-      width: 100%;
-      padding: 0;
-      margin: 0;
-   }
+      &-img {
+         display: block;
+         width: 100%;
+         padding: 0;
+         margin: 0;
+      }
 
-   @for $i from 1 through 5 {
-      &-b#{$i} {
-         content: "";
-         position: absolute;
-         z-index: -$i;
-         
-         // Berechne die Graustufen, indem du den Farbwert dunkler machst
-         background-color: darken($base_color, ($i - 1) * 16%);
-         
-         // Berechne die Border-Größen
-         $size: $base_size + ($i - 1) * $size_increment;
-         top: $size;
-         left: $size;
-         right: $size;
-         bottom: $size;
+      @for $i from 1 through 5 {
+         &-b#{$i} {
+            content: "";
+            position: absolute;
+            z-index: -$i;
+            
+            // Berechne die Graustufen, indem du den Farbwert dunkler machst
+            background-color: darken($base_color, ($i - 1) * 16%);
+            
+            // Berechne die Border-Größen
+            $size: $base_size + ($i - 1) * $size_increment;
+            top: $size;
+            left: $size;
+            right: $size;
+            bottom: $size;
+         }
       }
    }
-}
