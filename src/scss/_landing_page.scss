@@ -1,83 +1,90 @@
 .lp_header {
-   display: none;
-   
-   @include breakpoint("sm"){
+   margin-bottom: 1rem;
+
+   @include breakpoint("xs") {
+      margin-bottom: 3rem;
+   }
+
+   @include breakpoint("sm") {
       display: flex;
       justify-content: space-between;
-      padding-bottom: 2rem;
       flex-direction: column;
-      
+      margin-bottom: 3rem;
+
       &__container {
          display: flex;
          flex-direction: column;
       }
-      
-      &__img {
-         display: block;
-         align-self: flex-start;
+   }
+
+   &__img {
+      display: block;
+      align-self: flex-start;
+      padding: 0;
+      margin: 0;
+
+      @include breakpoint("md") {
+         width: 80%;
+      }
+
+      @include breakpoint("lg") {
+         width: 100%;
+      }
+
+      &--img {
+         width: 100%;
       }
    }
-   
+
    &__pre-hw {
       display: none;
-      
-      @include breakpoint("sm"){
+
+      @include breakpoint("sm") {
          display: flex;
-         font-size: 16px;
+         font-size: 2.6vw;
          line-height: 12px;
-         margin-top: 2rem;
       }
 
-      @include breakpoint("sm"){
-         font-size: 18px;
-         line-height: 13px;
-      }
-
-      @include breakpoint("md"){
-         font-size: 4vh;
-         max-width: 100%;
+      @include breakpoint("md") {
+         font-size: 2.1vw;
          line-height: 15px;
       }
 
-      @include breakpoint("lg"){
-         font-size: 14px;
+      @include breakpoint("lg") {
+         font-size: 1rem;
          line-height: 10px;
       }
-
-      @include breakpoint("xl"){
-         font-size: 15px;
+      
+      @include breakpoint("xl") {
          line-height: 11px;
       }
-
-      @include breakpoint("xxl"){
-         font-size: 17px;
+      
+      @include breakpoint("xxl") {
+         font-size: 1.1rem;
          line-height: 12px;
       }
    }
-   
+
    &__pre-code {
-      display: inline-block;
-      margin: 0;
-      margin-left: 1rem;
+      display: none;
 
-      @include breakpoint("lg"){
-         font-size: 12px;
+      @include breakpoint("sm") {
+         display: inline-block;
+         font-size: 2vw;
+         margin-bottom: 3rem;
       }
 
-      @include breakpoint("xl"){
-         font-size: 13px;
+      @include breakpoint("lg") {
+         font-size: 1.2vw;
+         margin-left: 1rem;
       }
 
-      @include breakpoint("xxl"){
-         font-size: 15px;
+      @include breakpoint("xl") {
+         font-size: 1rem;
       }
    }
 
-   @include breakpoint("sm"){
-      margin-bottom: 3rem;
-   }
-
-   @include breakpoint("lg"){
+   @include breakpoint("lg") {
       flex-direction: row;
       margin-bottom: 5rem;
    }
@@ -86,82 +93,61 @@
 .lp_name {
    position: relative;
    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-   font-size: 34px;
-   margin-top: 2rem;
-   
-   @include breakpoint("xs"){
-      font-size: 60px;
+   margin-bottom: 1rem;
+
+   @include breakpoint("xs") {
+      margin-bottom: 4rem;
    }
 
-   @include breakpoint("mid"){
-      font-size: 85px;
-   }
-   
-   @include breakpoint("sm"){
-      font-size: 115px;
-      margin-top: 0rem;
-      margin-bottom: 5rem;
+   @include breakpoint("sm") {
+      margin-bottom: 6rem;
    }
 
-   @include breakpoint("lg"){
-      font-size: 170px;
-      margin-bottom: 10rem;
+   @include breakpoint("md") {
+      margin-bottom: 7rem;
    }
-   
+
    &-black {
       position: absolute;
-      font-size: inherit;
       top: 2px;
       left: 2px;
-      color: #000000;
+      color: $c1-main;
+      font-size: 18vw;
 
-      @include breakpoint("sm"){
+      @include breakpoint("sm") {
          top: 3px;
          left: 3px;
       }
 
-      @include breakpoint("lg"){
+      @include breakpoint("lg") {
          top: 5px;
          left: 5px;
+         font-size: 8rem;
       }
 
       &-sure {
-         margin-top: calc($name_mt + 35px);
+         margin-top: calc(10rem + 35px);
       }
    }
 
    &-white {
-      font-size: inherit;
-      color: #ffffff;
+      font-size: 18vw;
+      color: $c3-second;
+
+      @include breakpoint("lg") {
+         font-size: 8rem;
+      }
    }
 
    &--surename {
-      margin-top: 0.5rem;
-      
-      @include breakpoint("xs"){
-         margin-top: 2rem;
+      margin-top: 0.7vw;
+
+      @include breakpoint("xs") {
+         margin-top: 12vw;
       }
 
-      @include breakpoint("mid"){
-         margin-top: 3rem;
+      @include breakpoint("lg") {
+         margin-top: 6rem;
       }
-
-      @include breakpoint("sm"){
-         margin-top: 5rem;
-      }
-
-      @include breakpoint("lg"){
-         margin-top: 8rem;
-      }
-   }
-}
-
-.small_size {
-   & p{
-      font-size: 17px;
-   }
-
-   @include breakpoint("sm"){
-      display: none;
    }
 }

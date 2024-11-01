@@ -1,22 +1,25 @@
-.link_logo{
-   margin-top: 1rem;
-   width: 25%;
-   margin-right: 5px;
-   
+.link_logo--wrapper {
+   display: flex;
+   justify-content: space-around;
+   gap: 1rem; 
+
+   @include breakpoint("lg") {
+      justify-content: flex-start;
+   }
+}
+
+.link_logo {
+   width: auto;
+   height: 22px;
    @include breakpoint("xs") {
-      margin-right: 20px;
+      height: 50px;
    }
-
-   @include breakpoint("mid") {
-      margin-right: 26px;
+   
+   @include breakpoint("md") {
+      height: 70px;
    }
-
-   @include breakpoint("sm") {
-      width: 12%;
-   }
-
-   @include breakpoint("xxl") {
-      width: 7%;
-      margin-bottom: 2rem;
+   
+   @include breakpoint("lg") {
+      margin-right: 1rem;
    }
 }

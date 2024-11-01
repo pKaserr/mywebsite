@@ -3,17 +3,14 @@ html {
 }
 
 .container {
-   // display: flex;
    margin: 0 auto;
-   @include breakpoint("xs") {
-      width: 90%;
-      padding: 0;
-   }
+   width: 90%;
+
    @include breakpoint("mid") {
-      width: 83%;
+      width: 80%;
    }
    @include breakpoint("sm") {
-      width: 80%;
+      width: 75%;
    }
    @include breakpoint("md") {
       width: 75%;
