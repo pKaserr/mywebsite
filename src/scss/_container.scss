@@ -25,3 +25,18 @@ html {
       width: 70rem;
    }
 }
+
+.container_dashboard {
+   margin: 0 auto;
+   width: 90%;
+
+   @include breakpoint("lg") {
+      width: 60rem;
+   }
+   @include breakpoint("xl") {
+      width: 70rem;
+   }
+   @include breakpoint("xxl") {
+      width: 80rem;
+   }
+}

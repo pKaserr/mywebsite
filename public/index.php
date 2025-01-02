@@ -50,30 +50,17 @@
 24
 25  function apply_for_job with "Patrick Kaserer";
 26  >
-                </pre>
-            </div>
-            <div class="lp_name">
-                <div>
-                    <p class="lp_name-black">PATRICK</p>
-                    <p class="lp_name-white">PATRICK</p>
-                </div>
-                <div class="lp_name lp_name--surename">
-                    <div>
-                        <p class="lp_name-black">KASERER</p>
-                        <p class="lp_name-white">KASERER</p>
-                    </div>
-                </div>
-                <a href=https://github.com/Z3r0cks/mywebsite><div class="banner">Page Is Work In Progess! <img style="width: 35px;"
-                        src=./assets/img/github_logo-inverted.png alt=Github></div></a>
-            </div>
-            <div class="link_logo--wrapper"><a href=https://www.linkedin.com/in/patrick-kaserer><img
-                        class="link_logo link_logo--linked" src=./assets/img/linkedin_logo.png alt=linkedIn></a><a
-                    href=https://www.xing.com/profile/Patrick_Kaserer><img class="link_logo link_logo--xing"
-                        src=./assets/img/xing_logo.png alt=Xing></a><a href=https://github.com/Z3r0cks><img
-                        class="link_logo link_logo--github" src=./assets/img/github_logo.png alt=Github></a><a
-                    href="mailto:mail@patrick-kaserer.de"><img class="link_logo link_logo--mail"
-                        src=./assets/img/mail.png alt=Mail></a></div>
-    </main><!--<div class="devBtn">--></div>
+ </pre></div><div class="lp_name"><div><p class="lp_name-black">PATRICK</p><p class="lp_name-white">PATRICK</p></div><div class="lp_name lp_name--surename"><div><p class="lp_name-black">KASERER</p><p class="lp_name-white">KASERER</p></div></div><a href=https://github.com/Z3r0cks/mywebsite><div class="banner">Page Is Work In Progess! <img style="width: 35px;" src=./assets/img/github_logo-inverted.png alt=Github></div></a></div><div class="link_logo--wrapper"><a href=https://www.linkedin.com/in/patrick-kaserer><img class="link_logo link_logo--linked" src=./assets/img/linkedin_logo.png alt=linkedIn></a><a href=https://www.xing.com/profile/Patrick_Kaserer><img class="link_logo link_logo--xing" src=./assets/img/xing_logo.png alt=Xing></a><a href=https://github.com/Z3r0cks><img class="link_logo link_logo--github" src=./assets/img/github_logo.png alt=Github></a><a href="mailto:mail@patrick-kaserer.de"><img class="link_logo link_logo--mail" src=./assets/img/mail.png alt=Mail></a></div></main>
 </body>
+
+<form action="check_login.php" method="POST">
+    <label for="user_name">Benutzername:</label>
+    <input type="text" placeholder="Login Name" id="user_name" name="user_name" required>
+    
+    <label for="password">Passwort:</label>
+    <input type="password" placeholder="Passwort" id="password" name="password" required>
+    
+    <button type="submit">Anmelden</button>
+</form>
 
 </html>
