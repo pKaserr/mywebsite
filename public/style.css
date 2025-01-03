@@ -8091,6 +8091,18 @@ html {
   }
 }
 
+.pdf-content img {
+  float: none !important;
+  display: block !important;
+  margin: 0 auto !important;
+  max-width: 100% !important;
+}
+
+.pdf-content {
+  text-align: left !important;
+  margin: 10px !important;
+}
+
 .devBtn:after {
   position: fixed;
   line-height: 0.9;
@@ -8151,14 +8163,14 @@ html {
 }
 
 .accordion {
-  background-color: #353535;
+  background-color: #bbbbbb;
   cursor: pointer;
   padding: 10px;
   width: 100%;
   border: none;
   text-align: left;
   outline: none;
-  font-size: 15px;
+  font-size: 18px;
   transition: 0.4s;
 }
 

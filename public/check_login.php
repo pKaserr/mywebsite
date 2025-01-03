@@ -1,5 +1,5 @@
 <?php
-require 'db_connect.php';
+require '../includes/db_connect.php';
 
 $user_name = $_POST['user_name'];
 $password = $_POST['password'];

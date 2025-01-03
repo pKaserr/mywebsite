@@ -40,3 +40,15 @@ html {
       width: 80rem;
    }
 }
+
+.pdf-content img {
+   float: none !important;
+   display: block !important;
+   margin: 0 auto !important;
+   max-width: 100% !important;
+}
+
+.pdf-content {
+   text-align: left !important;
+   margin: 10px !important;
+}
