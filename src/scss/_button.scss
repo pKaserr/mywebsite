@@ -3,17 +3,17 @@
    margin: 0 0.3rem;
    transition: $transition;
    font-family: inherit;
+   cursor: pointer;
 
    &--main {
       color: $c-white;
-      border-radius: 12px;
+      border-radius: 3px;
       padding: 0.5rem;
-      background-color: $c1-second;
-      border: solid 2px transparent;
+      background-color: $c1-main;
+      border: solid 2px $c-white;
 
       &:hover {
-         background-color: transparent;
-         border: solid 2px $c1-second;
+         transform: scale(1.1);
       }
    }
 

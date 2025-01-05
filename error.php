@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Falscher Login</title>
+   <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+   <a href="index"><button class="btn btn--main btn--nav">Zurück</button></a>
+   <div class="container">
+      <h1>Da ist was schief gelaufen</h1>
+      <p class="mb-3">Anscheinend waren die Login-Daten nicht korrekt :(</p>
+      <h3>Noch ein Versuch?</h3>
+      <form class="mb-2 display-flex flex-column login" action="check_login" method="POST">
+         <div class="display-flex flex-justify-between">
+            <div class="mr-10-px login--input">
+               <label for="user_name">Benutzername</label>
+               <input type="text" placeholder="Login Name" id="user_name" name="user_name" required>
+            </div>
+            <div class="ml-10-px login--input">
+               <label for="password">Passwort</label>
+               <input class="" type="password" placeholder="Passwort" id="password" name="password" required>
+            </div>
+         </div>
+         <button class="button_form" type="submit">Anmelden</button>
+      </form>
+   </div>
+</body>
+
+</html>

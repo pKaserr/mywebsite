@@ -1,0 +1,8 @@
+<Files ".env">
+    Order allow,deny
+    Deny from all
+</Files>
+
+Order Allow,Deny
+Deny from all
+ErrorDocument 403 "404 Not Found"

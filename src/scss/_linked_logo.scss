@@ -1,7 +1,7 @@
 .link_logo--wrapper {
    display: flex;
    justify-content: space-around;
-   gap: 1rem; 
+   gap: 1rem;
 
    @include breakpoint("lg") {
       justify-content: flex-start;
@@ -14,12 +14,17 @@
    @include breakpoint("xs") {
       height: 50px;
    }
-   
+
    @include breakpoint("md") {
       height: 70px;
    }
-   
+
    @include breakpoint("lg") {
       margin-right: 1rem;
    }
+}
+
+.link_logo:hover {
+   transform: scale(1.1);
+   transition: 0.3s;
 }

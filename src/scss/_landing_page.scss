@@ -54,11 +54,11 @@
          font-size: 1rem;
          line-height: 10px;
       }
-      
+
       @include breakpoint("xl") {
          line-height: 11px;
       }
-      
+
       @include breakpoint("xxl") {
          font-size: 1.1rem;
          line-height: 12px;
@@ -149,5 +149,18 @@
       @include breakpoint("lg") {
          margin-top: 6rem;
       }
+   }
+}
+
+.login {
+   display: none !important;
+
+   @include breakpoint("xs") {
+      display: block !important;
+   }
+
+   &--input {
+      font-size: 20px;
+      width: 100%;
    }
 }

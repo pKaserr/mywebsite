@@ -425,3 +425,50 @@ $grid-columns: 15;
       }
    }
 }
+
+$grid-columns: 100;
+@for $i from 0 through $grid-columns {
+   .p-#{$i*1}-px {
+      padding: $i + px !important;
+   }
+   .py-#{$i*1}-px {
+      padding: $i + px + " " + 0 + px !important;
+   }
+   .px-#{$i*1}-px {
+      padding: 0 + px + " " + $i + px !important;
+   }
+   .pt-#{$i*1}-px {
+      padding-top: $i + px !important;
+   }
+   .pr-#{$i*1}-px {
+      padding-right: $i + px !important;
+   }
+   .pb-#{$i*1}-px {
+      padding-bottom: $i + px !important;
+   }
+   .pl-#{$i*1}-px {
+      padding-left: $i + px !important;
+   }
+
+   .m-#{$i*1}-px {
+      margin: $i + px !important;
+   }
+   .my-#{$i*1}-px {
+      margin: $i + px + " " + 0 + px !important;
+   }
+   .mx-#{$i*1}-px {
+      margin: 0 + px + " " + $i + px !important;
+   }
+   .mt-#{$i*1}-px {
+      margin-top: $i + px !important;
+   }
+   .mr-#{$i*1}-px {
+      margin-right: $i + px !important;
+   }
+   .mb-#{$i*1}-px {
+      margin-bottom: $i + px !important;
+   }
+   .ml-#{$i*1}-px {
+      margin-left: $i + px !important;
+   }
+}

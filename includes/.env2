@@ -1,0 +1,11 @@
+DB_HOST=localhost
+DB_NAME=my_db
+DB_USER=root
+DB_PASS=
+
+
+# DB_HOST=db5016536324.hosting-data.io
+# DB_NAME=dbs13421348
+# DB_USER=dbu169358
+# DB_PASS=tBvfPGyauB3G9nJX5t
+# sEJMN5h6JD4BXKUqU7eUHakZpurkNY7k

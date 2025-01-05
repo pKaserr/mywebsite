@@ -23,6 +23,30 @@
    display: none !important;
 }
 
+.display-flex {
+   display: flex !important;
+}
+
+.flex-row {
+   flex-direction: row !important;
+}
+
+.flex-column {
+   flex-direction: column !important;
+}
+
+.flex-justify-between {
+   justify-content: space-between !important;
+}
+
+.flex-justify-center {
+   justify-content: center !important;
+}
+
+.flex-justify-around {
+   justify-content: space-around !important;
+}
+
 .opacity-0 {
    opacity: 0 !important;
    z-index: -1;
@@ -31,3 +55,13 @@
 .opacity-1 {
    opacity: 1 !important;
 }
+
+// $percent-width: 100;
+
+// @for $i from 0 through $percent-width {
+//    .width-#{$i} {
+//       width: #{$i}% !important; // Prozentwert korrekt interpoliert
+//    }
+// }
+
+// padding: $i + rem !important;
