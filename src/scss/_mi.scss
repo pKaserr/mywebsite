@@ -1,0 +1,9 @@
+.mi {
+   &__img {
+      &--second {
+         position: relative;
+         left: 50%;
+         transform: translateX(-50%);
+      }
+   }
+}

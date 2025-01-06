@@ -31,7 +31,9 @@ try {
 </head>
 
 <body>
-    <a href="logout"><button class="btn btn--main btn--nav">Abmelden</button></a>
+    <div class="nav">
+        <a href="logout"><button class="btn btn--main btn--nav">Abmelden</button></a>
+    </div>
     <div class="container_dashboard">
         <h1>Willkommen im Dashboard, <?= htmlspecialchars($username) ?></h1>
         <p>Schön, dass Sie hier her gefunden haben und <?php if ($initial_appli) { ?>

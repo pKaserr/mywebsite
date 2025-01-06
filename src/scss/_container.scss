@@ -29,6 +29,7 @@ html {
 .container_dashboard {
    margin: 0 auto;
    width: 90%;
+   position: relative;
 
    @include breakpoint("lg") {
       width: 60rem;

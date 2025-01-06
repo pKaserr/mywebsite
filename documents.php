@@ -31,8 +31,10 @@ try {
 </head>
 
 <body>
-    <a href="logout"><button class="btn btn--main btn--nav">Abmelden</button></a>
-    <a href="dashboard"><button class="btn btn--main btn--nav">Zurück</button></a>
+    <div class="nav">
+        <a href="logout"><button class="btn btn--main btn--nav">Abmelden</button></a>
+        <a href="dashboard"><button class="btn btn--main btn--nav">Zurück</button></a>
+    </div>
     <div class="container_dashboard">
 
         <h1>Willkommen im Dashboard, <?= htmlspecialchars($username) ?></h1>
