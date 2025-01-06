@@ -44,8 +44,8 @@ try {
 
     <div class="boxWrapper">
         <div class="boxWrapper__inner">
-            <a class="boxWrapper__a" href="about_me"><span>About Me</span></a>
-            <a class="boxWrapper__a" href="documents"><span>Dokumente</span></a>
+            <a class="boxWrapper__a" href="about_me"><img width="100%" src="./assets/img/dashboard_about_me.png" alt=""></a>
+            <a class="boxWrapper__a" href="documents"><img width="85%" src="./assets/img/documents.png" alt=""></a></a>
         </div>
         <div class="boxWrapper__inner">
             <a class="boxWrapper__a" href="experience"><span>Erfahrungen</span></a>

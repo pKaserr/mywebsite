@@ -14433,7 +14433,7 @@ header {
 }
 .boxWrapper__inner {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100%;
 }
 .boxWrapper__inner :first-child {
@@ -14441,7 +14441,6 @@ header {
 }
 .boxWrapper__a {
   display: inline-block;
-  border: solid 1px #e5e5e5;
   position: relative;
   height: 300px;
   width: 300px;
