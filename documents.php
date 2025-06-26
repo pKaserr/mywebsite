@@ -51,11 +51,11 @@ try {
         <table class="mb-2" style="width: 100%;">
             <?php foreach ($documents as $document) : ?>
                 <tr>
-                    <td class="table_desc__first"><a class="table_desc" href="download.php?file=<?= $document['file_hash'] ?>"><?= $document['file_name'] ?></a></td>
+                    <td class="table_desc__first"><a class="table_desc" href="download.php?file=<?= $document['file_hash'] ?>"><?= htmlspecialchars($document['file_name']) ?></a></td>
                     <td class="table_desc
                     "><?= $document['file_size'] ?> KB</td>
                     <td class="table_desc
-                    table_desc__second"> <?= $document['file_desc'] ?></td>
+                    table_desc__second"> <?= htmlspecialchars($document['file_desc']) ?></td>
                     <td><a class="table_desc" href="download.php?file=<?= $document['file_hash'] ?>"><img style="width: 30px" src="./assets/svg/download-button.svg" alt="download icon"></a></td>
                 </tr>
             <?php endforeach; ?>

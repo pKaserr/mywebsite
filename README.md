@@ -7,6 +7,7 @@ Website still under construction.
 - Add timeline
 - Add database access with more information and password for companies
 - Add portfolio
+<<<<<<< codex/update-readme-with-setup-details
 
 ## Requirements
 
@@ -40,3 +41,6 @@ npm install -g sass
 sass src/scss/style.scss style.css
 ```
 
+=======
+- Hash all real passwords using PHP's `password_hash` before storing them
+>>>>>>> main
