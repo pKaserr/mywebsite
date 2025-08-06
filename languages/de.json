@@ -1,0 +1,120 @@
+{
+  "nav": {
+    "logout": "Abmelden",
+    "back": "Zurück",
+    "download_pdf": "Download als PDF"
+  },
+  "dashboard": {
+    "welcome": "Willkommen im Dashboard",
+    "welcome_guest": "Willkommen als Gast",
+    "intro_individual": "Schön, dass Sie hier her gefunden haben und meine Initiativbewerbung bei Ihnen in Betracht ziehen.",
+    "intro_job": "Schön, dass Sie hier her gefunden haben und meine Bewerbung als {job} in Betracht ziehen.",
+    "intro_guest": "Hier können Sie einen ersten Eindruck von meinen Qualifikationen und Erfahrungen bekommen. Für weitere Informationen kontaktieren Sie mich gerne direkt.",
+    "info_text": "Unten finden Sie weitere Informationen über mich und die Bewerbungsunterlagen sowie Zeugnisse und Empfehlungen als einzelnen Dokumente.",
+    "info_text_guest": "Erkunden Sie die verfügbaren Bereiche um mehr über meine Qualifikationen zu erfahren."
+  },
+  "timeline": {
+    "title": "Professional Timeline",
+    "intro": "Mein Weg von der Logistik zur Informatik - ein umfassender Überblick über meine berufliche Entwicklung, Ausbildung und wichtige Meilensteine.",
+    "education_title": "Ausbildung & Akademische Entwicklung",
+    "experience_title": "Berufserfahrung",
+    "leadership_title": "Führung & Schlüsselprojekte",
+    "skills_title": "Technische Kompetenzentwicklung",
+    "education": {
+      "master": {
+        "title": "M.Sc. Medieninformatik",
+        "location": "Hochschule Furtwangen",
+        "description": "Spezialisierung auf Neuronale Netze und Deep Learning. Masterarbeit über \"Synthesized Sensor Data from Neural Radiance Fields\". Voraussichtlicher Abschluss: Januar/Februar 2025.",
+        "tags": ["Neuronale Netze", "Deep Learning", "Forschung", "NeRF"]
+      },
+      "bachelor": {
+        "title": "B.Sc. Medieninformatik", 
+        "location": "Hochschule Furtwangen",
+        "description": "Erfolgreich abgeschlossener Bachelor-Studiengang mit Fokus auf Softwareentwicklung, Projektmanagement und angewandte Informatik. Starke Grundlage in Programmierung, Webentwicklung und Mensch-Computer-Interaktion.",
+        "tags": ["Softwareentwicklung", "Web-Technologien", "Projektmanagement"]
+      },
+      "fachabitur": {
+        "title": "Fachabitur",
+        "location": "Berufliche Neuorientierung",
+        "description": "Strategische Entscheidung für ein Hochschulstudium nach dem Sammeln von Berufserfahrung. Erfolgreich abgeschlossene Fachhochschulreife zur Ermöglichung des Universitätsstudiums.",
+        "tags": ["Berufswechsel", "Selbstentwicklung"]
+      }
+    },
+    "work": {
+      "lecturer": {
+        "title": "Lehrbeauftragter",
+        "location": "Hochschule Furtwangen",
+        "description": "Lehre in \"Creative Coding\" und \"Entwicklung interaktiver Medien\" für Erst- und Zweitsemester. Verantwortlich für Curriculum-Entwicklung, Content-Erstellung, Prüfungskonzeption und Teamführung.",
+        "tags": ["Hochschullehre", "Curriculum-Entwicklung", "Teamführung", "Creative Coding"]
+      },
+      "internship": {
+        "title": "Praktikum - Full Stack Developer",
+        "location": "dreiQbik Webagentur, Karlsruhe",
+        "description": "Praxissemester mit Fokus auf Full-Stack-Webentwicklung. Entwicklung individueller Webanwendungen mit WordPress als Backend. Beteiligung am kompletten Projektlebenszyklus von Kundenakquise bis Deployment.",
+        "tags": ["Full Stack Development", "WordPress", "Kundenbetreuung", "Projektmanagement"]
+      },
+      "student_assistant": {
+        "title": "Studentische Hilfskraft",
+        "location": "Hochschule Furtwangen",
+        "description": "Betreuung von Erstsemestern in Programmiergrundlagen und interaktiver Medienentwicklung. Mentoring bei praktischen Aufgaben im Bereich IoT und Web-Technologien.",
+        "tags": ["Mentoring", "Programmierunterricht", "IoT"]
+      },
+      "logistics": {
+        "title": "Fachkraft für Lagerlogistik",
+        "location": "Verschiedene Unternehmen",
+        "description": "Berufserfahrung in Logistik und Lagerverwaltung. Wertvolle Einblicke in Geschäftsprozesse, Organisation und Teamkoordination, die später meinen Ansatz bei Softwareentwicklungsprojekten beeinflusst haben.",
+        "tags": ["Prozessoptimierung", "Teamkoordination", "Geschäftsabläufe"]
+      },
+      "apprenticeship": {
+        "title": "Ausbildung - Fachkraft für Lagerlogistik",
+        "location": "Berufsausbildung",
+        "description": "Dreijährige Berufsausbildung zur Fachkraft für Lagerlogistik. Grundlage in systematischen Arbeitsprozessen, Qualitätsmanagement und beruflicher Verantwortung.",
+        "tags": ["Berufsausbildung", "Qualitätsmanagement", "Systematische Prozesse"]
+      }
+    },
+    "leadership": {
+      "chairman": {
+        "title": "Vorsitzender der Verfassten Studierendenschaft",
+        "location": "Hochschule Furtwangen",
+        "description": "Leitung der verfassten Studierendenschaft, die Tausende von Studierenden vertritt. Verantwortlich für strategische Entscheidungsfindung, Ressourcenallokation und organisatorische Optimierung.",
+        "tags": ["Strategische Führung", "Studierendenvertretung", "Ressourcenmanagement"]
+      }
+    },
+    "projects": {
+      "breakfast_checks": {
+        "title": "Forschungsprojekt - \"Frühstücks-Checks\"",
+        "location": "KI-gestütztes Nahrungsmittelerkennungssystem",
+        "description": "Entwicklung einer Webapp mit Convolutional Neural Networks zur Nahrungsmittelerkennung mit Augmented Reality Visualisierung. Erstellung eigener Trainingsdaten und Implementierung von WebSocket-Kommunikation zwischen Frontend und KI-Server.",
+        "tags": ["Machine Learning", "TensorFlow", "Augmented Reality", "WebSockets"]
+      },
+      "blind_meetup": {
+        "title": "Projektstudium - \"Blind MeetUp\"",
+        "location": "Anonyme soziale Plattform für Studierende",
+        "description": "Leitung der Entwicklung und des Projektmanagements in einem 6-Personen-Team zur Erstellung einer anonymen Meeting-Plattform für Universitätsstudierende. Implementierung der Scrum-Methodologie und Bearbeitung des kompletten Entwicklungslebenszyklus.",
+        "tags": ["Teamführung", "Scrum", "Full Stack Development", "Soziale Plattform"]
+      }
+    },
+    "skills": {
+      "programming_title": "Programmiersprachen",
+      "ai_title": "KI & Machine Learning"
+    }
+  },
+  "about_me": {
+    "title": "Über mich",
+    "short_summary": "Kurzfassung:",
+    "detailed_version": "Ausführliche Fassung:",
+    "professional_interests": "Berufliche Interessen",
+    "neural_networks": "Neuronale Netze",
+    "didactics": "Didaktik", 
+    "applied_sciences": "Angewandte Wissenschaften",
+    "leadership_organization": "Führung und Organisation"
+  },
+  "experience": {
+    "title": "Erfahrungen",
+    "university_teaching": "Hochschullehre",
+    "research_project": "Forschungsprojekt - Frühstücks-Checks",
+    "masters_thesis": "Masterthesis - Synthesized Sensor Data from Neural Radiance Fields",
+    "internship_dreiqbik": "Praktisches Studiensemester - dreiQbik",
+    "project_study": "Projektstudium - Website: \"Blind MeetUp\""
+  }
+}

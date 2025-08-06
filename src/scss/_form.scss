@@ -26,7 +26,7 @@ input[type="password"] {
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-   transform: scale(1.2);
+   transform: scale(1.07);
    transition: 0.3s;
    outline: solid 3px $c1-main;
    box-shadow: 0 0 10px $c1-main;
@@ -45,7 +45,7 @@ input[type="password"]:focus {
 
 .button_form:focus,
 .button_form:hover {
-   transform: scale(1.1);
+   transform: scale(1.02);
    transition: 0.3s;
    box-shadow: 0 0 10px $c1-main;
 }

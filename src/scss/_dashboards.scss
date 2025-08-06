@@ -1,0 +1,54 @@
+
+/* --------------------------------------------------
+Dashboard Icons - Timeline & About Me
+-------------------------------------------------- */
+
+.timeline-dashboard-icon, .about-me-dashboard-icon, .documents-dashboard-icon, .medieninformatik-dashboard-icon, .experience-dashboard-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    height: 100%;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #0f7dbd0d, #2e6c480d);
+    border-radius: 10px;
+    border: 1px solid rgba(15, 125, 189, 0.1);
+  }
+  
+  .timeline-dashboard-icon:hover, .about-me-dashboard-icon:hover, .documents-dashboard-icon:hover, .medieninformatik-dashboard-icon:hover, .experience-dashboard-icon:hover {
+    // background: linear-gradient(135deg, $c1-second, $c2-second);
+    /* box-shadow: 0 4px 15px rgba(15, 125, 189, 0.082); */
+    border: $c1-second, solid 1px;
+  }
+  
+  .timeline-dashboard-icon svg, .about-me-dashboard-icon svg, .documents-dashboard-icon svg, .medieninformatik-dashboard-icon svg, .experience-dashboard-icon svg {
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .timeline-dashboard-icon:hover svg, .about-me-dashboard-icon:hover svg, .documents-dashboard-icon:hover svg, .medieninformatik-dashboard-icon:hover svg, .experience-dashboard-icon:hover svg{
+    transform: scale(1.07) translateY(-3px);
+  }
+  
+  .timeline-dashboard-text,
+  .about-me-dashboard-text,
+  .documents-dashboard-text,
+  .medieninformatik-dashboard-text,
+  .experience-dashboard-text {
+    font-weight: 600;
+    color: $c1-main; 
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.7 !important;
+    display: block;
+    top: 92% !important;
+  }
+  
+  .about-me-dashboard-icon:hover .about-me-dashboard-text,
+  .documents-dashboard-icon:hover .documents-dashboard-text,
+  .medieninformatik-dashboard-icon:hover .medieninformatik-dashboard-text,
+  .experience-dashboard-icon:hover .experience-dashboard-text,
+  .about-me-dashboard-icon:hover .about-me-dashboard-text {
+    color: $c1-second;
+  }

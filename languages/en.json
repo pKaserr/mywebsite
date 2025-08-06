@@ -1,0 +1,120 @@
+{
+  "nav": {
+    "logout": "Logout",
+    "back": "Back",
+    "download_pdf": "Download as PDF"
+  },
+  "dashboard": {
+    "welcome": "Welcome to the Dashboard",
+    "welcome_guest": "Welcome as Guest",
+    "intro_individual": "Thank you for finding your way here and considering my speculative application.",
+    "intro_job": "Thank you for finding your way here and considering my application as {job}.",
+    "intro_guest": "Here you can get a first impression of my qualifications and experience. For further information, please feel free to contact me directly.",
+    "info_text": "Below you will find more information about me and the application documents as well as certificates and recommendations as individual documents.",
+    "info_text_guest": "Explore the available sections to learn more about my qualifications."
+  },
+  "timeline": {
+    "title": "Professional Timeline",
+    "intro": "My journey from logistics to computer science - a comprehensive overview of my professional development, education, and key milestones.",
+    "education_title": "Education & Academic Development",
+    "experience_title": "Professional Experience",
+    "leadership_title": "Leadership & Key Projects",
+    "skills_title": "Technical Skills Evolution",
+    "education": {
+      "master": {
+        "title": "M.Sc. Media Informatics",
+        "location": "Hochschule Furtwangen University",
+        "description": "Specialization in Neural Networks and Deep Learning. Master's thesis on \"Synthesized Sensor Data from Neural Radiance Fields\". Expected completion: January/February 2025.",
+        "tags": ["Neural Networks", "Deep Learning", "Research", "NeRF"]
+      },
+      "bachelor": {
+        "title": "B.Sc. Media Informatics",
+        "location": "Hochschule Furtwangen University", 
+        "description": "Successfully completed Bachelor's degree with focus on software development, project management, and applied computer science. Strong foundation in programming, web development, and human-computer interaction.",
+        "tags": ["Software Development", "Web Technologies", "Project Management"]
+      },
+      "fachabitur": {
+        "title": "Technical College Entrance Qualification",
+        "location": "Career Reorientation Phase",
+        "description": "Strategic decision to pursue higher education after gaining professional experience. Successfully completed technical college entrance qualification to enable university studies.",
+        "tags": ["Career Change", "Self-Development"]
+      }
+    },
+    "work": {
+      "lecturer": {
+        "title": "Lecturer (Lehrbeauftragter)",
+        "location": "Hochschule Furtwangen University",
+        "description": "Teaching \"Creative Coding\" and \"Interactive Media Development\" to first and second semester students. Responsible for curriculum development, content creation, examination design, and team leadership.",
+        "tags": ["University Teaching", "Curriculum Development", "Team Leadership", "Creative Coding"]
+      },
+      "internship": {
+        "title": "Internship - Full Stack Developer",
+        "location": "dreiQbik Webagentur, Karlsruhe",
+        "description": "Practical semester focused on full-stack web development. Developed custom web applications using WordPress as backend. Involved in complete project lifecycle from client acquisition to deployment.",
+        "tags": ["Full Stack Development", "WordPress", "Client Management", "Project Management"]
+      },
+      "student_assistant": {
+        "title": "Student Teaching Assistant",
+        "location": "Hochschule Furtwangen University",
+        "description": "Supporting first-year students in programming fundamentals and interactive media development. Mentoring in practical assignments related to IoT and web technologies.",
+        "tags": ["Mentoring", "Programming Education", "IoT"]
+      },
+      "logistics": {
+        "title": "Logistics Specialist",
+        "location": "Various Companies",
+        "description": "Professional experience in logistics and warehouse management. Gained valuable insights into business processes, organization, and team coordination that later influenced my approach to software development projects.",
+        "tags": ["Process Optimization", "Team Coordination", "Business Operations"]
+      },
+      "apprenticeship": {
+        "title": "Apprenticeship - Logistics Specialist",
+        "location": "Professional Training",
+        "description": "Three-year professional training as \"Fachkraft für Lagerlogistik\" (Logistics Specialist). Foundation in systematic work processes, quality management, and professional responsibility.",
+        "tags": ["Professional Training", "Quality Management", "Systematic Processes"]
+      }
+    },
+    "leadership": {
+      "chairman": {
+        "title": "Chairman of Student Body",
+        "location": "Hochschule Furtwangen University",
+        "description": "Leading the constitutional student body representing thousands of students. Responsible for strategic decision-making, resource allocation, and organizational optimization.",
+        "tags": ["Strategic Leadership", "Student Representation", "Resource Management"]
+      }
+    },
+    "projects": {
+      "breakfast_checks": {
+        "title": "Research Project - \"Breakfast Checks\"",
+        "location": "AI-Powered Food Recognition System",
+        "description": "Developed a webapp using Convolutional Neural Networks for food recognition with Augmented Reality visualization. Created custom training data and implemented WebSocket communication between frontend and AI server.",
+        "tags": ["Machine Learning", "TensorFlow", "Augmented Reality", "WebSockets"]
+      },
+      "blind_meetup": {
+        "title": "Project Study - \"Blind MeetUp\"",
+        "location": "Anonymous Social Platform for Students",
+        "description": "Led development and project management in a 6-person team creating an anonymous meeting platform for university students. Implemented Scrum methodology and handled full development lifecycle.",
+        "tags": ["Team Leadership", "Scrum", "Full Stack Development", "Social Platform"]
+      }
+    },
+    "skills": {
+      "programming_title": "Programming Languages",
+      "ai_title": "AI & Machine Learning"
+    }
+  },
+  "about_me": {
+    "title": "About Me",
+    "short_summary": "Short Summary:",
+    "detailed_version": "Detailed Version:",
+    "professional_interests": "Professional Interests",
+    "neural_networks": "Neural Networks",
+    "didactics": "Didactics",
+    "applied_sciences": "Applied Sciences", 
+    "leadership_organization": "Leadership and Organization"
+  },
+  "experience": {
+    "title": "Experience",
+    "university_teaching": "University Teaching",
+    "research_project": "Research Project - Breakfast Checks",
+    "masters_thesis": "Master's Thesis - Synthesized Sensor Data from Neural Radiance Fields",
+    "internship_dreiqbik": "Practical Semester - dreiQbik",
+    "project_study": "Project Study - Website: \"Blind MeetUp\""
+  }
+}

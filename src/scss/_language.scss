@@ -1,0 +1,93 @@
+
+/* --------------------------------------------------
+Language Switcher Styles
+-------------------------------------------------- */
+
+/* .language-switcher {
+  display: flex;
+  gap: 0.5rem;
+  margin-right: 1rem;
+  align-items: center;
+}
+
+.language-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.language-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.language-btn.active {
+  background: rgba(15, 125, 189, 0.2);
+  border-color: #0f7dbd;
+  box-shadow: 0 0 0 2px rgba(15, 125, 189, 0.3);
+}
+
+.language-btn.active:hover {
+  background: rgba(15, 125, 189, 0.3);
+}
+
+.language-btn .flag {
+  font-size: 1.2rem;
+  display: block;
+  line-height: 1;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.language-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.language-btn:hover::before {
+  left: 100%;
+}
+
+/* Responsive language switcher */
+/* @media (max-width: 768px) {
+  .language-switcher {
+    margin-right: 0.5rem;
+    gap: 0.3rem;
+  }
+  
+  .language-btn {
+    padding: 0.3rem 0.5rem;
+  }
+  
+  .language-btn .flag {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-switcher {
+    order: -1;
+    margin-right: auto;
+    margin-left: 0;
+  }
+  
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}  */
