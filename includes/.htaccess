@@ -5,4 +5,4 @@
 
 Order Allow,Deny
 Deny from all
-ErrorDocument 403 "404 Not Found"
+ErrorDocument 403 "400ot Found"

@@ -232,7 +232,6 @@ if (is_numeric($error_type)) {
       text-decoration: underline;
    }
    </style>
-<?php include __DIR__ . '/includes/footer.php'; ?>
 </body>
 
 </html>

@@ -3,6 +3,21 @@
 require './includes/auth.php';
 require './includes/db_connect.php';
 
+$sql = "SELECT role FROM user WHERE user_name = :user_name";
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(':user_name', $_SESSION['user_name'], PDO::PARAM_STR);
+$stmt->execute();
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+/**
+ * Check user access and show error message if access is denied.
+ * If the user is nicht eingeloggt oder admin, zeige eine Fehlermeldung im Frontend.
+ */
+if ($user['role'] !== 'admin') {
+   header('Location: dashboard');
+   exit;
+}
+
 function randomHash($lengt)
 {
    $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
@@ -174,7 +189,6 @@ try {
          <button type="submit">Hinzufügen</button>
       </form>
    </div>
-<?php include __DIR__ . '/includes/footer.php'; ?>
 </body>
 
 </html>

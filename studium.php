@@ -57,10 +57,10 @@ require './includes/auth.php';
                <div class="area-content">
                   <ul class="skills-list">
                      <li>Mathematik & Algorithmen</li>
-                     <li>Programmierung & Software-Entwicklung</li>
+                     <li><strong>Programmierung & Software-Entwicklung</strong></li>
                      <li>Datenbanken & Verteilte Systeme</li>
                      <li>Kryptographie & Formale Sprache</li>
-                     <li>Softwaretechnik & Softwaredesign</li>
+                     <li><strong>Softwaretechnik & Softwaredesign</strong></li>
                      <li>Kommunikationstechnik</li>
                      <li>Internet of Things & Webentwicklung</li>
                      <li>Programmierparadigmen</li>
@@ -78,8 +78,8 @@ require './includes/auth.php';
                   <ul class="skills-list">
                      <li>Psychologie & User Experience</li>
                      <li>Recht & Computergrafik</li>
-                     <li>Computer Vision</li>
-                     <li>Medienwirtschaft</li>
+                     <li><strong>Computer Vision</strong></li>
+                     <li><strong>Medienwirtschaft</strong></li>
                      <li>Interaktionsdesign</li>
                      <li>VR/AR Technologien</li>
                      <li>Gameentwicklung</li>
@@ -96,10 +96,10 @@ require './includes/auth.php';
                <div class="area-content">
                   <ul class="skills-list">
                      <li>Ökonomie & Management</li>
-                     <li>Produktmanagement</li>
+                     <li><strong>Produktmanagement</strong></li>
                      <li>BWL & Unternehmensgründung</li>
                      <li>Marketing & Vertrieb</li>
-                     <li>Projektmanagement</li>
+                     <li><strong>Projektmanagement</strong></li>
                   </ul>
                </div>
             </div>

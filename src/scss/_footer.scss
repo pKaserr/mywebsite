@@ -1,39 +1,66 @@
 // Footer styles
 .site-footer {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  // position: fixed;
+  // bottom: 0;
+  // right: 0;
+  // left: 0;
   background-color: $c1-main;
   color: $c-white;
   padding: 16px 0;
   border-top: 1px solid $c-darkGrey;
 
-  .site-footer__content {
+  &__contact {
+    display: none;
+
+    @media (min-width: $bp-sm) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 0;
+      background-color: $c1-main;
+      color: $c-white;
+      border-top: 1px solid $c1-main;
+    }
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    // gap: 12px;
+
+    &--item {
+      width: 48%;
+    }
+  }
+
+  &__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
+    border-top: 1px solid $c-darkGrey;
   }
 
-  .site-footer__left {
+  &__left {
     display: flex;
     align-items: center;
     gap: 12px;
+    margin-top: 1rem;
     font-size: 14px;
   }
 
-  .site-footer__rights {
+  &__rights {
     color: $c-lightGrey;
   }
 
-  .site-footer__right {
+  &__right {
     display: flex;
     align-items: center;
     gap: 10px;
   }
 
-  .site-footer__icon-link {
+  &__icon-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -41,18 +68,19 @@
     height: 28px !important;
     border-radius: $border-radius-round;
     background: $c-darkGrey;
-    transition: background $transition, transform $transition;
+    transition:
+      background $transition,
+      transform $transition;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba($c-white, 0.12);
       transform: translateY(-1px);
     }
   }
 
-  .site-footer__icon {
+  &__icon {
     width: 18px;
     height: 18px;
     display: block;
   }
 }
-

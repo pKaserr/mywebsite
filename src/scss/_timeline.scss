@@ -12,13 +12,32 @@ Timeline Styles - Professional CV Timeline
   }
   
   .timeline-container {
-    max-width: 1200px;
+    max-width: 75%;
     margin: 0 auto;
     position: relative;
+    left: 15%;
+  }
+
+  /* Sticky date indicator shown on larger screens */
+  .timeline-sticky-date {
+    display: none; /* hidden by default, enabled on desktop */
+    position: sticky;
+    top: 22rem; /* keeps space for nav */
+    // width: 8rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: $c1-second;
+    padding: 0.5rem 1rem;
+    background: $c1-main;
+    border-radius: $border-radius_small;
+    border: 1px solid $c1-second;
+    margin-left: -12rem; /* align to the left of the vertical line similar to old dates */
+    z-index: 2;
   }
   
   .timeline-section {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     position: relative;
   }
   
@@ -119,6 +138,7 @@ Timeline Styles - Professional CV Timeline
   
   .timeline-content {
     background: $c-white;
+    width: 75%;
     padding: 2rem;
     border-radius: 10px;
     border: 1px solid $c1-main;
@@ -273,6 +293,12 @@ Timeline Styles - Professional CV Timeline
   }
   
   /* Responsive Design */
+  @media (min-width: 769px) {
+    /* On desktop: hide per-item dates, show sticky indicator */
+    .timeline-date { display: none; }
+    .timeline-sticky-date { display: inline-block; }
+  }
+
   @media (max-width: 768px) {
     .timeline-item {
       padding-left: 2rem;
@@ -288,6 +314,9 @@ Timeline Styles - Professional CV Timeline
       display: inline-block;
     }
     
+    /* On mobile: show per-item dates and hide sticky indicator */
+    .timeline-sticky-date { display: none; }
+
     .timeline-content { padding: 1.5rem; }
     .timeline-section-title { font-size: 1.5rem; }
     .timeline-skills { grid-template-columns: 1fr; }

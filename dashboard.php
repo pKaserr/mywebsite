@@ -52,8 +52,8 @@ try {
             <?php if ($is_guest) { ?>
                     <h4 class="container__title--text" data-translate="dashboard.welcome_guest">Willkommen Gast</h4>
                 <?php } else { ?>
-                    <h4 class="container__title--text" data-translate="dashboard.welcome">Willkommen im Dashboard</h4>, <?= htmlspecialchars($username) ?>
-                <?php } ?></h1>
+                    <h4 class="container__title--text" data-translate="dashboard.welcome">Willkommen im Dashboard, <?= htmlspecialchars($username)?></h4>
+                <?php } ?>
             <?php if ($is_guest) { ?>
                     <span data-translate="dashboard.intro_guest">Hier können Sie einen ersten Eindruck von meinen Qualifikationen und Erfahrungen bekommen. Für weitere Informationen kontaktieren Sie mich gerne direkt.</span>
                 <?php } elseif ($initial_apply) { ?>
@@ -72,7 +72,7 @@ try {
         <div class="boxWrapper__inner">
             <a class="boxWrapper__a" href="about_me">
                 <div class="about-me-dashboard-icon">
-                    <svg width="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                         <!-- Person silhouette -->
                         <circle cx="50" cy="25" r="12" fill="#0f7dbd" opacity="0.8"/>
                         <path d="M 30 75 Q 30 55 50 55 Q 70 55 70 75 L 70 85 L 30 85 Z" fill="#2e6c48" opacity="0.8"/>
@@ -111,7 +111,7 @@ try {
                 <a class="boxWrapper__a boxWrapper__a--disabled">
                 <div class="documents-dashboard-icon documents-dashboard-icon--disabled">
             <?php } ?>
-                    <svg width="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                         <!-- Main document -->
                         <rect x="25" y="15" width="40" height="55" rx="3" fill="#0f7dbd" opacity="0.8"/>
                         <rect x="30" y="25" width="30" height="2" fill="#ffffff" opacity="0.9"/>
@@ -141,11 +141,14 @@ try {
                     <span class="documents-dashboard-text documents-dashboard-text--disabled">Dokumente</span>
                 </div>
             </a>
-        </div>
-        <div class="boxWrapper__inner">
-            <a class="boxWrapper__a" href="experience">
+            <?php if (!$is_guest) { ?>
+                <a class="boxWrapper__a" href="experience">
                 <div class="experience-dashboard-icon">
-                    <svg width="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <?php } else {?>
+                <a class="boxWrapper__a boxWrapper__a--disabled">
+                <div class="experience-dashboard-icon experience-dashboard-icon--disabled">
+            <?php } ?>
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                         <!-- Briefcase/Portfolio -->
                         <rect x="30" y="40" width="40" height="25" rx="3" fill="#2e6c48" opacity="0.8"/>
                         <rect x="45" y="35" width="10" height="8" fill="#2e6c48" opacity="0.6"/>
@@ -186,7 +189,7 @@ try {
             </a>
             <a class="boxWrapper__a mb-8" href="studium">
                 <div class="medieninformatik-dashboard-icon">
-                    <svg width="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                         <!-- Graduation cap -->
                         <path d="M 50 25 L 20 35 L 50 45 L 80 35 Z" fill="#2e6c48" opacity="0.8"/>
                         <rect x="47" y="45" width="6" height="15" fill="#2e6c48" opacity="0.6"/>
@@ -230,33 +233,32 @@ try {
                         <line x1="20" y1="65" x2="30" y2="62" stroke="#e9ecef" stroke-width="1" opacity="0.5"/>
                         <line x1="80" y1="65" x2="70" y2="62" stroke="#e9ecef" stroke-width="1" opacity="0.5"/>
                     </svg>
-                    <span class="medieninformatik-dashboard-text">Medien- <br> informatik</span>
+                    <span class="medieninformatik-dashboard-text">Medien- informatik</span>
                 </div>
             </a>
-        </div>
-        <div class="boxWrapper__inner">
-        <?php if (!$is_guest) { ?>
-                <a class="boxWrapper__a" href="timeline">
-                    <div class="timeline-dashboard-icon">
-            <?php } else {?>
-                <a class="boxWrapper__a boxWrapper__a--disabled">
-                    <div class="timeline-dashboard-icon timeline-dashboard-icon--disabled">
-            <?php } ?>
-                <!-- <div class="timeline-dashboard-icon timeline-dashboard-icon--disabled"> -->
-                    <svg width="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="10" cy="20" r="3" fill="#0f7dbd"/>
-                        <circle cx="10" cy="40" r="3" fill="#2e6c48"/>
-                        <circle cx="10" cy="60" r="3" fill="#d9534f"/>
-                        <circle cx="10" cy="80" r="3" fill="#f0ad4e"/>
-                        <line x1="10" y1="20" x2="10" y2="80" stroke="#e9ecef" stroke-width="2"/>
-                        <rect x="20" y="17" width="70" height="6" rx="3" fill="#0f7dbd" opacity="0.8"/>
-                        <rect x="20" y="37" width="60" height="6" rx="3" fill="#2e6c48" opacity="0.8"/>
-                        <rect x="20" y="57" width="65" height="6" rx="3" fill="#d9534f" opacity="0.8"/>
-                        <rect x="20" y="77" width="55" height="6" rx="3" fill="#f0ad4e" opacity="0.8"/>
-                    </svg>
-                    <span class="timeline-dashboard-text">Timeline</span>
-                </div>
-            </a>
+            <?php if (!$is_guest) { ?>
+                    <a class="boxWrapper__a" href="timeline">
+                        <div class="timeline-dashboard-icon">
+                <?php } else {?>
+                    <a class="boxWrapper__a boxWrapper__a--disabled">
+                        <div class="timeline-dashboard-icon timeline-dashboard-icon--disabled">
+                <?php } ?>
+                    <!-- <div class="timeline-dashboard-icon timeline-dashboard-icon--disabled"> -->
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="20" r="3" fill="#0f7dbd"/>
+                            <circle cx="10" cy="40" r="3" fill="#2e6c48"/>
+                            <circle cx="10" cy="60" r="3" fill="#d9534f"/>
+                            <circle cx="10" cy="80" r="3" fill="#f0ad4e"/>
+                            <line x1="10" y1="20" x2="10" y2="80" stroke="#e9ecef" stroke-width="2"/>
+                            <rect x="20" y="17" width="70" height="6" rx="3" fill="#0f7dbd" opacity="0.8"/>
+                            <rect x="20" y="37" width="60" height="6" rx="3" fill="#2e6c48" opacity="0.8"/>
+                            <rect x="20" y="57" width="65" height="6" rx="3" fill="#d9534f" opacity="0.8"/>
+                            <rect x="20" y="77" width="55" height="6" rx="3" fill="#f0ad4e" opacity="0.8"/>
+                        </svg>
+                        <span class="timeline-dashboard-text">Timeline</span>
+                    </div>
+                </a>
+            </div>
         </div>
         <?php
 
@@ -270,9 +272,9 @@ try {
             <div class="boxWrapper__inner">
                 <a class="boxWrapper__a" href="add_comp">Unternehmen Hinzufügen</a></a>
                 <a class="boxWrapper__a" href="add_file">Datei Hinzufügen</a></a>
+                <a class="boxWrapper__a" href="admin/relations.php">Zuweisungen verwalten</a></a>
             </div>
         <?php } ?>
-    </div>
     </div>
     
     <script>
@@ -299,7 +301,7 @@ try {
             }, 500);
         });
     </script>
-<?php include __DIR__ . '/includes/footer.php'; ?>
+    <?php include __DIR__ . '/includes/footer.php'; ?>
 </body>
 
 </html>

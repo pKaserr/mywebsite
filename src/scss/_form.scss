@@ -3,6 +3,7 @@
 input[type="text"],
 input[type="email"],
 input[type="password"],
+input[type="textarea"],
 input[type="number"],
 input[type="date"],
 input[type="time"],
@@ -16,23 +17,31 @@ textarea {
    transition: 0.3s;
 }
 
+textarea {
+   resize: vertical !important;
+}
+
 .button_form,
+textarea,
 input[type="text"],
+input[type="email"],
 input[type="password"] {
    border: none;
-   border-radius: 25px;
+   border-radius: $border-radius_small;
    outline: none;
 }
 
+textarea:focus,
 input[type="text"]:focus,
+input[type="email"]:focus,
 input[type="password"]:focus {
-   transform: scale(1.07);
+   transform: scale(1.01);
    transition: 0.3s;
-   outline: solid 3px $c1-main;
+   outline: solid 1px $c1-main;
    box-shadow: 0 0 10px $c1-main;
 }
 
-.button_form {
+.button_form { 
    cursor: pointer;
    width: 100%;
    background-color: $c1-main;
@@ -43,7 +52,6 @@ input[type="password"]:focus {
    transition: 0.3s;
 
    &--guest {
-      // background-color: red;
       color: white;
       text-decoration: none;
       display: block;
@@ -51,7 +59,6 @@ input[type="password"]:focus {
       transition: all 0.3s ease;
 
       &:hover {
-         // background-color: #5a6268;
          transform: scale(1.02);
       }
    }

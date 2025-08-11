@@ -3,9 +3,15 @@
 require './includes/auth.php';
 require './includes/db_connect.php';
 
-// CSRF-Schutz vorbereiten
-if (!isset($_SESSION['csrf_token'])) {
-   $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+$sql = "SELECT role FROM user WHERE user_name = :user_name";
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(':user_name', $_SESSION['user_name'], PDO::PARAM_STR);
+$stmt->execute();
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($user['role'] !== 'admin') {
+   header('Location: dashboard');
+   exit;
 }
 
 // Verarbeite das Formular, wenn es abgeschickt wurde
@@ -106,7 +112,6 @@ print_r(randomPassword());
          <button type="submit">Upload</button>
       </form>
    </div>
-<?php include __DIR__ . '/includes/footer.php'; ?>
 <script>
    el = '<select name="user"> <option value="false">False</option> <?php foreach ($users as $user) : ?><option value="<?= $user['user_id'] ?>"><?= $user['user_name'] ?></option><?php endforeach; ?> </select> <br>'
 </script>

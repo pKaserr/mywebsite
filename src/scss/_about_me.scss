@@ -1,26 +1,25 @@
-/* About Me Page Styles 
-   Farben werden ausschließlich über SCSS-Variablen aus variables.scss gesteuert.
-*/
+// About Me Page Styles
+// Colors are exclusively controlled via SCSS variables from variables.scss.
 
 .about-hero {
   margin-bottom: 3rem;
-  
+
   .hero-content {
     display: flex;
     align-items: center;
     gap: 2rem;
     margin-bottom: 2rem;
     flex-wrap: wrap;
-    
+
     @media (max-width: 768px) {
       flex-direction: column;
       text-align: center;
     }
   }
-  
+
   .hero-image {
     flex: 0 0 200px;
-    
+
     .profile-image {
       width: 250px;
       height: 250px;
@@ -29,36 +28,36 @@
       border: 4px solid $c1-second;
       box-shadow: 0 8px 32px rgba($c-black, 0.1);
       transition: transform 0.3s ease;
-      
+
       &:hover {
         transform: scale(1.05);
       }
     }
   }
-  
+
   .hero-text {
     flex: 1;
-    
+
     h1 {
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
       font-weight: bold;
-      
-      @media (max-width: 768px) {
+
+      @media (max-width: $bp-md) {
         font-size: 2rem;
       }
     }
-    
+
     h2 {
       font-size: 1.5rem;
       margin-bottom: 1rem;
       font-weight: 300;
-      
-      @media (max-width: 768px) {
+
+      @media (max-width: $bp-md) {
         font-size: 1.3rem;
       }
     }
-    
+
     .hero-description {
       font-size: 1.1rem;
       line-height: 1.6;
@@ -68,35 +67,56 @@
 }
 
 .interest-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+  display: block;
+  margin: 5rem 0;
+
+  @media (min-width: $bp-mid) {
+    display: flex;
+    justify-content: space-between;
+
+    &-inner_wrapper {
+      width: 45%;
+    }
+  }
+
+  @media (min-width: $bp-lg) {
+    &-inner_wrapper {
+      width: 48%;
+    }
+  }
 }
 
 .interest-card {
   padding: 1.5rem;
+  margin-bottom: 1rem;
   border-radius: $border-radius_image;
   color: $c-white;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   box-shadow: 0 4px 15px rgba($c-black, 0.1);
-  
+
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba($c-black, 0.2);
   }
-  
+
   h3 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
   }
-  
+
   p {
     font-size: 1rem;
     opacity: 0.9;
     margin: 0;
+  }
+
+  @media (min-width: $bp-mid) {
+    width: 90%;
+    height: 5rem;
   }
 }
 
@@ -107,9 +127,9 @@
     margin-bottom: 2rem;
     color: $c2-main;
     position: relative;
-    
+
     &::after {
-      content: '';
+      content: "";
       display: block;
       width: 60px;
       height: 3px;
@@ -126,18 +146,18 @@
   margin: 1.5rem 0;
   border-left: 4px solid $c1-second;
   box-shadow: 0 2px 10px rgba($c-black, 0.05);
-  
+
   h4 {
     margin: 0 0 1rem 0;
     font-size: 1.2rem;
     font-weight: 600;
   }
-  
+
   p {
     margin: 0 !important;
     font-weight: 500;
   }
-  
+
   ul {
     margin: 1rem 0 0 0 !important;
   }
@@ -150,33 +170,37 @@
       text-align: center;
     }
   }
-  
+
   .interest-cards {
     grid-template-columns: 1fr;
   }
-  
+
   .accordion {
     font-size: 1.1rem;
     padding: 1.2rem;
-    
+
     .accordion-icon {
       font-size: 1.3rem;
     }
   }
-  
-  .panel .panel-content {
-    padding: 1.5rem;
+
+  .panel {
+    .panel-content {
+      padding: 1.5rem;
+    }
   }
-  
+
   .highlight-box {
     padding: 1.2rem;
   }
 }
 
 // Animation for panel opening/closing
-.panel.show {
-  display: block;
-  animation: slideDown 0.3s ease-out;
+.panel {
+  &.show {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+  }
 }
 
 @keyframes slideDown {

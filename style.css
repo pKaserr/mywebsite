@@ -13646,10 +13646,10 @@ Breakpoint Mixin
   border-radius: 3px;
   padding: 0.5rem;
   background-color: #272727;
-  border: solid 2px #d3d3d3;
+  border: solid 1px #d3d3d3;
 }
 .btn--main:hover {
-  transform: scale(1.07);
+  transform: scale(1.02);
 }
 .btn--second {
   color: #d3d3d3;
@@ -13821,6 +13821,7 @@ html {
 input[type=text],
 input[type=email],
 input[type=password],
+input[type=textarea],
 input[type=number],
 input[type=date],
 input[type=time],
@@ -13834,19 +13835,27 @@ textarea {
   transition: 0.3s;
 }
 
+textarea {
+  resize: vertical !important;
+}
+
 .button_form,
+textarea,
 input[type=text],
+input[type=email],
 input[type=password] {
   border: none;
-  border-radius: 25px;
+  border-radius: 5px;
   outline: none;
 }
 
+textarea:focus,
 input[type=text]:focus,
+input[type=email]:focus,
 input[type=password]:focus {
-  transform: scale(1.07);
+  transform: scale(1.01);
   transition: 0.3s;
-  outline: solid 3px #272727;
+  outline: solid 1px #272727;
   box-shadow: 0 0 10px #272727;
 }
 
@@ -14264,35 +14273,35 @@ header {
 }
 
 .card__red::after {
-  background-color: rgb(107.953125, 35.984375, 33.046875);
+  background-color: #6c2421;
 }
 
 .card__blue::after {
-  background-color: rgb(25.9581589958, 46.410041841, 162.0418410042);
+  background-color: #1a2ea2;
 }
 
 .card__green::after {
-  background-color: rgb(33.5483870968, 70.4516129032, 33.5483870968);
+  background-color: #224622;
 }
 
 .card__purple::after {
-  background-color: rgb(127.6219512195, 35.6707317073, 159.3292682927);
+  background-color: #80249f;
 }
 
 .card__pink::after {
-  background-color: rgb(198.5675675676, 38.4324324324, 144.1216216216);
+  background-color: #c72690;
 }
 
 .card__yellow::after {
-  background-color: rgb(135.7345971564, 125.8767772512, 24.2654028436);
+  background-color: #887e18;
 }
 
 .card__cyan::after {
-  background-color: rgb(28.6033519553, 99.3966480447, 92.2458100559);
+  background-color: #1d635c;
 }
 
 .card__brown::after {
-  background-color: rgb(99.3966480447, 50.7709497207, 28.6033519553);
+  background-color: #63331d;
 }
 
 .lp_header {
@@ -14530,45 +14539,6 @@ header {
   }
 }
 
-.boxWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 0 -15px;
-}
-.boxWrapper__inner {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-}
-.boxWrapper__inner :first-child {
-  margin-bottom: 100px;
-}
-.boxWrapper__a {
-  display: inline-block;
-  position: relative;
-  height: 300px;
-  width: 300px;
-  transition: transform 0.3s;
-}
-.boxWrapper__a span {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-  font-size: 40px;
-  line-height: 2;
-  color: #cacaca;
-}
-.boxWrapper__a--disabled {
-  opacity: 0.5;
-  pointer-events: none !important;
-  cursor: not-allowed !important;
-}
-.boxWrapper__a:hover {
-  transform: scale(1.07);
-}
-
 .mi__img--second {
   position: relative;
   left: 50%;
@@ -14608,13 +14578,31 @@ Timeline Styles - Professional CV Timeline
 }
 
 .timeline-container {
-  max-width: 1200px;
+  max-width: 75%;
   margin: 0 auto;
   position: relative;
+  left: 15%;
+}
+
+/* Sticky date indicator shown on larger screens */
+.timeline-sticky-date {
+  display: none; /* hidden by default, enabled on desktop */
+  position: sticky;
+  top: 22rem; /* keeps space for nav */
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #0f7dbd;
+  padding: 0.5rem 1rem;
+  background: #272727;
+  border-radius: 5px;
+  border: 1px solid #0f7dbd;
+  margin-left: -12rem; /* align to the left of the vertical line similar to old dates */
+  z-index: 2;
 }
 
 .timeline-section {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   position: relative;
 }
 
@@ -14714,6 +14702,7 @@ Timeline Styles - Professional CV Timeline
 
 .timeline-content {
   background: #d3d3d3;
+  width: 75%;
   padding: 2rem;
   border-radius: 10px;
   border: 1px solid #272727;
@@ -14869,6 +14858,15 @@ Timeline Styles - Professional CV Timeline
   }
 }
 /* Responsive Design */
+@media (min-width: 769px) {
+  /* On desktop: hide per-item dates, show sticky indicator */
+  .timeline-date {
+    display: none;
+  }
+  .timeline-sticky-date {
+    display: inline-block;
+  }
+}
 @media (max-width: 768px) {
   .timeline-item {
     padding-left: 2rem;
@@ -14881,6 +14879,10 @@ Timeline Styles - Professional CV Timeline
     text-align: left;
     margin-bottom: 1rem;
     display: inline-block;
+  }
+  /* On mobile: show per-item dates and hide sticky indicator */
+  .timeline-sticky-date {
+    display: none;
   }
   .timeline-content {
     padding: 1.5rem;
@@ -15007,7 +15009,11 @@ Language Switcher Styles
 /* --------------------------------------------------
 Dashboard Icons - Timeline & About Me
 -------------------------------------------------- */
-.timeline-dashboard-icon, .about-me-dashboard-icon, .documents-dashboard-icon, .medieninformatik-dashboard-icon, .experience-dashboard-icon {
+.timeline-dashboard-icon,
+.about-me-dashboard-icon,
+.documents-dashboard-icon,
+.medieninformatik-dashboard-icon,
+.experience-dashboard-icon {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15015,9 +15021,9 @@ Dashboard Icons - Timeline & About Me
   padding: 2rem;
   height: 100%;
   transition: all 0.3s ease;
-  background: linear-gradient(135deg, rgba(15, 125, 189, 0.0509803922), rgba(46, 108, 72, 0.0509803922));
+  background: linear-gradient(135deg, rgba(39, 39, 39, 0.4), rgba(70, 70, 70, 0.4));
   border-radius: 10px;
-  border: 1px solid rgba(15, 125, 189, 0.1);
+  border: 1px solid rgba(15, 125, 189, 0.4);
 }
 
 .timeline-dashboard-icon:hover:not(.timeline-dashboard-icon--disabled),
@@ -15029,9 +15035,36 @@ Dashboard Icons - Timeline & About Me
   border: #0f7dbd, solid 1px;
 }
 
-.timeline-dashboard-icon svg, .about-me-dashboard-icon svg, .documents-dashboard-icon svg, .medieninformatik-dashboard-icon svg, .experience-dashboard-icon svg {
+.timeline-dashboard-icon svg,
+.about-me-dashboard-icon svg,
+.documents-dashboard-icon svg,
+.medieninformatik-dashboard-icon svg,
+.experience-dashboard-icon svg {
   margin-bottom: 1.5rem;
   transition: transform 0.3s ease;
+  width: 150px !important;
+  height: 150px !important;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .timeline-dashboard-icon svg,
+  .about-me-dashboard-icon svg,
+  .documents-dashboard-icon svg,
+  .medieninformatik-dashboard-icon svg,
+  .experience-dashboard-icon svg {
+    width: 100px !important;
+    height: 100px !important;
+  }
+}
+@media (max-width: 576px) {
+  .timeline-dashboard-icon svg,
+  .about-me-dashboard-icon svg,
+  .documents-dashboard-icon svg,
+  .medieninformatik-dashboard-icon svg,
+  .experience-dashboard-icon svg {
+    width: 50px !important;
+    height: 50px !important;
+  }
 }
 
 .timeline-dashboard-icon:hover:not(.timeline-dashboard-icon--disabled) svg,
@@ -15063,10 +15096,73 @@ Dashboard Icons - Timeline & About Me
   color: #0f7dbd;
 }
 
-.documents-dashboard-icon--disabled, .timeline-dashboard-icon--disabled {
+.documents-dashboard-icon--disabled,
+.timeline-dashboard-icon--disabled,
+.experience-dashboard-icon--disabled {
+  opacity: 0.7;
+  pointer-events: none !important;
+  cursor: not-allowed !important;
+}
+
+.boxWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 -15px;
+}
+.boxWrapper__inner {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.boxWrapper__inner :first-child {
+  margin-bottom: 100px;
+}
+.boxWrapper__a {
+  display: inline-block;
+  position: relative;
+  height: 200px;
+  width: 200px;
+  transition: transform 0.3s;
+}
+@media (max-width: 768px) {
+  .boxWrapper__a {
+    height: 100px;
+    width: 100px;
+  }
+}
+@media (max-width: 576px) {
+  .boxWrapper__a {
+    height: 100px;
+    width: 100px;
+  }
+}
+.boxWrapper__a span {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  font-size: 1.7rem;
+  line-height: 2;
+  color: #cacaca;
+}
+@media (max-width: 768px) {
+  .boxWrapper__a span {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 576px) {
+  .boxWrapper__a span {
+    font-size: 1rem;
+  }
+}
+.boxWrapper__a--disabled {
   opacity: 0.5;
   pointer-events: none !important;
   cursor: not-allowed !important;
+}
+.boxWrapper__a:hover {
+  transform: scale(1.07);
 }
 
 .guest-login-section {
@@ -15079,9 +15175,6 @@ Dashboard Icons - Timeline & About Me
   margin: 0.5rem 0;
 }
 
-/* About Me Page Styles 
-   Farben werden ausschließlich über SCSS-Variablen aus variables.scss gesteuert.
-*/
 .about-hero {
   margin-bottom: 3rem;
 }
@@ -15144,14 +15237,27 @@ Dashboard Icons - Timeline & About Me
 }
 
 .interest-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+  display: block;
+  margin: 5rem 0;
+}
+@media (min-width: 576px) {
+  .interest-cards {
+    display: flex;
+    justify-content: space-between;
+  }
+  .interest-cards-inner_wrapper {
+    width: 45%;
+  }
+}
+@media (min-width: 992px) {
+  .interest-cards-inner_wrapper {
+    width: 48%;
+  }
 }
 
 .interest-card {
   padding: 1.5rem;
+  margin-bottom: 1rem;
   border-radius: 15px;
   color: #d3d3d3;
   text-align: center;
@@ -15171,6 +15277,12 @@ Dashboard Icons - Timeline & About Me
   font-size: 1rem;
   opacity: 0.9;
   margin: 0;
+}
+@media (min-width: 576px) {
+  .interest-card {
+    width: 90%;
+    height: 5rem;
+  }
 }
 
 .about-details .details-title {
@@ -15313,6 +15425,7 @@ Dashboard Icons - Timeline & About Me
   margin-bottom: 4rem;
 }
 .study-areas .section-title {
+  line-height: 3rem;
   text-align: center;
   font-size: 2.2rem;
   margin-bottom: 3rem;
@@ -15717,36 +15830,56 @@ Dashboard Icons - Timeline & About Me
 }
 
 .site-footer {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
   background-color: #272727;
   color: #d3d3d3;
   padding: 16px 0;
   border-top: 1px solid #2f2f2f;
 }
-.site-footer .site-footer__content {
+.site-footer__contact {
+  display: none;
+}
+@media (min-width: 576px) {
+  .site-footer__contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 0;
+    background-color: #272727;
+    color: #d3d3d3;
+    border-top: 1px solid #272727;
+  }
+}
+.site-footer__data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.site-footer__data--item {
+  width: 48%;
+}
+.site-footer__content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  border-top: 1px solid #2f2f2f;
 }
-.site-footer .site-footer__left {
+.site-footer__left {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-top: 1rem;
   font-size: 14px;
 }
-.site-footer .site-footer__rights {
+.site-footer__rights {
   color: #959595;
 }
-.site-footer .site-footer__right {
+.site-footer__right {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.site-footer .site-footer__icon-link {
+.site-footer__icon-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -15756,11 +15889,11 @@ Dashboard Icons - Timeline & About Me
   background: #2f2f2f;
   transition: background 0.3s, transform 0.3s;
 }
-.site-footer .site-footer__icon-link:hover {
-  background: rgba(255, 255, 255, 0.12);
+.site-footer__icon-link:hover {
+  background: rgba(211, 211, 211, 0.12);
   transform: translateY(-1px);
 }
-.site-footer .site-footer__icon {
+.site-footer__icon {
   width: 18px;
   height: 18px;
   display: block;

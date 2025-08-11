@@ -5,11 +5,34 @@
  */
 
 $scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
-$assetBase = (strpos($scriptName, '/admin/') !== false) ? '../' : './';
+$currentDir = dirname($scriptName);
+$assetBase = (strpos($currentDir, '/admin') !== false) ? '../' : './';
 ?>
 <footer class="site-footer">
-  <div class="container">
-    <div class="site-footer__content">
+  <div class="container_dashboard">
+    <!-- <div class="site-footer__contact"> -->
+      <P>Kontaktformular</P>
+      <form class="site-footer__contact mb-1" method="post" action="<?= htmlspecialchars($assetBase) ?>contact.php">
+          <!-- <legend data-translate="footer.contact.title">Kontaktformular</legend> -->
+          <div class="site-footer__data">
+            <div class="site-footer__data--item">
+              <label for="footer-contact-name" data-translate="footer.contact.name">Name</label>
+              <input type="text" id="footer-contact-name" name="name" required autocomplete="name" />
+            </div>
+            <div class="site-footer__data--item">
+              <label for="footer-contact-email" data-translate="footer.contact.email">E-Mail</label>
+              <input type="email" id="footer-contact-email" name="email" required autocomplete="email" v>
+            </div>
+        </div>
+          <div class="">
+            <label for="footer-contact-message" data-translate="footer.contact.message">Nachricht</label>
+            <textarea maxlength="2000" id="footer-contact-message" name="message" rows="3" required></textarea>
+          </div>
+          <div class="">
+            <button type="submit" class="btn btn--main" data-translate="footer.contact.send">Absenden</button>
+        </div>
+      </form>
+        <div class="site-footer__content">
       <div class="site-footer__left">
         <span class="site-footer__copyright">&copy; <?= date('Y') ?> Patrick Kaserer</span>
         <span class="site-footer__rights" data-translate="footer.rights">Alle Rechte vorbehalten</span>
@@ -31,4 +54,5 @@ $assetBase = (strpos($scriptName, '/admin/') !== false) ? '../' : './';
     </div>
   </div>
 </footer>
+
 

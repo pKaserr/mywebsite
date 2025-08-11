@@ -23,7 +23,7 @@ require './includes/db_connect.php';
    <div class="nav">
       <a href="logout"><button class="btn btn--main btn--nav">Abmelden</button></a>
       <a href="dashboard"><button class="btn btn--main btn--nav">Zurück</button></a>
-      <a href="#" pdfName="about_patrick_kaserer" id="downloadPdf"><button class="btn btn--main btn--nav">Download als PDF</button></a>
+      <!-- <a href="#" pdfName="about_patrick_kaserer" id="downloadPdf"><button class="btn btn--main btn--nav">Download als PDF</button></a> -->
    </div>
 
    <div class="container_dashboard">
@@ -37,30 +37,34 @@ require './includes/db_connect.php';
                <h1 class="c2-main">Patrick Kaserer</h1>
                <h2 class="c1-second">Medieninformatik M.Sc.</h2>
                <p class="hero-description">
-                  Ich bin kein klassischer Absolvent mit geradlinigem Lebenslauf, sondern jemand, der sich bewusst neu orientiert hat. 
-                  Nach einer Ausbildung und mehreren Jahren Berufserfahrung habe ich mich dazu entschieden, ein Studium in Medieninformatik zu beginnen – 
+                  Ich bin kein klassischer Absolvent mit geradlinigem Lebenslauf, sondern jemand, der sich bewusst neu orientiert hat.
+                  Nach einer Ausbildung und mehreren Jahren Berufserfahrung habe ich mich dazu entschieden, ein Studium in Medieninformatik zu beginnen –
                   mit dem Ziel, mein Interesse an Technologie, KI und Lehre beruflich umzusetzen.
                </p>
             </div>
          </div>
-         
+
          <!-- Interest Cards -->
          <div class="interest-cards">
-            <div class="interest-card bg-main2">
-               <h3>🧠 Neuronale Netze & Deep Learning</h3>
-               <p>Die Zukunft der Technologie</p>
+            <div class="interest-cards-inner_wrapper">
+               <div class="interest-card bg-main2">
+                  <h3>🧠 Neuronale Netze & Deep Learning</h3>
+                  <p>Die Zukunft der Technologie</p>
+               </div>
+               <div class="interest-card bg-second1">
+                  <h3>🎓 Didaktik & Lehre</h3>
+                  <p>Wissen vermitteln & teilen</p>
+               </div>
             </div>
-            <div class="interest-card bg-second1">
-               <h3>🎓 Didaktik & Lehre</h3>
-               <p>Wissen vermitteln & teilen</p>
-            </div>
-            <div class="interest-card bg-second2">
-               <h3>🔬 Angewandte Wissenschaft</h3>
-               <p>Forschung & Innovation</p>
-            </div>
-            <div class="interest-card bg-second4">
-               <h3>👥 Organisation & Führung</h3>
-               <p>Teams & Prozesse optimieren</p>
+            <div class="interest-cards-inner_wrapper">
+               <div class="interest-card bg-second2">
+                  <h3>🔬 Angewandte Wissenschaft</h3>
+                  <p>Forschung & Innovation</p>
+               </div>
+               <div class="interest-card bg-second4">
+                  <h3>👥 Organisation & Führung</h3>
+                  <p>Teams & Prozesse optimieren</p>
+               </div>
             </div>
          </div>
       </div>
@@ -68,7 +72,7 @@ require './includes/db_connect.php';
       <!-- Detailed Information Accordion -->
       <div class="about-details">
          <h2 class="details-title">Mehr über meine Interessen erfahren</h2>
-         
+
          <!-- Personal Story Accordion -->
          <button class="accordion bg-main3">
             <span class="accordion-icon">📖</span>
@@ -78,19 +82,19 @@ require './includes/db_connect.php';
             <div class="panel-content">
                <img src="./assets/img/me_game_jam.jpg" alt="Patrick bei der Arbeit" class="panel-image-right">
                <p><strong>Hey, ich bin Patrick.</strong></p>
-               <p>Da ich erst mit 28 Jahren angefangen habe zu studieren, bin ich ein älterer Absolvent als die meisten Studierenden. 
-               Der Vorteil ist, dass ich ganz genau weiß, wo ich im Leben stehe. Erfahrungen sammeln durfte und auch weiß, 
-               wie die Arbeitswelt aussieht und funktioniert.</p>
-               
-               <p>Nachdem ich meinen Hauptschulabschluss und anschließend meine 3-jährige Berufsausbildung zur Fachkraft für 
-               Lagerlogistik abgeschlossen hatte, habe ich mehrere Jahre in der Logistik und in anderen Bereichen gearbeitet und 
-               Berufserfahrung sammeln dürfen.</p>
-               
+               <p>Da ich erst mit 28 Jahren angefangen habe zu studieren, bin ich ein älterer Absolvent als die meisten Studierenden.
+                  Der Vorteil ist, dass ich ganz genau weiß, wo ich im Leben stehe. Erfahrungen sammeln durfte und auch weiß,
+                  wie die Arbeitswelt aussieht und funktioniert.</p>
+
+               <p>Nachdem ich meinen Hauptschulabschluss und anschließend meine 3-jährige Berufsausbildung zur Fachkraft für
+                  Lagerlogistik abgeschlossen hatte, habe ich mehrere Jahre in der Logistik und in anderen Bereichen gearbeitet und
+                  Berufserfahrung sammeln dürfen.</p>
+
                <p>Ich habe erkannt, dass ich mein Leben anders designen möchte. Was dazu führte, dass ich in eine berufliche Neuorientierung begonnen habe.</p>
-               
-               <p>Durch meine Berufsausbildung und meinen Hauptschulabschluss konnte ich anschließend das Fachabitur nachholen und 
-               bei der Hochschule Furtwangen meinen B.Sc. und M.Sc. in Medieninformatik erfolgreich abschließen. Die 
-               Arbeit während des Studiums, z. B. im Praktikum, als Lehrbeauftragter oder auch bei studentischen Projekten, waren nicht vergleichebar mit der Arbeit davor. Hierdurch habe ich erkannt, dass ich die richtige Entscheidung getroffen habe.</p>
+
+               <p>Durch meine Berufsausbildung und meinen Hauptschulabschluss konnte ich anschließend das Fachabitur nachholen und
+                  bei der Hochschule Furtwangen meinen B.Sc. und M.Sc. in Medieninformatik erfolgreich abschließen. Die
+                  Arbeit während des Studiums, z. B. im Praktikum, als Lehrbeauftragter oder auch bei studentischen Projekten, waren nicht vergleichebar mit der Arbeit davor. Hierdurch habe ich erkannt, dass ich die richtige Entscheidung getroffen habe.</p>
             </div>
          </div>
 
@@ -101,14 +105,14 @@ require './includes/db_connect.php';
          </button>
          <div class="panel">
             <div class="panel-content">
-               <p>Schon bevor ich 2018 mit dem Studium begonnen habe, hatte ich großes Interesse an dem Thema künstliche Intelligenz. 
-               Selbst betrachte ich den Begriff KI als Buzzword. Als Begriff für eine Marketingstrategie zur Erweiterung der Produktlinie.</p>
-               
-               <p><strong>Mein Interesse liegt bei neuronalen Netzen bzw. Deep Learning.</strong> Ich sehe in diesen Bereichen die 
-               Zukunft der Entwicklung und stelle sie auf eine ähnliche Stufe wie die Erfindung und Verbreitung des Internets. Da mich 
-               dieses Thema stark interessiert, informiere ich mich auch privat darüber, jedoch ist es gerade als Absolvent schwierig, 
-               in diesem Bereich Berufserfahrungen zu sammeln, wenn diese nicht schon vorhanden sind.</p>
-               
+               <p>Schon bevor ich 2018 mit dem Studium begonnen habe, hatte ich großes Interesse an dem Thema künstliche Intelligenz.
+                  Selbst betrachte ich den Begriff KI als Buzzword. Als Begriff für eine Marketingstrategie zur Erweiterung der Produktlinie.</p>
+
+               <p><strong>Mein Interesse liegt bei neuronalen Netzen bzw. Deep Learning.</strong> Ich sehe in diesen Bereichen die
+                  Zukunft der Entwicklung und stelle sie auf eine ähnliche Stufe wie die Erfindung und Verbreitung des Internets. Da mich
+                  dieses Thema stark interessiert, informiere ich mich auch privat darüber, jedoch ist es gerade als Absolvent schwierig,
+                  in diesem Bereich Berufserfahrungen zu sammeln, wenn diese nicht schon vorhanden sind.</p>
+
                <div class="highlight-box bg-second3">
                   <h4 class="c2-main">Meine KI-Projekte:</h4>
                   <ul>
@@ -129,22 +133,22 @@ require './includes/db_connect.php';
          </button>
          <div class="panel">
             <div class="panel-content">
-               <p>Während meines Studiums hatte ich das Glück als studentische Hilfskraft, Erstsemester zu unterrichten und ihnen von der 
-               Welt der Programmierung zu begeistern. Nach meiner Tätigkeit als studentische Hilfskraft und dem Abschluss meines Bachelors, wurde mir angeboten, als 
-               Lehrbeauftragter die Verantwortung zu übernehmen und die Inhalte so zu gestalten, wie ich sie für richtig empfinde. 
-               Inklusive der Prüfungsleistung.</p>
-               
+               <p>Während meines Studiums hatte ich das Glück als studentische Hilfskraft, Erstsemester zu unterrichten und ihnen von der
+                  Welt der Programmierung zu begeistern. Nach meiner Tätigkeit als studentische Hilfskraft und dem Abschluss meines Bachelors, wurde mir angeboten, als
+                  Lehrbeauftragter die Verantwortung zu übernehmen und die Inhalte so zu gestalten, wie ich sie für richtig empfinde.
+                  Inklusive der Prüfungsleistung.</p>
+
                <div class="highlight-box" style="background-color: #effcef;">
-                  <p class="c2-main"><strong>Diese Arbeit hat mir sehr viel Spaß gemacht und mich persönlich auch sehr weitergebracht.</strong> 
-                  Ich habe während dieser Tätigkeit als Lehrbeauftragter erst richtig wahrgenommen, was es bedeutet, Inhalte tatsächlich zu verstehen.</p>
+                  <p class="c2-main"><strong>Diese Arbeit hat mir sehr viel Spaß gemacht und mich persönlich auch sehr weitergebracht.</strong>
+                     Ich habe während dieser Tätigkeit als Lehrbeauftragter erst richtig wahrgenommen, was es bedeutet, Inhalte tatsächlich zu verstehen.</p>
                </div>
-               
-               <p>Wie Menschen denken, wie Menschen geführt werden wollen und wie mit ihnen umgegangen werden muss. Ich habe verstanden, 
-               dass ein Thema nur dann verstanden wird, wenn es anderen Personen erklärt werden kann, die keine Erfahrung damit haben. 
-               Dies hat auch meine Art beeinflusst, wie ich mit anderen Menschen kommuniziere und meine Inhalte präsentiere.</p>
-               
-               <p>Ich sehe die Lehre als besonders spannenden und wichtigen Bereich. Sowohl selbst Inhalte zu lehren als auch an 
-               Projekten zu arbeiten, die dafür gedacht sind, Inhalte zu vermitteln, und natürlich auch ein Leben lang selbst zu lernen.</p>
+
+               <p>Wie Menschen denken, wie Menschen geführt werden wollen und wie mit ihnen umgegangen werden muss. Ich habe verstanden,
+                  dass ein Thema nur dann verstanden wird, wenn es anderen Personen erklärt werden kann, die keine Erfahrung damit haben.
+                  Dies hat auch meine Art beeinflusst, wie ich mit anderen Menschen kommuniziere und meine Inhalte präsentiere.</p>
+
+               <p>Ich sehe die Lehre als besonders spannenden und wichtigen Bereich. Sowohl selbst Inhalte zu lehren als auch an
+                  Projekten zu arbeiten, die dafür gedacht sind, Inhalte zu vermitteln, und natürlich auch ein Leben lang selbst zu lernen.</p>
             </div>
          </div>
 
@@ -155,18 +159,18 @@ require './includes/db_connect.php';
          </button>
          <div class="panel">
             <div class="panel-content">
-               <p>Während des Masters war die Arbeit im wissenschaftlichen Kontext besonders stark ausgeprägt. Hierbei ist für mich 
-               meine eigene Weiterentwicklung das Spannende. <strong>Stillstand betrachte ich persönlich als negativ</strong> und 
-               beziehe mich hierbei auch auf den technologischen Fortschritt.</p>
-               
-               <p>Es macht mir Spaß, eine Idee zu nehmen oder zu entwickeln und sich dann mit den möglichen Technologien 
-               auseinanderzusetzen, die dafür geeignet sind, die Idee umzusetzen. Es fordert, dass sich stetig mit neuen Inhalten 
-               auseinandergesetzt werden muss, dass der Stand der Technik immer aktuell ist und das Problem und diese Lösung immer 
-               einer besonderen Betrachtung bedürfen.</p>
-               
+               <p>Während des Masters war die Arbeit im wissenschaftlichen Kontext besonders stark ausgeprägt. Hierbei ist für mich
+                  meine eigene Weiterentwicklung das Spannende. <strong>Stillstand betrachte ich persönlich als negativ</strong> und
+                  beziehe mich hierbei auch auf den technologischen Fortschritt.</p>
+
+               <p>Es macht mir Spaß, eine Idee zu nehmen oder zu entwickeln und sich dann mit den möglichen Technologien
+                  auseinanderzusetzen, die dafür geeignet sind, die Idee umzusetzen. Es fordert, dass sich stetig mit neuen Inhalten
+                  auseinandergesetzt werden muss, dass der Stand der Technik immer aktuell ist und das Problem und diese Lösung immer
+                  einer besonderen Betrachtung bedürfen.</p>
+
                <div class="highlight-box" style="background-color: #e8f0ff;">
-                  <p class="c2-main">Es stellt eine Herausforderung dar, da deren Ausgang oft nicht einzuschätzen ist, und umso mehr ist das 
-                  Ergebnis am Ende dann positiver, wenn Dinge entwickelt wurden, die nicht im Alltag schon zur Gewohnheit wurden.</p>
+                  <p class="c2-main">Es stellt eine Herausforderung dar, da deren Ausgang oft nicht einzuschätzen ist, und umso mehr ist das
+                     Ergebnis am Ende dann positiver, wenn Dinge entwickelt wurden, die nicht im Alltag schon zur Gewohnheit wurden.</p>
                </div>
             </div>
          </div>
@@ -174,32 +178,32 @@ require './includes/db_connect.php';
          <!-- Leadership Accordion -->
          <button class="accordion bg-second4">
             <span class="accordion-icon">👥</span>
-            <span class="accordion-title">Führung und Organisation</span>
+            <span class="accordion-title">Organisation & Führung</span>
          </button>
          <div class="panel">
             <div class="panel-content">
-               <p>Ich sehe mich zu den Menschen, die das Große und Ganze betrachten wollen und versuchen, nicht nur die Prozesse 
-               hinter dem Handel zu verstehen, sondern diese auch zu optimieren. Ich besitze einen ausgeprägten organisatorischen 
-               Blick und die Fähigkeit, auch komplexe Prozesse einfach darzustellen.</p>
-               
+               <p>Ich sehe mich zu den Menschen, die das Große und Ganze betrachten wollen und versuchen, nicht nur die Prozesse
+                  hinter dem Handel zu verstehen, sondern diese auch zu optimieren. Ich besitze einen ausgeprägten organisatorischen
+                  Blick und die Fähigkeit, auch komplexe Prozesse einfach darzustellen.</p>
+
                <div class="highlight-box" style="background-color: #f5e8ff;">
                   <h4 class="c2-main">Meine Führungserfahrung:</h4>
-                  <p class="c2-main"><strong>Vorsitzender der Verfassten Studierendenschaft</strong> - Hauptverantwortlicher für 
-                  Tausende Studierende einer Anstalt des Öffentlichen Rechts.</p>
+                  <p class="c2-main"><strong>Vorsitzender der Verfassten Studierendenschaft</strong> - Hauptverantwortlicher für
+                     Tausende Studierende einer Anstalt des Öffentlichen Rechts.</p>
                   <p class="c2-main"><strong>Führung von Teams als Lehrbeauftragter</strong> - Als Lehrbeauftragter habe ich Studierende im Bereich Programmierung und Konzeption betreut und dabei ein Team angeleitet.</p>
                </div>
-               
-               <p>Diese Tätigkeit hat mir viel über Führung und Organisation gezeigt. Dabei geht es nicht darum, alles zu wissen oder 
-               immer eine Antwort auf alle Inhalte zu haben, sondern um die Fähigkeit, diese Probleme zu lösen. Zu wissen, was die 
-               Stärken und Schwächen von Menschen sind, um sie effizient einzusetzen.</p>
-               
-               <p>Ressourcen und Kapazitäten so einzusetzen, dass es nicht nur zu einem erfolgreichen, sondern bestenfalls zu einem 
-               optimalen Ergebnis führt. Dabei sind ein kontinuierlicher Verbesserungsprozess und richtige Kommunikation im Vordergrund.</p>
+
+               <p>Diese Tätigkeit hat mir viel über Organisation & Führung gezeigt. Dabei geht es nicht darum, alles zu wissen oder
+                  immer eine Antwort auf alle Inhalte zu haben, sondern um die Fähigkeit, diese Probleme zu lösen. Zu wissen, was die
+                  Stärken und Schwächen von Menschen sind, um sie effizient einzusetzen.</p>
+
+               <p>Ressourcen und Kapazitäten so einzusetzen, dass es nicht nur zu einem erfolgreichen, sondern bestenfalls zu einem
+                  optimalen Ergebnis führt. Dabei sind ein kontinuierlicher Verbesserungsprozess und richtige Kommunikation im Vordergrund.</p>
             </div>
          </div>
       </div>
    </div>
-<?php include __DIR__ . '/includes/footer.php'; ?>
+   <?php include __DIR__ . '/includes/footer.php'; ?>
 </body>
 
 </html>

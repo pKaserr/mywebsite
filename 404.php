@@ -212,7 +212,7 @@ if (empty($_SESSION['csrf_token'])) {
    // Optional: Track 404 errors for analytics
    if (typeof gtag !== 'undefined') {
        gtag('event', 'page_view', {
-           'page_title': '404 Not Found',
+           'page_title': '4004 Not Found',
            'page_location': window.location.href
        });
    }
