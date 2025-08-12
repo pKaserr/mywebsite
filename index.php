@@ -3,6 +3,7 @@ session_start();
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,28 +41,30 @@ if (empty($_SESSION['csrf_token'])) {
 1  Host: your_company.com
 2  Content-Type: application/json
 3  // HR won't read this
-4
-5  {
-6      "candidate": {
-7          "name": "Patrick Kaserer",
-8          "email": "mail@patrick-kaserer.de",
-10          "location": "Karlsruhe, Germany",
-11          "linkedIn": "https://www.linkedin.com/in/patrick-kaserer/",
-12          "github": "https://github.com/Z3r0cks",
-13          "availability": "immediately",
-15      }
-16  
-
-18  <strong>IF</strong> job == „computer science" && candidate == „Patrick Kaserer"
-19      print „Good candidate found!"
+4  CONNECT establish_link_to_future_employer()
+5
+6  {
+7    "candidate": {
+9      "name": "Patrick Kaserer",
+10      "email": "mail@patrick-kaserer.de",
+11      "location": "Karlsruhe, Germany",
+12     "linkedIn": "https://www.linkedin.com/in/patrick-kaserer/",
+13     "github": "https://github.com/Z3r0cks",
+14     "skills": ["Fullstack Development", "AI", "Neural Radiance Fields", "Problem Solving"],
+15     "availability": "immediately",
+16  }
+17  
+18  <strong>IF</strong> job == "computer science" && candidate == "Patrick Kaserer"
+19      print "Good candidate found!"
 20  <strong>END IF</strong>
-
+21
 22  <strong>FUNCTION</strong> motivation
 23      return "Finding solutions where others see problems."
-20  <strong>END FUNCTION</strong>
-
-25  function apply_for_job with "Patrick Kaserer";
-26  >
+24  <strong>END FUNCTION</strong>
+25
+26  function apply_for_job with "Patrick Kaserer";
+27  EXECUTE send_application()
+28  >
                 </pre>
             </div>
             <div class="lp_name">
@@ -75,7 +78,7 @@ if (empty($_SESSION['csrf_token'])) {
                         <p class="lp_name-white">KASERER</p>
                     </div>
                 </div>
-                <div class="banner">Page Is Work In Progess! </div>
+                <!-- <div class="banner">Page Is Work In Progess! </div> -->
             </div>
             <form class="display-flex flex-column login" action="check_login.php" method="POST">
                 <div class="display-flex flex-justify-between">

@@ -14,19 +14,9 @@ Dashboard Icons - Timeline & About Me
   padding: 2rem;
   height: 100%;
   transition: all 0.3s ease;
-  // You can set an alpha value by using rgba() for the color variables.
-  // Beispiel mit 80% Deckkraft (0.8) für beide Farben:
   background: linear-gradient(135deg, rgba($c1-main, 0.4), rgba($c2-main, 0.4));
   border-radius: 10px;
   border: 1px solid rgba($c1-second, 0.4);
-
-  // // Responsive font size
-  // @media (max-width: $bp-md) {
-  //   padding: 1.5rem;
-  // }
-  // @media (max-width: $bp-sm) {
-  //   padding: 1rem;
-  // }
 }
 
 .timeline-dashboard-icon:hover:not(.timeline-dashboard-icon--disabled),
@@ -46,19 +36,25 @@ Dashboard Icons - Timeline & About Me
 .documents-dashboard-icon svg,
 .medieninformatik-dashboard-icon svg,
 .experience-dashboard-icon svg {
-  margin-bottom: 1.5rem;
+  margin-bottom: 5.5rem;
   transition: transform 0.3s ease;
-  width: 150px!important;  
-  height: 150px!important;  
+  width: 150px !important;
+  height: 150px !important;
   flex-shrink: 0;
 
-  @media (max-width: $bp-md) {
-    width: 100px !important;
-    height: 100px !important;
+  @media (max-width: $bp-xl) {
+    margin-bottom: 5rem;
+    height: 120px !important;
+    width: 120px !important;
   }
-  @media (max-width: $bp-sm) {
-    width: 50px !important;
-    height: 50px !important;
+  @media (max-width: $bp-lg) {
+    margin-bottom: 4.5rem;
+    width: 90px !important;
+    height: 90px !important;
+  }
+  @media (max-width: $bp-md) {
+    width: 80px !important;
+    height: 80px !important;
   }
 }
 
@@ -81,7 +77,11 @@ Dashboard Icons - Timeline & About Me
   font-size: 1.5rem;
   line-height: 1.7 !important;
   display: block;
-  top: 92% !important;
+  top: 100% !important;
+
+  @media (max-width: $bp-lg) {
+    top: 110% !important;
+  }
 }
 
 .about-me-dashboard-icon:hover:not(.about-me-dashboard-icon--disabled) .about-me-dashboard-text,
@@ -105,29 +105,53 @@ Dashboard Icons - Timeline & About Me
   justify-content: space-around;
   margin: 0 -15px;
 
+  /// 
+  /// Styles the inner wrapper of the dashboard boxes.
+  /// On small screens (<= $bp-sm), only 2 items per row.
+  /// 
   &__inner {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    :first-child {
-      margin-bottom: 100px;
+    flex-wrap: wrap;
+
+    
+    @media (max-width: $bp-sm) {
+      justify-content: flex-start;
+      
+      /// 
+      /// Adds margin-top to all .boxWrapper__a children except the first two.
+      /// Uses :not(:nth-child(1)):not(:nth-child(2)) for clarity.
+      /// 
+      > .boxWrapper__a:not(:nth-child(1)):not(:nth-child(2)) {
+        margin-top: 7rem;
+      }
+      > .boxWrapper__a {
+        flex: 0 0 50%;
+        max-width: 50%;
+        justify-content: center;
+        display: flex;
+      }
     }
   }
 
   &__a {
     display: inline-block;
-    // border: solid 1px #e5e5e5;
     position: relative;
     height: 200px;
     width: 200px;
     transition: transform 0.3s;
 
     // Responsive font size
-    @media (max-width: $bp-md) {
-      height: 100px;
-      width: 100px;
+    @media (max-width: $bp-xl) {
+      height: 150px;
+      width: 150px;
     }
-    @media (max-width: $bp-sm) {
+    @media (max-width: $bp-lg) {
+      height: 120px;
+      width: 120px;
+    }
+    @media (max-width: $bp-md) {
       height: 100px;
       width: 100px;
     }
@@ -142,11 +166,11 @@ Dashboard Icons - Timeline & About Me
       color: #cacaca;
 
       // Responsive font size
-      @media (max-width: $bp-md) {
+      @media (max-width: $bp-xl) {
         font-size: 1.4rem;
       }
-      @media (max-width: $bp-sm) {
-        font-size: 1.0rem;
+      @media (max-width: $bp-lg) {
+        font-size: 1rem;
       }
     }
 

@@ -2,6 +2,7 @@
 // session_start();
 require './includes/auth.php';
 require './includes/db_connect.php';
+require_once './includes/utils.php';
 
 $sql = "SELECT role FROM user WHERE user_name = :user_name";
 $stmt = $pdo->prepare($sql);
@@ -16,18 +17,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($user['role'] !== 'admin') {
    header('Location: dashboard');
    exit;
-}
-
-function randomHash($lengt)
-{
-   $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-   $pass = array(); //remember to declare $pass as an array
-   $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
-   for ($i = 0; $i < $lengt; $i++) {
-      $n = rand(0, $alphaLength);
-      $pass[] = $alphabet[$n];
-   }
-   return implode($pass); //turn the array into a string
 }
 
 // CSRF-Schutz vorbereiten
@@ -63,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    $file_hash = randomHash(20);
 
    try {
-
+      
       // add user
       $sql = "
            INSERT INTO user (user_name, email, passwort, job_desc, initial_apply, role, file_hash)

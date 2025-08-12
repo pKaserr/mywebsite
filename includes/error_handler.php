@@ -5,8 +5,9 @@
  */
 
 class ErrorHandler {
-    private static $logFile = __DIR__ . '/../logs/error.log';
+    private static $logFile = __DIR__ . '/../logging/error.log';
     private static $maxLogSize = 10485760; // 10MB
+    private static $useSystemLog = false;
     
     /**
      * Initialize error handler
@@ -15,7 +16,20 @@ class ErrorHandler {
         // Create logs directory if it doesn't exist
         $logDir = dirname(self::$logFile);
         if (!is_dir($logDir)) {
-            mkdir($logDir, 0755, true);
+            try {
+                mkdir($logDir, 0755, true);
+            } catch (Exception $e) {
+                // If we can't create the log directory, use a fallback location
+                self::$logFile = sys_get_temp_dir() . '/website_error.log';
+                error_log("Could not create log directory, using fallback: " . self::$logFile);
+            }
+        }
+        
+        // Check if log file is writable
+        if (!is_writable(dirname(self::$logFile))) {
+            // Use system error log instead of file logging
+            self::$useSystemLog = true;
+            error_log("Log directory not writable, switching to system error log");
         }
         
         // Set custom error and exception handlers
@@ -196,8 +210,21 @@ class ErrorHandler {
         
         $logEntry .= str_repeat('-', 80) . "\n";
         
-        // Write to log file
-        file_put_contents(self::$logFile, $logEntry, FILE_APPEND | LOCK_EX);
+        // Write to log file or system log
+        if (self::$useSystemLog) {
+            // Use system error log
+            error_log("WEBSITE ERROR: " . $logEntry);
+        } else {
+            // Try to write to file with error handling
+            try {
+                file_put_contents(self::$logFile, $logEntry, FILE_APPEND | LOCK_EX);
+            } catch (Exception $e) {
+                // Fallback: switch to system logging permanently
+                self::$useSystemLog = true;
+                error_log("ErrorHandler write failed, switching to system log: " . $e->getMessage());
+                error_log("WEBSITE ERROR: " . $logEntry);
+            }
+        }
     }
     
     /**

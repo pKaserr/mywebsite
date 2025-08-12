@@ -14342,6 +14342,8 @@ header {
 }
 .lp_header__img--img {
   width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(1, 1, 1, 0.8);
 }
 .lp_header__pre-hw {
   display: none;
@@ -14383,6 +14385,7 @@ header {
   .lp_header__pre-code {
     display: inline-block;
     font-size: 2vw;
+    margin-top: 0;
     margin-bottom: 3rem;
   }
 }
@@ -15040,11 +15043,33 @@ Dashboard Icons - Timeline & About Me
 .documents-dashboard-icon svg,
 .medieninformatik-dashboard-icon svg,
 .experience-dashboard-icon svg {
-  margin-bottom: 1.5rem;
+  margin-bottom: 5.5rem;
   transition: transform 0.3s ease;
   width: 150px !important;
   height: 150px !important;
   flex-shrink: 0;
+}
+@media (max-width: 1200px) {
+  .timeline-dashboard-icon svg,
+  .about-me-dashboard-icon svg,
+  .documents-dashboard-icon svg,
+  .medieninformatik-dashboard-icon svg,
+  .experience-dashboard-icon svg {
+    margin-bottom: 5rem;
+    height: 120px !important;
+    width: 120px !important;
+  }
+}
+@media (max-width: 992px) {
+  .timeline-dashboard-icon svg,
+  .about-me-dashboard-icon svg,
+  .documents-dashboard-icon svg,
+  .medieninformatik-dashboard-icon svg,
+  .experience-dashboard-icon svg {
+    margin-bottom: 4.5rem;
+    width: 90px !important;
+    height: 90px !important;
+  }
 }
 @media (max-width: 768px) {
   .timeline-dashboard-icon svg,
@@ -15052,18 +15077,8 @@ Dashboard Icons - Timeline & About Me
   .documents-dashboard-icon svg,
   .medieninformatik-dashboard-icon svg,
   .experience-dashboard-icon svg {
-    width: 100px !important;
-    height: 100px !important;
-  }
-}
-@media (max-width: 576px) {
-  .timeline-dashboard-icon svg,
-  .about-me-dashboard-icon svg,
-  .documents-dashboard-icon svg,
-  .medieninformatik-dashboard-icon svg,
-  .experience-dashboard-icon svg {
-    width: 50px !important;
-    height: 50px !important;
+    width: 80px !important;
+    height: 80px !important;
   }
 }
 
@@ -15086,7 +15101,16 @@ Dashboard Icons - Timeline & About Me
   font-size: 1.5rem;
   line-height: 1.7 !important;
   display: block;
-  top: 92% !important;
+  top: 100% !important;
+}
+@media (max-width: 992px) {
+  .timeline-dashboard-text,
+  .about-me-dashboard-text,
+  .documents-dashboard-text,
+  .medieninformatik-dashboard-text,
+  .experience-dashboard-text {
+    top: 110% !important;
+  }
 }
 
 .about-me-dashboard-icon:hover:not(.about-me-dashboard-icon--disabled) .about-me-dashboard-text,
@@ -15114,9 +15138,21 @@ Dashboard Icons - Timeline & About Me
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+  flex-wrap: wrap;
 }
-.boxWrapper__inner :first-child {
-  margin-bottom: 100px;
+@media (max-width: 576px) {
+  .boxWrapper__inner {
+    justify-content: flex-start;
+  }
+  .boxWrapper__inner > .boxWrapper__a:not(:nth-child(1)):not(:nth-child(2)) {
+    margin-top: 7rem;
+  }
+  .boxWrapper__inner > .boxWrapper__a {
+    flex: 0 0 50%;
+    max-width: 50%;
+    justify-content: center;
+    display: flex;
+  }
 }
 .boxWrapper__a {
   display: inline-block;
@@ -15125,13 +15161,19 @@ Dashboard Icons - Timeline & About Me
   width: 200px;
   transition: transform 0.3s;
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .boxWrapper__a {
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 992px) {
+  .boxWrapper__a {
+    height: 120px;
+    width: 120px;
+  }
+}
+@media (max-width: 768px) {
   .boxWrapper__a {
     height: 100px;
     width: 100px;
@@ -15146,12 +15188,12 @@ Dashboard Icons - Timeline & About Me
   line-height: 2;
   color: #cacaca;
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .boxWrapper__a span {
     font-size: 1.4rem;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 992px) {
   .boxWrapper__a span {
     font-size: 1rem;
   }

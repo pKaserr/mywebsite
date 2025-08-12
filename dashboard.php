@@ -68,7 +68,7 @@ try {
         <?php } ?>
     </div>
 
-    <div class="boxWrapper">
+    <div class="boxWrapper mb-8">
         <div class="boxWrapper__inner">
             <a class="boxWrapper__a" href="about_me">
                 <div class="about-me-dashboard-icon">
@@ -187,7 +187,7 @@ try {
                     <span class="experience-dashboard-text">Erfahrung</span>
                 </div>
             </a>
-            <a class="boxWrapper__a mb-8" href="studium">
+            <a class="boxWrapper__a" href="studium">
                 <div class="medieninformatik-dashboard-icon">
                     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                         <!-- Graduation cap -->
@@ -302,6 +302,7 @@ try {
         });
     </script>
     <?php include __DIR__ . '/includes/footer.php'; ?>
+    <div class="devBtn"></div>
 </body>
 
 </html>

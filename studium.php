@@ -22,7 +22,6 @@ require './includes/auth.php';
    <div class="nav">
       <a href="logout"><button class="btn btn--main btn--nav">Abmelden</button></a>
       <a href="dashboard"><button class="btn btn--main btn--nav">Zurück</button></a>
-      <a href="#" pdfName="experience_patrick_kaserer" id="downloadPdf"><button class="btn btn--main btn--nav">Download als PDF </button></a>
    </div>
    <div class="container_dashboard">
       <!-- Hero Section -->
