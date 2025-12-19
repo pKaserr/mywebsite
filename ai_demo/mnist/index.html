@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+  <style>
+    body { font-family: sans-serif; display: flex; flex-direction: row; gap: 20px; padding: 20px; }
+    .container { display: flex; flex-direction: column; align-items: center; }
+    canvas { border: 2px solid #333; cursor: crosshair; }
+    #debug-canvas { border: 1px solid red; margin-top: 10px; image-rendering: pixelated; }
+    .bar-container { width: 100%; display: flex; align-items: center; margin: 2px 0; }
+    .bar-bg { width: 150px; background: #eee; height: 15px; margin: 0 10px; }
+    .bar-fill { height: 100%; background: #4CAF50; transition: width 0.2s; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h3>Zeichne hier:</h3>
+  <canvas id="canvas" width="280" height="280"></canvas>
+  <button onclick="clearCanvas()" style="margin-top:10px; padding: 10px 20px;">Löschen</button>
+</div>
+
+<div class="container">
+  <h3>Was das Modell sieht:</h3>
+  <!-- Kleiner Canvas zum Debuggen -->
+  <canvas id="debug-canvas" width="28" height="28"></canvas>
+  
+  <h3>Vorhersage:</h3>
+  <div id="predictions">Lade Modell...</div>
+</div>
+
+<script>
+let model;
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const debugCanvas = document.getElementById('debug-canvas');
+const debugCtx = debugCanvas.getContext('2d');
+
+// Setup Canvas
+ctx.lineWidth = 8;
+ctx.lineCap = 'round';
+ctx.lineJoin = 'round';
+ctx.fillStyle = "black";
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+ctx.strokeStyle = "white"; 
+
+let drawing = false;
+let lastX = 0;
+let lastY = 0;
+
+// Maus-Events
+function startDrawing(e) {
+  drawing = true;
+  ctx.beginPath();
+  ctx.moveTo(e.offsetX, e.offsetY);
+  lastX = e.offsetX;
+  lastY = e.offsetY;
+  draw(e); // Für Punkte
+}
+
+function stopDrawing() {
+  if (!drawing) return;
+  drawing = false;
+  predict(); // Vorhersagen beim Loslassen
+}
+
+function draw(e) {
+  if (!drawing) return;
+  // Glattere Linien durch quadratische Kurven
+  ctx.beginPath();
+  ctx.moveTo(lastX, lastY);
+  ctx.lineTo(e.offsetX, e.offsetY);
+  ctx.stroke();
+  lastX = e.offsetX;
+  lastY = e.offsetY;
+}
+
+canvas.addEventListener('mousedown', startDrawing);
+canvas.addEventListener('mouseup', stopDrawing);
+canvas.addEventListener('mouseout', stopDrawing);
+canvas.addEventListener('mousemove', draw);
+
+function clearCanvas() {
+  ctx.fillStyle = "black";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  debugCtx.fillStyle = "black";
+  debugCtx.fillRect(0, 0, 28, 28);
+  document.getElementById("predictions").innerHTML = "";
+}
+
+// async function loadModel() {
+//   // Wir verwenden das offizielle TF.js Demo Modell (besser trainiert)
+//   const MODEL_URL = 'https://storage.googleapis.com/tfjs-models/tfjs/mnist_transfer_cnn_v1/model.json';
+  
+//   try {
+//     model = await tf.loadLayersModel(MODEL_URL);
+//     document.getElementById("predictions").innerHTML = "Modell bereit! Zeichne eine Zahl.";
+//     console.log("Model loaded!");
+//   } catch (err) {
+//     console.error(err);
+//     document.getElementById("predictions").innerHTML = "Fehler beim Laden.";
+//   }
+// }
+
+async function loadModel() {
+  // Dein eigenes, hochgezüchtetes Modell laden
+  // Hinweis: Wenn du lokal testest (file://), brauchst du einen lokalen Webserver (z.B. Live Server in VS Code),
+  // da Browser aus Sicherheitsgründen keine JSON-Dateien von der Festplatte laden dürfen.
+  model = await tf.loadLayersModel('model/model.json');
+}
+
+// --- DIE MAGIE: ZUSCHNEIDEN UND ZENTRIEREN ---
+function getBoundingBox(ctx) {
+  const width = canvas.width;
+  const height = canvas.height;
+  const imgData = ctx.getImageData(0, 0, width, height).data;
+  
+  let minX = width, minY = height, maxX = 0, maxY = 0;
+  let found = false;
+
+  // Wir scannen das Alpha oder den Rot-Kanal (da schwarz/weiß)
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      const offset = (y * width + x) * 4;
+      // Wenn Pixel hell genug ist (wir zeichnen weiß)
+      if (imgData[offset] > 0) { 
+        if (x < minX) minX = x;
+        if (x > maxX) maxX = x;
+        if (y < minY) minY = y;
+        if (y > maxY) maxY = y;
+        found = true;
+      }
+    }
+  }
+  
+  if (!found) return null; // Leeres Bild
+  
+  return { minX, minY, width: maxX - minX, height: maxY - minY };
+}
+
+async function predict() {
+  if (!model) return;
+
+  const bbox = getBoundingBox(ctx);
+  
+  if (!bbox) {
+    // Canvas ist leer
+    return;
+  }
+
+  // 1. Temporärer Canvas für das zugeschnittene Bild
+  // Wir wollen, dass die Zahl in eine 20x20 Box passt
+  const tempCanvas = document.createElement('canvas');
+  tempCanvas.width = 20;
+  tempCanvas.height = 20;
+  const tempCtx = tempCanvas.getContext('2d');
+  
+  // Skalierung berechnen, um Aspect Ratio zu erhalten
+  // Wir nehmen die längere Seite der BoundingBox
+  const maxSide = Math.max(bbox.width, bbox.height);
+  const scale = 20 / maxSide;
+  
+  const scaledWidth = bbox.width * scale;
+  const scaledHeight = bbox.height * scale;
+
+  // 2. Zeichne den Ausschnitt zentriert in die 20x20 Box
+  // dx und dy sorgen für die Zentrierung im 20x20 Raster
+  const dx = (20 - scaledWidth) / 2;
+  const dy = (20 - scaledHeight) / 2;
+  
+  tempCtx.drawImage(canvas, 
+    bbox.minX, bbox.minY, bbox.width, bbox.height, // Source
+    dx, dy, scaledWidth, scaledHeight              // Destination
+  );
+
+  // 3. Nun das 20x20 Bild in das 28x28 Raster (mit 4px Rand) setzen
+  // (Center of Mass Simulation)
+  debugCtx.fillStyle = "black";
+  debugCtx.fillRect(0, 0, 28, 28);
+  debugCtx.drawImage(tempCanvas, 4, 4); // 4px Padding
+
+  // 4. Tensor aus dem Debug-Canvas erstellen
+  let img = tf.browser.fromPixels(debugCanvas, 1)
+    .toFloat()
+    .div(255.0)
+    .expandDims(0);
+
+  // img = tf.onesLike(img).sub(img);
+
+  // 5. Vorhersage
+  let prediction = model.predict(img);
+  let probs = prediction.dataSync();
+
+  // Anzeige
+  let top = Array.from(probs)
+    .map((p, i) => ({ probability: p, digit: i }))
+    .sort((a, b) => b.probability - a.probability)
+    .slice(0, 3);
+
+  let out = "";
+  top.forEach(t => {
+    let color = t.probability > 0.7 ? "#4CAF50" : "#999";
+    out += `
+      <div class="bar-container">
+        <span style="width:15px; font-weight:bold">${t.digit}</span>
+        <div class="bar-bg">
+          <div class="bar-fill" style="width:${t.probability*100}%; background:${color}"></div>
+        </div>
+        <span>${(t.probability * 100).toFixed(0)}%</span>
+      </div>
+    `;
+  });
+
+  document.getElementById("predictions").innerHTML = out;
+  img.dispose();
+  prediction.dispose();
+}
+
+loadModel();
+</script>
+
+</body>
+</html>

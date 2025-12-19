@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    $file_hash = randomHash(20);
 
    try {
-      
+
       // add user
       $sql = "
            INSERT INTO user (user_name, email, passwort, job_desc, initial_apply, role, file_hash)
@@ -121,7 +121,7 @@ try {
 } catch (PDOException $e) {
    die("Fehler beim Hinzufügen des Dokuments: " . $e->getMessage());
 }
-
+$pw = randomHash(8)
 ?>
 
 <!DOCTYPE html>
@@ -131,6 +131,8 @@ try {
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Unternehmen Hinzufügen</title>
+   <script src="./js/add_comp.js" defer></script>
+   <script src="./js/chat.js" defer></script>
    <link rel="stylesheet" href="./style.css">
    <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
    <link rel="icon" type="image/svg+xml" href="./assets/favicons/favicon.svg" />
@@ -144,7 +146,61 @@ try {
       <a href="logout"><button class="btn btn--main btn--nav">Abmelden</button></a>
       <a href="dashboard"><button class="btn btn--main btn--nav">Zurück</button></a>
    </div>
+
    <div class="container_dashboard">
+        <div id="dashboard__chatBox">
+            <input type="text" id="userInput" placeholder="Frage die KI...">
+            <button onclick="askAI()">Senden</button>
+        </div>
+      <h1>Motivationsschreiben erstellen</h1>
+      <form action="process_cover_note.php" method="post" class="form-style mb-4" style="width: 100%">
+         <div class="form-group" style="margin-bottom: 15px;">
+            <label for="p_salutation">Anrede:</label>
+            <input type="text" id="p_salutation" name="p_salutation" required class="form-control" style="width: 100%; padding: 8px; margin-top: 5px;" placeholder="z.B. Sehr geehrte Damen und Herren">
+         </div>
+
+
+         <div class="form-group">
+            <label for="p_text">Text:</label>
+            <textarea id="p_text" name="p_text" required class="form-control" rows="10" style="width: 100%; padding: 8px; margin-top: 5px;" placeholder="Ihr Text hier..."></textarea>
+         </div>
+
+         <div class="form-group" style="margin-bottom: 15px;">
+            <label for="p_login">Login:</label>
+            <input type="text" id="p_login" required name="p_login" class="form-control" style="width: 100%; padding: 8px; margin-top: 5px;" placeholder="Login-Name">
+         </div>
+
+         <div class="form-group" style="margin-bottom: 15px;">
+            <label for="p_passwort">Passwort:</label>
+            <input value="<?= htmlspecialchars($pw) ?>" type="text" id="p_passwort" name="p_passwort" class="form-control" style="width: 100%; padding: 8px; margin-top: 5px;" placeholder="Passwort">
+         </div>
+
+         <div class="form-group" style="margin-bottom: 15px;">
+            <label for="format">Format wählen:</label>
+            <select id="format" name="format" class="form-control" style="width: 100%; padding: 8px; margin-top: 5px;">
+               <option value="docx">Word (.docx)</option>
+               <!-- <option value="pdf">PDF (.pdf)</option> -->
+               <!-- PDF generation might require more setup, enabling only Word for now unless I can confirm PDF works -->
+            </select>
+         </div>
+
+         <button type="submit" class="btn btn--main">Dokument erstellen</button>
+      </form>
+
+      <h1>Lebenslauf Erstellen</h1>
+      <form action="process_cv.php" method="post" class="form-style mb-4" style="width: 100%">
+         <div class="form-group" style="margin-bottom: 15px;">
+            <label for="p_login">Login:</label>
+            <input type="text" id="p_login_cv" required name="p_login" class="form-control" style="width: 100%; padding: 8px; margin-top: 5px;" placeholder="Login-Name">
+         </div>
+
+         <div class="form-group" style="margin-bottom: 15px;">
+            <label for="p_passwort">Passwort:</label>
+            <input value="<?= htmlspecialchars($pw) ?>" type="text" id="p_passwort_cv" name="p_passwort" class="form-control" style="width: 100%; padding: 8px; margin-top: 5px;" placeholder="Passwort">
+         </div>
+
+         <button type="submit" class="btn btn--main">Dokument erstellen</button>
+      </form>
       <h1>Unternehmen Hinzufügen</h1>
       <!-- Formular anzeigen -->
       <form action="add_comp" method="post" enctype="multipart/form-data">
@@ -156,15 +212,15 @@ try {
          <br>
 
          <label for="company_email">E-Mail:</label>
-         <input type="email" id="company_email" name="company_email" required>
+         <input value="no@email.de" type="email" id="company_email" name="company_email">
          <br>
-         <?php $pw = randomHash(8) ?>
+   
          <label for="company_password">Passwort:</label>
          <input value="<?= htmlspecialchars($pw) ?>" type="text" id="company_password" name="company_password" required>
          <br>
 
          <label for="company_job_desc">Job-Beschreibung:</label>
-         <input type="text" id="company_job_desc" name="company_job_desc">
+         <input type="text" id="company_job_desc" name="company_job_desc" required>
          <br>
 
          <label for="company_initial_apply">Initial Apply:</label>
@@ -172,7 +228,7 @@ try {
          <br>
 
          <label for="file">Motivationsschreiben:</label>
-         <input id="file" name="file" type="file" />
+         <input id="file" name="file" type="file" required />
          <br>
 
          <button type="submit">Hinzufügen</button>

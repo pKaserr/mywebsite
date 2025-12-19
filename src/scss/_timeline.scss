@@ -7,7 +7,9 @@ Timeline Styles - Professional CV Timeline
     font-size: 1.1rem;
     color: $c3-main;
     text-align: center;
-    margin-bottom: 3rem;
+    // @media (min-width: $bp-md) {
+    //   margin-bottom: 3rem;
+    // }
     font-style: italic;
   }
   
@@ -15,7 +17,10 @@ Timeline Styles - Professional CV Timeline
     max-width: 75%;
     margin: 0 auto;
     position: relative;
-    left: 15%;
+    left: 0;
+    @media (min-width: $bp-md) {
+      left: 15%;
+    }
   }
 
   /* Sticky date indicator shown on larger screens */
@@ -138,12 +143,15 @@ Timeline Styles - Professional CV Timeline
   
   .timeline-content {
     background: $c-white;
-    width: 75%;
+    width: 87%;
     padding: 2rem;
     border-radius: 10px;
     border: 1px solid $c1-main;
     transition: all 0.3s ease;
     position: relative;
+    @media (min-width: $bp-md) {
+      width: 75%;
+    }
   }
   
   .timeline-content:hover {
@@ -293,13 +301,13 @@ Timeline Styles - Professional CV Timeline
   }
   
   /* Responsive Design */
-  @media (min-width: 769px) {
+  @media (min-width: $bp-md) {
     /* On desktop: hide per-item dates, show sticky indicator */
     .timeline-date { display: none; }
     .timeline-sticky-date { display: inline-block; }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: $bp-md) {
     .timeline-item {
       padding-left: 2rem;
     }
@@ -316,8 +324,10 @@ Timeline Styles - Professional CV Timeline
     
     /* On mobile: show per-item dates and hide sticky indicator */
     .timeline-sticky-date { display: none; }
-
-    .timeline-content { padding: 1.5rem; }
+    .timeline-content { 
+      @media (min-width: $bp-md) {
+        padding: 1.5rem; }
+      }
     .timeline-section-title { font-size: 1.5rem; }
     .timeline-skills { grid-template-columns: 1fr; }
     .skill-item { flex-direction: column; align-items: stretch; gap: 0.5rem; }

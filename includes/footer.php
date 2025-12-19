@@ -11,8 +11,8 @@ $assetBase = (strpos($currentDir, '/admin') !== false) ? '../' : './';
 <footer class="site-footer">
   <div class="container_dashboard">
     <!-- <div class="site-footer__contact"> -->
-      <P>Kontaktformular</P>
       <form class="site-footer__contact mb-1" method="post" action="<?= htmlspecialchars($assetBase) ?>contact.php">
+        <P>Kontaktformular</P>
           <!-- <legend data-translate="footer.contact.title">Kontaktformular</legend> -->
           <div class="site-footer__data">
             <div class="site-footer__data--item">

@@ -14324,35 +14324,35 @@ header {
 }
 
 .card__red::after {
-  background-color: #6c2421;
+  background-color: rgb(107.953125, 35.984375, 33.046875);
 }
 
 .card__blue::after {
-  background-color: #1a2ea2;
+  background-color: rgb(25.9581589958, 46.410041841, 162.0418410042);
 }
 
 .card__green::after {
-  background-color: #224622;
+  background-color: rgb(33.5483870968, 70.4516129032, 33.5483870968);
 }
 
 .card__purple::after {
-  background-color: #80249f;
+  background-color: rgb(127.6219512195, 35.6707317073, 159.3292682927);
 }
 
 .card__pink::after {
-  background-color: #c72690;
+  background-color: rgb(198.5675675676, 38.4324324324, 144.1216216216);
 }
 
 .card__yellow::after {
-  background-color: #887e18;
+  background-color: rgb(135.7345971564, 125.8767772512, 24.2654028436);
 }
 
 .card__cyan::after {
-  background-color: #1d635c;
+  background-color: rgb(28.6033519553, 99.3966480447, 92.2458100559);
 }
 
 .card__brown::after {
-  background-color: #63331d;
+  background-color: rgb(99.3966480447, 50.7709497207, 28.6033519553);
 }
 
 .lp_header {
@@ -14713,7 +14713,6 @@ Timeline Styles - Professional CV Timeline
   font-size: 1.1rem;
   color: #686868;
   text-align: center;
-  margin-bottom: 3rem;
   font-style: italic;
 }
 
@@ -14721,7 +14720,12 @@ Timeline Styles - Professional CV Timeline
   max-width: 75%;
   margin: 0 auto;
   position: relative;
-  left: 15%;
+  left: 0;
+}
+@media (min-width: 768px) {
+  .timeline-container {
+    left: 15%;
+  }
 }
 
 /* Sticky date indicator shown on larger screens */
@@ -14842,12 +14846,17 @@ Timeline Styles - Professional CV Timeline
 
 .timeline-content {
   background: #d3d3d3;
-  width: 75%;
+  width: 87%;
   padding: 2rem;
   border-radius: 10px;
   border: 1px solid #272727;
   transition: all 0.3s ease;
   position: relative;
+}
+@media (min-width: 768px) {
+  .timeline-content {
+    width: 75%;
+  }
 }
 
 .timeline-content:hover {
@@ -14998,7 +15007,7 @@ Timeline Styles - Professional CV Timeline
   }
 }
 /* Responsive Design */
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   /* On desktop: hide per-item dates, show sticky indicator */
   .timeline-date {
     display: none;
@@ -15024,9 +15033,13 @@ Timeline Styles - Professional CV Timeline
   .timeline-sticky-date {
     display: none;
   }
+}
+@media (max-width: 768px) and (min-width: 768px) {
   .timeline-content {
     padding: 1.5rem;
   }
+}
+@media (max-width: 768px) {
   .timeline-section-title {
     font-size: 1.5rem;
   }
@@ -15153,6 +15166,7 @@ Dashboard Icons - Timeline & About Me
 .about-me-dashboard-icon,
 .documents-dashboard-icon,
 .medieninformatik-dashboard-icon,
+.cover-note-dashboard-icon,
 .experience-dashboard-icon {
   display: flex;
   flex-direction: column;
@@ -15170,6 +15184,7 @@ Dashboard Icons - Timeline & About Me
 .about-me-dashboard-icon:hover:not(.about-me-dashboard-icon--disabled),
 .documents-dashboard-icon:hover:not(.documents-dashboard-icon--disabled),
 .medieninformatik-dashboard-icon:hover:not(.medieninformatik-dashboard-icon--disabled),
+.cover-note-dashboard-icon:hover:not(.cover-note-dashboard-icon--disabled),
 .experience-dashboard-icon:hover:not(.experience-dashboard-icon--disabled) {
   /* box-shadow: 0 4px 15px rgba(15, 125, 189, 0.082); */
   border: #0f7dbd, solid 1px;
@@ -15179,6 +15194,7 @@ Dashboard Icons - Timeline & About Me
 .about-me-dashboard-icon svg,
 .documents-dashboard-icon svg,
 .medieninformatik-dashboard-icon svg,
+.cover-note-dashboard-icon svg,
 .experience-dashboard-icon svg {
   margin-bottom: 5.5rem;
   transition: transform 0.3s ease;
@@ -15191,6 +15207,7 @@ Dashboard Icons - Timeline & About Me
   .about-me-dashboard-icon svg,
   .documents-dashboard-icon svg,
   .medieninformatik-dashboard-icon svg,
+  .cover-note-dashboard-icon svg,
   .experience-dashboard-icon svg {
     margin-bottom: 5rem;
     height: 120px !important;
@@ -15202,6 +15219,7 @@ Dashboard Icons - Timeline & About Me
   .about-me-dashboard-icon svg,
   .documents-dashboard-icon svg,
   .medieninformatik-dashboard-icon svg,
+  .cover-note-dashboard-icon svg,
   .experience-dashboard-icon svg {
     margin-bottom: 4.5rem;
     width: 90px !important;
@@ -15213,6 +15231,7 @@ Dashboard Icons - Timeline & About Me
   .about-me-dashboard-icon svg,
   .documents-dashboard-icon svg,
   .medieninformatik-dashboard-icon svg,
+  .cover-note-dashboard-icon svg,
   .experience-dashboard-icon svg {
     width: 80px !important;
     height: 80px !important;
@@ -15231,6 +15250,7 @@ Dashboard Icons - Timeline & About Me
 .about-me-dashboard-text,
 .documents-dashboard-text,
 .medieninformatik-dashboard-text,
+.cover-note-dashboard-text,
 .experience-dashboard-text {
   font-weight: 600;
   color: #272727;
@@ -15245,6 +15265,7 @@ Dashboard Icons - Timeline & About Me
   .about-me-dashboard-text,
   .documents-dashboard-text,
   .medieninformatik-dashboard-text,
+  .cover-note-dashboard-text,
   .experience-dashboard-text {
     top: 110% !important;
   }
@@ -15443,10 +15464,6 @@ Dashboard Icons - Timeline & About Me
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 15px rgba(1, 1, 1, 0.1);
 }
-.interest-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(1, 1, 1, 0.2);
-}
 .interest-card h3 {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
@@ -15461,6 +15478,10 @@ Dashboard Icons - Timeline & About Me
   .interest-card {
     width: 90%;
     height: 5rem;
+  }
+  .interest-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(1, 1, 1, 0.2);
   }
 }
 

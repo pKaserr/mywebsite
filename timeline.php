@@ -13,6 +13,7 @@ if (isset($_SESSION['is_guest']) && $_SESSION['is_guest'] === true) {
 <head>
    <title>Dashboard - Zeitstrahl</title>
    <link rel="stylesheet" href="./style.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
    <script src="./js/timeline.js" defer></script>
    <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
@@ -40,7 +41,7 @@ if (isset($_SESSION['is_guest']) && $_SESSION['is_guest'] === true) {
          <div class="timeline-item timeline-item--work">
             <div class="timeline-date">03/25 - 08/25</div>
             <div class="timeline-content">
-               <h3>Fullstack Softwareentwickler/KI</h3>
+               <h3>Fullstack Softwareentwickler | KI-Forschung</h3>
                <h4>Webbasierte Logistikplattform</h4>
                <p class="timeline-description">Echtzeitvisualisierung und -steuerung des Materialflusses, Prototyping KI-gestützter Komponenten (z. B. Materialflussrechner), Mitarbeit an Forschungsprojekten.</p>
                <div class="timeline-highlights">

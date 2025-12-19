@@ -6,6 +6,7 @@ Dashboard Icons - Timeline & About Me
 .about-me-dashboard-icon,
 .documents-dashboard-icon,
 .medieninformatik-dashboard-icon,
+.cover-note-dashboard-icon,
 .experience-dashboard-icon {
   display: flex;
   flex-direction: column;
@@ -23,6 +24,7 @@ Dashboard Icons - Timeline & About Me
 .about-me-dashboard-icon:hover:not(.about-me-dashboard-icon--disabled),
 .documents-dashboard-icon:hover:not(.documents-dashboard-icon--disabled),
 .medieninformatik-dashboard-icon:hover:not(.medieninformatik-dashboard-icon--disabled),
+.cover-note-dashboard-icon:hover:not(.cover-note-dashboard-icon--disabled),
 .experience-dashboard-icon:hover:not(.experience-dashboard-icon--disabled) {
   // background: linear-gradient(135deg, $c1-second, $c2-second);
   /* box-shadow: 0 4px 15px rgba(15, 125, 189, 0.082); */
@@ -35,6 +37,7 @@ Dashboard Icons - Timeline & About Me
 .about-me-dashboard-icon svg,
 .documents-dashboard-icon svg,
 .medieninformatik-dashboard-icon svg,
+.cover-note-dashboard-icon svg,
 .experience-dashboard-icon svg {
   margin-bottom: 5.5rem;
   transition: transform 0.3s ease;
@@ -70,6 +73,7 @@ Dashboard Icons - Timeline & About Me
 .about-me-dashboard-text,
 .documents-dashboard-text,
 .medieninformatik-dashboard-text,
+.cover-note-dashboard-text,
 .experience-dashboard-text {
   font-weight: 600;
   color: $c1-main;
@@ -99,30 +103,45 @@ Dashboard Icons - Timeline & About Me
   cursor: not-allowed !important;
 }
 
+// #dashboard {
+//   &__chatBox {
+//     position: fixed;
+//     z-index: 1000;
+//     max-width: 20rem;
+//     max-height: 10rem;
+//     overflow-y: auto;
+//     bottom: 1rem;
+//     right: 1rem;
+//     background: $c1-second;
+//     padding: 1rem;
+//     border-radius: 10px;
+//     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+//   }
+// }
+
 .boxWrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 0 -15px;
 
-  /// 
+  ///
   /// Styles the inner wrapper of the dashboard boxes.
   /// On small screens (<= $bp-sm), only 2 items per row.
-  /// 
+  ///
   &__inner {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
     flex-wrap: wrap;
 
-    
     @media (max-width: $bp-sm) {
       justify-content: flex-start;
-      
-      /// 
+
+      ///
       /// Adds margin-top to all .boxWrapper__a children except the first two.
       /// Uses :not(:nth-child(1)):not(:nth-child(2)) for clarity.
-      /// 
+      ///
       > .boxWrapper__a:not(:nth-child(1)):not(:nth-child(2)) {
         margin-top: 7rem;
       }

@@ -33,9 +33,11 @@ try {
 
 <head>
     <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <!-- <script src="./js/language.js" defer></script> -->
     <script src="./js/dashboard.js" defer></script>
+    <script src="./js/chat.js" defer></script>
     <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./assets/favicons/favicon.svg" />
     <link rel="shortcut icon" href="./assets/favicons/favicon.ico" />
@@ -66,6 +68,10 @@ try {
         <?php } else { ?>
             <span  data-translate="dashboard.info_text_guest">Erkunden Sie die verfügbaren Bereiche um mehr über meine Qualifikationen zu erfahren.</span>
         <?php } ?>
+        <div id="dashboard__chatBox">
+            <input type="text" id="userInput" placeholder="Frage die KI...">
+            <button onclick="askAI()">Senden</button>
+        </div>
     </div>
 
     <div class="boxWrapper mb-8">
@@ -260,47 +266,36 @@ try {
                 </a>
             </div>
         </div>
-        <?php
+            <?php
 
-        $sql = "SELECT role FROM user WHERE user_name = :user_name";
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':user_name', $_SESSION['user_name'], PDO::PARAM_STR);
-        $stmt->execute();
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+$sql = "SELECT role FROM user WHERE user_name = :user_name";
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(':user_name', $_SESSION['user_name'], PDO::PARAM_STR);
+$stmt->execute();
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if (!$user || $user['role'] == 'admin') { ?>
-            <div class="boxWrapper__inner">
-                <a class="boxWrapper__a" href="add_comp">Unternehmen Hinzufügen</a></a>
-                <a class="boxWrapper__a" href="add_file">Datei Hinzufügen</a></a>
-                <a class="boxWrapper__a" href="admin/relations.php">Zuweisungen verwalten</a></a>
-                <a class="boxWrapper__a" href="admin/access_logs.php">Access Logs</a></a>
+if (!$user || $user['role'] == 'admin') { ?>
+    <div class="boxWrapper__inner">
+        <a class="boxWrapper__a" href="add_comp">
+            <div class="cover-note-dashboard-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Document -->
+                    <rect x="25" y="15" width="50" height="70" rx="3" fill="#f0ad4e" opacity="0.8"/>
+                    <rect x="35" y="25" width="30" height="2" fill="#ffffff" opacity="0.9"/>
+                    <rect x="35" y="35" width="30" height="2" fill="#ffffff" opacity="0.9"/>
+                    <rect x="35" y="45" width="30" height="2" fill="#ffffff" opacity="0.9"/>
+                    
+                    <!-- Pen -->
+                    <path d="M 60 60 L 80 80 L 85 75 L 65 55 Z" fill="#d9534f"/>
+                    <path d="M 60 60 L 55 65 L 60 65 Z" fill="#333"/>
+                </svg>
+                  <span class="cover-note-dashboard-text">Unternehmen Hinzufügen</span>
             </div>
-        <?php } ?>
-    </div>
-    
-    <script>
-        // Handle job description variable for translations
-        document.addEventListener('DOMContentLoaded', function() {
-            // Wait for language manager to be initialized
-            setTimeout(() => {
-                const jobElement = document.querySelector('[data-job]');
-                if (jobElement && window.languageManager) {
-                    const jobDesc = jobElement.getAttribute('data-job');
-                    
-                    // Update translation with job variable
-                    const updateJobTranslation = () => {
-                        const translation = window.languageManager.translate('dashboard.intro_job', { job: jobDesc });
-                        jobElement.textContent = translation;
-                    };
-                    
-                    // Initial update
-                    updateJobTranslation();
-                    
-                    // Listen for language changes
-                    document.addEventListener('languageChanged', updateJobTranslation);
-                }
-            }, 500);
-        });
+        </a>
+        <a class="boxWrapper__a" href="admin/relations.php">Zuweisungen verwalten</a></a>
+        <a class="boxWrapper__a" href="admin/access_logs.php">Access Logs</a></a>
+        <a class="boxWrapper__a" href="ai_demos">AI-Demos</a></a>
+    <?php } ?>
     </script>
     <?php include __DIR__ . '/includes/footer.php'; ?>
 </body>

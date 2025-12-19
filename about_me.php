@@ -16,6 +16,7 @@ require './includes/db_connect.php';
    <link rel="shortcut icon" href="./assets/favicons/favicon.ico" />
    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-touch-icon.png" />
    <link rel="manifest" href="./assets/favicons/site.webmanifest" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>

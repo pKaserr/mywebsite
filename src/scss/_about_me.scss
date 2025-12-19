@@ -97,24 +97,25 @@
     box-shadow 0.3s ease;
   box-shadow: 0 4px 15px rgba($c-black, 0.1);
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba($c-black, 0.2);
-  }
-
+  
   h3 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
   }
-
+  
   p {
     font-size: 1rem;
     opacity: 0.9;
     margin: 0;
   }
-
+  
   @media (min-width: $bp-mid) {
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba($c-black, 0.2);
+    }
+
     width: 90%;
     height: 5rem;
   }

@@ -7,6 +7,7 @@ require './includes/auth.php';
 
 <head>
    <title>Dashboard - Experience</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="./style.css">
    <script src="./js/accordion.js" defer></script>
    <script src="./js/video-controls.js" defer></script>
