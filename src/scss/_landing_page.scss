@@ -1,129 +1,279 @@
-.lp_header {
-   margin-bottom: 1rem;
+.lp {
+   &_intro {
+      display: none;
 
-   @include breakpoint("xs") {
-      margin-bottom: 3rem;
-   }
+      @include breakpoint("sm") {
+         display: block;
 
-   @include breakpoint("sm") {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
-      margin-bottom: 3rem;
-      align-items: center;
-      
-      @include breakpoint("lg") {
-         align-items: flex-start;
+         &__wrapper1 {
+            display: flex;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem ;
+         }
+
+         &__wrapper2 {
+            display: flex;
+            margin-bottom: 1.5rem ;
+         }
+
+         &-png{
+            // position: relative;
+            width: 25%;
+            height: 25%;
+
+            &--1 {
+               margin-left: 10%;
+            }
+            &--2 {
+               margin-right: 10%;
+            }
+         }
+
+         &-title {
+            font-size: 2.2vw;
+            line-height: 12px;
+
+            &--1 {
+               margin-top: 1rem;
+            }
+            &--2 {
+               margin-top: 1rem;
+               text-align: right;
+            }
+         }
+
+         &-text {
+            font-size: 3.2vw;
+            line-height: 17px;
+         }
+
+         &-text--2 {
+            text-align: right;
+         }
       }
 
-      &__container {
+      @include breakpoint("sm") {
+         &-title {
+            font-size: 2.6vw;
+            line-height: 10px;
+            margin: 1rem 0;
+         }
+
+         &-text {
+            font-size: 2vw;
+            line-height: 17px;
+         }
+      }
+
+      @include breakpoint("md") {
+         &__wrapper1 {
+            margin: 2rem 0;
+         }
+
+         &-title {
+            font-size: 2.6vw;
+            line-height: 10px;
+            &--1 {
+               margin-top: 2rem;
+            }
+         }
+
+         &-text {
+            font-size: 2.1vw;
+            line-height: 20px;
+            &--1 {
+               margin-bottom: 3.2rem;
+            }
+            &--2 {
+               margin-bottom: 2.3rem;
+            }
+         }
+      }
+
+      @include breakpoint("lg") {
+         &__wrapper1 {
+            margin-bottom: 4rem;
+         }
+         &__wrapper2 {
+            margin-bottom: 4rem;
+         }
+
+         &-title {
+            font-size: 2.6vw;
+            line-height: 10px;
+            &--1 {
+               margin-top: 3rem;
+            }
+         }
+         &-text {
+            font-size: 1.9vw;
+            line-height: 23px;
+
+            &--1 {
+               margin-bottom: 4rem;
+               margin-right: 10%;
+            }
+
+            &--2 {
+               margin-bottom: 2.3rem;
+            }
+         }
+      }
+
+      @include breakpoint("xl") {
+         &-title {
+            font-size: 2.2vw;
+            margin-bottom: 2rem;
+         }
+
+         &-text {
+            font-size: 1.3vw;
+            line-height: 25px;
+            &--1 {
+               margin-bottom: 4rem;
+            }
+            &--2 {
+               margin-bottom: 6.5rem;
+            }
+         }
+      }
+
+      @include breakpoint("xl") {
+         &-text {
+            &--2 {
+               margin-bottom: 5rem;
+            }
+         }
+      }
+   }
+
+   &_header {
+      margin-bottom: 1rem;
+
+      @include breakpoint("xs") {
+         margin-bottom: 3rem;
+      }
+
+      @include breakpoint("sm") {
          display: flex;
+         justify-content: space-between;
          flex-direction: column;
+         margin-bottom: 3rem;
          align-items: center;
 
          @include breakpoint("lg") {
             align-items: flex-start;
          }
-      }
-   }
 
-   &__img {
-      display: block;
-      padding: 0;
-      margin: 0;
+         &__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-      &--img {
-         margin-bottom: 2rem;
-         width: 100%;
-         border-radius: $border-radius_image;
-         box-shadow: 0 4px 15px rgba($c-black, 0.8);
-         align-self: center;
+            @include breakpoint("lg") {
+               align-items: flex-start;
+            }
+         }
       }
-      // @include breakpoint("md") {
-      //    width: 80%;
+
+      &__img {
+         display: block;
+         padding: 0;
+         margin: 0;
+
+         &--img {
+            margin-bottom: 2rem;
+            width: 100%;
+            border-radius: $border-radius_image;
+            box-shadow: 0 4px 15px rgba($c-black, 0.8);
+            align-self: center;
+         }
+         // @include breakpoint("md") {
+         //    width: 80%;
+         // }
+
+         @include breakpoint("lg") {
+            // align-self: flex-start;
+            width: 95%;
+         }
+
+         // @include breakpoint("xl") {
+         //    width: 95%;
+         // }
+
+         @include breakpoint("xxl") {
+            width: 100%;
+         }
+      }
+
+      // &__pre-hw {
+      //    display: none;
+
+      //    @include breakpoint("sm") {
+      //       display: flex;
+      //       font-size: 2.6vw;
+      //       line-height: 12px;
+      //    }
+
+      //    @include breakpoint("md") {
+      //       font-size: 2.1vw;
+      //       line-height: 15px;
+      //    }
+
+      //    @include breakpoint("lg") {
+      //       font-size: 1.03rem;
+      //       line-height: 10px;
+      //    }
+
+      //    @include breakpoint("xl") {
+      //       font-size: 1.0rem;
+      //       line-height: 11px;
+      //    }
+
+      //    @include breakpoint("xxl") {
+      //       font-size: 1.2rem;
+      //       line-height: 12px;
+      //    }
       // }
+
+      &__pre-code {
+         display: none;
+
+         // @include breakpoint("sm") {
+         //    display: inline-block;
+         //    font-size: 2vw;
+         //    margin-top: 0;
+         //    margin-bottom: 3rem;
+         // }
+
+         @include breakpoint("md") {
+            font-size: 2.2vw;
+            line-height: 1.2;
+         }
+
+         @include breakpoint("lg") {
+            display: inline-block;
+            margin-top: 0;
+            line-height: 1.27;
+            font-size: 0.75rem;
+            margin-left: 1rem;
+            margin-bottom: 3rem;
+         }
+
+         @include breakpoint("xl") {
+            font-size: 0.8rem;
+         }
+
+         @include breakpoint("xxl") {
+            line-height: 1.2;
+            font-size: 1rem;
+         }
+      }
 
       @include breakpoint("lg") {
-         // align-self: flex-start;
-         width: 95%;
+         flex-direction: row;
+         margin-bottom: 1rem;
       }
-
-      // @include breakpoint("xl") {
-      //    width: 95%;
-      // }
-
-      @include breakpoint("xxl") {
-         width: 100%;
-      }
-   }
-
-   // &__pre-hw {
-   //    display: none;
-
-   //    @include breakpoint("sm") {
-   //       display: flex;
-   //       font-size: 2.6vw;
-   //       line-height: 12px;
-   //    }
-
-   //    @include breakpoint("md") {
-   //       font-size: 2.1vw;
-   //       line-height: 15px;
-   //    }
-
-   //    @include breakpoint("lg") {
-   //       font-size: 1.03rem;
-   //       line-height: 10px;
-   //    }
-
-   //    @include breakpoint("xl") {
-   //       font-size: 1.0rem;
-   //       line-height: 11px;
-   //    }
-      
-   //    @include breakpoint("xxl") {
-   //       font-size: 1.2rem;
-   //       line-height: 12px;
-   //    }
-   // }
-
-   &__pre-code {
-      display: none;
-
-      // @include breakpoint("sm") {
-      //    display: inline-block;
-      //    font-size: 2vw;
-      //    margin-top: 0;
-      //    margin-bottom: 3rem;
-      // }
-
-      @include breakpoint("md") {
-         font-size: 2.2vw;
-         line-height: 1.2;
-      }
-
-      @include breakpoint("lg") {
-         display: inline-block;
-         margin-top: 0;
-         line-height: 1.27;
-         font-size: 0.75rem;
-         margin-left: 1rem;
-         margin-bottom: 3rem;
-      }
-
-      @include breakpoint("xl") {
-         font-size: 0.8rem;
-      }
-      
-      @include breakpoint("xxl") {
-         line-height: 1.2;
-         font-size: 1rem;
-      }
-   }
-
-   @include breakpoint("lg") {
-      flex-direction: row;
-      margin-bottom: 1rem;
    }
 }
 

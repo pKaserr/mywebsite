@@ -13980,7 +13980,7 @@ input[type=password]:focus {
 }
 @media (min-width: 768px) {
   .devBtn:after {
-    content: "MEDI";
+    content: "MD";
   }
 }
 @media (min-width: 992px) {
@@ -14361,6 +14361,131 @@ header {
   background-color: rgb(99.3966480447, 50.7709497207, 28.6033519553);
 }
 
+.lp_intro {
+  display: none;
+}
+@media (min-width: 576px) {
+  .lp_intro {
+    display: block;
+  }
+  .lp_intro__wrapper1 {
+    display: flex;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .lp_intro__wrapper2 {
+    display: flex;
+    margin-bottom: 1.5rem;
+  }
+  .lp_intro-png {
+    width: 25%;
+    height: 25%;
+  }
+  .lp_intro-png--1 {
+    margin-left: 10%;
+  }
+  .lp_intro-png--2 {
+    margin-right: 10%;
+  }
+  .lp_intro-title {
+    font-size: 2.2vw;
+    line-height: 12px;
+  }
+  .lp_intro-title--1 {
+    margin-top: 1rem;
+  }
+  .lp_intro-title--2 {
+    margin-top: 1rem;
+    text-align: right;
+  }
+  .lp_intro-text {
+    font-size: 3.2vw;
+    line-height: 17px;
+  }
+  .lp_intro-text--2 {
+    text-align: right;
+  }
+}
+@media (min-width: 576px) {
+  .lp_intro-title {
+    font-size: 2.6vw;
+    line-height: 10px;
+    margin: 1rem 0;
+  }
+  .lp_intro-text {
+    font-size: 2vw;
+    line-height: 17px;
+  }
+}
+@media (min-width: 768px) {
+  .lp_intro__wrapper1 {
+    margin: 2rem 0;
+  }
+  .lp_intro-title {
+    font-size: 2.6vw;
+    line-height: 10px;
+  }
+  .lp_intro-title--1 {
+    margin-top: 2rem;
+  }
+  .lp_intro-text {
+    font-size: 2.1vw;
+    line-height: 20px;
+  }
+  .lp_intro-text--1 {
+    margin-bottom: 3.2rem;
+  }
+  .lp_intro-text--2 {
+    margin-bottom: 2.3rem;
+  }
+}
+@media (min-width: 992px) {
+  .lp_intro__wrapper1 {
+    margin-bottom: 4rem;
+  }
+  .lp_intro__wrapper2 {
+    margin-bottom: 4rem;
+  }
+  .lp_intro-title {
+    font-size: 2.6vw;
+    line-height: 10px;
+  }
+  .lp_intro-title--1 {
+    margin-top: 3rem;
+  }
+  .lp_intro-text {
+    font-size: 1.9vw;
+    line-height: 23px;
+  }
+  .lp_intro-text--1 {
+    margin-bottom: 4rem;
+    margin-right: 10%;
+  }
+  .lp_intro-text--2 {
+    margin-bottom: 2.3rem;
+  }
+}
+@media (min-width: 1200px) {
+  .lp_intro-title {
+    font-size: 2.2vw;
+    margin-bottom: 2rem;
+  }
+  .lp_intro-text {
+    font-size: 1.3vw;
+    line-height: 25px;
+  }
+  .lp_intro-text--1 {
+    margin-bottom: 4rem;
+  }
+  .lp_intro-text--2 {
+    margin-bottom: 6.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .lp_intro-text--2 {
+    margin-bottom: 5rem;
+  }
+}
 .lp_header {
   margin-bottom: 1rem;
 }

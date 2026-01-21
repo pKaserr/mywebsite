@@ -16,7 +16,7 @@
          content: "SM";
       }
       @include breakpoint("md") {
-         content: "MEDI";
+         content: "MD";
       }
       @include breakpoint("lg") {
          content: "LG";

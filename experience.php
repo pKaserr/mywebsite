@@ -54,7 +54,7 @@ require './includes/auth.php';
       <div class="panel">
          
          <div class="tl_dr">Kurzfasssung: Bilderkennung mit KI (CNN) und selbsterstellten Trainingsdaten, Datenpipline von Backend zu Frontend (Python, Webtechnologien, TensorFlow, Flask).</div>
-         <video class="mr-2" style="clear:left; float: left" width="360" controls>
+         <video class="mr-2 mb-2" style="clear:left; float: left" width="360" controls>
             <source src="./assets/videos/TAR.mp4">
             Your browser does not support the video tag.
          </video>
@@ -99,7 +99,7 @@ require './includes/auth.php';
          <div class="tl_dr">Kurzfassung: Entwicklung einer Plattform für Studierende, die sich anonym zu zweit oder in Gruppen treffen können. Von der Ideenfindung, bis hin zu Kunden und Usergesprächen, Projektmanagement und Entwicklung der Webanwendung (React & Laravel).</div> 
          <p style="text-align: justify; line-height:1.7; padding-bottom:1rem;">Die Hochschule Furtwangen ist als Hochschule für angewandte Wissenschaften eine praktisch orientierte Hochschule. Alle Studiengänge in der Fakultät mussten ein Projektstudium absolvieren, das sich über zwei Semester zieht. Hierbei geht es darum, die gelernten Inhalte in einem eigenen, von den Studierenden entwickelten Projekt unter Beweis zu stellen. In einem 6-köpfigen Team wurde hier die eigens konzipierte Webanwendung "Blind MeetUp" entwickelt. Die Idee dahinter war, eine Plattform für Studierende der Hochschule anzubieten, bei der sich die Studierenden anonym zu zweit oder in Gruppen treffen können.</p>
 
-         <video class="ml-2" style="clear:right; float: right" width="720" controls>
+         <video class="ml-2 mb-2" style="clear:right; float: right" width="720" controls>
             <source src="./assets/videos/ImageVideo_Final.mp4">
             Your browser does not support the video tag.
          </video>

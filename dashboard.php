@@ -296,6 +296,7 @@ try {
                 <h4>Zukünftige Funktionen und Projekte</h4>
                 <span>Da auch die Didaktik für mich eine wichtige Rolle spielt, werden hier zukünftig weitere Funktionen und Projekte hinzugefügt. Unter anderem verschiedene Tutorials über die Themen Programmierung, Künstliche Intelligenz und Computer Vision.</span>
             </div>
+        </div>
             <?php include __DIR__ . '/includes/footer.php'; ?>
 </body>
 <!-- <div class="devBtn"></div> -->
