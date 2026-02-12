@@ -17,6 +17,8 @@ session_start();
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
+
+include __DIR__ . '/includes/load_colors.php';
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -24,8 +26,7 @@ if (empty($_SESSION['csrf_token'])) {
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Seite nicht gefunden - 404</title>
-   <link rel="stylesheet" href="./style.css">
+   <link rel="stylesheet" href="<?php echo $base_path; ?>style.css">
    <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
    <link rel="icon" type="image/svg+xml" href="./assets/favicons/favicon.svg" />
    <link rel="shortcut icon" href="./assets/favicons/favicon.ico" />
@@ -41,7 +42,7 @@ if (empty($_SESSION['csrf_token'])) {
    .error-404 h1 {
        font-size: 8rem;
        font-weight: bold;
-       color: #6c757d;
+       color: <?php echo $c_grey; ?>;
        margin: 0;
        line-height: 1;
    }
@@ -49,12 +50,12 @@ if (empty($_SESSION['csrf_token'])) {
    .error-404 h2 {
        font-size: 2rem;
        margin: 20px 0;
-       color: #343a40;
+       color:  <?php echo $c_grey; ?>;
    }
    
    .error-404 p {
        font-size: 1.2rem;
-       color: #6c757d;
+       color: <?php echo $c_grey; ?>;
        margin-bottom: 30px;
    }
    
@@ -77,36 +78,36 @@ if (empty($_SESSION['csrf_token'])) {
    }
    
    .error-btn--primary {
-       background-color: #007bff;
+       background-color:  <?php echo $c1_second; ?>;
        color: white;
    }
    
    .error-btn--primary:hover {
-       background-color: #0056b3;
+       background-color: <?php echo $card_cyan; ?>;
        color: white;
    }
-   
+       
    .error-btn--secondary {
-       background-color: #6c757d;
+       background-color: <?php echo $c_grey; ?>;
        color: white;
    }
    
    .error-btn--secondary:hover {
-       background-color: #545b62;
+       background-color: <?php echo $c_grey; ?>;
        color: white;
    }
    
    .search-suggestions {
        margin: 40px 0;
        padding: 20px;
-       background-color: #f8f9fa;
+       background-color: <?php echo $c2_main; ?>;
        border-radius: 8px;
        text-align: left;
    }
    
    .search-suggestions h3 {
        margin-top: 0;
-       color: #495057;
+       color: <?php echo $c_gey; ?>;
    }
    
    .search-suggestions ul {
@@ -116,11 +117,11 @@ if (empty($_SESSION['csrf_token'])) {
    
    .search-suggestions li {
        margin: 8px 0;
-       color: #6c757d;
+       color: <?php echo $c_grey; ?>;
    }
    
    .search-suggestions a {
-       color: #007bff;
+       color: <?php echo $c1_second; ?>;
        text-decoration: none;
    }
    
@@ -157,7 +158,7 @@ if (empty($_SESSION['csrf_token'])) {
          <p>Die Seite, die Sie suchen, existiert nicht oder wurde verschoben.</p>
          
          <div class="error-actions-404">
-            <a href="index.php" class="error-btn error-btn--primary">Zur Startseite</a>
+            <a href="https://patrick-kaserer.de/" class="error-btn error-btn--primary">Zur Startseite</a>
             <button onclick="history.back()" class="error-btn error-btn--secondary">Zurück</button>
          </div>
          
@@ -168,13 +169,6 @@ if (empty($_SESSION['csrf_token'])) {
                <li>Verwenden Sie die Navigation oder gehen Sie zur <a href="index.php">Startseite</a></li>
                <li>Nutzen Sie den Zurück-Button Ihres Browsers</li>
                <li>Falls Sie über einen Link hierher gekommen sind, ist dieser möglicherweise veraltet</li>
-            </ul>
-            
-            <h3>Häufig gesuchte Seiten:</h3>
-            <ul>
-               <li><a href="index.php">Startseite</a></li>
-               <li><a href="dashboard.php">Dashboard</a> (Login erforderlich)</li>
-               <li><a href="documents.php">Dokumente</a> (Login erforderlich)</li>
             </ul>
          </div>
          

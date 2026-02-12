@@ -46,7 +46,7 @@ $assetBase = (strpos($currentDir, '/admin') !== false) ? '../' : './';
           <img class="site-footer__icon" src="<?= htmlspecialchars($assetBase) ?>assets/img/github_logo.png" alt="GitHub" />
         </a>
         <a class="site-footer__icon-link" href="mailto:kaserer.patrick@gmail.com" aria-label="E-Mail">
-          <img class="site-footer__icon" src="<?= htmlspecialchars($assetBase) ?>assets/img/mail.png" alt="E-Mail" />
+          <img class="site-footer__icon site-footer__icon--mail" src="<?= htmlspecialchars($assetBase) ?>assets/img/mail.png" alt="E-Mail" />
         </a>
       </div>
     </div>

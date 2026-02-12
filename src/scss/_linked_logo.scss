@@ -11,6 +11,7 @@
 .link_logo {
    width: auto;
    height: 22px;
+   background-color: transparent;
    @include breakpoint("xs") {
       height: 50px;
    }

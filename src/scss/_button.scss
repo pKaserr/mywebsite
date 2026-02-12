@@ -5,6 +5,10 @@
    font-family: inherit;
    cursor: pointer;
 
+   &--lp {
+      background-color: rgba($c1-main, 0.5) !important;
+   }
+
    &--main {
       color: $c-white;
       border-radius: 3px;

@@ -4,6 +4,7 @@
     # ClickJacking Protection (X-Frame-Options)
     # Verhindert, dass deine Seite in IFrames anderer Seiten geladen wird.
     Header set X-Frame-Options "DENY"
+    Header always set X-Frame-Options "SAMEORIGIN"
 
     # Content Type Sniffing verhindern
     # Zwingt den Browser, den vom Server gesendeten MIME-Typ zu akzeptieren.
@@ -18,15 +19,13 @@
     # Ein White-Listing-System, das festlegt, woher Skripte und Bilder geladen werden dürfen.
     Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://patrick-kaserer.de;"
 
-    # Erzwinge HTTPS (nur wenn NICHT localhost)
+    # Erzwinge HTTPS
     # Hinweis: Falls du Cloudflare nutzt, prüfe dort auch die Option "Always Use HTTPS"
-    RewriteCond %{HTTP_HOST} !^localhost$ [NC]
-    RewriteCond %{HTTP_HOST} !^127\.0\.0\.1$ [NC]
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
     
     # Basis-Pfad (Root Verzeichnis auf dem Webspace)
-    RewriteBase /mywebsite/
+    RewriteBase /
 
     # cloudflare-Whitelist (cdn-cgi Pfade ignorieren)
     # Damit wird die E-Mail-Protection von Cloudflare nicht an deine index.php weitergeleitet
@@ -41,11 +40,6 @@
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^ - [L]
 
-    # Regel 3: .php-Endung automatisch anfügen (z.B. /dashboard -> dashboard.php)
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME}.php -f
-    RewriteRule ^(.*)$ $1.php [L]
-
-    # Regel 4: Alles andere an die index.php (Dein PHP-Router)
+    # Regel 3: Alles andere an die index.php (Dein PHP-Router)
     RewriteRule ^ index.php [L]
 </IfModule>

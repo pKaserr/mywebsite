@@ -6,6 +6,7 @@ require './includes/auth.php';
 
 <head>
 	<title>Was ist AI?</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./style.css">
 	<script src="./js/ai_demo.js" defer></script>
 	<link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />

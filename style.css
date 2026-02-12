@@ -13698,6 +13698,9 @@ Breakpoint Mixin
   font-family: inherit;
   cursor: pointer;
 }
+.btn--lp {
+  background-color: rgba(39, 39, 39, 0.5) !important;
+}
 .btn--main {
   color: #d3d3d3;
   border-radius: 3px;
@@ -14330,35 +14333,35 @@ header {
 }
 
 .card__red::after {
-  background-color: rgb(107.953125, 35.984375, 33.046875);
+  background-color: #6c2421;
 }
 
 .card__blue::after {
-  background-color: rgb(25.9581589958, 46.410041841, 162.0418410042);
+  background-color: #1a2ea2;
 }
 
 .card__green::after {
-  background-color: rgb(33.5483870968, 70.4516129032, 33.5483870968);
+  background-color: #224622;
 }
 
 .card__purple::after {
-  background-color: rgb(127.6219512195, 35.6707317073, 159.3292682927);
+  background-color: #80249f;
 }
 
 .card__pink::after {
-  background-color: rgb(198.5675675676, 38.4324324324, 144.1216216216);
+  background-color: #c72690;
 }
 
 .card__yellow::after {
-  background-color: rgb(135.7345971564, 125.8767772512, 24.2654028436);
+  background-color: #887e18;
 }
 
 .card__cyan::after {
-  background-color: rgb(28.6033519553, 99.3966480447, 92.2458100559);
+  background-color: #1d635c;
 }
 
 .card__brown::after {
-  background-color: rgb(99.3966480447, 50.7709497207, 28.6033519553);
+  background-color: #63331d;
 }
 
 .lp_intro {
@@ -14724,6 +14727,7 @@ Animations for interactive code elements
 .link_logo {
   width: auto;
   height: 22px;
+  background-color: transparent;
 }
 @media (min-width: 280px) {
   .link_logo {
@@ -15361,7 +15365,8 @@ Dashboard Icons - Timeline & About Me
 .about-me-dashboard-icon:hover:not(.about-me-dashboard-icon--disabled) .about-me-dashboard-text,
 .documents-dashboard-icon:hover:not(.documents-dashboard-icon--disabled) .documents-dashboard-text,
 .medieninformatik-dashboard-icon:hover:not(.medieninformatik-dashboard-icon--disabled) .medieninformatik-dashboard-text,
-.experience-dashboard-icon:hover:not(.experience-dashboard-icon--disabled) .experience-dashboard-text {
+.experience-dashboard-icon:hover:not(.experience-dashboard-icon--disabled) .experience-dashboard-text,
+.timeline-dashboard-icon:hover:not(.timeline-dashboard-icon--disabled) .timeline-dashboard-text {
   color: #0f7dbd;
 }
 
@@ -16185,6 +16190,9 @@ Dashboard Icons - Timeline & About Me
   height: 18px;
   display: block;
 }
+.site-footer__icon--mail {
+  width: 24px;
+}
 
 #char-count {
   margin: 0;
@@ -16363,4 +16371,12 @@ Dashboard Icons - Timeline & About Me
   .no-access-banner {
     font-size: 1.2rem !important;
   }
+}
+
+.particleCanvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }

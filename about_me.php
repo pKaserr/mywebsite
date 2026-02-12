@@ -9,6 +9,7 @@ require './includes/db_connect.php';
 <head>
    <title>Dashboard - About Me</title>
    <link rel="stylesheet" href="./style.css">
+   <script src="./js/bg_net_graph.js" defer></script>
    <script src="./js/accordion.js" defer></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
    <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
@@ -20,12 +21,15 @@ require './includes/db_connect.php';
 </head>
 
 <body>
-   <div class="nav">
-      <a href="logout"><button class="btn btn--main btn--nav">Abmelden</button></a>
-      <a href="dashboard"><button class="btn btn--main btn--nav">Zurück</button></a>
-   </div>
-
+   <nav> 
+      <div class="nav">
+         <a href="logout"><button class="btn btn--main btn--nav">Abmelden</button></a>
+         <a href="dashboard"><button class="btn btn--main btn--nav">Zurück</button></a>
+      </div>
+   </nav>
+   <main>
    <div class="container_dashboard">
+      <canvas class="particleCanvas"></canvas>
       <!-- Hero Section -->
       <div class="about-hero">
          <div class="hero-content">
@@ -120,6 +124,7 @@ require './includes/db_connect.php';
                      <li><strong>Neural Radiance Fields (Masterthesis):</strong> Approximiert eine fotorealistische 3D-Repräsentation einer echten Szene, in der sich in Echtzeit unabhängig bewegt werden kann.</li>
                      <li><strong>SILOG (Safe Intralogistics):</strong> Entwicklung eines Systems zur Gefahrenprävention, bei dem ein trainiertes Modell erkennt, wenn sich Personen unerlaubt oder gefährlich auf einem Förderband bewegen, um in solchen Fällen automatisiert das Band zu stoppen oder eine Alarmmeldung auszulösen.</li>
                      <li><strong>SALT (Smart automatic loading of Trucks):</strong> Entwicklung eines KI-gestützten Systems zur automatisierten Entladung von Gitterboxen. Ziel war es, ein neuronales Netz zu trainieren, das unterschiedliche Objekte in einer Gitterbox erkennt und die Be- und Entladung entsprechend steuert (nur Recherche).</li>
+                     <li><strong>Diese Website:</strong> Hinter dieser Website steckt KI-Power. Von einem eigenen LLM, welches Fragen beantwortet, über die automatische Erstellung von Bewerbungsunterlagen. Aktuell arbeite ich daran, diese Website zu erweitern. Ziel ist es, ein Chatbot zu verfügung zu stellen, welches Fragen über mich beantwortet, automatische Stellen zu suchen und direkt Bewerbungsunterlagen zu erstellen, welche dann von mir lediglich noch überprüft werden müssen.</li>
                   </ul>
                </div>
             </div>
@@ -202,6 +207,7 @@ require './includes/db_connect.php';
          </div>
       </div>
    </div>
+   </main>
    <?php include __DIR__ . '/includes/footer.php'; ?>
 </body>
 

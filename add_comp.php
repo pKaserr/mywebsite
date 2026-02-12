@@ -134,7 +134,6 @@ $pw = randomHash(8);
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Unternehmen Hinzufügen</title>
    <script src="./js/add_comp.js" defer></script>
-   <script src="./js/chat.js" defer></script>
    <link rel="stylesheet" href="./style.css">
    <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
    <link rel="icon" type="image/svg+xml" href="./assets/favicons/favicon.svg" />

@@ -36,6 +36,7 @@ try {
     <title>Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <script src="./js/bg_net_graph.js" defer></script>
     <script src="./js/accordion.js" defer></script>
     <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./assets/favicons/favicon.svg" />
@@ -45,53 +46,60 @@ try {
 </head>
 
 <body>
-    <div class="nav">
-        <a href="logout"><button class="btn btn--main btn--nav">Abmelden</button></a>
-        <a href="dashboard"><button class="btn btn--main btn--nav">Zurück</button></a>
-    </div>
-    <div class="container_dashboard">
+    <nav>
+        <div class="nav">
+            <a href="logout"><button class="btn btn--main btn--nav">Abmelden</button></a>
+            <a href="dashboard"><button class="btn btn--main btn--nav">Zurück</button></a>
+        </div>
+    </nav>
+    <main>
+        <div class="container_dashboard">
+            <canvas class="particleCanvas"></canvas>
+            <h1>Willkommen bei den Dokumenten, <?= htmlspecialchars($user_name) ?></h1>
+            <p class="mb-3">Unten finden Sie nun Bewerbungsunterlagen und Zeugnisse als einzelne Dateien.</p>
 
-        <h1>Willkommen bei den Dokumenten, <?= htmlspecialchars($user_name) ?></h1>
-        <p class="mb-3">Unten finden Sie nun Bewerbungsunterlagen und Zeugnisse als einzelne Dateien.</p>
-
-        <table class="documents-table mb-2">
-            <thead>
-                <tr>
-                    <th>Datei</th>
-                    <th>Größe</th>
-                    <th>Beschreibung</th>
-                    <th>Aktion</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php if (!empty($documents)) : 
+            <table class="documents-table mb-2">
+                <thead>
+                    <tr>
+                        <th>Datei</th>
+                        <th>Größe</th>
+                        <th>Beschreibung</th>
+                        <th>Aktion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if (!empty($documents)):
                         $count = count($documents);
-                        foreach ($documents as $index => $document) :
-                        $border = $index === $count - 1 ? 'class="no-border"' : "" ?>
+                        foreach ($documents as $index => $document):
+                            $border = $index === $count - 1 ? 'class="no-border"' : "" ?>
 
                             <tr <?= $border ?>>
                                 <td class="documents-table__name">
-                                    <a class="table_desc" href="download.php?file=<?= $document['file_hash'] ?>"><?= htmlspecialchars($document['file_name']) ?></a>
+                                    <a class="table_desc"
+                                        href="download.php?file=<?= $document['file_hash'] ?>"><?= htmlspecialchars($document['file_name']) ?></a>
                                 </td>
-                                <td class="documents-table__size"><?= number_format((float)$document['file_size']) ?> KB</td>
+                                <td class="documents-table__size"><?= number_format((float) $document['file_size']) ?> KB</td>
                                 <td class="documents-table__desc"><?= htmlspecialchars($document['file_desc']) ?></td>
                                 <td class="documents-table__action">
-                                    <a class="table_desc" href="download.php?file=<?= $document['file_hash'] ?>" aria-label="Download <?= htmlspecialchars($document['file_name']) ?>">
-                                        <img class="documents-table__icon" src="./assets/svg/download-button.svg" alt="Download" />
+                                    <a class="table_desc" href="download.php?file=<?= $document['file_hash'] ?>"
+                                        aria-label="Download <?= htmlspecialchars($document['file_name']) ?>">
+                                        <img class="documents-table__icon" src="./assets/svg/download-button.svg"
+                                            alt="Download" />
                                     </a>
                                 </td>
                             </tr>
-                            
-                    <?php endforeach; ?>
-                <?php else : ?>
+
+                        <?php endforeach; ?>
+                    <?php else: ?>
                         <tr>
                             <td colspan="4" class="documents-table__empty">Keine Dokumente vorhanden.</td>
                         </tr>
-                <?php endif; ?>
-            </tbody>
-        </table>
-    </div>
-<?php include __DIR__ . '/includes/footer.php'; ?>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <?php include __DIR__ . '/includes/footer.php'; ?>
 </body>
 
 </html>

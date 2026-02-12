@@ -4,15 +4,74 @@ if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 
+// 1. Den angeforderten Pfad holen (z.B. "/mywebsite/dashboard")
+$request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+// 2. Den Ordner holen, in dem das Skript liegt (z.B. "/mywebsite")
+$script_name = dirname($_SERVER['SCRIPT_NAME']);
+
+// 3. Den Ordner-Teil aus der Anfrage entfernen, um den "echten" Pfad zu bekommen
+// Wir ersetzen Backslashes (Windows) durch Slashes, um sicherzugehen
+$base_path = str_replace('\\', '/', $script_name);
+$request_path = $request_uri;
+
+// Wenn wir in einem Unterordner sind und dieser im Request vorkommt, entfernen wir ihn
+if ($base_path !== '/' && strpos($request_uri, $base_path) === 0) {
+    $request_path = substr($request_uri, strlen($base_path));
+}
+
+// Optional: Trailing Slash entfernen (außer es ist nur "/")
+if ($request_path !== '/' && substr($request_path, -1) === '/') {
+    $request_path = rtrim($request_path, '/');
+}
+
+// Fallback, falls der String leer wird (passiert manchmal beim Root)
+if ($request_path === '') {
+    $request_path = '/';
+}
+
+// --- DEBUGGING ---
+// Wenn es immer noch nicht geht, kommentiere die nächste Zeile aus,
+// dann siehst du sofort auf dem Bildschirm, was falsch läuft:
+// echo "Base: '$base_path' <br> Request: '$request_path'"; exit;
+
+
+// Deine Whitelist (Jetzt sauber, ohne Projektordner-Sorgen)
+$valid_routes = [
+    '/',
+    '/index',
+    '/index.php',
+    '/dashboard',
+    '/dashboard.php',
+    '/logs',
+    '/experience',
+    '/experience.php',
+    '/documents',
+    '/documents.php',
+    '/cdn-cgi/l/email-protection'
+];
+
+// Prüfung
+if (!in_array($request_path, $valid_routes)) {
+    http_response_code(200);
+    if (file_exists(__DIR__ . '/404.php')) {
+        require_once __DIR__ . '/404.php';
+    } else {
+        echo "404 Not Found (Pfad war: " . htmlspecialchars($request_path) . ")";
+    }
+    exit;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <title>Patrick Kaserer</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patrick Kaserer</title>
+    <script defer src="./js/bg_net_graph.js"></script>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./assets/favicons/favicon.svg" />
@@ -23,12 +82,15 @@ if (empty($_SESSION['csrf_token'])) {
 
 <body>
     <main>
+        <canvas class="particleCanvas"></canvas>
         <div class="container">
             <div class="lp_intro">
                 <div class="lp_intro__wrapper1">
                     <div>
                         <h1 class="lp_intro-title lp_intro-title--1">DIGITAL UND SICHER</h1>
-                        <p class="lp_intro-text lp_intro-text--1">Digitalisierung und Sicherheit sind einer der wichtigsten Aspekte wirtschaftlicher Geschäftsprozesse. Sowohl für den Schutz von geistigem Eigentum als auch eine bessere Zugänglichkeit für Kunden.</p>
+                        <p class="lp_intro-text lp_intro-text--1">Digitalisierung und Sicherheit sind einer der
+                            wichtigsten Aspekte wirtschaftlicher Geschäftsprozesse. Sowohl für den Schutz von geistigem
+                            Eigentum als auch eine bessere Zugänglichkeit für Kunden.</p>
                     </div>
                     <img class="lp_intro-png lp_intro-png--1" src="./assets/png/shield.png" alt="AI-Shield">
                 </div>
@@ -36,7 +98,10 @@ if (empty($_SESSION['csrf_token'])) {
                     <img class="lp_intro-png lp_intro-png--2" src="./assets/png/chaos.png" alt="AI-Chaos">
                     <div>
                         <h1 class="lp_intro-title lp_intro-title--2">VON CHAOS ZU ORDNUNG</h1>
-                        <p class="lp_intro-text lp_intro-text--2">Mit einem M.Sc. in Medieninformatik und den Fokus auf KI, Konzeption, Forschung, XR, Software Architektur und Didaktik, kann ich in allen Bereichen, von bestimmen der Anforderungen über die Entwicklung bis hin zu Schulungen und Weiterbildung unterstützen. Ich schaffe Ordnung im digitalem Chaos.</p>
+                        <p class="lp_intro-text lp_intro-text--2">Mit einem M.Sc. in Medieninformatik und den Fokus auf
+                            KI, Konzeption, Forschung, XR, Software Architektur und Didaktik, kann ich in allen
+                            Bereichen, von der Festlegung der Anforderungen über die Entwicklung bis hin zu Schulungen
+                            und Weiterbildung unterstützen. Ich schaffe Ordnung im digitalem Chaos.</p>
                     </div>
                 </div>
             </div>
@@ -91,14 +156,18 @@ if (empty($_SESSION['csrf_token'])) {
             </div>
             <form class="display-flex flex-column login" action="check_login.php" method="POST">
                 <div class="display-flex flex-justify-between">
-                    <div class="mr-10-px login--input"><label for="user_name">Benutzername</label><input type="text" placeholder="Login Name" id="user_name" name="user_name" required></div>
-                    <div class="ml-10-px login--input"><label for="password">Passwort</label><input class="" type="password" placeholder="Passwort" id="password" name="password" required><input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>"></div>
-                </div><button class="button_form" type="submit">Anmelden</button>
+                    <div class="mr-10-px login--input"><label for="user_name">Benutzername</label><input type="text"
+                            placeholder="Login Name" id="user_name" name="user_name" required></div>
+                    <div class="ml-10-px login--input"><label for="password">Passwort</label><input class=""
+                            type="password" placeholder="Passwort" id="password" name="password" required><input
+                            type="hidden" name="csrf_token"
+                            value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>"></div>
+                </div><button class="button_form btn--lp" type="submit">Anmelden</button>
             </form>
             <div class="guest-login-section">
                 <p class="text-center">oder</p>
                 <form class="mb-2 display-flex flex-column login" action="guest_login.php" method="POST">
-                    <button class="button_form" type="submit">Als Gast anmelden</button>
+                    <button class="button_form btn--lp" type="submit">Als Gast anmelden</button>
                 </form>
             </div>
             <div class="link_logo--wrapper">
@@ -107,7 +176,8 @@ if (empty($_SESSION['csrf_token'])) {
                 </a>
                 <a href=https://github.com/pKaserr>
                     <img class="link_logo link_logo--github" src="./assets/img/github_logo.png" alt=Github></a>
-                <a href="mailto:mail@patrick-kaserer.de"><img class="link_logo link_logo--mail" src=./assets/img/mail.png alt=Mail></a>
+                <a href="mailto:mail@patrick-kaserer.de"><img class="link_logo link_logo--mail"
+                        src=./assets/img/mail.png alt=Mail></a>
             </div>
         </div>
     </main>
