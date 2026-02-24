@@ -91,7 +91,7 @@ require './includes/auth.php';
          </div>
 
 
-         <button class="accordion accordion--bg">Masterthesis - Synthesized Sensor Data from Neural Radiance
+         <button id="masterthesis" class="accordion accordion--bg">Masterthesis - Synthesized Sensor Data from Neural Radiance
             Fields</button>
          <div class="panel">
             <div class="tl_dr">Kurzfasssung: Wie kann in einem Neural Radiance Field (NeRF) synthetische LiDAR-Sensor

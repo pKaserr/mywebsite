@@ -1,0 +1,88 @@
+
+/* Dashboard Icons for Tutorials and AI */
+.tutorials-dashboard-icon,
+.ai-dashboard-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 20px;
+    background-color: #2a2a2a;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.tutorials-dashboard-icon:hover,
+.ai-dashboard-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.tutorials-dashboard-icon svg,
+.ai-dashboard-icon svg {
+    width: 50%;
+    height: 50%;
+    margin-bottom: 1rem;
+    z-index: 2;
+}
+
+.tutorials-dashboard-text,
+.ai-dashboard-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    z-index: 2;
+    text-align: center;
+}
+
+/* Specific Styles for Tutorials - Gradient Green */
+.tutorials-dashboard-icon {
+    background: linear-gradient(135deg, #2e6c48 0%, #1a4d2e 100%);
+}
+
+/* Specific Styles for AI - Gradient Blue */
+.ai-dashboard-icon {
+    background: linear-gradient(135deg, #0f7dbd 0%, #0a5a8a 100%);
+}
+
+
+/* Sub-Dashboard Icons */
+.tutorials-icon-basics, .tutorials-icon-advanced, .tutorials-icon-more,
+.ai-dashboard-icon-intro, .ai-dashboard-icon-ml, .ai-dashboard-icon-more {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 15px;
+    background-color: #333;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    margin: 1rem;
+}
+
+.tutorials-icon-basics:hover, .tutorials-icon-advanced:hover, .tutorials-icon-more:hover,
+.ai-dashboard-icon-intro:hover, .ai-dashboard-icon-ml:hover, .ai-dashboard-icon-more:hover {
+    transform: translateY(-5px);
+    background-color: #444;
+}
+
+.tutorials-icon-basics svg, .tutorials-icon-advanced svg, .tutorials-icon-more svg,
+.ai-dashboard-icon-intro svg, .ai-dashboard-icon-ml svg, .ai-dashboard-icon-more svg {
+    width: 50%;
+    height: 50%;
+    margin-bottom: 0.5rem;
+}
+
+.tutorials-text, .ai-dashboard-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #eee;
+    text-align: center;
+}

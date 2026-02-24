@@ -35,6 +35,7 @@ try {
     <title>Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style_additions.css">
     <script src="./js/bg_net_graph.js" defer></script>
     <script src="./js/dashboard.js" defer></script>
     <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
@@ -58,7 +59,8 @@ try {
                     <h4 class="container__title--text" data-translate="dashboard.welcome_guest">Willkommen Gast</h4>
                 <?php } else { ?>
                     <h4 class="container__title--text" data-translate="dashboard.welcome">Willkommen im Dashboard,
-                        <?= htmlspecialchars($username) ?></h4>
+                        <?= htmlspecialchars($username) ?>
+                    </h4>
                 <?php } ?>
                 <?php if ($is_guest) { ?>
                     <span data-translate="dashboard.intro_guest">Hier können Sie einen ersten Eindruck von meinen
@@ -328,8 +330,8 @@ try {
                                 <a class="boxWrapper__a" href="admin/relations.php">Zuweisungen verwalten</a>
                         </a>
                         <a class="boxWrapper__a" href="admin/access_logs.php">Access Logs</a></a>
-                        <a class="boxWrapper__a" href="ai_demos">AI-Demos</a></a>
                     <?php } ?>
+
                     <div class="mb-2">
                         <!-- Benötige Icon hier -->
                         <h4>Du willst digitalisieren? Kontaktiere mich!</h4>

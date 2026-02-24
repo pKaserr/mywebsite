@@ -1,0 +1,11 @@
+.code {
+    &-box {
+        background-color: $c-black;
+        color: $c-white;
+        padding: 10px;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 0.9em;
+        margin-top: 0.5rem;
+    }
+}

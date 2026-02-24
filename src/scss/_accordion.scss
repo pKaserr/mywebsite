@@ -72,7 +72,6 @@
     p {
       line-height: 1.7;
       margin-bottom: 1.5rem;
-      color: $c3-second;
       font-size: 1.05rem;
       
       &:last-child {
@@ -84,17 +83,17 @@
     //   color: $c-white;
     // }
     
-    ul {
+    ul, ol {
       margin: 1rem 0;
       padding-left: 1.5rem;
       
       li {
         margin-bottom: 1rem;
         line-height: 1.6;
-        color: $c2-main;
+        color: $c5-main;
         
         strong {
-          color: $c1-second;
+          color: $c2-second;
         }
       }
     }

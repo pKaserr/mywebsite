@@ -43,6 +43,8 @@ $valid_routes = [
     '/index.php',
     '/dashboard',
     '/dashboard.php',
+    '/ai_dashboard',
+    '/ai_dashboard.php',
     '/logs',
     '/experience',
     '/experience.php',
@@ -152,7 +154,10 @@ if (!in_array($request_path, $valid_routes)) {
                         <p class="lp_name-white">KASERER</p>
                     </div>
                 </div>
-                <!-- <div class="banner">Page Is Work In Progess! </div> -->
+                <p>Dich interessiert ein Anfängerguide über KI? Dann klick hier: <br>
+                    <a href="ai_dashboard">KI-Bereich</a><br>
+                    Die Seite ist noch im Aufbau und wird stetig erweitert.
+                </p>
             </div>
             <form class="display-flex flex-column login" action="check_login.php" method="POST">
                 <div class="display-flex flex-justify-between">
