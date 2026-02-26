@@ -198,8 +198,8 @@
             </div>
 
             <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
-                <a href="ai_04_training.php"><button class="btn btn--main">&larr; Zurück</button></a>
-                <a href="ai_06_nlp.php"><button class="btn btn--main">Weiter: Sprachmodelle & LLMs &rarr;</button></a>
+                <a href="ai_04_learning.php"><button class="btn btn--main">&larr; Zurück</button></a>
+                <a href="ai_06_transformer.php"><button class="btn btn--main">Weiter: Transformer &rarr;</button></a>
             </div>
         </div>
     </main>

@@ -97,8 +97,8 @@
             </div>
             
             <div class="mt-1" style="display: flex; justify-content: space-between;">
-                <a href="ai_05_computer_vision.php"><button class="btn btn--main">&larr; Zurück</button></a>
-                <a href="ai_07_llm_rag.php"><button class="btn btn--main">Weiter: Large Language Models & RAG &rarr;</button></a>
+                <a href="ai_05_vision.php"><button class="btn btn--main">&larr; Zurück</button></a>
+                <a href="ai_dashboard.php"><button class="btn btn--main">Zurück zur Übersicht</button></a>
             </div>
         </div>
     </main>

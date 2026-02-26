@@ -122,7 +122,7 @@
             </div>
             <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
                 <a href="ai_03_architecture.php"><button class="btn btn--main">&larr; Zurück</button></a>
-                <a href="ai_dashboard.php"><button class="btn btn--main">Zurück zur Übersicht</button></a>
+                <a href="ai_05_vision.php"><button class="btn btn--main">Weiter: Computer Vision &rarr;</button></a>
             </div>
         </div>
     </main>
