@@ -12,8 +12,8 @@
 <body>
     <nav>
         <div class="nav">
-            <a href="ai_dashboard.php"><button class="btn btn--main btn--nav">Zurück zur Übersicht</button></a>
-            <a href="logout"><button class="btn btn--main btn--nav">Abmelden</button></a>
+            <a href="index"><button class="btn btn--main btn--nav">Zurück zur Startseite</button></a>
+            <a href="ai_dashboard.php"><button class="btn btn--main btn--nav">Zur Übersicht</button></a>
         </div>
     </nav>
     <main>
@@ -62,7 +62,8 @@
                     <p>Stell dir den Fehler (Loss) als ein riesiges Gebirge vor. Ganz oben auf dem Berg
                         ist der Fehler gigantisch. Unten im Tal ist der Fehler null (perfekte Vorhersage). Das Netz
                         steht nun blind im Nebel auf diesem Berg und will ins Tal. Spingst du zu weit (die Learning
-                        Rate ist zu hoch), landest du hinter dem niedgrigsten Tal. Spingst du zu wenig, steckst du davor fest.</p>
+                        Rate ist zu hoch), landest du hinter dem niedgrigsten Tal. Spingst du zu wenig, steckst du davor
+                        fest.</p>
                     <div class="ai-img-wrapper mt-1">
                         <img src="assets/png/gradient_descent.png" style="max-width: 90%; " alt="Gradient Descent">
                     </div>
@@ -104,12 +105,13 @@
                                     Dienstag wäre ein Garant für Sonne!"</em></li>
                             <li class="mt-1"><strong>Die Korrektur (Update):</strong> Der Optimizer (der
                                 Mechaniker des Netzes) schnappt sich die Gewichte und passt sie minimal an:<br>
-                                <span class="c-string">W<sub>1</sub></span> (Bewölkung) wird <strong>erhöht</strong>.<br>
+                                <span class="c-string">W<sub>1</sub></span> (Bewölkung) wird
+                                <strong>erhöht</strong>.<br>
                                 <span class="c-string">W<sub>2</sub></span> (Dienstag) wird <strong>verringert</strong>.
                             </li>
                         </ol>
                     </div>
- 
+
                     <div class="ai-card--notice mt-1">
                         <p><strong>Das ist der gesamte Zauber:</strong> Forward Pass
                             (Vorhersagen) &rarr; Loss berechnen (Fehler messen) &rarr; Backpropagation (Schuld
