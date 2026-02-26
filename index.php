@@ -86,27 +86,6 @@ if (!in_array($request_path, $valid_routes)) {
     <main>
         <canvas class="particleCanvas"></canvas>
         <div class="container">
-            <div class="lp_intro">
-                <div class="lp_intro__wrapper1">
-                    <div>
-                        <h1 class="lp_intro-title lp_intro-title--1">DIGITAL UND SICHER</h1>
-                        <p class="lp_intro-text lp_intro-text--1">Digitalisierung und Sicherheit sind einer der
-                            wichtigsten Aspekte wirtschaftlicher Geschäftsprozesse. Sowohl für den Schutz von geistigem
-                            Eigentum als auch eine bessere Zugänglichkeit für Kunden.</p>
-                    </div>
-                    <img class="lp_intro-png lp_intro-png--1" src="./assets/png/shield.png" alt="AI-Shield">
-                </div>
-                <div class="lp_intro__wrapper2">
-                    <img class="lp_intro-png lp_intro-png--2" src="./assets/png/chaos.png" alt="AI-Chaos">
-                    <div>
-                        <h1 class="lp_intro-title lp_intro-title--2">VON CHAOS ZU ORDNUNG</h1>
-                        <p class="lp_intro-text lp_intro-text--2">Mit einem M.Sc. in Medieninformatik und den Fokus auf
-                            KI, Konzeption, Forschung, XR, Software Architektur und Didaktik, kann ich in allen
-                            Bereichen, von der Festlegung der Anforderungen über die Entwicklung bis hin zu Schulungen
-                            und Weiterbildung unterstützen. Ich schaffe Ordnung im digitalem Chaos.</p>
-                    </div>
-                </div>
-            </div>
             <div class="lp_header">
                 <div class="lp_header__container">
                     <div class="lp_header__img">
@@ -152,6 +131,30 @@ if (!in_array($request_path, $valid_routes)) {
                     <div>
                         <p class="lp_name-black">KASERER</p>
                         <p class="lp_name-white">KASERER</p>
+                    </div>
+                </div>
+                <div class="lp_intro">
+                    <div class="lp_intro__wrapper1">
+                        <div>
+                            <h1 class="lp_intro-title lp_intro-title--1">DIGITAL UND SICHER</h1>
+                            <p class="lp_intro-text lp_intro-text--1">Digitalisierung und Sicherheit sind einer der
+                                wichtigsten Aspekte wirtschaftlicher Geschäftsprozesse. Sowohl für den Schutz von
+                                geistigem
+                                Eigentum als auch eine bessere Zugänglichkeit für Kunden.</p>
+                        </div>
+                        <img class="lp_intro-png lp_intro-png--1" src="./assets/png/shield.png" alt="AI-Shield">
+                    </div>
+                    <div class="lp_intro__wrapper2">
+                        <img class="lp_intro-png lp_intro-png--2" src="./assets/png/chaos.png" alt="AI-Chaos">
+                        <div>
+                            <h1 class="lp_intro-title lp_intro-title--2">VON CHAOS ZU ORDNUNG</h1>
+                            <p class="lp_intro-text lp_intro-text--2">Mit einem M.Sc. in Medieninformatik und den Fokus
+                                auf
+                                KI, Konzeption, Forschung, XR, Software Architektur und Didaktik, kann ich in allen
+                                Bereichen, von der Festlegung der Anforderungen über die Entwicklung bis hin zu
+                                Schulungen
+                                und Weiterbildung unterstützen. Ich schaffe Ordnung im digitalem Chaos.</p>
+                        </div>
                     </div>
                 </div>
                 <p>Dich interessiert ein Anfängerguide über KI? Dann klick hier: <br>

@@ -57,28 +57,21 @@
                         <span class="ai-module-desc">Backpropagation, Loss Functions & Gradient Descent.</span>
                     </a>
 
-                    <a href="#" class="ai-module-card ai-module-card--disabled">
-
-                        <span class="wip-banner">In Arbeit ...</span>
-
+                    <a href="ai_05_vision.php" class="ai-module-card">
                         <span class="ai-module-number">05</span>
                         <span class="ai-module-title">Computer Vision</span>
                         <span class="ai-module-desc">Wie Maschinen sehen. CNNs & Gesichtserkennung.</span>
                     </a>
 
-                    <a href="#" class="ai-module-card ai-module-card--disabled">
-
+                    <a href="ai_06_transformer.php" class="ai-module-card">
                         <span class="wip-banner">In Arbeit ...</span>
-
                         <span class="ai-module-number">06</span>
                         <span class="ai-module-title">Transformer Revolution</span>
                         <span class="ai-module-desc">Self-Attention & das Ende der Rekursion.</span>
                     </a>
 
                     <a href="#" class="ai-module-card ai-module-card--disabled">
-
-                        <span class="wip-banner">In Arbeit ...</span>
-
+                        <span class="wip-banner">In Vorbereitung ...</span>
                         <span class="ai-module-number">07</span>
                         <span class="ai-module-title">LLMs & Reasoning</span>
                         <span class="ai-module-desc">Embeddings, Training & Chain-of-Thought.</span>
@@ -86,7 +79,7 @@
 
                     <a href="#" class="ai-module-card ai-module-card--disabled">
 
-                        <span class="wip-banner">In Arbeit ...</span>
+                        <span class="wip-banner">In Vorbereitung ...</span>
 
                         <span class="ai-module-number">08</span>
                         <span class="ai-module-title">Das Ökosystem</span>
@@ -95,7 +88,7 @@
 
                     <a href="#" class="ai-module-card ai-module-card--disabled">
 
-                        <span class="wip-banner">In Arbeit ...</span>
+                        <span class="wip-banner">In Vorbereitung ...</span>
 
                         <span class="ai-module-number">09</span>
                         <span class="ai-module-title">Vertrauen & XAI</span>
