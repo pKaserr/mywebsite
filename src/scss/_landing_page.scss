@@ -8,15 +8,15 @@
          &__wrapper1 {
             display: flex;
             margin-top: 1.5rem;
-            margin-bottom: 1.5rem ;
+            margin-bottom: 1.5rem;
          }
 
          &__wrapper2 {
             display: flex;
-            margin-bottom: 1.5rem ;
+            margin-bottom: 1.5rem;
          }
 
-         &-png{
+         &-png {
             // position: relative;
             width: 25%;
             height: 25%;
@@ -24,6 +24,7 @@
             &--1 {
                margin-left: 10%;
             }
+
             &--2 {
                margin-right: 10%;
             }
@@ -36,6 +37,7 @@
             &--1 {
                margin-top: 1rem;
             }
+
             &--2 {
                margin-top: 1rem;
                text-align: right;
@@ -73,6 +75,7 @@
          &-title {
             font-size: 2.6vw;
             line-height: 10px;
+
             &--1 {
                margin-top: 2rem;
             }
@@ -81,9 +84,11 @@
          &-text {
             font-size: 2.1vw;
             line-height: 20px;
+
             &--1 {
                margin-bottom: 3.2rem;
             }
+
             &--2 {
                margin-bottom: 2.3rem;
             }
@@ -94,6 +99,7 @@
          &__wrapper1 {
             margin-bottom: 4rem;
          }
+
          &__wrapper2 {
             margin-bottom: 4rem;
          }
@@ -101,10 +107,12 @@
          &-title {
             font-size: 2.6vw;
             line-height: 10px;
+
             &--1 {
                margin-top: 3rem;
             }
          }
+
          &-text {
             font-size: 1.9vw;
             line-height: 23px;
@@ -129,16 +137,41 @@
          &-text {
             font-size: 1.3vw;
             line-height: 25px;
+
             &--1 {
                margin-bottom: 4rem;
             }
+
             &--2 {
                margin-bottom: 6.5rem;
             }
          }
+
+         &-text {
+            &--2 {
+               margin-bottom: 5rem;
+            }
+         }
       }
 
-      @include breakpoint("xl") {
+      @include breakpoint("xxl") {
+         &-title {
+            font-size: 2.5rem;
+         }
+
+         &-text {
+            font-size: 2rem;
+            line-height: 2rem;
+
+            &--1 {
+               margin-bottom: 4rem;
+            }
+
+            &--2 {
+               margin-bottom: 6.5rem;
+            }
+         }
+
          &-text {
             &--2 {
                margin-bottom: 5rem;
@@ -188,63 +221,18 @@
             box-shadow: 0 4px 15px rgba($c-black, 0.8);
             align-self: center;
          }
-         // @include breakpoint("md") {
-         //    width: 80%;
-         // }
 
          @include breakpoint("lg") {
-            // align-self: flex-start;
             width: 95%;
          }
-
-         // @include breakpoint("xl") {
-         //    width: 95%;
-         // }
 
          @include breakpoint("xxl") {
             width: 100%;
          }
       }
 
-      // &__pre-hw {
-      //    display: none;
-
-      //    @include breakpoint("sm") {
-      //       display: flex;
-      //       font-size: 2.6vw;
-      //       line-height: 12px;
-      //    }
-
-      //    @include breakpoint("md") {
-      //       font-size: 2.1vw;
-      //       line-height: 15px;
-      //    }
-
-      //    @include breakpoint("lg") {
-      //       font-size: 1.03rem;
-      //       line-height: 10px;
-      //    }
-
-      //    @include breakpoint("xl") {
-      //       font-size: 1.0rem;
-      //       line-height: 11px;
-      //    }
-
-      //    @include breakpoint("xxl") {
-      //       font-size: 1.2rem;
-      //       line-height: 12px;
-      //    }
-      // }
-
       &__pre-code {
          display: none;
-
-         // @include breakpoint("sm") {
-         //    display: inline-block;
-         //    font-size: 2vw;
-         //    margin-top: 0;
-         //    margin-bottom: 3rem;
-         // }
 
          @include breakpoint("md") {
             font-size: 2.2vw;
@@ -282,10 +270,12 @@ Animations for interactive code elements
 -------------------------------------------------- */
 
 @keyframes blink-cursor {
+
    0%,
    50% {
       opacity: 1;
    }
+
    51%,
    100% {
       opacity: 0;
@@ -293,10 +283,12 @@ Animations for interactive code elements
 }
 
 @keyframes pulse-glow {
+
    0%,
    100% {
       text-shadow: 0 0 5px rgba($c1-second, 0.3);
    }
+
    50% {
       text-shadow:
          0 0 10px rgba($c1-second, 0.6),
@@ -308,6 +300,7 @@ Animations for interactive code elements
    0% {
       width: 0;
    }
+
    100% {
       width: 100%;
    }

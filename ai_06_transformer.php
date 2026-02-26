@@ -1,7 +1,3 @@
-<?php
-require './includes/auth.php';
-require './includes/db_connect.php';
-?>
 <!DOCTYPE html>
 <html>
 
@@ -51,8 +47,6 @@ require './includes/db_connect.php';
                         </ul>
                     </div>
 
-                    
-
                     <hr>
 
                     <h3 class="c1-second mt-1">Phase 2: Der Paradigmenwechsel (Attention Is All You Need)</h3>
@@ -87,8 +81,6 @@ require './includes/db_connect.php';
                             <p>Das Netz lernt durch Backpropagation, dass die Eigenschaft "müde" stark mit Lebewesen ("Tier") und schwach mit Asphalt ("Straße") korreliert. Die mathematische Verbindung (der Attention-Score) zwischen "es" und "Tier" leuchtet stark auf, die Verbindung zu "Straße" bleibt dunkel.</p>
                         </div>
                     </div>
-
-                    
 
                     <hr>
 

@@ -13745,6 +13745,21 @@ Breakpoint Mixin
   background-color: transparent;
   border: solid 2px #0f7dbd;
 }
+.btn--ki {
+  width: 100%;
+  margin: 0.3rem 0;
+  text-decoration: none !important;
+  color: #d3d3d3;
+  border-radius: 5px;
+  padding: 1.3rem;
+  background-color: #272727;
+  border: solid 2px;
+}
+.btn--ki:hover {
+  color: #0f7dbd;
+  background-color: transparent;
+  border: solid 2px #0f7dbd;
+}
 .btn--devBtn {
   color: #d3d3d3;
   border-radius: 12px;
@@ -14952,8 +14967,24 @@ header {
   .lp_intro-text--2 {
     margin-bottom: 6.5rem;
   }
+  .lp_intro-text--2 {
+    margin-bottom: 5rem;
+  }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1920px) {
+  .lp_intro-title {
+    font-size: 2.5rem;
+  }
+  .lp_intro-text {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .lp_intro-text--1 {
+    margin-bottom: 4rem;
+  }
+  .lp_intro-text--2 {
+    margin-bottom: 6.5rem;
+  }
   .lp_intro-text--2 {
     margin-bottom: 5rem;
   }

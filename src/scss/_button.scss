@@ -52,6 +52,23 @@
       }
    }
 
+   &--ki {
+      width: 100%;
+      margin: 0.3rem 0;
+      text-decoration: none !important;
+      color: $c-white;
+      border-radius: 5px;
+      padding: 1.3rem;
+      background-color: $c1-main;
+      border: solid 2px;
+
+      &:hover {
+         color: $c1-second;
+         background-color: transparent;
+         border: solid 2px $c1-second;
+      }
+   }
+
    &--devBtn {
       color: $c-white;
       border-radius: 12px;

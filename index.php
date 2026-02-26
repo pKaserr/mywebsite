@@ -153,13 +153,13 @@ if (!in_array($request_path, $valid_routes)) {
                                 KI, Konzeption, Forschung, XR, Software Architektur und Didaktik, kann ich in allen
                                 Bereichen, von der Festlegung der Anforderungen über die Entwicklung bis hin zu
                                 Schulungen
-                                und Weiterbildung unterstützen. Ich schaffe Ordnung im digitalem Chaos.</p>
+                                und Weiterbildung unterstützen. <br> Ich schaffe Ordnung im digitalem Chaos.</p>
                         </div>
                     </div>
                 </div>
-                <p>Dich interessiert ein Anfängerguide über KI? Dann klick hier: <br>
-                    <a href="ai_dashboard">KI-Bereich</a><br>
+                <p>Dich interessiert ein Anfängerguide über KI, ohne Mathematik studiert zu haben? Dann geht es hier lang.<br>
                     Die Seite ist noch im Aufbau und wird stetig erweitert.
+                    <a href="ai_dashboard"><button class="btn btn--ki">KI-Bereich</button></a>
                 </p>
             </div>
             <form class="display-flex flex-column login" action="check_login.php" method="POST">
