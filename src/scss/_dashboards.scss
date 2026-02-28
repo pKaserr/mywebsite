@@ -205,3 +205,90 @@ Dashboard Icons - Timeline & About Me
     transform: scale(1.07);
   }
 }
+
+/* --------------------------------------------------
+Tutorials and AI Dashboard Icons
+-------------------------------------------------- */
+.tutorials-dashboard-icon,
+.ai-dashboard-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 20px;
+  background-color: $c-darkGrey;
+  box-shadow: 0 10px 20px rgba($c-black, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba($c-black, 0.4);
+  }
+
+  svg {
+    width: 50%;
+    height: 50%;
+    margin-bottom: 1rem;
+    z-index: 2;
+  }
+}
+
+.tutorials-dashboard-text,
+.ai-dashboard-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $c-white;
+  z-index: 2;
+  text-align: center;
+}
+
+// Specific Styles
+.tutorials-dashboard-icon {
+  // mapped to $c2-second (which is a green value)
+  background: linear-gradient(135deg, lighten($c2-second, 10%) 0%, darken($c2-second, 5%) 100%);
+}
+
+.ai-dashboard-icon {
+  // mapped to $c1-second (which is a blue value)
+  background: linear-gradient(135deg, lighten($c1-second, 5%) 0%, darken($c1-second, 10%) 100%);
+}
+
+// Sub-Dashboard Icons
+.tutorials-icon-basics, .tutorials-icon-advanced, .tutorials-icon-more,
+.ai-dashboard-icon-intro, .ai-dashboard-icon-ml, .ai-dashboard-icon-more {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 15px;
+  background-color: lighten($c1-main, 5%); // Approx #333
+  box-shadow: 0 8px 16px rgba($c-black, 0.3);
+  transition: all 0.3s ease;
+  margin: 1rem;
+
+  &:hover {
+    transform: translateY(-5px);
+    background-color: lighten($c1-main, 10%); // Approx #444
+  }
+
+  svg {
+    width: 50%;
+    height: 50%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.tutorials-text, .ai-dashboard-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: $c-white;
+  text-align: center;
+}
+

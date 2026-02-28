@@ -5,7 +5,7 @@
     <title>AI 04: Der Lernprozess</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./style_additions.css">
+    <script src="./js/bg_net_graph.js" defer></script>
     <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
 </head>
 

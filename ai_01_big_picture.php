@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./js/bg_net_graph.js" defer></script>
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./style_additions.css">
+    <script src="./js/tooltip.js" defer></script>
     <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
 </head>
 
@@ -40,14 +40,14 @@
                     <div class="ai-grid-2" style="margin-top: 1rem;">
 
                         <div class="ai-card">
-                            <h4>A. Die "programmierte" Intelligenz (Symbolische KI)</h4>
+                            <h4 class="c2-second">A. Die "programmierte" Intelligenz (Symbolische KI)</h4>
                             <p><em>Beispiel: Der Gegner in einem Game oder ein Schachcomputer.</em></p>
                             <p>Hier hat ein Programmierer exakte Regeln geschrieben. Das System "denkt" nicht, es
                                 arbeitet eine Checkliste ab.</p>
                             <div class="code-box">
                                 <p> <span class="c-exec">WENN</span> <span
                                         class="c-keyword">Spieler_in_Sichtweite</span>:<br>
-                                    &nbsp;&nbsp;DANN <span class="c-func">Schieße</span>()<br>
+                                    &nbsp;&nbsp;DANN <span class="c-func">Reagiere</span>()<br>
                                     <span class="c-exec">SONST</span>:<br>
                                     <span class="c-exec">&nbsp;&nbsp;</span><span class="c-func">Patrouilliere</span>()
                                 </p>
@@ -60,7 +60,7 @@
                         </div>
 
                         <div class="ai-card" style="border-color: #007bff;">
-                            <h4>B. Die "lernende" Intelligenz (Machine Learning)</h4>
+                            <h4 class="c2-second">B. Die "lernende" Intelligenz (Machine Learning)</h4>
                             <p><em>Beispiel: ChatGPT, Gesichtserkennung, Netflix-Empfehlungen.</em></p>
                             <p>Hier schreibt niemand Regeln. Wir geben dem System nur Daten (z.B. 10.000 Bilder von
                                 Hunden) und sagen: "Finde selbst heraus, was Hunde ausmacht."</p>
@@ -79,7 +79,9 @@
                             </p>
                         </div>
                     </div>
-
+                    <div class="ai-card--notice mt-1">
+                        <p>Funfact: Die meisten Computergegener in Computerspielen sind nicht deswegen so dämlich, weil sie nicht besser programmiert werden können, sondern weil es ein Teil der User Experience ist. Zu schwierige Gegner demotivieren. Außerdem gibt es dem Spieler unterbewusst ein Gefühl der Überlegenheit. <br> So sind Computergegner nicht nur strunzdoof, sondern verhalten sich bewusst unrealistisch. Es ist für Elitesoldaten und Bösewichte für gewöhnlich nicht normal, dass sie ständig laut schreien, was sie nun exakt machen (flankiere von rechts), wo sie sich befinden und ob sie gerade auf Fußspuren gestoßen sind, obwohl sie alleine sind: <br><a class="c-black" href="https://www.youtube.com/watch?v=Sq-9b1Se3rM " target="_blank"><em>Hä, Fußspuren?</em></a></p>
+                    </div>
                     <hr>
 
                     <h3 class="c1-second mt-1">Begriffsdefinition</h3>
@@ -108,7 +110,7 @@
 
                     <h3 class="c1-second mt-1">Was ist ein "Sprachmodell" (LLM)?</h3>
                     <p>Wenn heute alle von KI reden, meinen sie meistens <strong>Large Language Models (LLMs)</strong>
-                        wie GPT.</p>
+                        wie <span class="has-tooltip" data-tooltip='GPT wie ChatGPT steht für "generative pre-trained transformer" also soviel wie "Generativer vortrainierter Transformer". Was ein Transformer ist, erkläre ich im Modul 06: Transformer Revolution'>GPT</span>.</p>
                     <div class="ai-card--notice">
                         <p class="c-black">Ein LLM ist im Grunde ein sehr guter
                             <strong>"Nächstes-Wort-Vorhersager"</strong>. Es hat
@@ -119,61 +121,10 @@
                             gelernt, wie
                             das Wort "Tisch" im Kontext von "Stuhl", "Essen" und "Holz" verwendet wird.</p>
                     </div>
-                    <div>
-                        <h4 class="c1-second">Unter der Haube: Wie ChatGPT, Gemini und co. Texte lesen</h4>
-                        <p>Wenn du einen Prompt eingibst, durchläuft dein Satz einen streng
-                            mathematischen Prozess, bevor das Modell überhaupt zu "denken" beginnt. Die Magie passiert
-                            in vier Schritten:</p>
-
-                        <div>
-                            <div>
-                                <p class="mt-2 c2-second">1. Zerlegung (Tokenisierung)</p>
-                                <p>KI-Modelle lesen keine Buchstaben oder
-                                    Wörter. Sie zerlegen den Text in Bausteine, sogenannte <strong>Tokens</strong>. Ein
-                                    Token kann ein ganzes Wort sein, aber oft sind es nur Silben. Das ist effizienter
-                                    und hilft bei unbekannten Wörtern.</p>
-                                <div class="code-box">
-                                    <span class="c-comment">// Beispiel: Wie eine KI das Wort "Apfelbaum"
-                                        sieht</span><br>
-                                    <span class="c-exec">tokenize</span>(<span class="c-string">"Apfelbaum"</span>)
-                                    <span class="c-keyword">&rarr;</span>
-                                    [ <span class="c-string">"Apfel"</span>, <span class="c-string">"baum"</span> ]
-                                </div>
-                            </div>
-
-                            <div>
-                                <p class="mt-2 c2-second">2. Bewertung (Word Embeddings)</p>
-                                <p>Jedes Token wird in eine riesige
-                                    Zahlenreihe (einen Vektor) übersetzt. Stell dir eine gigantische 3D-Landkarte vor:
-                                    Wörter mit ähnlicher Bedeutung landen nah beieinander. Das Modell weiß nicht, was
-                                    ein "König" ist, aber es weiß mathematisch, dass "König" nah bei "Königin" und weit
-                                    weg von "Toaster" liegt. So entsteht ein semantisches Verständnis.</p>
-                            </div>
-
-                            <div>
-                                <p class="mt-2 c2-second">3. Die Reihenfolge (Positional
-                                    Encoding)</p>
-                                <p><em>"Der Hund beißt den Mann"</em>
-                                    bedeutet etwas völlig anderes als <em>"Der Mann beißt den Hund"</em>. Moderne
-                                    Modelle (Transformer) verarbeiten alle Wörter gleichzeitig, um Zeit zu sparen. Damit
-                                    der Satz keinen Sinn verliert, bekommt jedes Token einen mathematischen "Stempel"
-                                    aufgedrückt, der seine exakte Position im Satz verrät.</p>
-                            </div>
-
-                            <div>
-                                <p class="mt-2 c2-second">4. Die Vorhersage (Attention &
-                                    Prediction)</p>
-                                <p>Jetzt rechnet das Netz: Es schaut sich
-                                    alle Tokens, ihre Bedeutungen und ihre Positionen an. Mit dem sogenannten
-                                    <strong>Attention-Mechanismus</strong> (Aufmerksamkeit) bewertet es, welche Wörter
-                                    für den Kontext am wichtigsten sind. Bei dem Satz <em>"Der Himmel ist..."</em> liegt
-                                    die Aufmerksamkeit extrem stark auf "Himmel", und das System berechnet statistisch,
-                                    dass das Token <em>"blau"</em> die höchste Wahrscheinlichkeit für das nächste Wort
-                                    hat.
-                                </p>
-                            </div>
-
-                        </div>
+                    <div class="mt-1 ai-card">
+                        <h4 class="c1-second">Unter der Haube: Ein Blick in die Zukunft</h4>
+                        <p>Wie aus Wörtern reine Mathematik wird (Tokenisierung & Embeddings) und wieso die KI plötzlich den Kontext eines ganzen Buches verstehen kann (Attention-Mechanismus), ist eine der spannendsten technischen Entwicklungen der letzten Jahre.</p>
+                        <p>Da dies aber ein tieferes Eintauchen erfordert, schauen wir uns diese exakte Mechanik entspannt in <strong>Modul 06 (Transformer-Architektur)</strong> und <strong>Modul 07 (LLMs)</strong> an.</p>
                     </div>
 
                 </div>

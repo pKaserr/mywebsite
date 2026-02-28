@@ -60,12 +60,28 @@
    border: none !important;
 }
 
-// $percent-width: 100;
 
-// @for $i from 0 through $percent-width {
-//    .width-#{$i} {
-//       width: #{$i}% !important; // Prozentwert korrekt interpoliert
-//    }
-// }
+// until x display-none @media (min-width: x) {
+// $bp-xxxs;
+// $bp-xxs;
+// $bp-xs;
+// $bp-s;
+// $bp-mid;
+// $bp-sm;
+// $bp-md;
+// $bp-lg;
+// $bp-xl;
+// $bp-xxl;
 
-// padding: $i + rem !important;
+
+
+// Responsive until-[breakpoint]-display-none utility classes
+@each $name, $size in $breakpoints {
+   .until-#{$name}-display-none {
+      display: none !important;
+
+      @media (min-width: $size) {
+         display: flex !important; // Standard override is flex. Or switch to block if needed.
+      }
+   }
+}

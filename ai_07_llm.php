@@ -1,7 +1,3 @@
-<?php
-require './includes/auth.php';
-require './includes/db_connect.php';
-?>
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +5,7 @@ require './includes/db_connect.php';
     <title>AI 07: LLMs & Reasoning</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./style_additions.css">
+    <script src="./js/bg_net_graph.js" defer></script>
     <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
 </head>
 
@@ -22,44 +18,154 @@ require './includes/db_connect.php';
     </nav>
     <main>
         <div class="container_dashboard">
+            <canvas class="particleCanvas"></canvas>
+
             <div class="container__title">
                 <h4 class="container__title--text">07. Large Language Models (LLMs) & Reasoning</h4>
-                <span>Wie Text zu Mathematik wird und wie Modelle "denken" lernen.</span>
+                <span>Wie aus Text Mathematik wird und wie KIs scheinbar "denken" lernen.</span>
             </div>
-            
+
             <div class="panel">
                 <div class="panel-content">
-                    <h3>Tokenization & Embeddings</h3>
-                    <p>Computer verstehen keine Wörter. Sie verstehen Zahlen.</p>
-                    <ul class="ai-list">
-                        <li><strong>Tokenization:</strong> Zerlegt Text in kleine Stücke ("Haus" -> `3492`).</li>
-                        <li><strong>Embeddings:</strong> Ordnet jedem Token einen Platz in einem riesigen Vektorraum zu.</li>
-                    </ul>
-                    
-                     <div class="ai-placeholder" style="border: 2px dashed #555; padding: 2rem; text-align: center; color: #777; margin: 1rem 0;">
-                        [Placeholder: Vektorraum-Clustering (3D-Wolke)]
+                    <h3 class="c1-second mt-1">Einführung: Text in Zahlen verwandeln</h3>
+                    <p>Computer sind faszinierend, haben aber einen entscheidenden Fehler: Sie verstehen keine Wörter.
+                        Wenn Sie einem Computer das Wort "Apfel" geben, sieht es nichts als unverständliche Zeichen.
+                        Computer verstehen nur eines: Zahlen. Wie also bringt man einer Maschine das Lesen bei? <br>
+                        Wenn du einen Prompt eingibst (ein Prompt ist ein Text, der das Modell anweist, was es tun
+                        soll), durchläuft dein Satz einen streng mathematischen Prozess, bevor
+                        das Modell überhaupt zu "denken" beginnt.</p>
+                    <hr>
+
+                    <h3 class="c1-second mt-1">Phase 1: Tokenization (Die Zerstückelung)</h3>
+                    <p>Damit ein Modell wie ChatGPT Sprache verstehen kann, muss der Text zuerst zerkleinert werden.
+                        Dieser Prozess nennt sich <strong>Tokenization</strong>. Ein "Token" ist einfach ein Stückchen
+                        Text. Das kann ein ganzes Wort sein ("Haus"), eine Silbe ("un-") oder manchmal nur ein einzelner
+                        Buchstabe.</p>
+
+                    <div class="ai-card mt-1">
+                        <h4>Beispiel: Das Puzzlespiel</h4>
+                        <p>Betrachten wir den Satz: <em>"Ich liebe künstliche Intelligenz."</em></p>
+                        <p>Der Tokenizer zerschneidet diesen Satz und weist jedem Stück eine eindeutige ID (Zahl) zu.
+                            Zum Beispiel:</p>
+                        <div class="code-box">
+                            <ul class="ai-list mt-1">
+                                <span class="c-string">"Ich"</span> &rarr; <span class="c-keyword"> Token-ID:
+                                </span> <span class="c-number">832</span><br>
+                                <span class="c-string">" liebe"</span> &rarr; <span class="c-keyword"> Token-ID:
+                                </span> <span class="c-number">4192</span> <span class="c-comment">// Man beachte
+                                    die Leerzeichen</span><br>
+                                <span class="c-string">" künst"</span> &rarr; <span class="c-keyword"> Token-ID:
+                                </span> <span class="c-number">102</span><br>
+                                <span class="c-string">"liche"</span> &rarr; <span class="c-keyword"> Token-ID:
+                                </span> <span class="c-number">55</span><br>
+                                <span class="c-string">" Intelligenz"</span> &rarr; <span class="c-keyword">
+                                    Token-ID: </span> <span class="c-number">9841</span>
+                            </ul>
+                        </div>
+                        <p class="mt-1">Für den Computer ist der Satz nun keine Sprache mehr, sondern nur noch eine
+                            trockene Zahlenreihe:</p>
+                        <div class="code-box">
+                            <p> [<span class="c-number">832</span>, <span class="c-number">4192</span>, <span
+                                    class="c-number">102</span>, <span class="c-number">55</span>, <span
+                                    class="c-number">9841</span>] </p>
+                        </div>
                     </div>
 
-                    <h3>Training & Fine-tuning</h3>
-                    <div class="ai-grid">
-                        <div class="ai-card">
-                            <h4>Pre-training</h4>
-                            <p>Das Modell liest das halbe Internet und lernt nur eins: Das nächste Wort vorherzusagen.</p>
-                        </div>
-                        <div class="ai-card">
-                            <h4>Fine-tuning (RLHF)</h4>
-                            <p>Menschen bewerten die Antworten. Das Modell lernt, hilfreich und harmlos zu sein.</p>
-                        </div>
+                    <hr>
+
+                    <h3 class="c1-second mt-1">Phase 2: Embeddings (Die Landkarte der Bedeutung)</h3>
+                    <p>Jetzt hat das Modell Zahlen, aber es weiß immer noch nicht, was sie <em>bedeuten</em>. Hier kommt
+                        die wahre Magie der modernen KI ins Spiel: <strong>Embeddings</strong>. Statt Wörter einfach nur
+                        zu nummerieren, bekommen sie Koordinaten auf einer gigantischen Landkarte (einem abstrakten
+                        mathematischen Vektorraum mit oft tausenden Dimensionen).</p>
+                    <div class="code-box">
+                        <p> Token: <span class="c-keyword">" Intelligenz"</span> -> [<span
+                                class="c-number">0.0124</span>, <span class="c-number">-0.0541</span>, <span
+                                class="c-number">0.2310</span>, <span class="c-number">-0.1102</span>, <span
+                                class="c-number">...</span>,] <span class="c-comment">// insgesamt 4096 Werte für aktuelle Modelle</span>
+                        </p>
+                    </div>
+                    <p>Die Mehrdimensionalität, was für den Menschen nicht mehr vorstellbar ist, kommt daher, dass jedes
+                        Wort sehr viele unterschiedliche Nuancen hat. So kann eine Bank ein Kreditinstitut, aber auch
+                        eine Sitzgelegenheit sein. Um das zu verstehen, werden große LLMs monatelang darauf trainiert.
+                    </p>
+                    <div class="ai-card--notice mt-1">
+                        <p><strong>Die Bedeutungskarte:</strong> Stellen Sie sich eine Stadtkarte vor. Alle Bäckereien
+                            liegen nah beieinander, während Auto-Werkstätten in einem ganz anderen Viertel sind. Genau
+                            das macht die KI mit Wörtern: "Hund" und "Katze" bekommen Koordinaten, die sehr nah
+                            beieinander liegen, weil es beides Haustiere sind. Das Wort "Auto" hingegen wird meilenweit
+                            entfernt platziert.</p>
+                        <p class="mt-1">Dadurch fängt das Modell an, Konzepte zu "verstehen". Es weiß nicht, was ein
+                            Hund emotional <em>ist</em>, aber es weiß mathematisch ganz genau, in welcher Nachbarschaft
+                            der Bedeutungen es wohnt.</p>
                     </div>
 
-                    <h3>Reasoning</h3>
-                    <p>Chain-of-Thought: Modelle lösen komplexe logische Probleme besser, wenn man sie zwingt, "laut zu denken" (Zwischenschritte generieren).</p>
+                    <hr>
+
+                    <h3 class="c1-second mt-1">Phase 3: Pre-Training (Das halbe Internet lesen)</h3>
+                    <p>Wie wird das Modell nun auf dieser Basis schlau? Durch brutale Mengen an Daten. Im sogenannten
+                        <strong>Pre-Training</strong> (Vortraining) bekommt das Modell Millionen von Büchern, Artikeln
+                        und Websites "zu lesen". Es hat dabei nur eine einzige, fast schon beängstigend simple Aufgabe:
+                    </p>
+                    <p class="c1-second mt-1" style="font-size: 1.2rem; text-align: center;"><strong>Errate, welches
+                            Wort als nächstes kommt!</strong></p>
+
+                    <div class="bg-main2 p-1 mt-1">
+                        <p>Wenn das Modell den Satz liest: <em>"Der Himmel ist blau, und das Gras ist..."</em>, rechnet
+                            es fieberhaft alle Wahrscheinlichkeiten aus und tippt basierend auf seiner "Weltkarte" am
+                            Ende auf "...grün".</p>
+                    </div>
+                    <p class="mt-1">Es macht das nicht einmal, sondern Milliarden Mal. Dadurch lernt das Modell aus
+                        reinem Kontext nicht nur Grammatik und Faktenwissen, sondern ein extrem tiefes Musterverständnis
+                        für die Struktur unserer Welt.</p>
+
+                    <hr>
+
+                    <h3 class="c1-second mt-1">Phase 4: Fine-Tuning (Von der Bibliothek zum Assistenten)</h3>
+                    <p>Nach dem Pre-Training ist das Modell vollgepackt mit Wissen wie ein riesiges Archiv, aber es
+                        plappert unkontrolliert drauflos. Es versucht nur, Texte fortzusetzen. Fragen würde es
+                        vielleicht aus Reflex einfach mit einer Gegenfrage beantworten.</p>
+
+                    <p>Hier kommt das <strong>Fine-Tuning</strong> ins Spiel, oft mit einer Methode namens <em>RLHF
+                            (Reinforcement Learning from Human Feedback)</em>.</p>
+                    <div class="ai-card mt-1">
+                        <p>Menschen stellen dem Modell Fragen, das Modell gibt mehrere Antworten, und die menschlichen
+                            Trainer bewerten: "Antwort A war sehr hilfreich, Antwort B war unhöflich." So lernt das
+                            Modell durch Belohnung und Bestrafung (ähnlich wie bei einer Hundeerziehung), sich wie ein
+                            höflicher, hilfsbereiter Assistent zu verhalten, anstatt nur Wikipedia-Artikel zu imitieren.
+                        </p>
+                    </div>
+
+                    <hr>
+
+                    <h3 class="c1-second mt-1">Phase 5: Reasoning (Das Modell "denkt" laut)</h3>
+                    <p>Die neueste Entwicklung in der Welt der LLMs nennt sich <strong>Reasoning</strong>
+                        (Schlussfolgern) durch "Chain-of-Thought" (Gedankenkette). Normalerweise platzte ein LLM sofort
+                        mit der erstbesten Antwort heraus. Bei komplexen Mathe- oder Logikaufgaben führte das oft zu
+                        peinlichen Aussetzern.</p>
+
+                    <div class="ai-grid-2 mt-1">
+                        <div class="ai-card">
+                            <h4>Ohne Reasoning</h4>
+                            <p>Das Modell muss die Lösung für eine komplexe Textaufgabe in einem einzigen Schritt, oft
+                                im Bruchteil einer Sekunde, "erraten". Das geht häufig schief, da ihm die Zeit für
+                                Zwischenschritte fehlt.</p>
+                        </div>
+                        <div class="ai-card">
+                            <h4>Mit Reasoning (Chain-of-Thought)</h4>
+                            <p>Man zwingt das Modell, "laut zu denken". Es generiert erst verborgene interne Textblöcke
+                                (Zwischenschritte), zerlegt und analysiert das Problem Schritt für Schritt, plant den
+                                Weg und erzeugt <em>dann erst</em> die finale Antwort. Genau wie wir Menschen ein
+                                schwieriges Problem erst auf einem Schmierblatt lösen, bevor wir das Ergebnis sicher
+                                präsentieren.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
-                <a href="ai_06_transformer.php"><button class="btn btn--main">&larr; Vorheriges Modul</button></a>
-                <a href="ai_08_ecosystem.php"><button class="btn btn--main">Nächstes Modul: Das Ökosystem &rarr;</button></a>
+            <div class="mt-1" style="display: flex; justify-content: space-between;">
+                <a href="ai_06_transformer.php"><button class="btn btn--main">&larr; Zurück</button></a>
+                <a href="ai_08_ecosystem.php"><button class="btn btn--main">Weiter: Das Ökosystem &rarr;</button></a>
             </div>
         </div>
     </main>

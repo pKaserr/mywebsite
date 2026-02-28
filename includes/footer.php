@@ -53,3 +53,4 @@ $assetBase = (strpos($currentDir, '/admin') !== false) ? '../' : './';
   </div>
 </footer>
 <script src="<?= htmlspecialchars($assetBase) ?>js/footer.js"></script>
+

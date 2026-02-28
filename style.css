@@ -13688,6 +13688,87 @@ Breakpoint Mixin
   border: none !important;
 }
 
+.until-xxxs-display-none {
+  display: none !important;
+}
+@media (min-width: 0px) {
+  .until-xxxs-display-none {
+    display: flex !important;
+  }
+}
+
+.until-xxs-display-none {
+  display: none !important;
+}
+@media (min-width: 150px) {
+  .until-xxs-display-none {
+    display: flex !important;
+  }
+}
+
+.until-xs-display-none {
+  display: none !important;
+}
+@media (min-width: 280px) {
+  .until-xs-display-none {
+    display: flex !important;
+  }
+}
+
+.until-mid-display-none {
+  display: none !important;
+}
+@media (min-width: 390px) {
+  .until-mid-display-none {
+    display: flex !important;
+  }
+}
+
+.until-sm-display-none {
+  display: none !important;
+}
+@media (min-width: 576px) {
+  .until-sm-display-none {
+    display: flex !important;
+  }
+}
+
+.until-md-display-none {
+  display: none !important;
+}
+@media (min-width: 768px) {
+  .until-md-display-none {
+    display: flex !important;
+  }
+}
+
+.until-lg-display-none {
+  display: none !important;
+}
+@media (min-width: 992px) {
+  .until-lg-display-none {
+    display: flex !important;
+  }
+}
+
+.until-xl-display-none {
+  display: none !important;
+}
+@media (min-width: 1200px) {
+  .until-xl-display-none {
+    display: flex !important;
+  }
+}
+
+.until-xxl-display-none {
+  display: none !important;
+}
+@media (min-width: 1920px) {
+  .until-xxl-display-none {
+    display: flex !important;
+  }
+}
+
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -13803,7 +13884,11 @@ tr,
 th,
 td {
   margin: 0;
-  color: #d1d0d0 !important;
+  text-align: left;
+}
+
+td, th {
+  padding-right: 1rem;
 }
 
 .table_desc {
@@ -15957,6 +16042,88 @@ Dashboard Icons - Timeline & About Me
   transform: scale(1.07);
 }
 
+/* --------------------------------------------------
+Tutorials and AI Dashboard Icons
+-------------------------------------------------- */
+.tutorials-dashboard-icon,
+.ai-dashboard-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 20px;
+  background-color: #2f2f2f;
+  box-shadow: 0 10px 20px rgba(1, 1, 1, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.tutorials-dashboard-icon:hover,
+.ai-dashboard-icon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(1, 1, 1, 0.4);
+}
+.tutorials-dashboard-icon svg,
+.ai-dashboard-icon svg {
+  width: 50%;
+  height: 50%;
+  margin-bottom: 1rem;
+  z-index: 2;
+}
+
+.tutorials-dashboard-text,
+.ai-dashboard-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #d3d3d3;
+  z-index: 2;
+  text-align: center;
+}
+
+.tutorials-dashboard-icon {
+  background: linear-gradient(135deg, rgb(57.893258427, 171.106741573, 104.2078651685) 0%, rgb(38.5533707865, 113.9466292135, 69.3960674157) 100%);
+}
+
+.ai-dashboard-icon {
+  background: linear-gradient(135deg, rgb(16.875, 140.625, 212.625) 0%, rgb(11.25, 93.75, 141.75) 100%);
+}
+
+.tutorials-icon-basics, .tutorials-icon-advanced, .tutorials-icon-more,
+.ai-dashboard-icon-intro, .ai-dashboard-icon-ml, .ai-dashboard-icon-more {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 15px;
+  background-color: rgb(51.75, 51.75, 51.75);
+  box-shadow: 0 8px 16px rgba(1, 1, 1, 0.3);
+  transition: all 0.3s ease;
+  margin: 1rem;
+}
+.tutorials-icon-basics:hover, .tutorials-icon-advanced:hover, .tutorials-icon-more:hover,
+.ai-dashboard-icon-intro:hover, .ai-dashboard-icon-ml:hover, .ai-dashboard-icon-more:hover {
+  transform: translateY(-5px);
+  background-color: rgb(64.5, 64.5, 64.5);
+}
+.tutorials-icon-basics svg, .tutorials-icon-advanced svg, .tutorials-icon-more svg,
+.ai-dashboard-icon-intro svg, .ai-dashboard-icon-ml svg, .ai-dashboard-icon-more svg {
+  width: 50%;
+  height: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.tutorials-text, .ai-dashboard-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #d3d3d3;
+  text-align: center;
+}
+
 .guest-login-section {
   text-align: center;
   margin-top: 1rem;
@@ -16765,7 +16932,10 @@ Dashboard Icons - Timeline & About Me
   border-radius: 5px;
   font-size: 0.7rem !important;
   white-space: nowrap;
-  z-index: 9999;
+  z-index: 9;
+}
+.wip-banner--preview {
+  background-color: #5cb85c;
 }
 @media (min-width: 576px) {
   .wip-banner {
@@ -16786,6 +16956,37 @@ Dashboard Icons - Timeline & About Me
   .wip-banner {
     font-size: 1.2rem !important;
   }
+}
+
+.has-tooltip {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 4px;
+  cursor: help;
+  transition: color 0.2s ease;
+}
+.has-tooltip:hover {
+  color: #464646;
+}
+
+.custom-tooltip {
+  position: absolute;
+  background-color: var(--color-bg-dark, #2f2f2f);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  pointer-events: none;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  max-width: 250px;
+  box-shadow: 0 4px 6px rgba(1, 1, 1, 0.2);
+  line-height: 1.4;
+}
+.custom-tooltip.visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 .particleCanvas {

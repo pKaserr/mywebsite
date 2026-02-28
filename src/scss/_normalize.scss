@@ -30,7 +30,11 @@ tr,
 th,
 td {
   margin: 0;
-  color: $c5-main !important;
+  text-align: left;
+}
+
+td, th {
+  padding-right: 1rem;
 }
 
 .table_desc {
