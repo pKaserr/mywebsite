@@ -88,6 +88,14 @@ Breakpoint Mixin
   background-color: #686868 !important;
 }
 
+.bg-main4 {
+  background-color: #969595 !important;
+}
+
+.bg-main5 {
+  background-color: #d1d0d0 !important;
+}
+
 .bg-second1 {
   background-color: #0f7dbd !important;
 }
@@ -13941,7 +13949,6 @@ html {
 }
 .container__title {
   padding: 1rem;
-  margin-bottom: 2rem;
 }
 .container__title span {
   font-size: 1rem !important;
@@ -13949,7 +13956,6 @@ html {
 }
 .container__title h4 {
   line-height: 1rem;
-  margin-bottom: 1rem;
 }
 
 .container_dashboard {
@@ -14185,14 +14191,37 @@ input[type=password]:focus {
   padding: 15px;
   box-shadow: 0 2px 6px rgba(1, 1, 1, 0.3490196078);
 }
+.ai-card h1, .ai-card h2, .ai-card h3, .ai-card h4, .ai-card h5, .ai-card h6 {
+  color: #2d8551;
+}
 .ai-card--notice {
+  position: relative;
   background-color: #969595;
   border-radius: 4px;
-  border-left: 4px solid #0f7dbd;
+  border: 2px solid #0f7dbd;
+  border-left: 5px solid #0f7dbd;
   padding: 1.5rem;
 }
-.ai-card--notice p, .ai-card--notice span, .ai-card--notice h1, .ai-card--notice h2, .ai-card--notice h3, .ai-card--notice h4, .ai-card--notice h5, .ai-card--notice h6 {
-  color: #010101;
+.ai-card--notice-red {
+  border: 2px solid #8f2626;
+  border-left: 5px solid #8f2626;
+}
+.ai-card--notice-green {
+  border: 2px solid #2d8551;
+  border-left: 5px solid #2d8551;
+}
+.ai-card--notice::before {
+  content: "💡";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 20px;
+}
+.ai-card--notice p, .ai-card--notice span {
+  color: #272727;
+}
+.ai-card--notice h1, .ai-card--notice h2, .ai-card--notice h3, .ai-card--notice h4, .ai-card--notice h5, .ai-card--notice h6 {
+  color: #2d8551;
 }
 
 .demo-neuron {
@@ -16877,7 +16906,7 @@ Tutorials and AI Dashboard Icons
   padding: 10px;
   border-radius: 4px;
   font-family: monospace;
-  font-size: 0.9em;
+  font-size: 1.2em;
   margin-top: 0.5rem;
 }
 

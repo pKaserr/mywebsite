@@ -146,12 +146,12 @@ require './includes/auth.php';
                sondern WordPress diente als Backend, auf dem die individuelle Webanwendung entwickelt wurde. Der Kunde
                konnte anschließend mit für ihn entwickelten Custom-Fields die Inhalte selbst befüllen.</p>
 
-            <video class="mr-2" style="clear:left; float: left" width="720" autoplay controls loop muted>
+            <video class="mr-2" style="clear:left; float: left; width: 75%;" autoplay controls loop muted>
                <source src="./assets/videos/exp1.mp4">
                Your browser does not support the video tag.
             </video>
 
-            <p style="text-align: justify; line-height:1.7; padding-bottom:1rem;">Während des Praktikums von sechs
+            <p style="text-align: justify; line-height:1.7; padding-bottom:1rem;"> Während des Praktikums von sechs
                Monaten wurde ich in alle Prozesse der Entwicklung mit einbezogen und gefordert. Von der Kundenakquise,
                Kundengespräche, Projektmanagement, Back- und Frontendentwicklung bis zu Deployment der entsprechenden
                Software. Bei einem Relaunch einer Website von GoSilico haben ein weiterer Praktikant und ich den
@@ -175,7 +175,7 @@ require './includes/auth.php';
                entwickelt. Die Idee dahinter war, eine Plattform für Studierende der Hochschule anzubieten, bei der sich
                die Studierenden anonym zu zweit oder in Gruppen treffen können.</p>
 
-            <video class="ml-2 mb-2" style="clear:right; float: right" width="720" controls>
+            <video class="ml-2 mb-2" style="clear:right; float: right; width: 75%;" controls>
                <source src="./assets/videos/ImageVideo_Final.mp4">
                Your browser does not support the video tag.
             </video>

@@ -80,8 +80,8 @@
                         <div class="ai-card">
                             <h4>Learning Rate (Die Schrittweite)</h4>
                             <p>Ein Parameter, der angibt,
-                                wie groß der Schritt ist, den das Netz in diese Richtung macht. Zu groß: Wir springen
-                                über das Tal hinweg. Zu klein: Wir brauchen ewig, um anzukommen.</p>
+                                wie groß der Schritt ist, den das Netz in diese Richtung macht (wie stark die Gewichte angepasst werden). Zu groß: Wir springen
+                                über das Tal hinweg (überspringen den optimalen Wert). Zu klein: Wir brauchen ewig, um anzukommen.</p>
                         </div>
                     </div>
 

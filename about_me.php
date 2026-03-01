@@ -116,8 +116,8 @@ require './includes/db_connect.php';
                   dieses Thema stark interessiert, informiere ich mich auch privat darüber, jedoch ist es gerade als Absolvent schwierig,
                   in diesem Bereich Berufserfahrungen zu sammeln, wenn diese nicht schon vorhanden sind.</p>
 
-               <div class="highlight-box bg-second3">
-                  <h4 class="c2-main">Meine KI-Projekte:</h4>
+               <div class="highlight-box bg-main2">
+                  <h4 class="c5-main">Meine KI-Projekte:</h4>
                   <ul>
                      <li><strong>Lebensmittel-Erkennungsmodell:</strong> Erkennt verschiedene Lebensmittel und projiziert entsprechende Nährwerte auf einem Augmented-Reality-Tisch.</li>
                      <li><strong>XAI (Explainable AI) Modell:</strong> Zeigt visuell die Komplexität eines neuronalen Netzes auf und macht die Blackbox begreiflicher.</li>
@@ -142,8 +142,8 @@ require './includes/db_connect.php';
                   Lehrbeauftragter die Verantwortung zu übernehmen und die Inhalte so zu gestalten, wie ich sie für richtig empfinde.
                   Inklusive der Prüfungsleistung.</p>
 
-               <div class="highlight-box" style="background-color: #effcef;">
-                  <p class="c2-main"><strong>Diese Arbeit hat mir sehr viel Spaß gemacht und mich persönlich auch sehr weitergebracht.</strong>
+               <div class="highlight-box bg-main4">
+                  <p class="c1-main"><strong>Diese Arbeit hat mir sehr viel Spaß gemacht und mich persönlich auch sehr weitergebracht.</strong>
                      Ich habe während dieser Tätigkeit als Lehrbeauftragter erst richtig wahrgenommen, was es bedeutet, Inhalte tatsächlich zu verstehen.</p>
                </div>
 
@@ -172,8 +172,8 @@ require './includes/db_connect.php';
                   auseinandergesetzt werden muss, dass der Stand der Technik immer aktuell ist und das Problem und diese Lösung immer
                   einer besonderen Betrachtung bedürfen.</p>
 
-               <div class="highlight-box" style="background-color: #e8f0ff;">
-                  <p class="c2-main">Es stellt eine Herausforderung dar, da deren Ausgang oft nicht einzuschätzen ist, und umso mehr ist das
+               <div class="highlight-box bg-main4">
+                  <p class="c1-main">Es stellt eine Herausforderung dar, da deren Ausgang oft nicht einzuschätzen ist, und umso mehr ist das
                      Ergebnis am Ende dann positiver, wenn Dinge entwickelt wurden, die nicht im Alltag schon zur Gewohnheit wurden.</p>
                </div>
             </div>
@@ -190,11 +190,11 @@ require './includes/db_connect.php';
                   hinter dem Handel zu verstehen, sondern diese auch zu optimieren. Ich besitze einen ausgeprägten organisatorischen
                   Blick und die Fähigkeit, auch komplexe Prozesse einfach darzustellen.</p>
 
-               <div class="highlight-box" style="background-color: #f5e8ff;">
-                  <h4 class="c2-main">Meine Führungserfahrung:</h4>
-                  <p class="c2-main"><strong>Vorsitzender der Verfassten Studierendenschaft</strong> - Hauptverantwortlicher für
+               <div class="highlight-box bg-main4">
+                  <h4 class="c1-main">Meine Führungserfahrung:</h4>
+                  <p class="c1-main"><strong>Vorsitzender der Verfassten Studierendenschaft</strong> - Hauptverantwortlicher für
                      Tausende Studierende einer Anstalt des Öffentlichen Rechts.</p>
-                  <p class="c2-main"><strong>Führung von Teams als Lehrbeauftragter</strong> - Als Lehrbeauftragter habe ich Studierende im Bereich Programmierung und Konzeption betreut und dabei ein Team angeleitet.</p>
+                  <p class="c1-main"><strong>Führung von Teams als Lehrbeauftragter</strong> - Als Lehrbeauftragter habe ich Studierende im Bereich Programmierung und Konzeption betreut und dabei ein Team angeleitet.</p>
                </div>
 
                <p>Diese Tätigkeit hat mir viel über Organisation & Führung gezeigt. Dabei geht es nicht darum, alles zu wissen oder

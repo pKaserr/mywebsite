@@ -74,22 +74,55 @@
 	padding: 15px;
 	box-shadow: 0 2px 6px $box-shadow;
 
+	& h1,
+	& h2,
+	& h3,
+	& h4,
+	& h5,
+	& h6 {
+		color: $c2-second;
+	}
+
 	&--notice {
+		position: relative;
 		background-color: $c4-main;
 		border-radius: 4px;
-		border-left: 4px solid $c1-second;
+		border: 2px solid $c1-second;
+		border-left: 5px solid $c1-second;
 		padding: 1.5rem;
 
+		&-red {
+			border: 2px solid $c4-second;
+			border-left: 5px solid $c4-second;
+		}
+
+		&-green {
+			border: 2px solid $c2-second;
+			border-left: 5px solid $c2-second;
+		}
+
+		&::before {
+			content: "💡";
+			position: absolute;
+			top: 2px;
+			left: 2px;
+			font-size: 20px;
+		}
+
 		& p,
-		& span,
+		& span {
+			color: $c1-main;
+		}
+
 		& h1,
 		& h2,
 		& h3,
 		& h4,
 		& h5,
 		& h6 {
-			color: $c-black
+			color: $c2-second;
 		}
+
 	}
 }
 

@@ -5,8 +5,8 @@
     <title>AI 03: Die Architektur</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./js/bg_net_graph.js" defer></script>
+    <script src="./js/tooltip.js" defer></script>
     <link rel="stylesheet" href="./style.css">
-    <script src="./js/bg_net_graph.js" defer></script>
     <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
 </head>
 
@@ -72,7 +72,7 @@
                         style="text-align: center; margin-bottom: 3rem; min-height: 180px; display: flex; align-items: center; justify-content: center;">
                         <img src="assets/png/nerf_nn.png" style="max-width: 90%; " alt="Biologisches Neuron">
                     </div>
-                    <figcaption>Beispiel eines neuronalen Netzes mit 9 Layern und Dense Architektur, eines <strong class="has-tooltip"
+                    <figcaption>Beispiel eines neuronalen Netzes mit 9 Layern und dense Architektur, eines <strong class="has-tooltip"
                             data-tooltip='Echtzeit 3D Visualisierung durch ein neuronales Netz, bei dem 2D Bilder als Input verwendet wurden. Mehr Infos unter "Erfahrungen -> Masterthesis"'>Neural
                             Radiance Field (NeRF).</strong><br>
                         Die Eingabe (x, y, z, φ, θ) stehen für Koordinaten und Blickrichtung im 3D-Raum. Die Ausgabe (r,
@@ -109,7 +109,7 @@
                                 <td>Llama 3 (70B)</td>
                                 <td>70 Milliarden</td>
                                 <td>80</td>
-                                <td><div class="c-black has-tooltip" data-tooltip='Bei einer "dichten" Architektur muss jeder Token jeden einzelnen Parameter des Modells passieren. Sehr kohärentes Wissen, einfach zu trainieren aber sehr rechenintensiv'>Dense (bekannt)</div></td>
+                                <td><div class="c-black has-tooltip" data-tooltip='Bei einer dense Architektur muss jeder Token jeden einzelnen Parameter des Modells passieren. Sehr kohärentes Wissen, einfach zu trainieren aber sehr rechenintensiv'>Dense (bekannt)</div></td>
                             </tr>
                         </table>
                     </div>

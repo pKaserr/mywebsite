@@ -5,8 +5,9 @@
     <title>AI 01: Das Big Picture</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./js/bg_net_graph.js" defer></script>
-    <link rel="stylesheet" href="./style.css">
     <script src="./js/tooltip.js" defer></script>
+    <script src="./js/accordion.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
     <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
 </head>
 
@@ -32,12 +33,12 @@
                         Forschungslaboren direkt in unseren Alltag geplatzt.</p>
                     <p>Der Begriff "KI" wird oft pauschal und unspezifisch verwendet. Lass uns aufräumen.</p>
 
-                    <hr style="border: 0; border-top: 1px solid #eee; margin: 2rem 0;">
+                    <hr>
 
                     <h3 class="c1-second mt-1">Die zwei Gesichter der "KI"</h3>
                     <p>Wenn Gamer von "KI" sprechen, meinen sie oft etwas ganz anderes als Datenwissenschaftler.</p>
 
-                    <div class="ai-grid-2" style="margin-top: 1rem;">
+                    <div class="ai-grid-2 mt-1">
 
                         <div class="ai-card">
                             <h4 class="c2-second">A. Die "programmierte" Intelligenz (Symbolische KI)</h4>
@@ -52,14 +53,14 @@
                                     <span class="c-exec">&nbsp;&nbsp;</span><span class="c-func">Patrouilliere</span>()
                                 </p>
                             </div>
-                            <p style="margin-top: 10px;"><strong>Vorteil:</strong>
+                            <p><strong>Vorteil:</strong>
                                 Vorhersehbar.<br><strong>Nachteil:</strong> Kann nichts Neues lernen. Wenn etwas
                                 passiert, das nicht im Code steht, stürzt es ab oder macht etwas unpassendes, was als
                                 Fallback programmiert wurde (z.B: wenn du nicht weiß was du tun sollst, bleib stehen).
                             </p>
                         </div>
 
-                        <div class="ai-card" style="border-color: #007bff;">
+                        <div class="ai-card">
                             <h4 class="c2-second">B. Die "lernende" Intelligenz (Machine Learning)</h4>
                             <p><em>Beispiel: ChatGPT, Gesichtserkennung, Netflix-Empfehlungen.</em></p>
                             <p>Hier schreibt niemand Regeln. Wir geben dem System nur Daten (z.B. 10.000 Bilder von
@@ -72,15 +73,24 @@
                                     zum originalen Bild)<br>
                                     <span class="c-keyword">Ergebnis:</span> System erkennt Muster (Ohren, Fell)
                             </div>
-                            <p style="margin-top: 10px;"><strong>Vorteil:</strong> Kann komplexe Probleme lösen
+                            <p><strong>Vorteil:</strong> Kann komplexe Probleme lösen
                                 (Sprache, Bilder).<br><strong>Nachteil:</strong> Wir wissen oft nicht genau,
                                 <em>wie</em> es zur Lösung kommt (Blackbox), da sehr viele Rechnungen stattfinden, dass
                                 es zu komplex wird.
                             </p>
                         </div>
                     </div>
-                    <div class="ai-card--notice mt-1">
-                        <p>Funfact: Die meisten Computergegener in Computerspielen sind nicht deswegen so dämlich, weil sie nicht besser programmiert werden können, sondern weil es ein Teil der User Experience ist. Zu schwierige Gegner demotivieren. Außerdem gibt es dem Spieler unterbewusst ein Gefühl der Überlegenheit. <br> So sind Computergegner nicht nur strunzdoof, sondern verhalten sich bewusst unrealistisch. Es ist für Elitesoldaten und Bösewichte für gewöhnlich nicht normal, dass sie ständig laut schreien, was sie nun exakt machen (flankiere von rechts), wo sie sich befinden und ob sie gerade auf Fußspuren gestoßen sind, obwohl sie alleine sind: <br><a class="c-black" href="https://www.youtube.com/watch?v=Sq-9b1Se3rM " target="_blank"><em>Hä, Fußspuren?</em></a></p>
+                    <button class="accordion accordion--bg mt-1 p-1 mb-0">Kleine Funfact über Spiele-KI (Aufklappen)</button>
+                    <div class="panel">
+                        <p>Die meisten Computergegener in Computerspielen sind nicht deswegen so dämlich, weil
+                            sie nicht besser programmiert werden können, sondern weil es ein Teil der User Experience
+                            ist. Zu schwierige Gegner demotivieren. Außerdem gibt es dem Spieler unterbewusst ein Gefühl
+                            der Überlegenheit. <br> So sind Computergegner nicht nur strunzdoof, sondern verhalten sich
+                            bewusst unrealistisch. Es ist für Elitesoldaten und Bösewichte für gewöhnlich nicht normal,
+                            dass sie ständig laut schreien, was sie nun exakt machen (flankiere von rechts), wo sie sich
+                            befinden und ob sie gerade auf Fußspuren gestoßen sind, obwohl sie alleine sind: <br><a
+                                href="https://www.youtube.com/watch?v=v0uLfJrSpvY" target="_blank"><em>Hä,
+                                    Fußspuren?</em></a></p>
                     </div>
                     <hr>
 
@@ -110,21 +120,27 @@
 
                     <h3 class="c1-second mt-1">Was ist ein "Sprachmodell" (LLM)?</h3>
                     <p>Wenn heute alle von KI reden, meinen sie meistens <strong>Large Language Models (LLMs)</strong>
-                        wie <span class="has-tooltip" data-tooltip='GPT wie ChatGPT steht für "generative pre-trained transformer" also soviel wie "Generativer vortrainierter Transformer". Was ein Transformer ist, erkläre ich im Modul 06: Transformer Revolution'>GPT</span>.</p>
+                        wie <span class="has-tooltip"
+                            data-tooltip='GPT wie ChatGPT steht für "generative pre-trained transformer" also soviel wie "Generativer vortrainierter Transformer". Was ein Transformer ist, erkläre ich im Modul 06: Transformer Revolution'>GPT</span>.
+                    </p>
                     <div class="ai-card--notice">
-                        <p class="c-black">Ein LLM ist im Grunde ein sehr guter
+                        <p>Ein LLM ist im Grunde ein sehr guter
                             <strong>"Nächstes-Wort-Vorhersager"</strong>. Es hat
                             gigantische Mengen Text gelesen und statistisch gelernt, welches Wort am wahrscheinlichsten
                             auf das vorherige folgt, im Bezug auf den Kontext.
                         </p>
-                        <p class="c-black">Es "weiß" nicht wirklich, was ein Tisch ist. Aber es hat in Milliarden Texten
+                        <p>Es "weiß" nicht wirklich, was ein Tisch ist. Aber es hat in Milliarden Texten
                             gelernt, wie
                             das Wort "Tisch" im Kontext von "Stuhl", "Essen" und "Holz" verwendet wird.</p>
                     </div>
                     <div class="mt-1 ai-card">
                         <h4 class="c1-second">Unter der Haube: Ein Blick in die Zukunft</h4>
-                        <p>Wie aus Wörtern reine Mathematik wird (Tokenisierung & Embeddings) und wieso die KI plötzlich den Kontext eines ganzen Buches verstehen kann (Attention-Mechanismus), ist eine der spannendsten technischen Entwicklungen der letzten Jahre.</p>
-                        <p>Da dies aber ein tieferes Eintauchen erfordert, schauen wir uns diese exakte Mechanik entspannt in <strong>Modul 06 (Transformer-Architektur)</strong> und <strong>Modul 07 (LLMs)</strong> an.</p>
+                        <p>Wie aus Wörtern reine Mathematik wird (Tokenisierung & Embeddings) und wieso die KI plötzlich
+                            den Kontext eines ganzen Buches verstehen kann (Attention-Mechanismus), ist eine der
+                            spannendsten technischen Entwicklungen der letzten Jahre.</p>
+                        <p>Da dies aber ein tieferes Eintauchen erfordert, schauen wir uns diese exakte Mechanik
+                            entspannt in <strong>Modul 06 (Transformer-Architektur)</strong> und <strong>Modul 07
+                                (LLMs)</strong> an.</p>
                     </div>
 
                 </div>

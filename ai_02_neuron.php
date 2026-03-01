@@ -41,7 +41,7 @@
                                 <img src="assets/png/bnn.png" style="max-width: 90%; " alt="Biologisches Neuron">
                             </div>
 
-                            <h4 class="c4-main">Das biologische Vorbild</h4>
+                            <h4 >Das biologische Vorbild</h4>
                             <ul class="ai-list" style="margin-top: 1rem;">
                                 <li><strong>Dendriten (Blaue Verästelungen):</strong> Die "Antennen". Sie empfangen
                                     elektrische Impulse von anderen vorgeschalteten Zellen.</li>
@@ -60,7 +60,7 @@
                                     alt="Künstliches Neuron (Perzeptron)">
                             </div>
 
-                            <h4 class="c4-main">Das künstliche Neuron (Perzeptron)</h4>
+                            <h4>Das künstliche Neuron (Perzeptron)</h4>
                             <ul class="ai-list" style="margin-top: 1rem;">
                                 <li><strong>Inputs (X):</strong> Die Eingabedaten (z.B. Pixel eines Bildes). Entspricht
                                     den Dendriten.</li>
@@ -94,7 +94,7 @@
                     </div>
 
                     <div>
-                        <h4 class="c1-second mt-1">💡 Was passiert da genau? Das Regenschirm-Beispiel</h4>
+                        <h4 class="c1-second mt-1">Was passiert da genau? Das Regenschirm-Beispiel</h4>
 
                         <p>Ein Neuron gibt am Ende einen Zahlenwert aus. Sehr oft bewegt sich dieser Wert zwischen 0 und
                             1 (nicht immer, es hängt davon ab was genau du berechnen möchtest). Eine <strong>1</strong>

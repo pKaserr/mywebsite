@@ -129,6 +129,10 @@
                             <li>(Pixelwert Mitte) <strong>*</strong> (Filter-Gewicht Mitte)</li>
                             <li>... das passiert für alle 9 Felder, die exakt übereinanderliegen.</li>
                         </ul>
+                        <div class="ai-img-wrapper mb-2">
+                            <img src="assets/png/filtering1.png" style="max-width: 50%;"
+                                alt="Visualisierung der Faltung eines Filters über ein Bild">
+                        </div>
                         <p class="mt-1">Am Ende werden diese 9 Ergebnisse zu einer einzigen Summe addiert. Das Netz
                             berechnet so mathematisch, wie stark dieser kleine 3x3-Bildausschnitt zu dem Muster passt,
                             das in den Gewichten des Filters gespeichert ist.</p>
@@ -142,12 +146,13 @@
                         <div class="ai-img-wrapper mb-2">
                             <img src="assets/png/filtering_cnn.png" style="max-width: 90%;"
                                 alt="Visualisierung der Faltung eines Filters über ein Bild">
-                          </div>
+                        </div>
                         <p>Wenn die Folie das gesamte Bild abgetastet hat, ist das neue Raster gefüllt. Dieses neue
                             Raster nennen wir die <strong>Feature Map (Aktivierungsmatrix)</strong>. Sie ist eine
                             gefilterte Version des Originalbildes. Ein sehr hoher Zahlenwert in dieser Map bedeutet:
                             <em>"Aha! Genau an dieser Stelle im Bild habe ich das Muster gefunden, nach dem mein Filter
-                                gesucht hat!"</em></p>
+                                gesucht hat!"</em>
+                        </p>
                     </div>
                     <hr>
 

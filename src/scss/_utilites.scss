@@ -61,20 +61,6 @@
 }
 
 
-// until x display-none @media (min-width: x) {
-// $bp-xxxs;
-// $bp-xxs;
-// $bp-xs;
-// $bp-s;
-// $bp-mid;
-// $bp-sm;
-// $bp-md;
-// $bp-lg;
-// $bp-xl;
-// $bp-xxl;
-
-
-
 // Responsive until-[breakpoint]-display-none utility classes
 @each $name, $size in $breakpoints {
    .until-#{$name}-display-none {
