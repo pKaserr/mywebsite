@@ -67,7 +67,7 @@ try {
                         <p class="chatbox__message chatbox__message--left">Ich bin hier um dir Fragen zu Patricks Person und
                             seine Bewerbung zu beantworten.</p>
                     </div>
-                    <input type="text" class="chatbox__userInput" placeholder="Stellen Sie eine Frage">
+                    <input type="text" class="chatbox__userInput" placeholder="Stellen Sie eine Frage und Enter!">
                 </div>
             <?php } ?>
 

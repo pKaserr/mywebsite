@@ -1,12 +1,23 @@
 const userInput = document.querySelector('.chatbox__userInput');
 const display = document.querySelector('.chatbox__display');
 
+// Load chat history from sessionStorage on page load
+document.addEventListener('DOMContentLoaded', () => {
+    const savedHistory = sessionStorage.getItem('chatHistory');
+    if (savedHistory) {
+        display.innerHTML = savedHistory;
+        display.scrollTop = display.scrollHeight; // Scroll to bottom
+    }
+});
 
 userInput.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         const question = userInput.value;
         if (question.trim() === "") return;
+        
         display.innerHTML += `<p class="chatbox__message chatbox__message--right">${question}</p>`;
+        sessionStorage.setItem('chatHistory', display.innerHTML); // Save after user message
+        
         userInput.value = "";
         display.scrollTop = display.scrollHeight;
         askAI(question);
@@ -34,7 +45,6 @@ async function askAI(question) {
             body: JSON.stringify({ question: question }),
             headers: { 'Content-Type': 'application/json' }
         });
-        console.log(response);
         const ct = response.headers.get('content-type') || '';
         let data;
 
@@ -46,9 +56,12 @@ async function askAI(question) {
             throw new Error('Server lieferte kein JSON: ' + text.slice(0, 200));
         }
 
-        display.innerHTML += `<p class="chatbox__message chatbox__message--left">${data.answer}</p>`;
-
+        // data.answer is now HTML (parsed markdown), so we wrap it in a div with the left class
+        display.innerHTML += `<div class="chatbox__message chatbox__message--left">${data.answer}</div>`;
+        sessionStorage.setItem('chatHistory', display.innerHTML); // Save after AI response
+        display.scrollTop = display.scrollHeight;
+        
     } catch (error) {
-        display.innerHTML += `<p><strong>AI:</strong> Fehler: ${String(error)}</p>`;
+        display.innerHTML += `<div class="chatbox__message chatbox__message--left"><strong>AI:</strong> Fehler: ${String(error)}</div>`;
     }
 }

@@ -62,6 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Login erfolgreich, Session-Daten setzen
             $_SESSION['logged_in'] = true;
             $_SESSION['user_name'] = $user['user_name'];
+            $_SESSION['file_hash'] = $user['file_hash'] ?? null;
             header("Location: dashboard.php");
             exit();
         } else {

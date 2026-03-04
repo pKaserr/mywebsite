@@ -17031,7 +17031,7 @@ Tutorials and AI Dashboard Icons
   z-index: 15;
   bottom: 20px;
   right: 20px;
-  width: 300px;
+  width: 350px;
   height: 200px;
   background-color: #686868;
   border-radius: 5px;
@@ -17059,10 +17059,15 @@ Tutorials and AI Dashboard Icons
   z-index: 10;
   position: relative;
   font-size: 0.9rem;
-  line-height: 1;
+  line-height: 1.2;
   padding: 3px;
   border-radius: 5px;
   margin: 15px;
+}
+.chatbox__message * {
+  font-size: 0.9rem;
+  line-height: 1.2;
+  margin: 6px;
 }
 .chatbox__message--right {
   background-color: #464646;
