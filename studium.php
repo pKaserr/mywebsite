@@ -1,6 +1,7 @@
 <?php
 require './includes/auth.php';
-
+require './includes/db_connect.php';
+$user_name = $_SESSION['user_name'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,6 +12,7 @@ require './includes/auth.php';
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <script src="./js/bg_net_graph.js" defer></script>
    <script src="./js/accordion.js" defer></script>
+   <script src="./js/chat.js" defer></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
    <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
    <link rel="icon" type="image/svg+xml" href="./assets/favicons/favicon.svg" />
@@ -28,6 +30,22 @@ require './includes/auth.php';
    </nav>
    <main>
       <div class="container_dashboard">
+         <?php if (!$is_guest) { ?>
+            <div class="chatbox until-md-display-none">
+               <div class="display-flex flex-justify-between">
+                  <button class="chatbox__minimize" onclick="minimizeChatBox()">Einklappen</button>
+                  <button class="chatbox__toggle" onclick="toggleChatboxSize()">Vergrößern</button>
+               </div>
+               <div class="chatbox__display">
+                  <p class="chatbox__message chatbox__message--left">Hi <?php echo htmlspecialchars($user_name); ?>, ich
+                     bin
+                     PAi.</p>
+                  <p class="chatbox__message chatbox__message--left">Ich bin hier um dir Fragen zu Patricks Person und
+                     seine Bewerbung zu beantworten.</p>
+               </div>
+               <input type="text" class="chatbox__userInput" placeholder="Stellen Sie eine Frage">
+            </div>
+         <?php } ?>
          <canvas class="particleCanvas"></canvas>
          <!-- Hero Section -->
          <div class="studium-hero">
@@ -122,7 +140,8 @@ require './includes/auth.php';
                   <h3>Anwendungsorientiert</h3>
                   <!-- <p>Während die allgemeine Informatik oft in Kernelementen der Informationsverarbeitung vertieft,
                      fokussiert sich Medieninformatik auf das <strong>Gesamtbild von Anwendungen</strong></p> -->
-                  <p>Während die allgemeine Informatik die Werkzeuge bereitstellt, liegt der Fokus der Medieninformatik auf dem <strong>Gesamtbild von Anwendungen</strong> der digitalen und technischen Welt.</p>
+                  <p>Während die allgemeine Informatik die Werkzeuge bereitstellt, liegt der Fokus der Medieninformatik
+                     auf dem <strong>Gesamtbild von Anwendungen</strong> der digitalen und technischen Welt.</p>
                </div>
 
                <div class="explanation-card">
@@ -147,8 +166,11 @@ require './includes/auth.php';
                   <h3 class="c1-second">Meine Kernkompetenz</h3>
                   <blockquote>
                      <div class="blockquote">
-                        Ich verstehe mich als Brückenbauer zwischen angewandter Forschung und Entwicklung. 
-                        Meine Kernkompetenz liegt am Anfang der Konzeptionsphase: Ich bin derjenige, der die grundlegende Struktur und Funktionsweise komplexer Systeme definiert. Mit einem klaren Fokus auf Künstliche Intelligenz, Computer Vision und der Digitalisierung entwickle ich mit Forschergeist die
+                        Ich verstehe mich als Brückenbauer zwischen angewandter Forschung und Entwicklung.
+                        Meine Kernkompetenz liegt am Anfang der Konzeptionsphase: Ich bin derjenige, der die
+                        grundlegende Struktur und Funktionsweise komplexer Systeme definiert. Mit einem klaren Fokus auf
+                        Künstliche Intelligenz, Computer Vision und der Digitalisierung entwickle ich mit Forschergeist
+                        die
                         technologische Basis dafür, wie innovative Lösungen konzipiert und realisiert werden können, um
                         zukunftsfähige Produkte zu schaffen.</div>
                   </blockquote>

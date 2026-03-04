@@ -2,7 +2,6 @@
 require './includes/auth.php';
 require './includes/db_connect.php';
 
-
 $user_name = $_SESSION['user_name'];
 
 if (isset($_SESSION['is_guest']) && $_SESSION['is_guest'] === true) {
@@ -38,6 +37,7 @@ try {
     <link rel="stylesheet" href="./style.css">
     <script src="./js/bg_net_graph.js" defer></script>
     <script src="./js/accordion.js" defer></script>
+    <script src="./js/chat.js" defer></script>
     <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./assets/favicons/favicon.svg" />
     <link rel="shortcut icon" href="./assets/favicons/favicon.ico" />
@@ -53,7 +53,24 @@ try {
         </div>
     </nav>
     <main>
-        <div class="container_dashboard">
+        <div class="container_dashboard">   
+            <?php if (!$is_guest) { ?>
+                <div class="chatbox until-md-display-none">
+                    <div class="display-flex flex-justify-between">
+                        <button class="chatbox__minimize" onclick="minimizeChatBox()">Einklappen</button>
+                        <button class="chatbox__toggle" onclick="toggleChatboxSize()">Vergrößern</button>
+                    </div>
+                    <div class="chatbox__display">
+                        <p class="chatbox__message chatbox__message--left">Hi
+                            <?php echo htmlspecialchars($user_name); ?>, ich bin
+                            PAi.
+                        </p>
+                        <p class="chatbox__message chatbox__message--left">Ich bin hier um dir Fragen zu Patricks Person und
+                            seine Bewerbung zu beantworten.</p>
+                    </div>
+                    <input type="text" class="chatbox__userInput" placeholder="Stellen Sie eine Frage">
+                </div>
+            <?php } ?>
             <canvas class="particleCanvas"></canvas>
             <h1>Willkommen bei den Dokumenten, <?= htmlspecialchars($user_name) ?></h1>
             <p class="mb-3">Unten finden Sie nun Bewerbungsunterlagen und Zeugnisse als einzelne Dateien.</p>

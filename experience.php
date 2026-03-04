@@ -1,5 +1,8 @@
 <?php
 require './includes/auth.php';
+require './includes/db_connect.php';
+
+$user_name = $_SESSION['user_name'];
 
 ?>
 <!DOCTYPE html>
@@ -13,6 +16,8 @@ require './includes/auth.php';
    <script src="./js/accordion.js" defer></script>
    <script src="./js/video-controls.js" defer></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+   <script src="./js/chat.js" defer></script>
+
    <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
    <link rel="icon" type="image/svg+xml" href="./assets/favicons/favicon.svg" />
    <link rel="shortcut icon" href="./assets/favicons/favicon.ico" />
@@ -28,6 +33,21 @@ require './includes/auth.php';
          <a href="dashboard"><button class="btn btn--main btn--nav">Zurück</button></a>
       </div>
       <div class="container_dashboard">
+         <?php if (!$is_guest) { ?>
+            <div class="chatbox until-mid-display-none">
+               <div class="display-flex flex-justify-between">
+                  <button class="chatbox__minimize" onclick="minimizeChatBox()">Einklappen</button>
+                  <button class="chatbox__toggle" onclick="toggleChatboxSize()">Vergrößern</button>
+               </div>
+               <div class="chatbox__display">
+                  <p class="chatbox__message chatbox__message--left">Hi <?php echo htmlspecialchars($user_name); ?>,
+                     ich bin PAi.</p>
+                  <p class="chatbox__message chatbox__message--left">Ich bin hier um dir Fragen zu Patricks Person und
+                     seine Bewerbung zu beantworten.</p>
+               </div>
+               <input type="text" class="chatbox__userInput" placeholder="Stellen Sie eine Frage">
+            </div>
+         <?php } ?>
          <h1>Erfahrungen</h1>
 
          <button class="accordion accordion--bg">Fullstack Softwareentwickler/KI</button>
@@ -91,7 +111,8 @@ require './includes/auth.php';
          </div>
 
 
-         <button id="masterthesis" class="accordion accordion--bg">Masterthesis - Synthesized Sensor Data from Neural Radiance
+         <button id="masterthesis" class="accordion accordion--bg">Masterthesis - Synthesized Sensor Data from Neural
+            Radiance
             Fields</button>
          <div class="panel">
             <div class="tl_dr">Kurzfasssung: Wie kann in einem Neural Radiance Field (NeRF) synthetische LiDAR-Sensor

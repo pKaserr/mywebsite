@@ -38,6 +38,8 @@ try {
 
     <script src="./js/bg_net_graph.js" defer></script>
     <script src="./js/dashboard.js" defer></script>
+    <script src="./js/chat.js" defer></script>
+
     <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./assets/favicons/favicon.svg" />
     <link rel="shortcut icon" href="./assets/favicons/favicon.ico" />
@@ -53,6 +55,22 @@ try {
     </nav>
     <main>
         <div class="container_dashboard">
+            <?php if (!$is_guest) { ?>
+                <div class="chatbox until-mid-display-none">
+                    <div class="display-flex flex-justify-between">
+                        <button class="chatbox__minimize" onclick="minimizeChatBox()">Einklappen</button>
+                        <button class="chatbox__toggle" onclick="toggleChatboxSize()">Vergrößern</button>
+                    </div>
+                    <div class="chatbox__display">
+                        <p class="chatbox__message chatbox__message--left">Hi <?php echo htmlspecialchars($user_name); ?>,
+                            ich bin PAi.</p>
+                        <p class="chatbox__message chatbox__message--left">Ich bin hier um dir Fragen zu Patricks Person und
+                            seine Bewerbung zu beantworten.</p>
+                    </div>
+                    <input type="text" class="chatbox__userInput" placeholder="Stellen Sie eine Frage">
+                </div>
+            <?php } ?>
+
             <canvas class="particleCanvas"></canvas>
             <div class="container__title">
                 <?php if ($is_guest) { ?>
@@ -328,26 +346,32 @@ try {
                                     </div>
                                 </a>
                                 <a class="boxWrapper__a" href="admin/relations.php">Zuweisungen verwalten</a>
-                        </a>
-                        <a class="boxWrapper__a" href="admin/access_logs.php">Access Logs</a></a>
-                    <?php } ?>
+                                <a class="boxWrapper__a" href="admin/access_logs.php">Access Logs</a>
+                            <?php } ?>
 
-                    <div class="mb-2">
-                        <h4>Du willst digitalisieren? Kontaktiere mich!</h4>
-                        <span></span>Ich möchte weiterhin meine Erfahrung und Kenntnisse mit anderen Menschen teilen.
-                        Daher möchte ich gerne eine kostenlose Beratungen anbieten. Hierbei geht es nicht um eine
-                        bezahlte Arbeit als Freiberufler sondern um die Möglichkeit, anderen Menschen zu helfen und
-                        Erfahrungen zu gewinnen. Falls Sie also kleines oder mittelständiges Unternehmen sind, und
-                        aktuell mit dem Gedanken spielen Ihr Unternehmen zu digitalisieren, dürfen Sie mich gerne mit
-                        einer kurzen Beschreibung der Problemstellung und des gewünschten Ziels, über das
-                        Kontaktformular kontaktieren. Mein Gewinn ist hierbei die Erfahrung.</span>
-                    </div>
-                    <h4>Zukünftige Funktionen und Projekte</h4>
-                    <span>Da auch die Didaktik für mich eine wichtige Rolle spielt, werden hier zukünftig weitere
-                        Funktionen und Projekte hinzugefügt. Unter anderem verschiedene Tutorials über die Themen
-                        Programmierung, Künstliche Intelligenz und Computer Vision.</span>
+                            <div class="mb-2">
+                                <h4>Du willst digitalisieren? Kontaktiere mich!</h4>
+                                <span></span>Ich möchte weiterhin meine Erfahrung und Kenntnisse mit anderen Menschen
+                                teilen.
+                                Daher möchte ich gerne eine kostenlose Beratungen anbieten. Hierbei geht es nicht um
+                                eine
+                                bezahlte Arbeit als Freiberufler sondern um die Möglichkeit, anderen Menschen zu helfen
+                                und
+                                Erfahrungen zu gewinnen. Falls Sie also kleines oder mittelständiges Unternehmen sind,
+                                und
+                                aktuell mit dem Gedanken spielen Ihr Unternehmen zu digitalisieren, dürfen Sie mich
+                                gerne mit
+                                einer kurzen Beschreibung der Problemstellung und des gewünschten Ziels, über das
+                                Kontaktformular kontaktieren. Mein Gewinn ist hierbei die Erfahrung.</span>
+                            </div>
+                            <h4>Zukünftige Funktionen und Projekte</h4>
+                            <span>Da auch die Didaktik für mich eine wichtige Rolle spielt, werden hier zukünftig
+                                weitere
+                                Funktionen und Projekte hinzugefügt. Unter anderem verschiedene Tutorials über die
+                                Themen
+                                Programmierung, Künstliche Intelligenz und Computer Vision.</span>
+                        </div>
                 </div>
-            </div>
     </main>
     <?php include __DIR__ . '/includes/footer.php'; ?>
 </body>

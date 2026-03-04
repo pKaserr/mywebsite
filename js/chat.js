@@ -1,13 +1,34 @@
-async function askAI() {
-    const questionField = document.getElementById('userInput');
-    const question = questionField.value;
-    
-    // UI Feedback: "KI tippt..."
-    document.getElementById('p_text').value = question;
-    document.getElementById('p_text').value =  "AI denkt nach...";
+const userInput = document.querySelector('.chatbox__userInput');
+const display = document.querySelector('.chatbox__display');
 
+
+userInput.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        const question = userInput.value;
+        if (question.trim() === "") return;
+        display.innerHTML += `<p class="chatbox__message chatbox__message--right">${question}</p>`;
+        userInput.value = "";
+        display.scrollTop = display.scrollHeight;
+        askAI(question);
+    }
+});
+
+function toggleChatboxSize() {
+    const toggleButton = document.querySelector('.chatbox__toggle');
+    const chatbox = document.querySelector('.chatbox');
+    chatbox.classList.toggle('chatbox--open');
+    toggleButton.textContent = chatbox.classList.contains('chatbox--open') ? 'Verkleinern' : 'Vergrößern';
+}
+
+function minimizeChatBox() {
+    const chatbox = document.querySelector('.chatbox');
+    chatbox.classList.toggle('chatbox--minimized');
+    const toggleButton = document.querySelector('.chatbox__minimize');
+    toggleButton.textContent = chatbox.classList.contains('chatbox--minimized') ? 'Ausklappen' : 'Einklappen';
+}
+
+async function askAI(question) {
     try {
-        // Aufruf an dein lokales PHP Skript
         const response = await fetch('chat.php', {
             method: 'POST',
             body: JSON.stringify({ question: question }),
@@ -16,24 +37,18 @@ async function askAI() {
         console.log(response);
         const ct = response.headers.get('content-type') || '';
         let data;
+
         if (ct.includes('application/json')) {
             data = await response.json();
+
         } else {
             const text = await response.text();
             throw new Error('Server lieferte kein JSON: ' + text.slice(0, 200));
         }
-        console.log(data);
-        
-        // Lade-Text entfernen und Antwort anzeigen
-        // document.getElementById('loading').remove();
-        // document.getElementById('dashboard__chatBox').innerHTML += `<p><strong>AI:</strong> ${data.answer}</p>`;
-        document.getElementById('p_text').value += data.answer;
 
-        
+        display.innerHTML += `<p class="chatbox__message chatbox__message--left">${data.answer}</p>`;
+
     } catch (error) {
-        console.error("Fehler:", error);
-        const loadingEl = document.getElementById('loading');
-        if (loadingEl) loadingEl.remove();
-        document.getElementById('dashboard__chatBox').innerHTML += `<p><strong>AI:</strong> Fehler: ${String(error)}</p>`;
+        display.innerHTML += `<p><strong>AI:</strong> Fehler: ${String(error)}</p>`;
     }
 }

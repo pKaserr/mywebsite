@@ -30,7 +30,7 @@ if (class_exists('Dotenv\\Dotenv') && file_exists(__DIR__ . '/.env')) {
 
 // Configuration
 $config = [
-    'recipient_email' => 'patrick.kaserer@gmail.com',
+    'recipient_email' => 'kaserer.patrick@gmail.com',
     'subject_prefix' => 'Kontakt von Website: ',
     'success_message' => 'Vielen Dank für Ihre Nachricht! Ich werde mich bald bei Ihnen melden.',
     'error_message' => 'Es gab einen Fehler beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.',

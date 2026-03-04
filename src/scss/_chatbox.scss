@@ -1,0 +1,117 @@
+.chatbox {
+    position: fixed;
+    z-index: 15;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    height: 200px;
+    background-color: $c3-main;
+    border-radius: $border-radius_small;
+    box-shadow: 0 8px 32px rgba($c-black, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    transition: height 0.3s ease;
+
+    &__display {
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: $c2-main $c1-main;
+        background-color: $c1-main;
+        flex: 1;
+        border-radius: $border-radius_small;
+        border: none;
+        resize: none;
+        outline: none;
+        font-family: inherit;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    &__message {
+        z-index: 10;
+        position: relative;
+        font-size: 0.9rem;
+        line-height: 1;
+        padding: 3px;
+        border-radius: 5px;
+        margin: 15px;
+    }
+
+    &__message--right {
+        background-color: $c2-main;
+        margin-left: 2rem;
+
+        &::before {
+            content: "\a";
+            z-index: -1;
+            border-style: solid;
+            border-width: 10px 18px 10px 0;
+            border-color: transparent $c2-main transparent transparent;
+            position: absolute;
+            top: -1px;
+            right: -8px;
+            transform: rotate(-90deg);
+        }
+    }
+
+    &__message--left {
+        margin-right: 2rem;
+        background-color: $c2-second;
+
+        &::before {
+            content: "\a";
+            z-index: -1;
+            border-style: solid;
+            border-width: 10px 18px 10px 0;
+            border-color: transparent $c2-second transparent transparent;
+            position: absolute;
+            top: -1px;
+            left: -8px;
+            transform: rotate(-90deg);
+        }
+    }
+
+    &__userInput {
+        border: 1px solid $c-white;
+        padding: 8px;
+        border-radius: $border-radius_small;
+        margin-bottom: 10px;
+    }
+
+    &__toggle,
+    &__minimize {
+        width: 48%;
+        color: $c1-main;
+        margin-bottom: 0.5rem;
+        background-color: $c3-main;
+        border: solid 2px $c1-main;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    &--open {
+        height: 600px;
+    }
+
+    &--minimized {
+        height: 50px;
+        width: 100px;
+
+        .chatbox__display {
+            display: none;
+        }
+
+        .chatbox__userInput {
+            display: none;
+        }
+
+        .chatbox__toggle {
+            display: none;
+        }
+
+        .chatbox__minimize {
+            width: 100%;
+        }
+    }
+}
