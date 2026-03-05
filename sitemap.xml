@@ -3,4 +3,34 @@
   <url>
     <loc>https:/patrick-kaserer.de/index</loc>
   </url>
+  <url>
+    <loc>https:/patrick-kaserer.de/ai_dashboard</loc>
+  </url>
+  <url>
+    <loc>https:/patrick-kaserer.de/ai_01_big_picture.php</loc>
+  </url>
+  <url>
+    <loc>https:/patrick-kaserer.de/ai_02_neuron.php</loc>
+  </url>
+  <url>
+    <loc>https:/patrick-kaserer.de/ai_03_architecture.php</loc>
+  </url>
+  <url>
+    <loc>https:/patrick-kaserer.de/ai_04_learning.php</loc>
+  </url>
+  <url>
+    <loc>https:/patrick-kaserer.de/ai_05_vision.php</loc>
+  </url>
+  <url>
+    <loc>https:/patrick-kaserer.de/ai_06_transformer.php</loc>
+  </url>
+  <url>
+    <loc>https:/patrick-kaserer.de/ai_07_llm.php</loc>
+  </url>
+  <url>
+    <loc>https:/patrick-kaserer.de/ai_08_ecosystem.php</loc>
+  </url>
+  <url>
+    <loc>https:/patrick-kaserer.de/ai_09_xai.php</loc>
+  </url>
 </urlset>

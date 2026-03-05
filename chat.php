@@ -207,18 +207,18 @@ $data = [
 // Debugging
 // file_put_contents('debug.txt', print_r($data, true));
 
-// $ch = curl_init($url);
-// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-// curl_setopt($ch, CURLOPT_POST, true);
-// curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-// curl_setopt($ch, CURLOPT_HTTPHEADER, [
-//     'Content-Type: application/json'
-// ]);
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    'Content-Type: application/json'
+]);
 
-// $response = curl_exec($ch);
-// $curlErr = curl_error($ch);
-// $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); // Gut fürs Debugging
-// curl_close($ch);
+$response = curl_exec($ch);
+$curlErr = curl_error($ch);
+$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); // Gut fürs Debugging
+curl_close($ch);
 
 // 6. Antwort parsen und ans Frontend zurückgeben
 $botReply = "Fehler bei der Verbindung zur KI.";

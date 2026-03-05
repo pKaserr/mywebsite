@@ -1,2 +1,17 @@
 User-agent: *
 Allow: /index
+Allow: /ai_dashboard
+Allow: /ai_01_big_picture.php
+Allow: /ai_02_neuron.php
+Allow: /ai_03_architecture.php
+Allow: /ai_04_learning.php
+Allow: /ai_05_vision.php
+Allow: /ai_06_transformer.php
+Allow: /ai_07_llm.php
+Allow: /ai_08_ecosystem.php
+Allow: /ai_09_xai.php
+
+Disallow: /wp/
+Disallow: /wp-admin/user/index.php
+Disallow: /abc.php
+Disallow: /.htaccess
