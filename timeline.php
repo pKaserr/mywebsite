@@ -19,7 +19,6 @@ $user_name = $_SESSION['user_name'];
    <script src="./js/bg_net_graph.js" defer></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
    <script src="./js/timeline.js" defer></script>
-   <script src="./js/chat.js" defer></script>
    <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
    <link rel="icon" type="image/svg+xml" href="./assets/favicons/favicon.svg" />
    <link rel="shortcut icon" href="./assets/favicons/favicon.ico" />
@@ -39,20 +38,6 @@ $user_name = $_SESSION['user_name'];
    <main>
 
       <div class="container_dashboard">
-         <?php if (!$is_guest) { ?>
-            <div class="chatbox until-md-display-none">
-               <button class="chatbox__toggle" onclick="toggleChatbox()">Aufklappen</button>
-               <div class="chatbox__display">
-                  <p class="chatbox__message chatbox__message--left">Hi
-                     <?php echo htmlspecialchars($user_name); ?>, ich bin
-                     PAi.
-                  </p>
-                  <p class="chatbox__message chatbox__message--left">Ich bin hier um dir Fragen zu Patricks Person und
-                     seine Bewerbung zu beantworten.</p>
-               </div>
-               <input type="text" class="chatbox__userInput" placeholder="Stellen Sie eine Frage">
-            </div>
-         <?php } ?>
          <canvas class="particleCanvas"></canvas>
          <h1 lang="de" data-translate="timeline.title">Timeline</h1>
          <p class="timeline-intro" lang="de" data-translate="timeline.intro">Mein Weg von der Logistik zur Informatik –
@@ -224,6 +209,7 @@ $user_name = $_SESSION['user_name'];
          </div>
       </div>
    </main>
+   <?php include __DIR__ . '/includes/chatbox.php'; ?>
    <?php include __DIR__ . '/includes/footer.php'; ?>
 </body>
 

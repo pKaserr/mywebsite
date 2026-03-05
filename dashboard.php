@@ -38,7 +38,6 @@ try {
 
     <script src="./js/bg_net_graph.js" defer></script>
     <script src="./js/dashboard.js" defer></script>
-    <script src="./js/chat.js" defer></script>
 
     <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./assets/favicons/favicon.svg" />
@@ -55,21 +54,6 @@ try {
     </nav>
     <main>
         <div class="container_dashboard">
-            <?php if (!$is_guest) { ?>
-                <div class="chatbox until-mid-display-none">
-                    <div class="display-flex flex-justify-between">
-                        <button class="chatbox__minimize" onclick="minimizeChatBox()">Einklappen</button>
-                        <button class="chatbox__toggle" onclick="toggleChatboxSize()">Vergrößern</button>
-                    </div>
-                    <div class="chatbox__display">
-                        <p class="chatbox__message chatbox__message--left">Hi <?php echo htmlspecialchars($user_name); ?>,
-                            ich bin PAi.</p>
-                        <p class="chatbox__message chatbox__message--left">Ich bin hier um dir Fragen zu Patricks Person und
-                            seine Bewerbung zu beantworten.</p>
-                    </div>
-                    <input type="text" class="chatbox__userInput" placeholder="Stellen Sie eine Frage und Enter!">
-                </div>
-            <?php } ?>
 
             <canvas class="particleCanvas"></canvas>
             <div class="container__title">
@@ -373,6 +357,7 @@ try {
                         </div>
                 </div>
     </main>
+    <?php include __DIR__ . '/includes/chatbox.php'; ?>
     <?php include __DIR__ . '/includes/footer.php'; ?>
 </body>
 <!-- <div class="devBtn"></div> -->

@@ -157,11 +157,11 @@ Gebe keine Informationen über die Implementierung der Webseite oder dich als KI
 
 Deine Aufgabe ist es, Patrick als KI-Assistent zu repräsentieren. Du bist der Kollege der gefragt wird, bevor man Patrick direkt fragt. Sei nett und verwende auch reagiere auf emojis mit passenden emojis.
 
-Halte dich möglichst kurz und bündig.
+Halte dich möglichst kurz und bündig. Keine überteigungen: Patricks Fähigkeiten sind gut und teils auch überdurchschnittlich, aber er ist kein Supermann.
 NIEMALS: Infos über Anschrift, Telefonnumer, E-Mail oder andere persönliche Daten. 
 
-WEBSITE KOMPASS (Nutze dies um dem Nutzer zu erklären, wo er was auf der Webseite findet):
-- Startseite/Home: /index.php oder /dashboard.php
+WEBSITE KOMPASS:
+- Startseite/Home: /index.php
 - Lebenslauf & Erfahrungen: /experience.php
 - Studium & Bildung: /studium.php
 - Über Patrick (Privat/Persönlich): /about_me.php
@@ -205,20 +205,20 @@ $data = [
 ];
 
 // Debugging
-file_put_contents('debug.txt', print_r($data, true));
+// file_put_contents('debug.txt', print_r($data, true));
 
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    'Content-Type: application/json'
-]);
+// $ch = curl_init($url);
+// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+// curl_setopt($ch, CURLOPT_POST, true);
+// curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+// curl_setopt($ch, CURLOPT_HTTPHEADER, [
+//     'Content-Type: application/json'
+// ]);
 
-$response = curl_exec($ch);
-$curlErr = curl_error($ch);
-$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); // Gut fürs Debugging
-curl_close($ch);
+// $response = curl_exec($ch);
+// $curlErr = curl_error($ch);
+// $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); // Gut fürs Debugging
+// curl_close($ch);
 
 // 6. Antwort parsen und ans Frontend zurückgeben
 $botReply = "Fehler bei der Verbindung zur KI.";

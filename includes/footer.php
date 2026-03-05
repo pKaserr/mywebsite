@@ -51,6 +51,16 @@ $assetBase = (strpos($currentDir, '/admin') !== false) ? '../' : './';
       </div>
     </div>
   </div>
+  <?php if (!isset($_COOKIE['cookieConsent']) || $_COOKIE['cookieConsent'] !== '1'): ?>
+  <div class="cookie-banner">
+    <div class="cookie-banner__content">
+      <span class="cookie-banner__text" data-translate="footer.cookie.text">
+        Diese Website verwendet ausschließlich technisch notwendige Cookies, die für den Betrieb und die Funktionalität der Seite erforderlich sind. Es werden keine Tracking- oder Marketing-Cookies eingesetzt.
+      </span>
+      <button class="btn btn--main cookie-banner__btn" id="cookie-banner-btn" data-translate="footer.cookie.button">Verstanden</button>
+    </div>
+  </div>
+  <?php endif; ?>
 </footer>
 <script src="<?= htmlspecialchars($assetBase) ?>js/footer.js"></script>
 

@@ -5,27 +5,25 @@
     right: 20px;
     width: 350px;
     height: 200px;
-    background-color: $c3-main;
+    background-color: transparent;
+    border: 5px solid $c3-main;
     border-radius: $border-radius_small;
     box-shadow: 0 8px 32px rgba($c-black, 0.1);
     display: flex;
     flex-direction: column;
-    padding: 10px;
     transition: height 0.3s ease;
 
     &__display {
         overflow-y: auto;
         scrollbar-width: thin;
         scrollbar-color: $c2-main $c1-main;
-        background-color: $c1-main;
+        background-color: rgba($c1-main, 0.9);
         flex: 1;
-        border-radius: $border-radius_small;
         border: none;
         resize: none;
         outline: none;
         font-family: inherit;
         font-size: 14px;
-        margin-bottom: 10px;
     }
 
     &__message {
@@ -33,11 +31,10 @@
         position: relative;
         font-size: 0.9rem;
         line-height: 1.2;
-        padding: 3px;
+        padding: 7px;
         border-radius: 5px;
-        margin: 15px;
+        margin: 0.6rem;
 
-        // child elements inherit
         * {
             font-size: 0.9rem;
             line-height: 1.2;
@@ -53,10 +50,10 @@
             content: "\a";
             z-index: -1;
             border-style: solid;
-            border-width: 10px 18px 10px 0;
+            border-width: 0px 13px 15px 0px;
             border-color: transparent $c2-main transparent transparent;
             position: absolute;
-            top: -1px;
+            top: 2px;
             right: -8px;
             transform: rotate(-90deg);
         }
@@ -70,55 +67,85 @@
             content: "\a";
             z-index: -1;
             border-style: solid;
-            border-width: 10px 18px 10px 0;
+            border-width: 15px 13px 0px 0px;
             border-color: transparent $c2-second transparent transparent;
             position: absolute;
-            top: -1px;
+            top: 2px;
             left: -8px;
             transform: rotate(-90deg);
         }
     }
 
     &__userInput {
-        border: 1px solid $c-white;
+        border-top: 5px solid $c3-main !important;
         padding: 8px;
-        border-radius: $border-radius_small;
-        margin-bottom: 10px;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        box-shadow: none;
+
+        &:focus,
+        &:hover {
+            transform: scale(1) !important;
+            transition: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        &__counter {
+            position: absolute;
+            bottom: -2px;
+            right: 58px;
+            font-size: 0.6rem;
+            color: $c1-main;
+        }
+    }
+
+    &__btn {
+        margin: 0;
+        color: $c-white;
+        background-color: $c3-main;
+        padding: 6px 1px 0 5px !important;
+    }
+
+    &__toggle {
+        border: none;
+        border-left: 1px solid $c3-main;
+    }
+
+    &__minimize {
+        border: none;
     }
 
     &__toggle,
     &__minimize {
-        width: 48%;
-        color: $c1-main;
-        margin-bottom: 0.5rem;
+        width: 50%;
+        color: $c-white;
         background-color: $c3-main;
-        border: solid 2px $c1-main;
-        padding: 5px;
+        padding: 5px 5px 10px 5px;
         cursor: pointer;
     }
 
     &--open {
-        height: 600px;
+        height: 750px;
+        width: 550px;
     }
 
     &--minimized {
-        height: 50px;
+        height: 25px;
         width: 100px;
+        transition: none;
 
-        .chatbox__display {
-            display: none;
-        }
-
-        .chatbox__userInput {
-            display: none;
-        }
-
+        .chatbox__display,
+        .chatbox__userInput,
+        .chatbox__btn,
+        .chatbox__userInput__counter,
         .chatbox__toggle {
             display: none;
         }
 
         .chatbox__minimize {
             width: 100%;
+            margin: 0;
         }
     }
 }

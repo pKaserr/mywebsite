@@ -11,7 +11,6 @@ $user_name = $_SESSION['user_name'];
    <link rel="stylesheet" href="./style.css">
    <script src="./js/bg_net_graph.js" defer></script>
    <script src="./js/accordion.js" defer></script>
-   <script src="./js/chat.js" defer></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
    <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
@@ -31,22 +30,6 @@ $user_name = $_SESSION['user_name'];
    </nav>
    <main>
       <div class="container_dashboard">
-         <?php if (!$is_guest) { ?>
-            <div class="chatbox until-md-display-none">
-               <div class="display-flex flex-justify-between">
-                  <button class="chatbox__minimize" onclick="minimizeChatBox()">Einklappen</button>
-                  <button class="chatbox__toggle" onclick="toggleChatboxSize()">Vergrößern</button>
-               </div>
-               <div class="chatbox__display">
-                  <p class="chatbox__message chatbox__message--left">Hi <?php echo htmlspecialchars($user_name); ?>, ich
-                     bin
-                     PAi.</p>
-                  <p class="chatbox__message chatbox__message--left">Ich bin hier um dir Fragen zu Patricks Person und
-                     seine Bewerbung zu beantworten.</p>
-               </div>
-               <input type="text" class="chatbox__userInput" placeholder="Stellen Sie eine Frage">
-            </div>
-         <?php } ?>
          <canvas class="particleCanvas"></canvas>
          <!-- Hero Section -->
          <div class="about-hero">
@@ -284,6 +267,7 @@ $user_name = $_SESSION['user_name'];
          </div>
       </div>
    </main>
+   <?php include __DIR__ . '/includes/chatbox.php'; ?>
    <?php include __DIR__ . '/includes/footer.php'; ?>
 </body>
 
