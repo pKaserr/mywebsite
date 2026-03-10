@@ -58,7 +58,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Benutzername und Passwort überprüfen
         if ($user && password_verify($password, $user['passwort'])) {
-            error_log("Password verification SUCCESS - redirecting to dashboard");
+            error_log("Password verification SUCCESS");
+            
+            // 2FA check for Admin
+            if (strtolower($user['user_name']) === 'admin' || $user['user_id'] == 1) {
+                error_log("Admin user detected - initiating 2FA flow");
+                $_SESSION['pending_2fa_user_id'] = $user['user_id'];
+                $_SESSION['pending_2fa_user_name'] = $user['user_name'];
+                
+                if (empty($user['two_factor_secret'])) {
+                    error_log("No 2FA secret found - redirecting to setup");
+                    header("Location: 2fa_setup.php");
+                    exit();
+                } else {
+                    error_log("2FA secret found - redirecting to verify");
+                    header("Location: 2fa_verify.php");
+                    exit();
+                }
+            }
+
+            error_log("Regular user - redirecting to dashboard");
             // Login erfolgreich, Session-Daten setzen
             $_SESSION['logged_in'] = true;
             $_SESSION['user_name'] = $user['user_name'];

@@ -319,6 +319,24 @@
 		width: 50%;
 		margin: 0 auto;
 	}
+
+	&--multiple {
+		&>div {
+			width: 100%;
+
+			@media (min-width: $bp-md) {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+
+		@media (min-width: $bp-md) {
+			display: flex !important;
+			flex-direction: row !important;
+			text-align: left !important;
+		}
+	}
 }
 
 // XAI Module

@@ -199,6 +199,91 @@
                             verschmelzen.</p>
                     </div>
 
+                    <hr>
+
+                    <h3 class="c1-second mt-1">Phase 5: Vom Erkennen zum Erschaffen: Diffusion Models
+                    </h3>
+                    <p>Bisher haben wir KIs betrachtet, die Bilder <em>verstehen</em> (z. B. "Auf
+                        diesen Pixeln ist ein Hund zu sehen"). Aber wie bringt man einer Maschine bei, ein völlig neues
+                        Bild zu <em>malen</em>, das es so noch nie gab? Das Herzstück moderner Bildgeneratoren (wie
+                        Midjourney oder Stable Diffusion) ist eine Technik namens <strong>Diffusion</strong>.</p>
+                    
+                    <div class="ai-card mt-1">
+                        <h4>Was bedeutet eigentlich "Diffusion"?</h4>
+                        <p>Der Begriff kommt aus der Physik. Stell dir ein Glas mit klarem
+                            Wasser vor. Du lässt einen einzigen Tropfen blauer Tinte hineinfallen. Zuerst ist der
+                            Tropfen klar erkennbar (ein klares Bild). Doch langsam verteilt sich die Tinte, sie
+                            <em>diffundiert</em>. Irgendwann ist das Wasser nur noch eine gleichmäßig trübe, hellblaue
+                            Brühe. Die klare Information des Tropfens wurde durch das stetige Vermischen komplett
+                            zerstört.</p>
+                        <p class="mt-1">Genau dieses Prinzip wendet die KI auf Bilder an – nur
+                            dass sie nicht mit Wasser und Tinte arbeitet, sondern mit <strong>Bildrauschen
+                                (Noise)</strong>. Stell dir Rauschen vor wie das graue, flimmernde "Ameisenbild" bei
+                            einem alten Röhrenfernseher ohne Empfang. Es sind einfach völlig zufällige Pixel ohne jeden
+                            Sinn.</p>
+                        </div>
+
+                    <h3 class="c1-second mt-1">Phase 1: Das systematische Zerstören (Forward
+                        Diffusion)</h3>
+                    <p>Um der KI das Erschaffen beizubringen, muss sie paradoxerweise erst einmal
+                        Meisterin im Zerstören werden. Dieser Prozess findet während des Trainings statt.</p>
+
+                    <div class="ai-card mt-1">
+                        <ol class="ai-list">
+                            <li>Wir zeigen der KI ein gestochen scharfes Foto von einer
+                                Katze.</li>
+                            <li class="mt-1">Wir fügen dem Bild eine winzig kleine Menge
+                                Rauschen hinzu. Ein paar Pixel verändern zufällig ihre Farbe. Die Katze ist immer noch
+                                klar erkennbar, nur minimal körnig.</li>
+                            <li class="mt-1">Diesen Schritt wiederholen wir extrem oft (z.
+                                B. 1.000 Mal). Mit jedem Schritt wird das Bild verrauschter. Die Katze verschwindet im
+                                Chaos.</li>
+                            <li class="mt-1">Bei Schritt 1.000 ist von der Katze absolut
+                                nichts mehr übrig. Es ist nur noch rein zufälliges Pixel-Rauschen.</li>
+                            </ol>
+                        </div>
+                    <p class="mt-1"><strong>Der Trick dabei:</strong> Das neuronale Netz schaut bei
+                        jedem dieser 1.000 Schritte genau hin! Es lernt: <em>"Aha, so sieht das Bild bei Schritt 45 aus,
+                            und so sieht genau jenes Rauschen aus, das bei Schritt 46 dazukam."</em> Die KI lernt also
+                        die exakte mathematische Struktur von "Zerstörung".</p>
+
+
+
+                    
+                    <hr>
+
+                    <h3 class="c1-second mt-1">Phase 2: Die Zeit zurückdrehen (Reverse Diffusion)
+                    </h3>
+                    <p>Jetzt kommt die eigentliche Magie – die Generierung eines neuen Bildes. Wir
+                        drehen den Prozess um und spielen ihn rückwärts ab.</p>
+
+                    <div class="ai-grid-2 mt-1">
+                        <div class="ai-card">
+                            <h4>1. Der Start im Chaos</h4>
+                            <p>Wenn du der KI sagst "Male mir eine Katze", nimmt sie nicht
+                                etwa einen Pinsel in die Hand. Sie erzeugt stattdessen ein komplett neues Bild aus 100%
+                                purem, zufälligem Rauschen. Für uns Menschen sieht das aus wie das Flackern auf dem
+                                alten Röhrenfernseher.</p>
+                            </div>
+                        <div class="ai-card">
+                            <h4>2. Der Entrauscher (De-Noising)</h4>
+                            <p>Nun betrachtet die KI dieses Rauschen und fragt sich:
+                                <em>"Wenn dies Schritt 1.000 ist, welches Rauschen muss ich abziehen (subtrahieren), um
+                                    zu Schritt 999 zu gelangen?"</em> Da sie den Zerstörungsprozess perfekt studiert
+                                hat, kann sie genau berechnen, welche Pixelmuster sie entfernen muss.</p>
+                            </div>
+                        </div>
+
+                    <div class="ai-card--notice mt-1">
+                        <p><strong>Der Text ist der Kompass:</strong> Während die KI Schritt für
+                            Schritt das Rauschen entfernt (von Schritt 1.000 runter auf Schritt 0), wird sie von deinem
+                            Text-Prompt gesteuert. Dein Satz "Eine flauschige Katze" zwingt das Netz dazu, beim
+                            Entfernen des Rauschens genau jene Pixel-Strukturen übrig zu lassen, die am Ende wie Fell,
+                            Ohren und Augen aussehen. Aus dem anfänglichen Chaos wird die Tinte sozusagen wieder in
+                            einen perfekten Tropfen zurückverwandelt – aber diesmal in einen, den es in der echten Welt
+                            vorher nie gab.</p>
+                        </div>
+
                 </div>
             </div>
 

@@ -2,16 +2,16 @@
  * Custom video controls for experience page
  * Handles volume control customization
  */
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Find videos by their source files
     const videos = document.querySelectorAll('video');
-    
+
     videos.forEach(video => {
         const source = video.querySelector('source');
         if (!source) return;
-        
+
         const videoSrc = source.getAttribute('src');
-        
+
         if (videoSrc.includes('teaching.mp4')) {
             hideVolumeControl(video);
         } else if (videoSrc.includes('TAR.mp4')) {
@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (videoSrc.includes('exp1.mp4')) {
             hideVolumeControl(video);
         } else if (videoSrc.includes('ImageVideo_Final.mp4')) {
+            video.volume = 0.2;
+        } else if (videoSrc.includes('Vorlesung_nerf_cut.mp4')) {
             video.volume = 0.2;
         }
     });
@@ -31,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function hideVolumeControl(video) {
     // Add custom CSS class for styling
     video.classList.add('no-volume-control');
-    
+
     // Create style element if it doesn't exist
     if (!document.querySelector('#video-control-styles')) {
         const style = document.createElement('style');

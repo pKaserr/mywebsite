@@ -23,17 +23,17 @@
         <div class="container_dashboard">
             <canvas class="particleCanvas"></canvas>
             <div class="container__title">
-                <h4 class="container__title--text">AI Curriculum</h4>
+                <h4 class="container__title--text mb-2">AI Curriculum</h4>
                 <span>Von der Logik zur künstlichen Intuition. Ein strukturierter Weg durch die Welt der KI.</span><br>
                 <span> Hier folgen Schritt für Schritt verschiedene Module, die Ihnen helfen, die Grundlagen der KI zu
                     erlernen.</span>
                 <span> Außerdem sollen Tutorials folgen, die bei der Implementierung von KI-Modellen helfen.</span>
+                <span>Die Website befindet sich noch im Aufbau.</span>
             </div>
 
             <div class="boxWrapper mb-2">
                 <div class="ai-grid-container">
                     <a href="ai_01_big_picture.php" class="ai-module-card">
-                        <span class="wip-banner wip-banner--preview">Preview ...</span>
 
                         <span class="ai-module-number">01</span>
                         <span class="ai-module-title">Das Big Picture</span>
@@ -41,7 +41,6 @@
                     </a>
 
                     <a href="ai_02_neuron.php" class="ai-module-card">
-                        <span class="wip-banner wip-banner--preview">Preview ...</span>
 
                         <span class="ai-module-number">02</span>
                         <span class="ai-module-title">Das Atom des Netzes</span>
@@ -49,7 +48,6 @@
                     </a>
 
                     <a href="ai_03_architecture.php" class="ai-module-card">
-                        <span class="wip-banner wip-banner--preview">Preview ...</span>
 
                         <span class="ai-module-number">03</span>
                         <span class="ai-module-title">Die Architektur</span>
@@ -57,30 +55,28 @@
                     </a>
 
                     <a href="ai_04_learning.php" class="ai-module-card">
-                        <span class="wip-banner wip-banner--preview">Preview ...</span>
 
                         <span class="ai-module-number">04</span>
                         <span class="ai-module-title">Der Lernprozess</span>
-                        <span class="ai-module-desc">Backpropagation, Loss Functions & Gradient Descent.</span>
+                        <span class="ai-module-desc">Backpropagation, Loss Functions & Gradient Descent, Reinforcement Learning, Supervised Learning, Unsupervised Learning</span>
                     </a>
 
                     <a href="ai_05_vision.php" class="ai-module-card">
-                        <span class="wip-banner wip-banner--preview">Preview ...</span>
 
                         <span class="ai-module-number">05</span>
                         <span class="ai-module-title">Computer Vision</span>
-                        <span class="ai-module-desc">Wie Maschinen sehen. CNNs & Gesichtserkennung.</span>
+                        <span class="ai-module-desc">Wie Maschinen sehen und Bilder generieren. CNNs & Gesichtserkennung. Bildgenerierung mit Diffusion Models.</span>
                     </a>
 
                     <a href="ai_06_transformer.php" class="ai-module-card">
-                        <span class="wip-banner">In Arbeit ...</span>
+                        <span class="wip-banner wip-banner--preview">Preview ...</span>AI Curriculum
                         <span class="ai-module-number">06</span>
                         <span class="ai-module-title">Transformer Revolution</span>
                         <span class="ai-module-desc">Self-Attention & das Ende der Rekursion.</span>
                     </a>
 
                     <a href="ai_07_llm.php" class="ai-module-card">
-                        <span class="wip-banner">In Arbeit ...</span>
+                        <span class="wip-banner wip-banner--preview">Preview ...</span>
                         <span class="ai-module-number">07</span>
                         <span class="ai-module-title">LLMs & Reasoning</span>
                         <span class="ai-module-desc">Embeddings, Training & Chain-of-Thought.</span>
@@ -88,7 +84,7 @@
 
                     <a href="ai_08_ecosystem.php" class="ai-module-card">
 
-                        <span class="wip-banner">In Arbeit ...</span>
+                        <span class="wip-banner wip-banner--preview">Preview ...</span>
 
                         <span class="ai-module-number">08</span>
                         <span class="ai-module-title">Das Ökosystem</span>
@@ -96,11 +92,35 @@
                     </a>
 
                     <a href="ai_09_xai" class="ai-module-card">
-                        <span class="wip-banner">In Arbeit ...</span>
+                        <span class="wip-banner wip-banner--preview">Preview ...</span>
 
                         <span class="ai-module-number">09</span>
                         <span class="ai-module-title">Vertrauen & XAI</span>
                         <span class="ai-module-desc">Explainable AI & Saliency Maps.</span>
+                    </a>
+
+                    <a href="ai_10_nerf" class="ai-module-card">
+                        <span class="wip-banner">In Arbeit ...</span>
+
+                        <span class="ai-module-number">10</span>
+                        <span class="ai-module-title">NeRF & 3D Vision</span>
+                        <span class="ai-module-desc">NeRF & 3D Vision.</span>
+                    </a>
+
+                    <a href="ai_11_anomaly_detection" class="ai-module-card ai-module-card--disabled">
+                        <span class="wip-banner">In Planung ...</span>
+
+                        <span class="ai-module-number">11</span>
+                        <span class="ai-module-title">Anomaly Detection</span>
+                        <span class="ai-module-desc">Anomaly Detection.</span>
+                    </a>
+
+                    <a href="ai_12_practice" class="ai-module-card ai-module-card--disabled">
+                        <span class="wip-banner">In Planung ...</span>
+
+                        <span class="ai-module-number">12</span>
+                        <span class="ai-module-title">KI in der Praxis</span>
+                        <span class="ai-module-desc">KI in der Praxis.</span>
                     </a>
                 </div>
             </div>

@@ -46,8 +46,7 @@
                             <p>Hier hat ein Programmierer exakte Regeln geschrieben. Das System "denkt" nicht, es
                                 arbeitet eine Checkliste ab.</p>
                             <div class="code-box">
-                                <p> <span class="c-exec">WENN</span> <span
-                                        class="c-keyword">Spieler_in_Sichtweite</span>:<br>
+                                <p> <span class="c-exec">WENN</span> <span class="c-keyword">Spieler_in_Sichtweite</span>:<br>
                                     &nbsp;&nbsp;DANN <span class="c-func">Reagiere</span>()<br>
                                     <span class="c-exec">SONST</span>:<br>
                                     <span class="c-exec">&nbsp;&nbsp;</span><span class="c-func">Patrouilliere</span>()
@@ -88,8 +87,7 @@
                             der Überlegenheit. <br> So sind Computergegner nicht nur strunzdoof, sondern verhalten sich
                             bewusst unrealistisch. Es ist für Elitesoldaten und Bösewichte für gewöhnlich nicht normal,
                             dass sie ständig laut schreien, was sie nun exakt machen (flankiere von rechts), wo sie sich
-                            befinden und ob sie gerade auf Fußspuren gestoßen sind, obwohl sie alleine sind: <br><a
-                                href="https://www.youtube.com/watch?v=v0uLfJrSpvY" target="_blank"><em>Hä,
+                            befinden und ob sie gerade auf Fußspuren gestoßen sind, obwohl sie alleine sind: <br><a href="https://www.youtube.com/watch?v=v0uLfJrSpvY" target="_blank"><em>Hä,
                                     Fußspuren?</em></a></p>
                     </div>
                     <hr>
@@ -106,7 +104,7 @@
                         <li>
                             <strong>Machine Learning (Maschinelles Lernen - ML):</strong>
                             Der Teil der KI, der <em>lernt</em>. Algorithmen, die durch Erfahrung (Daten) besser
-                            werden, ohne dass man jede Regel händisch ändert.
+                            werden, ohne dass man jede Regel händisch ändert. Darunter zählen die drei Säulen Supervised Learning (SL), Unsupervised Learning (UL), Reinforcement Learning (RL) und alle Mischungen davon (z.B: Semi-Supervised Learning).
                         </li>
                         <li>
                             <strong>Deep Learning (Tiefes Lernen - DL):</strong>
@@ -120,8 +118,7 @@
 
                     <h3 class="c1-second mt-1">Was ist ein "Sprachmodell" (LLM)?</h3>
                     <p>Wenn heute alle von KI reden, meinen sie meistens <strong>Large Language Models (LLMs)</strong>
-                        wie <span class="has-tooltip"
-                            data-tooltip='GPT wie ChatGPT steht für "generative pre-trained transformer" also soviel wie "Generativer vortrainierter Transformer". Was ein Transformer ist, erkläre ich im Modul 06: Transformer Revolution'>GPT</span>.
+                        wie <span class="has-tooltip" data-tooltip='GPT wie ChatGPT steht für "generative pre-trained transformer" also soviel wie "Generativer vortrainierter Transformer". Was ein Transformer ist, erkläre ich im Modul 06: Transformer Revolution'>GPT</span>.
                     </p>
                     <div class="ai-card--notice">
                         <p>Ein LLM ist im Grunde ein sehr guter

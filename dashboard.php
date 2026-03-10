@@ -58,9 +58,9 @@ try {
             <canvas class="particleCanvas"></canvas>
             <div class="container__title">
                 <?php if ($is_guest) { ?>
-                    <h4 class="container__title--text" data-translate="dashboard.welcome_guest">Willkommen Gast</h4>
+                    <h4 class="container__title--text mb-2" data-translate="dashboard.welcome_guest">Willkommen Gast</h4>
                 <?php } else { ?>
-                    <h4 class="container__title--text" data-translate="dashboard.welcome">Willkommen im Dashboard,
+                    <h4 class="container__title--text mb-2" data-translate="dashboard.welcome">Willkommen im Dashboard,
                         <?= htmlspecialchars($username) ?>
                     </h4>
                 <?php } ?>

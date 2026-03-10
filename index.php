@@ -50,7 +50,11 @@ $valid_routes = [
     '/experience.php',
     '/documents',
     '/documents.php',
-    '/cdn-cgi/l/email-protection'
+    '/cdn-cgi/l/email-protection',
+    '/2fa_setup',
+    '/2fa_setup.php',
+    '/2fa_verify',
+    '/2fa_verify.php'
 ];
 
 // Prüfung
