@@ -8,10 +8,24 @@ Import: <script src="./js/tooltip.js" defer></script>
 
 Code-Block:
 
+.c-func-pre
+.c-func
+.c-var
+.c-string
+.c-return
+.c-comment
+.c-keyword
+.c-number
+.c-boolean
+.c-null
+.c-undefined
+.c-exec
+
 ```html
-<div class="code-block">
+<div class="code-box">
     <span class="c-comment">// This is a comment</span>
     <span class="c-keyword">function</span> <span class="c-function">myFunction</span>() {
+        <span class="c-var">variable</span> <span class="c-operator">=</span> <span class="c-number">1</span>;
         <span class="c-keyword">return</span> <span class="c-number">1</span>;
     }
 </div>
