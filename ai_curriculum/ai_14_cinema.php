@@ -2,8 +2,10 @@
 // variables:
 $title = "Praktische Einführung";
 $page_headline = "13. Praktische Einführung";
-$prev_link = 'ai_12_business';
-$prev_text = 'Zurück: Business';
+// $prev_link = 'ai_12_business';
+// $prev_text = 'Zurück: Business';
+$prev_link = 'ai_dashboard';
+$prev_text = 'Zurück zur Übersicht';
 $next_link = 'ai_dashboard';
 $next_text = 'Zurück zur Übersicht';
 
@@ -18,19 +20,17 @@ ob_start();
 </script>
 
 <!-- Content: -->
-<h3 class="c1-second mt-1">Einfaches Neuronales (Netz)</h3>
+<h3 class="c1-second mt-1">Einzelnes Neuron (Regenschirm-Beispiel)</h3>
 <p>Hier möchte ich ein simples neuronales Netz vorstellen. Dabei orientiere ich mich am Regenschirm-Beispiel aus den vorherigen Modulen. Da Python die Standard-Programmiersprache im Bereich der Künstlichen Intelligenz ist, werde ich sie auch hier verwenden, jedoch alle Schritte genau erklären. Für komplexere Netze nutzt man heute meist Frameworks wie TensorFlow oder PyTorch, die einem viel Arbeit abnehmen. Hier möchte ich mich aber auf die reinen Grundlagen beschränken, um zu zeigen, was unter der Haube passiert.</p>
+
 
 <form method="POST">
     <div class="user-input">
-        <label for="weather">Bewölkt:</label>
-        <input type="checkbox" id="weather" name="weather" value="1">
+        <label for="cinema">Läuft ein guter Film im Kino?</label>
+        <input type="checkbox" id="cinema" name="cinema" value="1">
 
-        <label for="drive">Fahren:</label>
-        <input type="checkbox" id="drive" name="drive" value="1">
-
-        <label for="weekday">Wochentag:</label>
-        <input type="checkbox" id="weekday" name="weekday" value="1">
+        <label for="netflix">Läuft ein guter Film auf Netflix?</label>
+        <input type="checkbox" id="netflix" name="netflix" value="1">
 
         <button type="submit" name="run_python_script" class="btn btn--main">Ausführen</button>
     </div>
@@ -39,23 +39,22 @@ ob_start();
 <?php
 if (isset($_POST['run_python_script'])) {
     // Get values from POST, default to 0 if not checked
-    $weather = isset($_POST['weather']) ? 1 : 0;
-    $drive = isset($_POST['drive']) ? 1 : 0;
-    $weekday = isset($_POST['weekday']) ? 1 : 0;
+    $cinema = isset($_POST['cinema']) ? 1 : 0;
+    $netflix = isset($_POST['netflix']) ? 1 : 0;
 
-    $script_path = dirname(__DIR__) . '/python/simple_neural_network.py';
+    $script_path = dirname(__DIR__) . '/python/cinema.py';
 
     if (file_exists($script_path)) {
         // chcp 65001 set the console to UTF-8 to handle special characters correctly on Windows
-        $command = "chcp 65001 > nul && python " . escapeshellarg($script_path) . " " . escapeshellarg($weather) . " " . escapeshellarg($drive) . " " . escapeshellarg($weekday) . " 2>&1";
+        $command = "chcp 65001 > nul && python " . escapeshellarg($script_path) . " " . escapeshellarg($cinema) . " " . escapeshellarg($netflix) . " 2>&1";
         $output = shell_exec($command);
 
         echo "<div class='panel mt-1'><div class='panel-content'>";
-        echo "<h4>Ergebnis der Berechnung:</h4>";
+        echo "<h3 class='c2-second'>Ergebnis der Berechnung:</h3>";
         echo "<pre>" . htmlspecialchars($output, ENT_QUOTES, 'UTF-8') . "</pre>";
         echo "</div></div>";
     } else {
-        echo "<p style='color: red; margin-top: 10px;'>Fehler: simple_neural_network.py nicht gefunden unter $script_path</p>";
+        echo "<p style='color: red; margin-top: 10px;'>Fehler: cinema.py nicht gefunden unter $script_path</p>";
     }
 }
 ?>

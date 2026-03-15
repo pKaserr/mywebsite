@@ -4,8 +4,10 @@ $title = "Neural Radiance Fields (NeRF)";
 $page_headline = "10. Neural Radiance Fields (NeRF)";
 $prev_link = 'ai_09_xai.php';
 $prev_text = 'Zurück: Vertrauen & Transparenz';
-$next_link = 'ai_11_anomaly.php';
-$next_text = 'Weiter: Anomaly Detection';
+// $next_link = 'ai_11_anomaly.php';
+// $next_text = 'Weiter: Anomaly Detection';
+$next_link = 'ai_dashboard';
+$next_text = 'Zurück zur Übersicht';
 ob_start();
 ?>
 <h3 class="c1-second mt-1">Einleitung: Die Illusion von KI-Videos vs.

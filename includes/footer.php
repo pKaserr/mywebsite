@@ -7,33 +7,39 @@
 $scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
 $currentDir = dirname($scriptName);
 $assetBase = (strpos($currentDir, '/admin') !== false) ? '../' : './';
+
+// if we in ./ai_curriculum/ set assetBase to ../
+if (strpos($currentDir, '/ai_curriculum') !== false) {
+  $assetBase = '../';
+}
 ?>
+<script defer src="<?= htmlspecialchars($assetBase) ?>js/footer.js"></script>
 <footer class="site-footer">
   <div class="container_dashboard">
     <!-- <div class="site-footer__contact"> -->
-      <form class="site-footer__contact mb-1" method="post" action="<?= htmlspecialchars($assetBase) ?>contact.php">
-        <P>Kontaktformular</P>
-          <!-- <legend data-translate="footer.contact.title">Kontaktformular</legend> -->
-          <div class="site-footer__data">
-            <div class="site-footer__data--item">
-              <label for="footer-contact-name" data-translate="footer.contact.name">Name</label>
-              <input type="text" placeholder="Name oder Unternehmen..." id="footer-contact-name" name="name" required autocomplete="name" />
-            </div>
-            <div class="site-footer__data--item">
-              <label for="footer-contact-email" data-translate="footer.contact.email">E-Mail</label>
-              <input type="email" id="footer-contact-email" name="email" required autocomplete="email" value="">
-            </div>
+    <form class="site-footer__contact mb-1" method="post" action="<?= htmlspecialchars($assetBase) ?>contact.php">
+      <P>Kontaktformular</P>
+      <!-- <legend data-translate="footer.contact.title">Kontaktformular</legend> -->
+      <div class="site-footer__data">
+        <div class="site-footer__data--item">
+          <label for="footer-contact-name" data-translate="footer.contact.name">Name</label>
+          <input type="text" placeholder="Name oder Unternehmen..." id="footer-contact-name" name="name" required autocomplete="name" />
         </div>
-          <div>
-            <label for="footer-contact-message" data-translate="footer.contact.message">Nachricht</label>
-            <textarea maxlength="3500" placeholder="Kurze Beschreibung wer Sie sind und was die Gründe für die Kontaktaufnahme sind.." id="footer-contact-message" name="message" rows="3" required></textarea>
-            <span id="char-count"></span>
-          </div>
-          <div >
-            <button type="submit" class="btn btn--main" data-translate="footer.contact.send">Absenden</button>
+        <div class="site-footer__data--item">
+          <label for="footer-contact-email" data-translate="footer.contact.email">E-Mail</label>
+          <input type="email" id="footer-contact-email" name="email" required autocomplete="email" value="">
         </div>
-      </form>
-        <div class="site-footer__content">
+      </div>
+      <div>
+        <label for="footer-contact-message" data-translate="footer.contact.message">Nachricht</label>
+        <textarea maxlength="3500" placeholder="Kurze Beschreibung wer Sie sind und was die Gründe für die Kontaktaufnahme sind.." id="footer-contact-message" name="message" rows="3" required></textarea>
+        <span id="char-count"></span>
+      </div>
+      <div>
+        <button type="submit" class="btn btn--main" data-translate="footer.contact.send">Absenden</button>
+      </div>
+    </form>
+    <div class="site-footer__content">
       <div class="site-footer__left">
         <span class="site-footer__copyright">&copy; <?= date('Y') ?> Patrick Kaserer</span>
         <span class="site-footer__rights" data-translate="footer.rights">Alle Rechte vorbehalten</span>
@@ -52,15 +58,13 @@ $assetBase = (strpos($currentDir, '/admin') !== false) ? '../' : './';
     </div>
   </div>
   <?php if (!isset($_COOKIE['cookieConsent']) || $_COOKIE['cookieConsent'] !== '1'): ?>
-  <div class="cookie-banner">
-    <div class="cookie-banner__content">
-      <span class="cookie-banner__text" data-translate="footer.cookie.text">
-        Diese Website verwendet ausschließlich technisch notwendige Cookies, die für den Betrieb und die Funktionalität der Seite erforderlich sind. Es werden keine Tracking- oder Marketing-Cookies eingesetzt.
-      </span>
-      <button class="btn btn--main cookie-banner__btn" id="cookie-banner-btn" data-translate="footer.cookie.button">Verstanden</button>
+    <div class="cookie-banner">
+      <div class="cookie-banner__content">
+        <span class="cookie-banner__text" data-translate="footer.cookie.text">
+          Diese Website verwendet ausschließlich technisch notwendige Cookies, die für den Betrieb und die Funktionalität der Seite erforderlich sind. Es werden keine Tracking- oder Marketing-Cookies eingesetzt.
+        </span>
+        <button class="btn btn--main cookie-banner__btn" id="cookie-banner-btn" data-translate="footer.cookie.button">Verstanden</button>
+      </div>
     </div>
-  </div>
   <?php endif; ?>
 </footer>
-<script src="<?= htmlspecialchars($assetBase) ?>js/footer.js"></script>
-

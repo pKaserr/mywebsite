@@ -339,6 +339,25 @@
 	}
 }
 
+.ai-user-input {
+	// background-color: $c1-main;
+	// border-radius: $border-radius_small;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	// box-shadow: 0 4px 10px $box-shadow;
+	text-decoration: none;
+	color: $c-white;
+	height: 100%;
+
+	&>div {
+		&>input {
+			margin-right: 0.5rem;
+		}
+	}
+}
+
 // XAI Module
 #xai-module {
 

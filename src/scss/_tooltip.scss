@@ -83,6 +83,7 @@
 }
 
 .custom-tooltip {
+    display: none;
     position: absolute;
     background-color: var(--color-bg-dark, $c-darkGrey);
     padding: 8px 12px;
@@ -100,5 +101,6 @@
     &.visible {
         opacity: 1;
         visibility: visible;
+        display: inline-block;
     }
 }

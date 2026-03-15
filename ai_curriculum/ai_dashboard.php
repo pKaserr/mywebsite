@@ -127,25 +127,25 @@
             <h3>Praktische Einführung</h3>
             <div class="boxWrapper mb-2">
                 <div class="ai-grid-container">
-                    <a href="./ai_13_simple_nn" class="ai-module-card">
+                    <a href="./ai_13_umbrella" class="ai-module-card">
                         <span class="wip-banner">In Arbeit ...</span>
                         <span class="ai-module-number">13</span>
-                        <span class="ai-module-title">Beispie: Simples Neuronales Netz</span>
-                        <span class="ai-module-desc">Simples Neuronales Netz.</span>
+                        <span class="ai-module-title">Der Regenschirm</span>
+                        <span class="ai-module-desc">Ein einziges Neuron (ohne Frameworks). Was passiert hier eigentlich?</span>
                     </a>
 
-                    <a href="./ai_14_complex_nn" class="ai-module-card ai-module-card--disabled">
+                    <a href="./ai_14_cinema" class="ai-module-card ai-module-card--disabled">
                         <span class="wip-banner">In Planung ...</span>
                         <span class="ai-module-number">14</span>
-                        <span class="ai-module-title">Beispiel: Komplexeres Neuronales Netz</span>
-                        <span class="ai-module-desc">Komplexeres Neuronales Netz.</span>
+                        <span class="ai-module-title">Kino oder Couch?</span>
+                        <span class="ai-module-desc">Der erste Hidden-Layer mit mehreren Neuronen.</span>
                     </a>
 
                     <a href="./ai_15_cloud_nn" class="ai-module-card ai-module-card--disabled">
                         <span class="wip-banner">In Planung ...</span>
                         <span class="ai-module-number">15</span>
-                        <span class="ai-module-title">Beispiel: Cloud</span>
-                        <span class="ai-module-desc">Cloud.</span>
+                        <span class="ai-module-title">Backpropagation</span>
+                        <span class="ai-module-desc">Backpropagation</span>
                     </a>
                 </div>
             </div>
