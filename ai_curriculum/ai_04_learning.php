@@ -51,7 +51,7 @@ ob_start();
     </ul>
 </div>
 <p class="mt-1">Das absolute Ziel jedes Machine
-    Learning Modells ist simpel: <strong>Mache den Loss so klein wie möglich (am besten 0).</strong>
+    Learning Modells ist simpel: Reduziere den Loss so stark wie möglich (am besten 0).
 </p>
 
 <hr>
@@ -59,9 +59,9 @@ ob_start();
 <h3 class="c1-second mt-1">Phase 3: Der Weg ins Tal (Gradient Descent)</h3>
 <p>Stell dir den Fehler (Loss) als ein riesiges Gebirge vor. Ganz oben auf dem Berg
     ist der Fehler gigantisch. Unten im Tal ist der Fehler null (perfekte Vorhersage). Das Netz
-    steht nun blind im Nebel auf diesem Berg und will ins Tal. Spingst du zu weit (die Learning
-    Rate ist zu hoch), landest du hinter dem niedgrigsten Tal. Spingst du zu wenig, steckst du davor
-    fest.</p>
+    steht nun blind im Nebel auf diesem Berg und will ins Tal (das bedeutet, dasss das Netz lernen möchte. Also die Gewichte einer Entscheidung anpassen). Spingst es zu weit (die Learning
+    Rate ist zu hoch), landest du hinter dem niedgrigsten Tal. Spingst es zu kurz, bleibst du davor
+    stecken.</p>
 <div class="ai-img-wrapper mt-1">
     <img src="../assets/png/gradient_descent.png" style="max-width: 90%; " alt="Gradient Descent">
 </div>
@@ -114,7 +114,7 @@ ob_start();
     <p><strong>Das ist der gesamte Zauber:</strong> Forward Pass
         (Vorhersagen) &rarr; Loss berechnen (Fehler messen) &rarr; Backpropagation (Schuld
         verteilen) &rarr; Gradient Descent (Gewichte minimal anpassen). <br><br>Diesen Zyklus
-        wiederholt das Netz bei Millionen von Bildern (Epochen), bis die Vorhersagen extrem nah an
+        wiederholt das Netz bei Millionen von Durchläufen (Epochen), bis die Vorhersagen extrem nah an
         der Realität (Ground Truth) liegen. <strong>Das Netz hat gelernt.</strong></p>
 </div>
 <hr id="rl">

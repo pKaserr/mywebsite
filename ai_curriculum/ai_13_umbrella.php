@@ -1,4 +1,15 @@
 <?php
+// variables:
+$title = "Der Regenschirm";
+$page_headline = "13. Der Regenschirm";
+// $prev_link = 'ai_12_business';
+// $prev_text = 'Zurück: Business';
+$prev_link = 'ai_dashboard';
+$prev_text = 'Zurück zur Übersicht';
+$next_link = 'ai_14_cinema';
+$next_text = 'Nächste: Kino oder Netflix?';
+
+
 if (isset($_POST['ajax_run_python_script'])) {
     $weather = isset($_POST['weather']) ? 1 : 0;
     $drive = isset($_POST['drive']) ? 1 : 0;
@@ -20,15 +31,6 @@ if (isset($_POST['ajax_run_python_script'])) {
     exit;
 }
 
-// variables:
-$title = "Praktische Einführung";
-$page_headline = "13. Praktische Einführung";
-// $prev_link = 'ai_12_business';
-// $prev_text = 'Zurück: Business';
-$prev_link = 'ai_dashboard';
-$prev_text = 'Zurück zur Übersicht';
-$next_link = 'ai_dashboard';
-$next_text = 'Zurück zur Übersicht';
 
 
 ob_start();
@@ -43,7 +45,7 @@ ob_start();
 <!-- Content: -->
 <h3 class="c1-second mt-1">Einfaches Neuronales (Netz)</h3>
 <p>Hier möchte ich ein simples neuronales Netz vorstellen. Dabei orientiere ich mich am Regenschirm-Beispiel aus den vorherigen Modulen. Da Python die Standard-Programmiersprache im Bereich der Künstlichen Intelligenz ist, werde ich sie auch hier verwenden, jedoch alle Schritte genau erklären. Für komplexere Netze nutzt man heute meist Frameworks wie TensorFlow oder PyTorch, die einem viel Arbeit abnehmen. Hier möchte ich mich aber auf die reinen Grundlagen beschränken, um zu zeigen, was unter der Haube passiert. <br>
-Als erstes eine Abbildung des einzelnen Neurons</p>
+    Als erstes eine Abbildung des einzelnen Neurons</p>
 
 <div class="ai-img-wrapper--multiple mt-1 mb-1">
     <figure style="margin: 0;">
@@ -77,33 +79,33 @@ Als erstes eine Abbildung des einzelnen Neurons</p>
 <div id="umbrellaResult"></div>
 
 <script>
-document.getElementById('runPythonBtn').addEventListener('click', function(e) {
-    e.preventDefault();
-    const btn = this;
-    const originalText = btn.innerText;
-    btn.innerText = 'Lade...';
-    btn.disabled = true;
+    document.getElementById('runPythonBtn').addEventListener('click', function (e) {
+        e.preventDefault();
+        const btn = this;
+        const originalText = btn.innerText;
+        btn.innerText = 'Lade...';
+        btn.disabled = true;
 
-    const formData = new FormData(document.getElementById('umbrellaForm'));
-    formData.append('ajax_run_python_script', '1');
-    
-    fetch(window.location.href, {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.text())
-    .then(html => {
-        document.getElementById('umbrellaResult').innerHTML = html;
-        btn.innerText = originalText;
-        btn.disabled = false;
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        document.getElementById('umbrellaResult').innerHTML = '<p style="color: red; margin-top: 10px;">Ein Fehler ist aufgetreten.</p>';
-        btn.innerText = originalText;
-        btn.disabled = false;
+        const formData = new FormData(document.getElementById('umbrellaForm'));
+        formData.append('ajax_run_python_script', '1');
+
+        fetch(window.location.href, {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('umbrellaResult').innerHTML = html;
+                btn.innerText = originalText;
+                btn.disabled = false;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('umbrellaResult').innerHTML = '<p style="color: red; margin-top: 10px;">Ein Fehler ist aufgetreten.</p>';
+                btn.innerText = originalText;
+                btn.disabled = false;
+            });
     });
-});
 </script>
 
 
@@ -112,22 +114,20 @@ document.getElementById('runPythonBtn').addEventListener('click', function(e) {
     in diesem Beispiel ist x1 = bewölkt = 1 oder 0.
     Die Gewichte (w1, w2, w3) und der Bias ist vorgegeben. Am Schluss der Funktion wird der berechnete Wert einer Sigmoid Funktion übergeben.</p>
 
-<div class="code-box">
-    <div class="code-box__copy-btn"><img src="../assets/png/copy_btn.png" alt="Copy Code"></div>
-    <pre>
-<span class="c-keyword">def</span> <span class="c-func">run_nn</span>(<span class="c-var">x1</span>, <span class="c-var">x2</span>, <span class="c-var">x3</span>):
-    <span class="c-var">w1 </span><span class="c-operator">=</span><span class="c-number"> 8</span><span class="c-comment"> # Bewölkt</span>
-    <span class="c-var">w2 </span><span class="c-operator">=</span><span class="c-number"> -6</span><span class="c-comment"> # Fahren</span>
-    <span class="c-var">w3 </span><span class="c-operator">=</span><span class="c-number"> 0</span><span class="c-comment"> # Wochentag</span>
-    <span class="c-var">bias </span><span class="c-operator">=</span><span class="c-number"> -2</span><span class="c-comment"> # Persönliche Präferenz</span>
+<pre class="code-box"><div class="code-box__copy-btn"><img src="../assets/png/copy_btn.png" alt="Copy Code"></div><code class="language-python">def run_nn(x1, x2, x3):
+    # Weights based on the "Umbrella" example
+    w1 = 8    # Dark clouds
+    w2 = -6   # Driving with car
+    bias = -2 # Persönliche Präferenz
+    
+    # Hier führen wir die Berechnung durch. Wie du siehst, 
+    # werden die Eingaben mit den Gewichten multipliziert und addiert.
+    weighted_sum = (x1 * w1) + (x2 * w2) + bias
 
-    <span style="white-space: pre-wrap;" class="c-comment"># Hier führen wir die Berechnung durch. Wie du siehst, werden die Eingaben mit den Gewichten multipliziert und addiert.</span>
-    <span class="c-var">weighted_sum </span><span class="c-operator">=</span><span class="c-number"> (<span class="c-var">x1</span> * <span class="c-var">w1</span>) + (<span class="c-var">x2</span> * <span class="c-var">w2</span>) + (<span class="c-var">x3</span> * <span class="c-var">w3</span>) + <span class="c-var">bias</span></span>
-
-    <span style="white-space: pre-wrap;" class="c-comment"># Das Ergebnis dieser Berechnung geht an die Sigmoid Funktion, welche unsere Aktivierungsfunktion darstellt.</span>
-    <span class="c-var">result </span><span class="c-operator">=</span><span class="c-number"> sigmoid(<span class="c-var">weighted_sum</span>)</span>
-    </pre>
-</div>
+    # Das Ergebnis dieser Berechnung geht an die Sigmoid Funktion,
+    # welche unsere Aktivierungsfunktion darstellt.
+    return sigmoid(weighted_sum)
+</code></pre>
 
 <p class="mt-1">
     Das hier ist die Sigmoid Funktion. Es gibt unterschiedliche Aktivierungsfunktionen, die bekanntesten sind ReLU, TanH und Sigmoid.
@@ -135,14 +135,10 @@ document.getElementById('runPythonBtn').addEventListener('click', function(e) {
     Aktivierungsfunktionen sind mathematisch meist eher simpel. Die heutzutage am weitesten verbreitete Funktion heißt ReLU (Rectified Linear Unit) und sorgt schlicht dafür, dass negative Werte auf 0 gesetzt werden, während positive Werte unverändert bleiben.
 </p>
 
-<div class="code-box">
-    <div class="code-box__copy-btn"><img src="../assets/png/copy_btn.png" alt="Copy Code"></div>
-    <pre>
-<span class="c-keyword">def</span> <span class="c-func">sigmoid</span>(<span class="c-var">weighted_sum</span>):
-    <span class="c-keyword">return</span> <span class="c-number">1</span> / (<span class="c-number">1</span> + <span class="c-keyword">math</span>.<span class="c-func">exp</span>(-<span class="c-var">weighted_sum</span>))
-    </pre>
-    <span class="c-comment"># Etwas lesbarer:</span> <br>
-    <math xmlns="http://www.w3.org/1998/Math/MathML">
+<pre class="code-box"><div class="code-box__copy-btn"><img src="../assets/png/copy_btn.png" alt="Copy Code"></div><code class="language-python">def sigmoid(weighted_sum):
+    return 1 / (1 + math.exp(-weighted_sum))
+</code></pre>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
         <mi>sigmoid</mi>
         <mo>(</mo>
         <mi>weighted_sum</mi>
@@ -163,9 +159,9 @@ document.getElementById('runPythonBtn').addEventListener('click', function(e) {
             </mrow>
         </mfrac>
     </math>
-</div>
 
-<p class="mt-1">Dies ergibt dann eine Zahl zwischen 1 und 0. Wenn das Ergebnis 0.68 ist, bedeutet das, dass es eine 68% Wahrscheinlichkeit gibt, dass du einen Regenschirm mitnehmen solltest. <br> Selbstverständlich ist dieses Beispiel nur sehr beschränkt als künstliches Neuron zu bezeichnen, zumal alle Gewichte hier von mir definiert wurden und nicht in einem Training ermittelt wurden. Jedoch dient diese Darstellung nur der Grundidee eines künstlichen Neurons. In den nächsten Abschnitten gehen wir geziehlt auf immer komplexere Modelle ein.</p>
+
+<p class="mt-1">Dies ergibt dann eine Zahl zwischen 1 und 0. Wenn das Ergebnis 0.68 ist, bedeutet das, dass es eine 68% Wahrscheinlichkeit gibt, dass du einen Regenschirm mitnehmen solltest.</p>
 <?php
 $content = ob_get_clean();
 

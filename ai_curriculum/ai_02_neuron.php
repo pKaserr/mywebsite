@@ -60,7 +60,8 @@ ob_start();
 <h3 class="c1-second mt-1">Der Entscheidungsmoment: Die Formel des "Denkens"</h3>
 <p>Im Gehirn feuert ein Neuron oder es feuert nicht. Im künstlichen Netz regelt das die
     <strong>Aktivierungsfunktion</strong>. Ohne sie wäre das gesamte neuronale Netz nur eine
-    langweilige lineare Gleichung und könnte keine komplexen Probleme lösen.
+    langweilige lineare Gleichung und könnte keine komplexen Probleme lösen. Ich gehe im Modul 11
+    genauer auf die verschiedenen Aktivierungsfunktionen ein, aber falls du ungeduldig bist, dann klicke <a href="./ai_11_activation.php">hier</a>.
 </p>
 
 <div class="code-box">

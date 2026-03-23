@@ -49,11 +49,14 @@ ob_start();
     </div>
 </div>
 
-<div style="text-align: center; margin-bottom: 3rem; min-height: 180px; display: flex; align-items: center; justify-content: center;">
-    <img src="../assets/png/nerf_nn.png" style="max-width: 90%; " alt="Biologisches Neuron">
+
+<div class="ai-img-wrapper--multiple mt-1 mb-1">
+    <figure style="margin: 0;">
+        <img src="../assets/png/nerf_nn.png" style="max-width: 100%;" alt="Darstellung des einelne Neurons für das Regenschirm-Beispiel.">
+        <figcaption>Beispiel eines neuronalen Netzes mit 9 Layern und Dense-Architektur, eines <strong class="has-tooltip" data-tooltip='Echtzeit 3D Visualisierung durch ein neuronales Netz, bei dem 2D Bilder als Input verwendet wurden. Mehr Informationen darüber im Kapitel 10: NeRF & 3D Vision'>Neural Radiance Field (NeRF).</strong><br>
+            Die Eingabe (x, y, z, φ, θ) stehen für Koordinaten und Blickrichtung im 3D-Raum. Die Ausgabe <nobr> (r, g, b, σ) </nobr> stehen für Farbe und Dichte an einer entspechenden Stelle im 3D-Raum. </figcaption>
+    </figure>
 </div>
-<figcaption>Beispiel eines neuronalen Netzes mit 9 Layern und dense Architektur, eines <strong class="has-tooltip" data-tooltip='Echtzeit 3D Visualisierung durch ein neuronales Netz, bei dem 2D Bilder als Input verwendet wurden. Mehr Infos unter "Erfahrungen -> Masterthesis"'>Neural Radiance Field (NeRF).</strong><br>
-    Die Eingabe (x, y, z, φ, θ) stehen für Koordinaten und Blickrichtung im 3D-Raum. Die Ausgabe <nobr> (r, g, b, σ) </nobr> stehen für Farbe und Dichte an einer entspechenden Stelle im 3D-Raum. </figcaption>
 
 <div class="ai-card--notice mt-1 until-sm-display-none">
     <table class="c-black">
@@ -90,7 +93,7 @@ ob_start();
             <td>70 Milliarden</td>
             <td>80</td>
             <td>
-                <div class="c-black has-tooltip" data-tooltip='Bei einer dense Architektur muss jeder Token jeden einzelnen Parameter des Modells passieren. Sehr kohärentes Wissen, einfach zu trainieren aber sehr rechenintensiv'>Dense (bekannt)</div>
+                <div class="c-black has-tooltip" data-tooltip='Bei einer Dense-Architektur muss jeder Token jeden einzelnen Parameter des Modells passieren. Sehr kohärentes Wissen, einfach zu trainieren aber sehr rechenintensiv'>Dense (bekannt)</div>
             </td>
         </tr>
     </table>

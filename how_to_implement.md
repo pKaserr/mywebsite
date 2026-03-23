@@ -84,3 +84,22 @@ echo "<div style='background: red; color: white; padding: 20px; z-index: 9999; p
 var_dump($currentDir);
 echo "<br>Absoluter Verzeichnis-Pfad: " . **DIR**;
 echo "</div>";
+
+Img
+
+```html
+<div class="ai-img-wrapper--multiple mt-1 mb-1">
+  <figure style="margin: 0;">
+    <img
+      src="../assets/png/umbrella_nn.png"
+      style="max-width: 50%;"
+      alt="Darstellung des einelne Neurons für das Regenschirm-Beispiel."
+    />
+    <figcaption>
+      Darstellung des einzelnen Neurons für das Regenschirm-Beispiel. Links der
+      Input (Wolken, Auto, Wochentag), in der Mitte das Neuron und rechts das
+      Ergebnis (benötige ich einen Regenschirm?).
+    </figcaption>
+  </figure>
+</div>
+```

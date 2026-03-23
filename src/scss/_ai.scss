@@ -321,6 +321,19 @@
 	}
 
 	&--multiple {
+		justify-content: center;
+		
+		&>figure {
+			width: 100%;
+			&>img {
+				display: block;
+				margin: 0 auto;
+			}
+			&>figcaption {
+				text-align: left;
+			}
+		}
+
 		&>div {
 			width: 100%;
 
@@ -334,7 +347,7 @@
 		@media (min-width: $bp-md) {
 			display: flex !important;
 			flex-direction: row !important;
-			text-align: left !important;
+			text-align: center !important;
 		}
 	}
 }
@@ -576,6 +589,36 @@
 		.hl-bold {
 			color: #fff;
 			font-weight: 700;
+		}
+	}
+}
+
+// AI Dashboard Search
+.ai-search {
+	margin-bottom: 2.5rem;
+	width: 100%;
+
+	&__input {
+		width: 100%;
+		padding: 15px 20px;
+		border-radius: $border-radius_small;
+		background-color: $c1-main;
+		border: 1px solid rgba($c-white, 0.2);
+		color: $c-white;
+		font-size: 1.1rem;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+		&:focus {
+			outline: none;
+			border-color: $c1-second;
+			box-shadow: 0 0 12px rgba($c1-second, 0.4);
+			transform: scale(1.02);
+		}
+
+		&::placeholder {
+			color: $c-lightGrey;
+			opacity: 0.8;
 		}
 	}
 }

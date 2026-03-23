@@ -2,7 +2,7 @@ const copyCodeBtn = document.querySelectorAll('.code-box__copy-btn');
 copyCodeBtn.forEach(btn => {
     btn.addEventListener('click', () => {
         const codebox = btn.closest('.code-box');
-        const code = codebox.querySelector('pre');
+        const code = codebox.querySelector('code');
         const textArea = document.createElement('textarea');
         textArea.value = code.innerText;
         document.body.appendChild(textArea);

@@ -30,7 +30,7 @@ ob_start();
 </div>
 
 <div class="ai-img-wrapper mt-1">
-    <img style="max-width: 100%;" src="./assets/png/pixel_rgb.png" alt="">
+    <img style="max-width: 100%;" src="../assets/png/pixel_rgb.png" alt="">
 </div>
 
 <div class="ai-grid-2 mt-1">
@@ -101,8 +101,7 @@ ob_start();
 
     <h4 class="c2-second">2. Was macht der Filter? (Die Faltung)</h4>
     Stell dir diesen 3x3-Filter nun wie eine kleine, durchsichtige Folie vor, auf der diese 9
-    Gewichte stehen. Das Originalbild darunter ist ein riesiges Raster aus Pixelwerten. Also ein
-    Bild.</p>
+    Gewichte stehen. Das Originalbild darunter ist ein riesiges Raster aus Pixelwerten.</p>
     <p>Wir legen nun unsere winzige 3x3-Folie exakt auf die oberste linke Ecke des Bildes. Jetzt
         verdecken die 9 Gewichte der Folie exakt 9 Pixel des Bildes. Nun rechnet das Netz Paar für
         Paar:</p>

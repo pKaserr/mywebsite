@@ -14439,6 +14439,19 @@ input[type=password]:focus {
     margin: 0 auto;
   }
 }
+.ai-img-wrapper--multiple {
+  justify-content: center;
+}
+.ai-img-wrapper--multiple > figure {
+  width: 100%;
+}
+.ai-img-wrapper--multiple > figure > img {
+  display: block;
+  margin: 0 auto;
+}
+.ai-img-wrapper--multiple > figure > figcaption {
+  text-align: left;
+}
 .ai-img-wrapper--multiple > div {
   width: 100%;
 }
@@ -14453,7 +14466,7 @@ input[type=password]:focus {
   .ai-img-wrapper--multiple {
     display: flex !important;
     flex-direction: row !important;
-    text-align: left !important;
+    text-align: center !important;
   }
 }
 
@@ -14658,6 +14671,36 @@ input[type=password]:focus {
   font-weight: 700;
 }
 
+.ai-search {
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+.ai-search__input {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 5px;
+  background-color: #272727;
+  border: 1px solid rgba(211, 211, 211, 0.2);
+  color: #d3d3d3;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.ai-search__input:focus {
+  outline: none;
+  border-color: #0f7dbd;
+  box-shadow: 0 0 12px rgba(15, 125, 189, 0.4);
+  transform: scale(1.02);
+}
+.ai-search__input::-moz-placeholder {
+  color: #959595;
+  opacity: 0.8;
+}
+.ai-search__input::placeholder {
+  color: #959595;
+  opacity: 0.8;
+}
+
 .accordion {
   cursor: pointer;
   background-color: #464646;
@@ -14710,7 +14753,7 @@ input[type=password]:focus {
   transition: height 0.3s ease-in-out;
   box-shadow: 0 4px 15px rgba(1, 1, 1, 0.4);
   border-radius: 5px;
-  background-color: #2a2a2a;
+  background-color: rgba(42, 42, 42, 0.65);
   line-height: 1.6;
 }
 .panel-content {
@@ -16957,6 +17000,9 @@ Tutorials and AI Dashboard Icons
   margin-bottom: 0;
 }
 
+.code span {
+  white-space: nowrap;
+}
 .code-box {
   position: relative;
   background-color: #010101;
@@ -16969,26 +17015,38 @@ Tutorials and AI Dashboard Icons
   z-index: 1;
 }
 .code-box__copy-btn {
+  display: none;
+}
+@media (min-width: 768px) {
+  .code-box__copy-btn {
+    display: block;
+  }
+}
+.code-box__copy-btn {
   cursor: pointer;
   position: absolute;
   line-height: 0;
-  padding: 5px;
+  padding: 7px;
   margin: 0;
   top: 5px;
   right: 5px;
   color: #010101;
   border: none;
-  border-radius: 5px;
+  border-radius: 45px;
   z-index: 10;
-  background-color: #272727;
   transition: background-color 0.3s ease, border-radius 0.3s ease;
 }
 .code-box__copy-btn img {
-  width: 1.4rem;
-  height: 1.7rem;
+  width: 1rem;
+  height: 1.3rem;
 }
 .code-box__copy-btn:hover {
   background-color: #464646;
+}
+.code-box pre {
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow-wrap: break-word;
 }
 
 .no-access-banner {
@@ -17076,7 +17134,7 @@ Tutorials and AI Dashboard Icons
   transition: color 0.2s ease;
 }
 .has-tooltip:hover {
-  color: #464646;
+  color: #0f7dbd;
 }
 
 .custom-tooltip {

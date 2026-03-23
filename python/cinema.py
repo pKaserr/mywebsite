@@ -11,30 +11,31 @@ def sigmoid(x):
     return 1 / (1 + math.exp(-x))
 
 def run_nn(x1, x2):
-    # --- Schicht 1 (Hidden Layer) ---
-    # Gewichte für h1 (w1[0]) und h2 (w1[1])
-    w1 = [[ 10.0, -10.0], 
-        [-10.0,  10.0]]
+    # --- Gewichte (weights) ---
+    w1 = [[ 10.0, -10.0],  # Erster Layer (Hidden Layer)
+          [-10.0,  10.0]]
+          
+    w2 = [[ 10.0, -10.0],  # Zweiter Layer (Output Layer)
+          [-10.0,  10.0]] 
+          
     bias = [-5.0, -5.0]
+    bias2 = [-5.0, -5.0]
     
-    # --- Schicht 2 (Output Layer) ---
-    # HIER IST DIE KORREKTUR: Eigene Gewichte für das Output-Neuron festlegen
-    w2 = [10.0, 10.0]
-    bias2 = -5.0
+    # --- Berechnnung der Schicht 1 (Hidden Layer) ---
+    hidden_layer_calc_1 = (x1 * w1[0][0]) + (x2 * w1[0][1]) + bias[0]
+    hidden_layer_calc_2 = (x1 * w1[1][0]) + (x2 * w1[1][1]) + bias[1]
 
-    # --- Berechnung Schicht 1 ---
-    h1 = (x1 * w1[0][0]) + (x2 * w1[0][1]) + bias[0]
-    h2 = (x1 * w1[1][0]) + (x2 * w1[1][1]) + bias[1]
+    hidden_layer_activating_1 = sigmoid(hidden_layer_calc_1)
+    hidden_layer_activating_2 = sigmoid(hidden_layer_calc_2)
 
-    a1 = sigmoid(h1)
-    a2 = sigmoid(h2)
+    # --- Berechnung Schicht 2 (Output Layer) ---
+    output_layer_calc_1 = (hidden_layer_activating_1 * w2[0][0]) + (hidden_layer_activating_2 * w2[0][1]) + bias2[0]
+    output_layer_calc_2 = (hidden_layer_activating_1 * w2[1][0]) + (hidden_layer_activating_2 * w2[1][1]) + bias2[1]
 
-    # --- Berechnung Schicht 2 ---
-    # a1 und a2 fließen als Inputs in das letzte Neuron
-    # w2[0] und w2[1] sind die dazugehörigen Gewichte
-    result = sigmoid((a1 * w2[0]) + (a2 * w2[1]) + bias2)
-    
-    return result, a1, a2
+    output_layer_activating_1 = sigmoid(output_layer_calc_1)
+    output_layer_activating_2 = sigmoid(output_layer_calc_2)
+
+    return hidden_layer_calc_1, hidden_layer_calc_2, hidden_layer_activating_1, hidden_layer_activating_2, output_layer_activating_1, output_layer_activating_2, output_layer_calc_1, output_layer_calc_2
 
 if __name__ == "__main__":
 
@@ -50,19 +51,24 @@ if __name__ == "__main__":
         cinema = int(sys.argv[1])
         netflix   = int(sys.argv[2])
 
-        prob, h1, h2 = run_nn(cinema, netflix)
+        hidden_layer_calc_1, hidden_layer_calc_2, hidden_layer_activating_1, hidden_layer_activating_2, output_layer_activating_1, output_layer_activating_2, output_layer_calc_1, output_layer_calc_2 = run_nn(cinema, netflix)
         
         print(f"Eingaben: Cinema={cinema}, Netflix={netflix}")
-        print(f"Gewichtete Summe (h1): {h1:.2f}")
-        print(f"Gewichtete Summe (h2): {h2:.2f}")
-        print(f"Wahrscheinlichkeit (Sigmoid): {prob:.4f}")
+        print(f"Berechnung des Hidden Layers neuron 1: {hidden_layer_calc_1:.2f}")
+        print(f"Berechnung des Hidden Layers neuron 2: {hidden_layer_calc_2:.2f}")
+        print(f"Aktivierung des Hidden Layers neuron 1: {hidden_layer_activating_1:.2f}")
+        print(f"Aktivierung des Hidden Layers neuron 2: {hidden_layer_activating_2:.2f}")
+        print(f"Berechnung des Output Layers neuron 1: {output_layer_calc_1:.2f}")
+        print(f"Berechnung des Output Layers neuron 2: {output_layer_calc_2:.2f}")
+        print(f"Aktivierung des Output Layers neuron 1 (Kino): {output_layer_activating_1:.2f}")
+        print(f"Aktivierung des Output Layers neuron 2 (Netflix): {output_layer_activating_2:.2f}")
         
-        if prob > 0.5:
-            print("Entscheidung: JA, ins Kino gehen!")
-        elif prob < 0.5:
-            print("Entscheidung: NEIN, zuhause bleiben!")
-        else:
+        if output_layer_activating_1 == output_layer_activating_2:
             print("Entscheidung: Unentschieden!")
+        elif output_layer_activating_1 > output_layer_activating_2:
+            print("Entscheidung: JA, ins Kino gehen!")
+        else:
+            print("Entscheidung: NEIN, zuhause bleiben!")
 
     except ValueError:
         print("Fehler: Argumente müssen Zahlen sein (0 oder 1).")

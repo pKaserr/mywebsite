@@ -9,6 +9,7 @@ if sys.stdout.encoding != 'utf-8':
 
 def sigmoid(x):
     return 1 / (1 + math.exp(-x))
+    
 
 def run_nn(x1, x2, x3):
     # Weights based on the "Umbrella" example

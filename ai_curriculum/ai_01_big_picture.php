@@ -97,7 +97,7 @@ ob_start();
     </li>
 </ul>
 
-<img src="assets/png/ai_ml_dl.png" style="width: 30%;" alt="">
+<img src="../assets/png/ai_ml_dl.png" style="width: 30%;" alt="">
 
 <h3 class="c1-second mt-1">Was ist ein "Sprachmodell" (LLM)?</h3>
 <p>Wenn heute alle von KI reden, meinen sie meistens <strong>Large Language Models (LLMs)</strong>
