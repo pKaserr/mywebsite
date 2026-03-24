@@ -47,9 +47,9 @@ ob_start();
 <p>Hier möchte ich ein simples neuronales Netz vorstellen. Dabei orientiere ich mich am Regenschirm-Beispiel aus den vorherigen Modulen. Da Python die Standard-Programmiersprache im Bereich der Künstlichen Intelligenz ist, werde ich sie auch hier verwenden, jedoch alle Schritte genau erklären. Für komplexere Netze nutzt man heute meist Frameworks wie TensorFlow oder PyTorch, die einem viel Arbeit abnehmen. Hier möchte ich mich aber auf die reinen Grundlagen beschränken, um zu zeigen, was unter der Haube passiert. <br>
     Als erstes eine Abbildung des einzelnen Neurons</p>
 
-<div class="ai-img-wrapper--multiple mt-1 mb-1">
-    <figure style="margin: 0;">
-        <img src="../assets/png/umbrella_nn.png" style="max-width: 50%;" alt="Darstellung des einelne Neurons für das Regenschirm-Beispiel.">
+<div class="ai-img-wrapper">
+    <figure>
+        <img src="../assets/png/umbrella_nn.png" alt="Darstellung des einelne Neurons für das Regenschirm-Beispiel.">
         <figcaption>Darstellung des einzelnen Neurons für das Regenschirm-Beispiel. Links der Input (Wolken, Auto, Wochentag), in der Mitte das Neuron und rechts das Ergebnis (benötige ich einen Regenschirm?).</figcaption>
     </figure>
 </div>

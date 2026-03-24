@@ -19,8 +19,11 @@ ob_start();
 <div class="ai-grid-2" style="margin-top: 2rem;">
 
     <div class="ai-card">
-        <div style="text-align: center; margin-bottom: 3rem; min-height: 180px; display: flex; align-items: center; justify-content: center;">
-            <img src="../assets/png/bnn.png" style="max-width: 90%; " alt="Biologisches Neuron">
+        <div class="ai-img-wrapper">
+            <figure>
+                <img src="../assets/png/bnn.png" alt="Biologisches Neuron">
+                <figcaption>Biologisches Neuron</figcaption>
+            </figure>
         </div>
 
         <h4>Das biologische Vorbild</h4>
@@ -36,8 +39,11 @@ ob_start();
     </div>
 
     <div class="ai-card">
-        <div style="text-align: center; margin-bottom: 1.5rem; min-height: 180px; display: flex; align-items: center; justify-content: center;">
-            <img src="../assets/png/ann.png" style="max-width: 90%; " alt="Künstliches Neuron (Perzeptron)">
+        <div class="ai-img-wrapper">
+            <figure>
+                <img src="../assets/png/ann.png" alt="Künstliches Neuron (Perzeptron)">
+                <figcaption>Künstliches Neuron (Perzeptron)</figcaption>
+            </figure>
         </div>
 
         <h4>Das künstliche Neuron (Perzeptron)</h4>
@@ -86,7 +92,7 @@ ob_start();
         Neuron sammelt dafür verschiedene Informationen (Inputs) und bewertet diese mit einer
         Wichtigkeit (Gewichten).</p>
 
-    <ul class="ai-list">
+    <ul class="ai-list mb-2">
         <li>
             <strong>Deine Eingabe (Input) <span class="c-var">X<sub>1</sub></span></strong> ist: <em>"Ist es draußen
                 bewölkt?"</em> <br>

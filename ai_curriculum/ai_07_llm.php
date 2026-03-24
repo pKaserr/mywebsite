@@ -30,21 +30,13 @@ ob_start();
     <p>Betrachten wir den Satz: <em>"Ich liebe künstliche Intelligenz."</em></p>
     <p>Der Tokenizer zerschneidet diesen Satz und weist jedem Stück eine eindeutige ID (Zahl) zu.
         Zum Beispiel:</p>
-    <div class="code-box">
-        <ul class="ai-list mt-1">
-            <span class="c-string">"Ich"</span> &rarr; <span class="c-keyword"> Token-ID:
-            </span> <span class="c-number">832</span><br>
-            <span class="c-string">" liebe"</span> &rarr; <span class="c-keyword"> Token-ID:
-            </span> <span class="c-number">4192</span> <span class="c-comment">// Man beachte
-                die Leerzeichen</span><br>
-            <span class="c-string">" künst"</span> &rarr; <span class="c-keyword"> Token-ID:
-            </span> <span class="c-number">102</span><br>
-            <span class="c-string">"liche"</span> &rarr; <span class="c-keyword"> Token-ID:
-            </span> <span class="c-number">55</span><br>
-            <span class="c-string">" Intelligenz"</span> &rarr; <span class="c-keyword">
-                Token-ID: </span> <span class="c-number">9841</span>
-        </ul>
-    </div>
+    <pre class="code-box"><code class="language-python">def run_nn(x1, x2):
+    "Ich" -> 832
+    " liebe" -> 4192
+    " künst" -> 102
+    "liche" -> 55
+    " Intelligenz" -> 9841
+</code></pre>
     <p class="mt-1">Für den Computer ist der Satz nun keine Sprache mehr, sondern nur noch eine
         trockene Zahlenreihe:</p>
     <div class="code-box">
@@ -85,7 +77,7 @@ ob_start();
     <strong>Pre-Training</strong> (Vortraining) bekommt das Modell Millionen von Büchern, Artikeln
     und Websites "zu lesen". Es hat dabei nur eine einzige, fast schon beängstigend simple Aufgabe:
 </p>
-<p class="c1-second mt-1" style="font-size: 1.2rem; text-align: center;"><strong>Errate, welches
+<p class="c2-second mt-1"><strong>Errate, welches
         Wort als nächstes kommt!</strong></p>
 
 <div class="bg-main2 p-1 mt-1">

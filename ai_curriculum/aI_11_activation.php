@@ -21,7 +21,7 @@ ob_start();
 <p>Genau hier kommt die <strong>Aktivierungsfunktion</strong> ins Spiel. Sie sitzt ganz am Ausgang jedes Neurons und agiert wie ein Filter oder Türsteher. Sie entscheidet: <em>"Darf dieses Signal weitergegeben werden? Und wenn ja, in welcher Form?"</em></p>
 <p>Indem diese Funktion das Signal ab einer bestimmten Schwelle abschneidet, staucht oder abknickt, bricht sie die starre, gerade Linie auf. Sie bringt die sogenannte <strong>Nicht-Linearität</strong> ins Netz. Erst durch diese gezielten "Knicke" wird die KI fähig, ihre Linien wie ein Lasso um die komplexesten Datenpunkte zu werfen.</p>
 
-<div class="ai-img-wrapper--multiple mt-1 mb-1">
+<div class="ai-img-wrapper mt-1 mb-1">
     <figure style="margin: 0;">
         <img src="../assets/png/activation_vs_linear.png" style="max-width: 50%;" alt="Vergleich: Lineare vs. Nicht-lineare Aktivierungsfunktion">
         <figcaption>Vergleich: Lineare vs. Nicht-lineare Aktivierungsfunktion. Links die lineare Funktion, die nur gerade Linien zeichnen kann. Damit ist es schwierig, komplexe Formen abzubilden und unterschiedliche Muster voneinander zu trennen. Rechts die nicht-lineare Funktion, die Kurven und komplexe Formen abbilden kann.</figcaption>
@@ -38,7 +38,7 @@ ob_start();
     <h4>1. Sigmoid (Der weiche Dimmer)</h4>
     <p>Der Klassiker aus den frühen Tagen der KI: Sigmoid. Diese Funktion hat die Form eines weich geschwungenen "S". Egal, wie groß oder extrem im Minus die Zahl ist, die aus dem Neuron kommt, Sigmoid quetscht sie in einen Bereich <strong>zwischen 0 und 1</strong>. Das ist perfekt für Wahrscheinlichkeiten, führt bei sehr tiefen Netzen aber dazu, dass die Signale "verschwinden" (<span class="has-tooltip" data-tooltip="Beim Backpropagation werden die Fehler zurückpropagiert, um die Gewichte anzupassen. Wenn die Gradienten sehr klein sind, werden die Gewichte kaum angepasst und das Netz lernt nicht mehr. Nutzung von Aktivierungsfunktionen wie Sigmoid oder Tanh, deren Ableitungen kleine Werte liefern, die durch Kettenregel-Multiplikation in tiefen Netzwerken gegen Null konvergieren.">Vanishing Gradient</span>).</p>
     <p class="mt-1 mb-0 text-align-center">$\sigma(x) = \frac{1}{1 + e^{-x}}$</p>
-    <div class="ai-img-wrapper--multiple mt-0 mb-1">
+    <div class="ai-img-wrapper mt-0 mb-1">
         <figure sclass="m-0">
             <img src="../assets/svg/Sigmoid.svg" style="max-width: 50%;" alt="Beispiel eines Graphen der Sigmoid Funktion.">
             <figcaption>Beispiel eines Graphen der Sigmoid Funktion. Zwischen 0 und 1.</figcaption>
@@ -55,7 +55,7 @@ ob_start();
     <p>Der <em>Tangens Hyperbolicus</em> sieht fast genauso aus wie die Sigmoid-Funktion (auch ein S-Bogen), aber mit einem entscheidenden Unterschied: Er quetscht die Zahlen nicht zwischen 0 und 1, sondern <strong>zwischen -1 und 1</strong>. Dadurch ist der Nullpunkt exakt in der Mitte (Zero-Centered). Das macht es für das Netz beim Lernen (Gradient Descent) mathematisch einfacher und effizienter, die Gewichte anzupassen.</p>
     <p class="mt-1 mb-0 text-align-center">$\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}$</p>
 
-    <div class="ai-img-wrapper--multiple mt-0 mb-1">
+    <div class="ai-img-wrapper mt-0 mb-1">
         <figure sclass="m-0">
             <img src="../assets/svg/Hyperbolic_Tangent.svg" style="max-width: 50%;" alt="Beispiel eines Graphen der Tanh Funktion.">
             <figcaption>Beispiel eines Graphen der Tanh Funktion. Zwischen -1 und 1.</figcaption>
@@ -78,7 +78,7 @@ def tanh(x):
     <p>ReLU (Rectified Linear Unit) ist heute der Industriestandard. Wenn das Ergebnis negativ ist, wird es auf 0 gesetzt. Ist es positiv, wird es exakt so weitergegeben. That's it. <br> </p>
     <p class="mt-1 text-align-center">$f(x) = \max(0, x)$</p>
 
-    <div class="ai-img-wrapper--multiple mt-0 mb-1">
+    <div class="ai-img-wrapper mt-0 mb-1">
         <figure sclass="m-0">
             <img src="../assets/svg/Relu.svg" style="max-width: 50%;" alt="Beispiel eines Graphen der ReLU Funktion.">
             <figcaption>Beispiel eines Graphen der ReLU Funktion. Alles unter 0 wird auf 0 gesetzt.</figcaption>

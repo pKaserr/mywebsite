@@ -62,8 +62,13 @@ ob_start();
     steht nun blind im Nebel auf diesem Berg und will ins Tal (das bedeutet, dasss das Netz lernen möchte. Also die Gewichte einer Entscheidung anpassen). Spingst es zu weit (die Learning
     Rate ist zu hoch), landest du hinter dem niedgrigsten Tal. Spingst es zu kurz, bleibst du davor
     stecken.</p>
-<div class="ai-img-wrapper mt-1">
-    <img src="../assets/png/gradient_descent.png" style="max-width: 90%; " alt="Gradient Descent">
+
+
+<div class="ai-img-wrapper ai-img-wrapper--small">
+    <figure>
+        <img src="../assets/png/gradient_descent.png" alt="Gradient Descent">
+        <figcaption>Darstellung es des Gradient Descent (Gradientenabstiegsverfahren). Wenn die Trainingrate zu gering ist, kann das Netz beim Training steckebleiben oder kaum vorankommen. Ist sie zu hoch, springt es über das Tal hinweg und überschreitet die Schwelle für die optimale Lösung.</figcaption>
+    </figure>
 </div>
 
 <div class="ai-grid-2 mt-1">
@@ -208,12 +213,14 @@ ob_start();
     </div>
 </div>
 
-<div class="ai-img-wrapper mt-1 display-flex flex-column text-align-left">
-    <img src="../assets/png/clustering.png" style="max-width: 90%; " alt="Clustering">
-    <figure>Beispiel eines Clusters. Hier werden gleiche Farbe, Anzahl und Formen zusammengelegt.
-        Beim Unsupervised Learning werden solche Cluster gefunden. Diese können viele Dimensionen
-        haben. Ein Hund hat somit nicht nur den eigenen Cluster "Hund" sondern auch Rasse, Tier,
-        Alter, Größe, Farbe und sehr viele mehr. Jede Katze gehört somit ebenfalls zum Cluster Tier.</figure>
+<div class="ai-img-wrapper ai-img-wrapper--small mt-1">
+    <figure>
+        <img src="../assets/png/clustering.png" alt="Clustering">
+        <figcaption>Beispiel eines Clusters. Hier werden gleiche Farbe, Anzahl und Formen zusammengelegt.
+            Beim Unsupervised Learning werden solche Cluster gefunden. Diese können viele Dimensionen
+            haben. Ein Hund hat somit nicht nur den eigenen Cluster "Hund" sondern auch Rasse, Tier,
+            Alter, Größe, Farbe und sehr viele mehr. Jede Katze gehört somit ebenfalls zum Cluster Tier.</figcaption>
+    </figure>
 </div>
 
 <div class="ai-card--notice mt-1">

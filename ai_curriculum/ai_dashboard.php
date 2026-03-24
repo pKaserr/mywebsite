@@ -147,7 +147,7 @@
                         <span class="ai-module-desc">Der erste Hidden-Layer mit mehreren Neuronen.</span>
                     </a>
 
-                    <a href="" class="ai-module-card ai-module-card--disabled" data-tags="backpropagation, praxis, implementierung, programmierung, mathe, gradient">
+                    <a href="" class="ai-module-card ai-module-card--disabled" data-tags="backpropagation, praxis, implementierung, programmierung, mathe, gradient, Gradientenabstiegsverfahren, Abstiegsverfahren">
                         <span class="wip-banner">In Planung ...</span>
                         <span class="ai-module-number">15</span>
                         <span class="ai-module-title">Backpropagation</span>

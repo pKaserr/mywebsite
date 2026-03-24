@@ -49,10 +49,9 @@ ob_start();
     </div>
 </div>
 
-
-<div class="ai-img-wrapper--multiple mt-1 mb-1">
-    <figure style="margin: 0;">
-        <img src="../assets/png/nerf_nn.png" style="max-width: 100%;" alt="Darstellung des einelne Neurons für das Regenschirm-Beispiel.">
+<div class="ai-img-wrapper">
+    <figure>
+        <img src="../assets/png/nerf_nn.png" alt="Beispiel eines neuronalen Netzes mit 9 Layern und Dense-Architektur, eines Neural Radiance Field (NeRF).">
         <figcaption>Beispiel eines neuronalen Netzes mit 9 Layern und Dense-Architektur, eines <strong class="has-tooltip" data-tooltip='Echtzeit 3D Visualisierung durch ein neuronales Netz, bei dem 2D Bilder als Input verwendet wurden. Mehr Informationen darüber im Kapitel 10: NeRF & 3D Vision'>Neural Radiance Field (NeRF).</strong><br>
             Die Eingabe (x, y, z, φ, θ) stehen für Koordinaten und Blickrichtung im 3D-Raum. Die Ausgabe <nobr> (r, g, b, σ) </nobr> stehen für Farbe und Dichte an einer entspechenden Stelle im 3D-Raum. </figcaption>
     </figure>

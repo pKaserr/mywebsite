@@ -69,34 +69,34 @@
     padding: 2rem;
     // background: linear-gradient(135deg, $c1-main 0%, $c-white 100%);
     
-    p {
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-      font-size: 1.05rem;
+    // p {
+    //   line-height: 1.7;
+    //   margin-bottom: 1.5rem;
+    //   font-size: 1.05rem;
       
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
+    //   &:last-child {
+    //     margin-bottom: 0;
+    //   }
+    // }
     
     // strong {
     //   color: $c-white;
     // }
     
-    ul, ol {
-      margin: 1rem 0;
-      padding-left: 1.5rem;
+    // ul, ol {
+    //   margin: 1rem 0;
+    //   padding-left: 1.5rem;
       
-      li {
-        margin-bottom: 1rem;
-        line-height: 1.6;
-        color: $c5-main;
+    //   li {
+    //     margin-bottom: 1rem;
+    //     line-height: 1.6;
+    //     color: $c5-main;
         
-        strong {
-          color: $c2-second;
-        }
-      }
-    }
+    //     strong {
+    //       color: $c2-second;
+    //     }
+    //   }
+    // }
   }
   
   &-image-right {

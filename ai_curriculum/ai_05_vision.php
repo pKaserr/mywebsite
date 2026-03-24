@@ -18,7 +18,7 @@ ob_start();
     Computer ist ein Bild keine Landschaft, sondern eine gigantische Excel-Tabelle voller Zahlen.
 </p>
 
-<div class="ai-card mt-1">
+<div class="ai-card my-1">
     <h4 class="c2-second">Das RGB-Raster: Die Sprache der Bilder</h4>
     <p>Jedes Bild auf einem Bildschirm besteht aus winzigen Leuchtpunkten, den
         <strong>Pixeln</strong>. Jeder Pixel misst die Helligkeit der drei Grundfarben:
@@ -29,8 +29,12 @@ ob_start();
         dieser Stelle nur die Werte: Rot 255, Grün 255, Blau 0.</p>
 </div>
 
-<div class="ai-img-wrapper mt-1">
-    <img style="max-width: 100%;" src="../assets/png/pixel_rgb.png" alt="">
+
+<div class="ai-img-wrapper ai-img-wrapper--small">
+    <figure>
+        <img src="../assets/png/pixel_rgb.png" alt="Visualisierung der Faltung eines Filters über ein Bild">
+        <figcaption>Jeder Pixel in einem Bild besteht aus digitalen Farbwerten wie RGB. Diese Informationen kann ein Computer verarbeiten und eine KI interpretieren.</figcaption>
+    </figure>
 </div>
 
 <div class="ai-grid-2 mt-1">
@@ -110,8 +114,13 @@ ob_start();
         <li>(Pixelwert Mitte) <strong>*</strong> (Filter-Gewicht Mitte)</li>
         <li>... das passiert für alle 9 Felder, die exakt übereinanderliegen.</li>
     </ul>
-    <div class="ai-img-wrapper mb-2">
-        <img src="../assets/png/filtering1.png" style="max-width: 50%;" alt="Visualisierung der Faltung eines Filters über ein Bild">
+
+    <div class="ai-img-wrapper ai-img-wrapper--small">
+        <figure>
+            <img src="../assets/png/filtering1.png" alt="Visualisierung der Faltung eines Filters über ein Bild">
+            <figcaption>Darstellung der Filterung in einem Bild. Hier wird Stückweise eine "Schablone" (Gewichte)
+                über das Bild gelegt und die Werte multipliziert. Am Ende ergibt es eine Feature-Map die dafür verwendet wird Muster auf Bildern zu erkennen.</figcaption>
+        </figure>
     </div>
     <p class="mt-1">Am Ende werden diese 9 Ergebnisse zu einer einzigen Summe addiert. Das Netz
         berechnet so mathematisch, wie stark dieser kleine 3x3-Bildausschnitt zu dem Muster passt,
@@ -123,8 +132,12 @@ ob_start();
     <p>Die ausgerechnete Summe (ein einzelner Zahlenwert) wird nun in ein komplett neues, anfangs
         leeres Raster geschrieben. Danach schieben wir unsere Filter-Folie einen Pixel weiter nach
         rechts und die Rechnung beginnt von vorn. </p>
-    <div class="ai-img-wrapper mb-2">
-        <img src="../assets/png/filtering_cnn.png" style="max-width: 90%;" alt="Visualisierung der Faltung eines Filters über ein Bild">
+
+    <div class="ai-img-wrapper">
+        <figure>
+            <img src="../assets/png/filtering_cnn.png" alt="Visualisierung der Faltung eines Filters über ein Bild">
+            <figcaption>Diese Filtern führt ein CNN nun auf das gesamte Bild durch, indem es den Filter immer etwas verschiebt. Am Ende ergibt es eine Feature-Map die dafür verwendet wird Muster auf Bildern zu erkennen.</figcaption>
+        </figure>
     </div>
     <p>Wenn die Folie das gesamte Bild abgetastet hat, ist das neue Raster gefüllt. Dieses neue
         Raster nennen wir die <strong>Feature Map (Aktivierungsmatrix)</strong>. Sie ist eine
@@ -269,4 +282,4 @@ ob_start();
 $content = ob_get_clean();
 
 include __DIR__ . '/includes/aI_boilerplate.php';
-?>  
+?>

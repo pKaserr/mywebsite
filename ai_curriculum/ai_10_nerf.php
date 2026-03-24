@@ -25,13 +25,15 @@ ob_start();
     Raum als riesige Liste von Punkten abzuspeichern, nutzt NeRF ein künstliches neuronales Netz.
     Das Netz <em>merkt</em> sich den Raum in seinen Gewichten. Es ist klein, aber enthält die gesamte visuelle Information einer 3D-Szene.</p>
 
-<div class="text-align-center">
-    <video class="ml-2 mb-2" style="width: 75%;" controls>
-        <source src="./../assets/videos/zip_nerf_2023.mp4">
-        Your browser does not support the video tag.
-    </video>
+<div class="ai-img-wrapper my-1">
+    <figure>
+        <video controls alt="Clustering">
+            <source src="../assets/videos/zip_nerf_2023.mp4">
+        </video>
+        <figcaption>Bei diesem Video handelt es sich nicht um einen Film, der gedeht wurde mit einer Kamera. Es handelt sich um ein Neuronales Netz, dass die Informationen des Ausschnitts (RGB) im Bezug auf die Perspektive berechnet. <br> <cite> (ZIP-NeRF: Jonathan T. Barron and Ben Mildenhall and Dor Verbin and Pratul P. Srinivasan and Peter Hedman, 2023, https://jonbarron.info/zipnerf/)</figcaption>
+    </figure>
 </div>
-<p>Bei diesem Video handelt es sich nicht um einen Film, der gedeht wurde mit einer Kamera. Es handelt sich um ein Neuronales Netz, dass die Informationen des Ausschnitts (RGB) im Bezug auf die Perspektive berechnet. <br> <cite> (ZIP-NeRF: Jonathan T. Barron and Ben Mildenhall and Dor Verbin and Pratul P. Srinivasan and Peter Hedman, 2023, https://jonbarron.info/zipnerf/)</cite></p>
+
 
 <hr>
 
@@ -57,18 +59,18 @@ ob_start();
     definiert durch die Winkel θ (Theta) und φ (Phi) (wohin schaust du?). Aus diesen beiden Informationen entsteht ein
     mathematischer Lichtstrahl (Ray), der präzise in die Szene hineingeschossen wird. Wie das aussieht, zeigt die folgende Abbildung:</p>
 
-<div class="ai-img-wrapper--multiple mt-1">
-    <figure style="margin: 0;">
-        <img src="../assets/png/nerf_loc.png" style="max-width: 100%;" alt="Ausgangsposition im 3D-Raum">
+<div class="ai-img-wrapper mt-2">
+    <figure>
+        <img src="../assets/png/nerf_loc.png" alt="Ausgangsposition im 3D-Raum">
         <figcaption>Beispiel einer lokalen Position im 3D-Raum mit <nobr>x, y und z...</nobr>
         </figcaption>
     </figure>
-    <figure style="margin: 0;">
-        <img src="../assets/png/nerf_pose.png" style="max-width: 100%;" alt="Blickrichtung">
+    <figure>
+        <img src="../assets/png/nerf_pose.png" alt="Blickrichtung">
         <figcaption>...und einer Blickrichtung mit den Winkeln θ und φ...</figcaption>
     </figure>
-    <figure style="margin: 0;">
-        <img src="../assets/png/nerf_ray.png" style="max-width: 100%;" alt="Lichtstrahl">
+    <figure>
+        <img src="../assets/png/nerf_ray.png" alt="Lichtstrahl">
         <figcaption>...was zusammen einen Lichtstrahl (Ray) definiert.</figcaption>
     </figure>
 </div>
@@ -97,13 +99,16 @@ ob_start();
 
     <p class="mt-1">Anbei ein kurzer Ausschnitt aus einer meiner Vorlesungen, in dem diese Methode veranschaulicht wird:</p>
 
-    <div class="text-align-center">
-        <video class="ml-2 mb-2 mt-1" style="clear:right; width: 75%;" controls>
-            <source src="./../assets/videos/Vorlesung_nerf_cut.mp4">
-            Dein Browser unterstützt das Video-Tag nicht.
-        </video>
+    <div class="ai-img-wrapper my-1">
+        <figure>
+            <video controls>
+                <source src="../assets/videos/Vorlesung_nerf_cut.mp4">
+            </video>
+            <figcaption>Ausschnitt einer Vorlesung die ich für Masterstudierende gehalten habe. Es zeigt, wie man aus den Messungen der CT-Scans das Innere des Gehirns rekonstruiert. Das Grundprinzip von volumetrischem Rendering, wie es auch bei NeRF verwendet wird.</figcaption>
+        </figure>
     </div>
-    <p>Durch dieses clevere Verrechnen erhalten wir schichtweise eine exakte 3D-Darstellung der Dichte, und machen das Innere des Gehirns sichtbar.</p>
+
+    <p class="mb-1">Durch dieses clevere Verrechnen erhalten wir schichtweise eine exakte 3D-Darstellung der Dichte, und machen das Innere des Gehirns sichtbar.</p>
 </div>
 
 
@@ -158,14 +163,14 @@ ob_start();
     </ul>
 </div>
 
-<div class="text-align-center">
-    <video class="ml-2 mb-2 mt-1" style="clear:right; width: 75%;" controls>
-        <source src="./../assets/videos/nerf_cloud_point.mp4">
-        Dein Browser unterstützt das Video-Tag nicht.
-    </video>
+<div class="ai-img-wrapper my-1">
+    <figure>
+        <video controls>
+            <source src="../assets/videos/nerf_cloud_point.mp4">
+        </video>
+        <figcaption>Das Video zeigt ein selbsterstelltes NeRF, das zu eine Punktwolke wird. Dies war Teil meiner Masterthesis. Die Punktwolke wurde innerhalb des NeRFs erstellt, nicht davor.</figcaption>
+    </figure>
 </div>
-<p>Das Video zeigt ein selbsterstelltes NeRF, das zu eine Punktwolke wird. Dies war Teil meiner Masterthesis. Die Punktwolke wurde innerhalb des NeRFs erstellt, nicht davor.
-</p>
 
 <?php
 $content = ob_get_clean();

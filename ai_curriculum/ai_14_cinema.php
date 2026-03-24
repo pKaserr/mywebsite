@@ -43,9 +43,9 @@ ob_start();
 <h3 class="c1-second mt-1">Einzelnes Neuron (Regenschirm-Beispiel)</h3>
 <p>In diesem Beispiel nun ein etwas komplexeres Beispielt mit einem Hidden-Layer und mehreren Neuronen. Wir wollen wissen, ob wir lieber ins Kino gehen oder Zuhause eine Serie schauen. Hier das Neuronale Netz:</p>
 
-<div class="ai-img-wrapper--multiple mt-1 mb-1">
-    <figure style="margin: 0;">
-        <img src="../assets/png/cinema_nn.png" style="max-width: 50%;" alt="Darstellung des einelne Neurons für das Regenschirm-Beispiel.">
+<div class="ai-img-wrapper">
+    <figure>
+        <img src="../assets/png/cinema_nn.png" alt="Darstellung des einelne Neurons für das Regenschirm-Beispiel.">
         <figcaption>Wir haben zwei Inputs: Kino oder Netflix. Außerdem einen Hidden-Layer mit zwie Neuronen und eine Output-Layer, ebenfalls zwei Neuronen.</figcaption>
     </figure>
 </div>
@@ -102,9 +102,9 @@ ob_start();
     x1 und x2 sind hier die Eingaben die du in diesem Feld eingestellt hast.
     WIe zu sehen, werden hier für die Multiplikationen der Gewichte Matrizen verwendet. Matrizenmultiplikationen sind für GPUs sehr gut geeignet. Außerdem ist es übersichtlicher. <br> In diesem Beispiel sind die Matrizen verschachtelte Listen. Wenn wir uns w1 anschauen, dann sehen wir zwei Listen: [10.0, -10.0] und [-10.0, 10.0] welche wiederum in einer Liste zusammengefasst sind. Dies ist wichtig zu verstehen um die Multiplikationen der Matrizen zu verstehen. <br> Wenn du dir die Multiplikation anschaust (x1 * w1[0][0]) dann steht w1[0][0] für das erste Element der ersten Liste. Hier eine Darstellung der Notation:</p>
 
-<div class="ai-img-wrapper--multiple mt-1 mb-1">
-    <figure style="margin: 0;">
-        <img src="../assets/png/matrix.png" style="max-width: 50%;" alt="Darstellung des einelne Neurons für das Regenschirm-Beispiel.">
+<div class="ai-img-wrapper ai-img-wrapper--small">
+    <figure>
+        <img src="../assets/png/matrix.png" alt="Darstellung des einelne Neurons für das Regenschirm-Beispiel.">
         <figcaption>Wir sehen <span style="color: #47D45A;">W<sub>1</sub></span> welches für die komplette Matrix steht. Innerhalb von <span style="color: #47D45A;">W<sub>1</sub></span> haben wir zwei Listen. Zugriff auf die erste (obere) Liste wird durch den sogenannten Index 0 erreicht (in der IT beginnt eine Liste für gewönlich mit 0 und nicht mit 1). Somit ist die erste Liste erreichbar mit <span style="color: #FFFF00;">W<sub>1</sub>[0]</span> und die zweite Liste mit <span style="color: #0F9ED5;">W<sub>1</sub>[1]</span>. Der erste Index bezog sich auf die Inhalte der äußeren Liste, also auf <span style="color: #47D45A;">W<sub>1</sub></span>. Um nun auf die Inhalte der inneren Liste zugreifen zu können, benötigen wir den Index dieser Liste. Somit ist das erste (linke) Element der ersten (oberen) Liste erreichbar mit <span style="color: #E97132;">W<sub>1</sub>[0][0]</span> und das zweite (rechte) Element der zweiten (unteren) Liste mit <span style="color: #E59EDD;">W<sub>1</sub>[1][1]</span>.</figcaption>
     </figure>
 </div>

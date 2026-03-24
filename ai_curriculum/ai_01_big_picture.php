@@ -78,7 +78,7 @@ ob_start();
 <h3 class="c1-second mt-1">Begriffsdefinition</h3>
 <p>Als erstes die Begrifflichkeiten, diese Begriffe sind ineinander verschachtelt. Wie eine
     Matroschka-Puppe.</p>
-<ul class="ai-list">
+<ul class="ai-list mb-2">
     <li>
         <strong>Künstliche Intelligenz (KI / AI):</strong>
         Der große Überbegriff. Alles, was maschinell "schlau" wirkt. Egal ob fest programmiert
@@ -97,7 +97,13 @@ ob_start();
     </li>
 </ul>
 
-<img src="../assets/png/ai_ml_dl.png" style="width: 30%;" alt="">
+
+<div class="ai-img-wrapper ai-img-wrapper--small">
+    <figure>
+        <img src="../assets/png/ai_ml_dl.png" alt="Die drei Begriffe KI, ML und DL im Überblick.">
+        <figcaption>Die drei Begriffe KI, ML und DL im Überblick.</figcaption>
+    </figure>
+</div>
 
 <h3 class="c1-second mt-1">Was ist ein "Sprachmodell" (LLM)?</h3>
 <p>Wenn heute alle von KI reden, meinen sie meistens <strong>Large Language Models (LLMs)</strong>
@@ -122,6 +128,7 @@ ob_start();
         entspannt in <strong>Modul 06 (Transformer-Architektur)</strong> und <strong>Modul 07
             (LLMs)</strong> an.</p>
 </div>
+
 
 <?php
 $content = ob_get_clean();
