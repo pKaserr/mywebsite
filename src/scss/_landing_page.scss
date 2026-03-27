@@ -182,6 +182,7 @@
 
    &_header {
       margin-bottom: 1rem;
+      container-type: inline-size;
 
       @include breakpoint("xs") {
          margin-bottom: 3rem;
@@ -235,26 +236,29 @@
          display: none;
 
          @include breakpoint("md") {
-            font-size: 2.2vw;
+            &>span {
+               font-size: 1.4cqw;
+               line-height: 1.2;
+            }
+
+            font-size: 1.4cqw;
             line-height: 1.2;
          }
 
          @include breakpoint("lg") {
             display: inline-block;
             margin-top: 0;
-            line-height: 1.27;
-            font-size: 0.75rem;
             margin-left: 1rem;
             margin-bottom: 3rem;
-         }
-
-         @include breakpoint("xl") {
-            font-size: 0.8rem;
-         }
-
-         @include breakpoint("xxl") {
             line-height: 1.2;
-            font-size: 1rem;
+
+            @include breakpoint("xxl") {
+               font-size: 1.443cqw;
+
+               &>span {
+                  font-size: 1.443cqw;
+               }
+            }
          }
       }
 

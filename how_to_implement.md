@@ -7,29 +7,13 @@ Import: <script src="./js/tooltip.js" defer></script>
 
 Code-Block:
 
-.c-func-pre
-.c-func
-.c-var
-.c-string
-.c-return
-.c-comment
-.c-keyword
-.c-number
-.c-boolean
-.c-null
-.c-undefined
-.c-exec
+<pre class="code-box"><div class="code-box__copy-btn"><img src="../assets/png/copy_btn.png" alt="Copy Code"></div><code class="language-python">def run_nn(x1, x2):
+    # --- Gewichte (weights) ---
+    w1 = [[ 10.0, -10.0],  # Erster Layer (Hidden Layer)
+          [-10.0,  10.0]]
+</code></pre>
 
-```html
-<div class="code-box">
-  <span class="c-comment">// This is a comment</span>
-  <span class="c-keyword">function</span>
-  <span class="c-function">myFunction</span>() {
-  <span class="c-var">variable</span> <span class="c-operator">=</span>
-  <span class="c-number">1</span>; <span class="c-keyword">return</span>
-  <span class="c-number">1</span>; }
-</div>
-```
+````
 
 Chatbox:
 
@@ -75,7 +59,7 @@ $user_name = $\_SESSION['user_name'];
   </div>
 </div>
 <?php } ?>
-```
+````
 
 dumb:
 // Gibt den Inhalt und Typen der Variable ganz roh aus,
@@ -88,17 +72,15 @@ echo "</div>";
 Img
 
 ```html
-<div class="ai-img-wrapper--multiple mt-1 mb-1">
-  <figure style="margin: 0;">
-    <img
-      src="../assets/png/umbrella_nn.png"
-      style="max-width: 50%;"
-      alt="Darstellung des einelne Neurons für das Regenschirm-Beispiel."
-    />
+<div class="ai-img-wrapper ai-img-wrapper--small mt-1">
+  <figure>
+    <img src="../assets/png/clustering.png" alt="Clustering" />
     <figcaption>
-      Darstellung des einzelnen Neurons für das Regenschirm-Beispiel. Links der
-      Input (Wolken, Auto, Wochentag), in der Mitte das Neuron und rechts das
-      Ergebnis (benötige ich einen Regenschirm?).
+      Beispiel eines Clusters. Hier werden gleiche Farbe, Anzahl und Formen
+      zusammengelegt. Beim Unsupervised Learning werden solche Cluster gefunden.
+      Diese können viele Dimensionen haben. Ein Hund hat somit nicht nur den
+      eigenen Cluster "Hund" sondern auch Rasse, Tier, Alter, Größe, Farbe und
+      sehr viele mehr. Jede Katze gehört somit ebenfalls zum Cluster Tier.
     </figcaption>
   </figure>
 </div>

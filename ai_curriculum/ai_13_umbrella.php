@@ -18,7 +18,11 @@ if (isset($_POST['ajax_run_python_script'])) {
     $script_path = dirname(__DIR__) . '/python/umbrella.py';
 
     if (file_exists($script_path)) {
-        $command = "chcp 65001 > nul && python " . escapeshellarg($script_path) . " " . escapeshellarg($weather) . " " . escapeshellarg($drive) . " " . escapeshellarg($weekday) . " 2>&1";
+        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+            $command = "chcp 65001 > nul && python " . escapeshellarg($script_path) . " " . escapeshellarg($weather) . " " . escapeshellarg($drive) . " " . escapeshellarg($weekday) . " 2>&1";
+        } else {
+            $command = "env PYTHONIOENCODING=utf8 python3 " . escapeshellarg($script_path) . " " . escapeshellarg($weather) . " " . escapeshellarg($drive) . " " . escapeshellarg($weekday) . " 2>&1";
+        }
         $output = shell_exec($command);
 
         echo "<div class='panel mt-1'><div class='panel-content'>";

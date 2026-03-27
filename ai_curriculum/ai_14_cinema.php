@@ -13,16 +13,27 @@ $next_text = 'Zurück zur Übersicht';
 if (isset($_POST['ajax_run_python_script'])) {
     $cinema = isset($_POST['cinema']) ? 1 : 0;
     $netflix = isset($_POST['netflix']) ? 1 : 0;
+    echo "<div class='panel mt-1'>Test</div>";
 
     $script_path = dirname(__DIR__) . '/python/cinema.py';
 
     if (file_exists($script_path)) {
-        $command = "chcp 65001 > nul && python " . escapeshellarg($script_path) . " " . escapeshellarg($cinema) . " " . escapeshellarg($netflix) . " 2>&1";
+        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+            $command = "set \"PYTHONIOENCODING=utf8\" && set \"PYTHONUTF8=1\" && chcp 65001 > nul && python " . escapeshellarg($script_path) . " " . escapeshellarg($cinema) . " " . escapeshellarg($netflix) . " 2>&1";
+        } else {
+            $command = "env PYTHONIOENCODING=utf8 python3 " . escapeshellarg($script_path) . " " . escapeshellarg($cinema) . " " . escapeshellarg($netflix) . " 2>&1";
+        }
         $output = shell_exec($command);
+
+        // Fallback: Falls Windows hartnäckig bleibt, erzwingen wir eine Umwandlung nach UTF-8
+        if (!mb_check_encoding($output, 'UTF-8')) {
+            $output = mb_convert_encoding($output, 'UTF-8', 'CP850'); // 'CP850' ist standard Windows-CMD Codepage
+        }
 
         echo "<div class='panel mt-1'><div class='panel-content'>";
         echo "<h3 class='c2-second'>Ergebnis der Berechnung:</h3>";
-        echo "<pre>" . htmlspecialchars($output, ENT_QUOTES, 'UTF-8') . "</pre>";
+        // ENT_SUBSTITUTE verhindert aktiv, dass der komplette String gelöscht wird, falls verbotene Byte-Sequenzen vorhanden sind!
+        echo "<pre class='ai-terminal'>" . htmlspecialchars($output, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . "</pre>";
         echo "</div></div>";
     } else {
         echo "<p style='color: red; margin-top: 10px;'>Fehler: cinema.py nicht gefunden unter $script_path</p>";

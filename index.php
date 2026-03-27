@@ -163,7 +163,7 @@ if (!in_array($request_path, $valid_routes)) {
                 </div>
                 <p>Dich interessiert ein Anfängerguide über KI, ohne Mathematik studiert zu haben? Dann geht es hier lang.<br>
                     Die Seite ist noch im Aufbau und wird stetig erweitert.
-                    <a href="./ai_curriculum/ai_dashboard"><button class="btn btn--ki">KI-Bereich</button></a>
+                    <a href="./ai_curriculum/ai_dashboard"><button class="btn btn--ki"><h2>KI-Bereich</h2></button></a>
                 </p>
             </div>
             <form class="display-flex flex-column login" action="check_login.php" method="POST">

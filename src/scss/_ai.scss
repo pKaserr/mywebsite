@@ -631,8 +631,32 @@
 		}
 
 		&::placeholder {
-			color: $c-lightGrey;
+			color: $c-lightGrey; 
 			opacity: 0.8;
 		}
 	}
+}
+
+// Terminal simulation
+.ai-terminal {
+	background-color: #0d1117;
+	color: #47D45A;
+	padding: 15px;
+	border-radius: $border-radius_small;
+	overflow-x: auto;
+	font-family: monospace;
+	line-height: 1.5;
+	white-space: pre-wrap;
+	max-height: 450px;
+	overflow-y: auto;
+	
+	&::after {
+		content: '_';
+		animation: ai-blink 1s step-end infinite;
+	}
+}
+
+@keyframes ai-blink {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0; }
 }
