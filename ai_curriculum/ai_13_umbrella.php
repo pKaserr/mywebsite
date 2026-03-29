@@ -119,9 +119,9 @@ ob_start();
     Die Gewichte (w1, w2, w3) und der Bias ist vorgegeben. Am Schluss der Funktion wird der berechnete Wert einer Sigmoid Funktion übergeben.</p>
 
 <pre class="code-box"><div class="code-box__copy-btn"><img src="../assets/png/copy_btn.png" alt="Copy Code"></div><code class="language-python">def run_nn(x1, x2, x3):
-    # Weights based on the "Umbrella" example
-    w1 = 8    # Dark clouds
-    w2 = -6   # Driving with car
+    # Gewichte basierend auf dem "Regenschirm" Beispiel
+    w1 = 8    # Bewölkt
+    w2 = -6   # Autofahren
     bias = -2 # Persönliche Präferenz
     
     # Hier führen wir die Berechnung durch. Wie du siehst, 
@@ -134,9 +134,8 @@ ob_start();
 </code></pre>
 
 <p class="mt-1">
-    Das hier ist die Sigmoid Funktion. Es gibt unterschiedliche Aktivierungsfunktionen, die bekanntesten sind ReLU, TanH und Sigmoid.
+    Das hier ist die Sigmoid Funktion. Es gibt unterschiedliche Aktivierungsfunktionen (siehe <a href="ai_11_activation.php">hier</a>), die bekanntesten sind ReLU, TanH und Sigmoid.
     Die Sigmoid Funktion hat den Vorteil, dass sie die Werte auf einen Bereich zwischen 0 und 1 beschränkt. Das ist nützlich, um Wahrscheinlichkeiten darzustellen. <br>
-    Aktivierungsfunktionen sind mathematisch meist eher simpel. Die heutzutage am weitesten verbreitete Funktion heißt ReLU (Rectified Linear Unit) und sorgt schlicht dafür, dass negative Werte auf 0 gesetzt werden, während positive Werte unverändert bleiben.
 </p>
 
 <pre class="code-box"><div class="code-box__copy-btn"><img src="../assets/png/copy_btn.png" alt="Copy Code"></div><code class="language-python">def sigmoid(weighted_sum):

@@ -2,7 +2,7 @@ Data Tooltip with notice (hover):
 Import: <script src="./js/tooltip.js" defer></script>
 
 ```html
-<div class="has-tooltip" data-tooltip="Tooltip Text">Hover me</div>
+<span class="has-tooltip" data-tooltip="Tooltip Text">Hover me</span>
 ```
 
 Code-Block:
@@ -85,3 +85,11 @@ Img
   </figure>
 </div>
 ```
+
+
+Exkurs:
+
+<button class="accordion accordion--bg mt-1 p-1 mb-0">Title des Buttons</button>
+<div class="panel">
+    <p>Inhalt des Panels</p>
+</div>

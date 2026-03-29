@@ -6,8 +6,8 @@ $page_headline = "14. Kino oder Netflix?";
 // $prev_text = 'Zurück: Business';
 $prev_link = 'ai_13_umbrella';
 $prev_text = 'Zurück: Der Regenschirm';
-$next_link = 'ai_dashboard';
-$next_text = 'Zurück zur Übersicht';
+$next_link = 'ai_15_backpropagation';
+$next_text = 'Backpropagation';
 
 
 if (isset($_POST['ajax_run_python_script'])) {
@@ -57,7 +57,7 @@ ob_start();
 <div class="ai-img-wrapper">
     <figure>
         <img src="../assets/png/cinema_nn.png" alt="Darstellung des einelne Neurons für das Regenschirm-Beispiel.">
-        <figcaption>Wir haben zwei Inputs: Kino oder Netflix. Außerdem einen Hidden-Layer mit zwie Neuronen und eine Output-Layer, ebenfalls zwei Neuronen.</figcaption>
+        <figcaption>Wir haben zwei Inputs: Kino oder Netflix. Außerdem einen Hidden-Layer mit zwei Neuronen und eine Output-Layer, ebenfalls zwei Neuronen.</figcaption>
     </figure>
 </div>
 
@@ -111,13 +111,17 @@ ob_start();
 
 <p class="mt-1">Als erstes definieren wir eine Funktion, die die Eingaben entgegennimmt.
     x1 und x2 sind hier die Eingaben die du in diesem Feld eingestellt hast.
-    WIe zu sehen, werden hier für die Multiplikationen der Gewichte Matrizen verwendet. Matrizenmultiplikationen sind für GPUs sehr gut geeignet. Außerdem ist es übersichtlicher. <br> In diesem Beispiel sind die Matrizen verschachtelte Listen. Wenn wir uns w1 anschauen, dann sehen wir zwei Listen: [10.0, -10.0] und [-10.0, 10.0] welche wiederum in einer Liste zusammengefasst sind. Dies ist wichtig zu verstehen um die Multiplikationen der Matrizen zu verstehen. <br> Wenn du dir die Multiplikation anschaust (x1 * w1[0][0]) dann steht w1[0][0] für das erste Element der ersten Liste. Hier eine Darstellung der Notation:</p>
+    Wie zu sehen, werden hier für die Multiplikationen der Gewichte Matrizen verwendet. Matrizenmultiplikationen sind für GPUs sehr gut geeignet. Außerdem ist es übersichtlicher. <br> In diesem Beispiel sind die Matrizen verschachtelte Listen. Wenn wir uns w1 anschauen, dann sehen wir zwei Listen: <nobr>[10.0, -10.0]</nobr> und <nobr>[-10.0, 10.0]</nobr> welche wiederum beide in einer weiteren Liste zusammengefasst sind.</p>
 
-<div class="ai-img-wrapper ai-img-wrapper--small">
-    <figure>
-        <img src="../assets/png/matrix.png" alt="Darstellung des einelne Neurons für das Regenschirm-Beispiel.">
-        <figcaption>Wir sehen <span style="color: #47D45A;">W<sub>1</sub></span> welches für die komplette Matrix steht. Innerhalb von <span style="color: #47D45A;">W<sub>1</sub></span> haben wir zwei Listen. Zugriff auf die erste (obere) Liste wird durch den sogenannten Index 0 erreicht (in der IT beginnt eine Liste für gewönlich mit 0 und nicht mit 1). Somit ist die erste Liste erreichbar mit <span style="color: #FFFF00;">W<sub>1</sub>[0]</span> und die zweite Liste mit <span style="color: #0F9ED5;">W<sub>1</sub>[1]</span>. Der erste Index bezog sich auf die Inhalte der äußeren Liste, also auf <span style="color: #47D45A;">W<sub>1</sub></span>. Um nun auf die Inhalte der inneren Liste zugreifen zu können, benötigen wir den Index dieser Liste. Somit ist das erste (linke) Element der ersten (oberen) Liste erreichbar mit <span style="color: #E97132;">W<sub>1</sub>[0][0]</span> und das zweite (rechte) Element der zweiten (unteren) Liste mit <span style="color: #E59EDD;">W<sub>1</sub>[1][1]</span>.</figcaption>
-    </figure>
+<button class="accordion accordion--bg mt-1 p-1 mb-0">Exkurs: Matrizen, was bedeutet diese Notation: (x1 * w1[0][0]) + (x2 * w1[0][1])?</button>
+<div class="panel">
+    <p>Hier eine Darstellung der Notation von Gewicht $W_1$:</p>
+    <div class="ai-img-wrapper ai-img-wrapper--small">
+        <figure>
+            <img src="../assets/png/matrix.png" alt="Darstellung des einelne Neurons für das Regenschirm-Beispiel.">
+            <figcaption>Wir sehen <span style="color: #47D45A;">W<sub>1</sub></span> welches für die komplette Matrix steht. Innerhalb von <span style="color: #47D45A;">W<sub>1</sub></span> haben wir zwei Listen. Zugriff auf die Inhalte einer Liste wird üblicherweise mit dem Index erreicht <span style="color: #47D45A;">W<sub>[Index]</sub></span>. So ist der Zugriff auf die erste/obere <span style="color: #FFFF00;">Liste</span> der Index: 0 (in der IT beginnt eine Liste für gewönlich mit 0 und nicht mit 1), also: <span style="color: #FFFF00;">W<sub>1</sub>[0]</span>. Die zweite Liste hat den Index: 1, also: <span style="color: #0F9ED5;">W<sub>1</sub>[1]</span>. Der erste Index bezog sich auf die Inhalte der äußeren <span style="color: #47D45A;">Liste</span>, also auf <span style="color: #47D45A;">W<sub>1</sub></span>. Um nun auf die Inhalte der beiden inneren Listen zugreifen zu können (<span style="color: #FFFF00;">W<sub>1</sub>[0]</span> und <span style="color: #0F9ED5;">W<sub>1</sub>[1]</span>), benötigen wir den Index dieser Listen, indem wir den zweiten Index dahinter schreiben <span style="color: #47D45A;">W<sub>[Index][Index]</sub></span>. Somit ist das erste (<span style="color: #E97132;">linke</span>) Element der ersten (oberen) Liste erreichbar mit <span style="color: #E97132;">W<sub>1</sub>[0][0]</span> und das zweite (<span style="color: #E59EDD;">rechte</span>) Element der zweiten (unteren) Liste mit <span style="color: #E59EDD;">W<sub>1</sub>[1][1]</span>.</figcaption>
+        </figure>
+    </div>
 </div>
 
 <pre class="code-box"><div class="code-box__copy-btn"><img src="../assets/png/copy_btn.png" alt="Copy Code"></div><code class="language-python">def run_nn(x1, x2):
@@ -156,7 +160,7 @@ ob_start();
     return 1 / (1 + math.exp(-weighted_sum))
 </code></pre>
 
-<p class="mt-1">Diese Beispiel ist sehr ähnlich zum ersten Beispiel nur mit einem Hidden-Layer und somit mehr Berechnungen. In diesen beiden Beispielen fand noch kein Training, ein Backpropagation statt. Die Gewichte wurden von mir festgelegt. Jedoch zeigt es den Kernaufbau eines neuronalen Netzes.</p>
+<p class="mt-1">Diese Beispiel ist sehr ähnlich zum ersten Beispiel nur mit einem Hidden-Layer und somit mehr Berechnungen. In diesen beiden Beispielen fand noch kein Training, kein Backpropagation statt. Die Gewichte wurden von mir festgelegt. Es ist also nicht von einem Neuronalen Netz zu sprechen. Jedoch zeigt es den Kernaufbau.</p>
 <?php
 $content = ob_get_clean();
 

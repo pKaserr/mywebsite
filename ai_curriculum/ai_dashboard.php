@@ -24,18 +24,18 @@
             <canvas class="particleCanvas"></canvas>
             <div class="container__title">
                 <h2 class="container__title--text mb-1">AI Curriculum</h2>
-                <p>Von der Logik zur künstlichen Intuition. Ein strukturierter Weg durch die Welt der KI.<br>
+                <p class="">Von der Logik zur künstlichen Intuition. Ein strukturierter Weg durch die Welt der KI.<br>
                     Hier folgen Schritt für Schritt verschiedene Module, die Ihnen helfen, die Grundlagen der KI zu <br>
                     erlernen. Außerdem sollen Tutorials folgen, die bei der Implementierung von KI-Modellen helfen. <br>
                     Die Website befindet sich noch im Aufbau.</p>
             </div>
-            
+
             <div class="ai-search">
                 <input type="text" id="ai-module-search" class="ai-search__input" placeholder="Module nach Stichwörtern durchsuchen (z.B. CNN, LLM, Neuron)...">
             </div>
 
-            <h3>Basis Module</h3>
-            <div class="boxWrapper mb-4">
+            <h3 class="ai-chapter-title">Basis Module</h3>
+            <div class="boxWrapper mb-6">
                 <div class="ai-grid-container">
                     <a href="./ai_01_big_picture.php" class="ai-module-card" data-tags="grundlagen, big picture, ki, ai, künstliche intelligenz, machine learning, deep learning">
 
@@ -129,9 +129,13 @@
                 </div>
             </div>
 
-            <h3 class="pt-3">Praktische Einführung</h3>
-            <p>In diesem Teil möchte ich die Implementation durch praktische Beispiele demonstrieren. Von einem einfachen Neuron ohne die verwendung von Frameworks (PyTorch oder TensorFlow) bis hin zu komplexeren Architekturen und Modellen.</p>
-            <div class="boxWrapper mb-2">
+            <!-- ------------------------->
+            <!-- Practical Introduction -->
+            <!-- ------------------------->
+
+            <h3 class="ai-chapter-title">Praktische Einführung</h3>
+            <p class="ai-chapter-desc">In diesem Teil möchte ich die Implementation durch praktische Beispiele demonstrieren. Von einem einfachen Neuron ohne die verwendung von Frameworks (PyTorch oder TensorFlow) bis hin zu komplexeren Architekturen und Modellen.</p>
+            <div class="boxWrapper mb-6">
                 <div class="ai-grid-container">
                     <a href="./ai_13_umbrella" class="ai-module-card" data-tags="regenschirm, neuron, praxis, implementierung, programmierung, no framework">
                         <span class="wip-banner">In Arbeit ...</span>
@@ -156,10 +160,49 @@
                 </div>
             </div>
 
+            <!-- ------------------------->
+            <!-- Management -------------->
+            <!-- ------------------------->
+
+
+            <h3 class="ai-chapter-title">KI-Management</h3>
+            <p class="ai-chapter-desc">Hier ein kleiner Einblick über die Management-Aspekte bei der Einführung und Arbeit mit KI in Unternehmen. Wichtig: Wie jedes andere Modul hier, sind die Bereiche in der Praxis deutlich ausführlicher und komplexer. Wer überlegt KI im Unternehmen einzuführen, sollte sich von qualifizierten Fachleuten beraten lassen.</p>
+            <div class="boxWrapper mb-2">
+                <div class="ai-grid-container">
+                    <a href="./ai_16_strategie.php" class="ai-module-card" data-tags="Strategie, Use-Case, Evaluierung, Hype, Machbarkeit, Proof of Concept, PoC">
+                        <span class="wip-banner">In Arbeit ...</span>
+                        <span class="ai-module-number">16</span>
+                        <span class="ai-module-title">KI-Strategie & Use-Case-Evaluierung</span>
+                        <span class="ai-module-desc">Hype vs. Machbarkeit, Proof of Concept, Use-Case</span>
+                    </a>
+                    <a href="ai_17_datastrat.php" class="ai-module-card" data-tags="Datenstrategie, Data Engineering, Data Readiness, Deep Dive, Umgang mit Datenmangel">
+                        <span class="wip-banner">In Arbeit ...</span>
+                        <span class="ai-module-number">17</span>
+                        <span class="ai-module-title">Datenstrategie & Data Engineering</span>
+                        <span class="ai-module-desc">Data Readiness, Deep Dive, Umgang mit Datenmangel</span>
+                    </a>
+                    <a href="ai_18_mlops.php" class="ai-module-card" data-tags="KI-Architektur, MLOps, Build Vs Buy, Integration, Lifecycle Management">
+                        <span class="wip-banner">In Arbeit ...</span>
+                        <span class="ai-module-number">18</span>
+                        <span class="ai-module-title">KI-Architektur & MLOps</span>
+                        <span class="ai-module-desc">Build Vs Buy, Integration, Lifecycle Management</span>
+                    </a>
+                    <a href="" class="ai-module-card ai-module-card--disabled" data-tags="KI Governance, Ethik, Compliance, Risikomanagement, rechtliche Rahmenbedingungen, Sustainability & Social Impact">
+                        <span class="wip-banner">Planung ...</span>
+                        <span class="ai-module-number">19</span>
+                        <span class="ai-module-title">AI Governance, Ethik & Compliance</span>
+                        <span class="ai-module-desc">Risikomanagement, rechtliche Rahmenbedingungen, Sustainability & Social Impact</span>
+                    </a>
+                    <a href="" class="ai-module-card ai-module-card--disabled" data-tags="Wissenschaftskommunikation, Stakeholder-Management, Erwartungsmanagement, Metriken">
+                        <span class="wip-banner">Planung ...</span>
+                        <span class="ai-module-number">20</span>
+                        <span class="ai-module-title">Wissenschaftskommunikation & Stakeholder-Management</span>
+                        <span class="ai-module-desc">Erwartungsmanagement, Metriken</span>
+                    </a>
+                </div>
+            </div>
+
             <script>
-                /**
-                 * Filter AI modules based on search input keywords
-                 */
                 document.addEventListener('DOMContentLoaded', function () {
                     const searchInput = document.getElementById('ai-module-search');
                     if (!searchInput) return;
@@ -167,6 +210,7 @@
                     searchInput.addEventListener('input', function () {
                         const query = this.value.toLowerCase().trim();
                         const cards = document.querySelectorAll('.ai-module-card');
+                        const chapterDesc = document.querySelectorAll('.ai-chapter-desc');
 
                         cards.forEach(card => {
                             const title = card.querySelector('.ai-module-title')?.textContent.toLowerCase() || '';
@@ -174,9 +218,15 @@
                             const tags = card.getAttribute('data-tags') ? card.getAttribute('data-tags').toLowerCase() : '';
 
                             if (title.includes(query) || desc.includes(query) || tags.includes(query)) {
-                                card.style.display = 'flex'; // ai-module-card uses display: flex
+                                card.style.display = 'flex';
+                                chapterDesc.forEach(desc => {
+                                    desc.style.display = "none"
+                                })
                             } else {
                                 card.style.display = 'none';
+                                chapterDesc.forEach(desc => {
+                                    desc.style.display = "none"
+                                })
                             }
                         });
                     });
