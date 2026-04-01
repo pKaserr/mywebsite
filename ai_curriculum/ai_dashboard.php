@@ -27,7 +27,7 @@
                 <p class="">Von der Logik zur künstlichen Intuition. Ein strukturierter Weg durch die Welt der KI.<br>
                     Hier folgen Schritt für Schritt verschiedene Module, die Ihnen helfen, die Grundlagen der KI zu <br>
                     erlernen. Außerdem sollen Tutorials folgen, die bei der Implementierung von KI-Modellen helfen. <br>
-                    Die Website befindet sich noch im Aufbau.</p>
+                    Die Website und die Module befinden sich im Aufbau und können sich daher noch stark ändern.</p>
             </div>
 
             <div class="ai-search">
@@ -73,59 +73,54 @@
                     </a>
 
                     <a href="./ai_06_transformer.php" class="ai-module-card" data-tags="transformer, self-attention, attention, rekursion, nlp">
-                        <span class="wip-banner wip-banner--preview">Preview ...</span>
                         <span class="ai-module-number">06</span>
                         <span class="ai-module-title">Transformer Revolution</span>
                         <span class="ai-module-desc">Self-Attention & das Ende der Rekursion.</span>
                     </a>
 
                     <a href="./ai_07_llm.php" class="ai-module-card" data-tags="llm, large language models, reasoning, embeddings, training, chain-of-thought, nlp, textgenerierung">
-                        <span class="wip-banner wip-banner--preview">Preview ...</span>
                         <span class="ai-module-number">07</span>
                         <span class="ai-module-title">LLMs & Reasoning</span>
                         <span class="ai-module-desc">Embeddings, Training & Chain-of-Thought.</span>
                     </a>
 
                     <a href="./ai_08_ecosystem.php" class="ai-module-card" data-tags="ökosystem, ecosystem, rag, retrieval augmented generation, agenten, agentische workflows">
-
-                        <span class="wip-banner wip-banner--preview">Preview ...</span>
-
                         <span class="ai-module-number">08</span>
                         <span class="ai-module-title">Das Ökosystem</span>
                         <span class="ai-module-desc">RAG & Agentische Workflows.</span>
                     </a>
 
                     <a href="./ai_09_xai" class="ai-module-card" data-tags="xai, explainable ai, vertrauen, saliency maps, erklärbarkeit, transparenz">
-                        <span class="wip-banner wip-banner--preview">Preview ...</span>
-
                         <span class="ai-module-number">09</span>
                         <span class="ai-module-title">Vertrauen & XAI</span>
                         <span class="ai-module-desc">Explainable AI & Saliency Maps.</span>
                     </a>
 
                     <a href="./ai_10_nerf" class="ai-module-card" data-tags="nerf, 3d, vision, rendering, generierung">
-                        <span class="wip-banner wip-banner--preview">Preview ...</span>
-
                         <span class="ai-module-number">10</span>
                         <span class="ai-module-title">NeRF & 3D Vision</span>
                         <span class="ai-module-desc">NeRF & 3D Vision.</span>
                     </a>
 
                     <a href="./aI_11_activation.php" class="ai-module-card" data-tags="aktivierungsfunktionen, relu, sigmoid, tanh">
-                        <span class="wip-banner wip-banner--preview">Preview ...</span>
-
                         <span class="ai-module-number">11</span>
                         <span class="ai-module-title">Aktivierungsfunktionen</span>
                         <span class="ai-module-desc">Aktivierungsfunktionen, ReLU, Sigmoid, Tanh</span>
                     </a>
 
                     <a href="./ai_12_uat" class="ai-module-card" data-tags="uat, universal approximation theorem, theorie, mathematik">
-                        <span class="wip-banner wip-banner--preview">Preview ...</span>
-
                         <span class="ai-module-number">12</span>
                         <span class="ai-module-title">Universal Approximation Theorem</span>
                         <span class="ai-module-desc">Universal Approximation Theorem</span>
                     </a>
+                    <a href="./ai_epilog" class="ai-module-card" data-tags="KI-Blase, Hype, Erwartungsmanagement, Metriken, Epilog, singularität, agi">
+                        <span class="ai-module-number">Epilog</span>
+                        <span class="ai-module-title">KI Blase</span>
+                        <span class="ai-module-desc">Wird sie bald platzen? Oder wird KI die Welt verändern?</span>
+                    </a>
+                    <div class="ai-module-card ai-module-card--disabled">
+                        <span class="ai-module-title mt-3">Weitere folgen</span>
+                    </div>
                 </div>
             </div>
 
@@ -138,25 +133,25 @@
             <div class="boxWrapper mb-6">
                 <div class="ai-grid-container">
                     <a href="./ai_13_umbrella" class="ai-module-card" data-tags="regenschirm, neuron, praxis, implementierung, programmierung, no framework">
-                        <span class="wip-banner">In Arbeit ...</span>
                         <span class="ai-module-number">13</span>
                         <span class="ai-module-title">Der Regenschirm</span>
                         <span class="ai-module-desc">Ein einziges Neuron (ohne Frameworks). Was passiert hier eigentlich?</span>
                     </a>
 
                     <a href="./ai_14_cinema.php" class="ai-module-card" data-tags="kino, couch, hidden layer, neuron, netz, praxis, implementierung, programmierung">
-                        <span class="wip-banner">In Arbeit ...</span>
                         <span class="ai-module-number">14</span>
                         <span class="ai-module-title">Kino oder Couch?</span>
                         <span class="ai-module-desc">Der erste Hidden-Layer mit mehreren Neuronen.</span>
                     </a>
 
                     <a href="./ai_15_backpropagation.php" class="ai-module-card" data-tags="backpropagation, praxis, implementierung, programmierung, mathe, gradient, Gradientenabstiegsverfahren, Abstiegsverfahren">
-                        <span class="wip-banner">In Arbeit ...</span>
                         <span class="ai-module-number">15</span>
                         <span class="ai-module-title">Backpropagation</span>
                         <span class="ai-module-desc">Backpropagation</span>
                     </a>
+                    <div class="ai-module-card ai-module-card--disabled">
+                        <span class="ai-module-title mt-3">Weitere folgen</span>
+                    </div>
                 </div>
             </div>
 
@@ -164,41 +159,38 @@
             <!-- Management -------------->
             <!-- ------------------------->
 
-
             <h3 class="ai-chapter-title">KI-Management</h3>
             <p class="ai-chapter-desc">Hier ein kleiner Einblick über die Management-Aspekte bei der Einführung und Arbeit mit KI in Unternehmen. Wichtig: Wie jedes andere Modul hier, sind die Bereiche in der Praxis deutlich ausführlicher und komplexer. Wer überlegt KI im Unternehmen einzuführen, sollte sich von qualifizierten Fachleuten beraten lassen.</p>
             <div class="boxWrapper mb-2">
                 <div class="ai-grid-container">
                     <a href="./ai_16_strategie.php" class="ai-module-card" data-tags="Strategie, Use-Case, Evaluierung, Hype, Machbarkeit, Proof of Concept, PoC">
-                        <span class="wip-banner">In Arbeit ...</span>
                         <span class="ai-module-number">16</span>
                         <span class="ai-module-title">KI-Strategie & Use-Case-Evaluierung</span>
                         <span class="ai-module-desc">Hype vs. Machbarkeit, Proof of Concept, Use-Case</span>
                     </a>
                     <a href="ai_17_datastrat.php" class="ai-module-card" data-tags="Datenstrategie, Data Engineering, Data Readiness, Deep Dive, Umgang mit Datenmangel">
-                        <span class="wip-banner">In Arbeit ...</span>
                         <span class="ai-module-number">17</span>
                         <span class="ai-module-title">Datenstrategie & Data Engineering</span>
                         <span class="ai-module-desc">Data Readiness, Deep Dive, Umgang mit Datenmangel</span>
                     </a>
                     <a href="ai_18_mlops.php" class="ai-module-card" data-tags="KI-Architektur, MLOps, Build Vs Buy, Integration, Lifecycle Management">
-                        <span class="wip-banner">In Arbeit ...</span>
                         <span class="ai-module-number">18</span>
                         <span class="ai-module-title">KI-Architektur & MLOps</span>
                         <span class="ai-module-desc">Build Vs Buy, Integration, Lifecycle Management</span>
                     </a>
-                    <a href="" class="ai-module-card ai-module-card--disabled" data-tags="KI Governance, Ethik, Compliance, Risikomanagement, rechtliche Rahmenbedingungen, Sustainability & Social Impact">
-                        <span class="wip-banner">Planung ...</span>
+                    <a href="ai_19_governance.php" class="ai-module-card" data-tags="KI Governance, Ethik, Compliance, Risikomanagement, rechtliche Rahmenbedingungen, Sustainability & Social Impact">
                         <span class="ai-module-number">19</span>
                         <span class="ai-module-title">AI Governance, Ethik & Compliance</span>
                         <span class="ai-module-desc">Risikomanagement, rechtliche Rahmenbedingungen, Sustainability & Social Impact</span>
                     </a>
-                    <a href="" class="ai-module-card ai-module-card--disabled" data-tags="Wissenschaftskommunikation, Stakeholder-Management, Erwartungsmanagement, Metriken">
-                        <span class="wip-banner">Planung ...</span>
+                    <a href="ai_20_communication.php" class="ai-module-card" data-tags="Wissenschaftskommunikation, Stakeholder-Management, Erwartungsmanagement, Metriken">
                         <span class="ai-module-number">20</span>
                         <span class="ai-module-title">Wissenschaftskommunikation & Stakeholder-Management</span>
                         <span class="ai-module-desc">Erwartungsmanagement, Metriken</span>
                     </a>
+                    <div class="ai-module-card ai-module-card--disabled">
+                        <span class="ai-module-title mt-5">Weitere folgen</span>
+                    </div>
                 </div>
             </div>
 

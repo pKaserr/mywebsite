@@ -1,7 +1,7 @@
 <?php
 // variables:
-$title = "";
-$page_headline = "";
+$title = "KI-Strategie & Use-Case-Evaluierung";
+$page_headline = "17. KI-Strategie & Use-Case-Evaluierung";
 $prev_link = 'ai_16_strategie.php';
 $prev_text = 'KI-Strategie & Use-Case-Evaluierung';
 $next_link = 'ai_18_mlops.php';

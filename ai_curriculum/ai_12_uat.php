@@ -4,8 +4,8 @@ $title = "Universelle Approximations Theorem";
 $page_headline = "12. Universeller Approximations Theorem";
 $prev_link = 'ai_11_activation.php';
 $prev_text = 'Aktivierungsfunktionen';
-$next_link = 'ai_dashboard.php';
-$next_text = 'Zurück zur Übersicht';
+$next_link = 'ai_epilog.php';
+$next_text = 'Epilog: Die KI-Blase';
 
 ob_start();
 ?>

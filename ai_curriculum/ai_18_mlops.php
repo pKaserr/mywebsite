@@ -1,7 +1,7 @@
 <?php
 // variables:
-$title = "";
-$page_headline = "";
+$title = "MLOps & Modell-Lebenszyklus";
+$page_headline = "18. MLOps & Modell-Lebenszyklus";
 $prev_link = 'ai_17_datastrat.php';
 $prev_text = 'KI-Strategie & Use-Case-Evaluierung';
 $next_link = 'ai_19_ethik.php';
