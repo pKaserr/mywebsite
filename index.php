@@ -59,7 +59,7 @@ $valid_routes = [
 
 // Prüfung
 if (!in_array($request_path, $valid_routes)) {
-    http_response_code(200);
+    http_response_code(404);
     if (file_exists(__DIR__ . '/404.php')) {
         require_once __DIR__ . '/404.php';
     } else {
