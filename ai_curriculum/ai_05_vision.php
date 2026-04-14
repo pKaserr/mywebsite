@@ -94,7 +94,7 @@ ob_start();
     <h4 class="c2-second">1. Woraus besteht der Filter? (Die Gewichte)</h4>
     <p>Erinnerst du dich an die Gewichte (W) aus Modul 02? Beim Regenschirm-Beispiel hatten wir
         Zahlen wie 0.8 oder -0.5, die bestimmt haben, wie wichtig eine Information ist, z.B. ob es
-        dunke Wolken gibt oder es Dienstag ist.</p>
+        dunke Wolken gibt oder du mit dem Auto fährst.</p>
     <p>Ein Filter in der Bilderkennung ist im Grunde nichts anderes als <strong>ein winziges
             3x3-Raster voller Gewichte</strong>. Diese 9 Zahlenwerte in dem Raster sind
         <em>keine</em> Pixel! Es sind mathematische Parameter (z.B. 1.2, -0.8, 0.5), die das Netz
@@ -133,12 +133,13 @@ ob_start();
         leeres Raster geschrieben. Danach schieben wir unsere Filter-Folie einen Pixel weiter nach
         rechts und die Rechnung beginnt von vorn. </p>
 
-    <div class="ai-img-wrapper">
+    <div class="ai-img-wrapper mb-1">
         <figure>
             <img src="../assets/png/filtering_cnn.png" alt="Visualisierung der Faltung eines Filters über ein Bild">
             <figcaption>Diese Filtern führt ein CNN nun auf das gesamte Bild durch, indem es den Filter immer etwas verschiebt. Am Ende ergibt es eine Feature-Map die dafür verwendet wird Muster auf Bildern zu erkennen.</figcaption>
         </figure>
     </div>
+
     <p>Wenn die Folie das gesamte Bild abgetastet hat, ist das neue Raster gefüllt. Dieses neue
         Raster nennen wir die <strong>Feature Map (Aktivierungsmatrix)</strong>. Sie ist eine
         gefilterte Version des Originalbildes. Ein sehr hoher Zahlenwert in dieser Map bedeutet:
@@ -209,7 +210,7 @@ ob_start();
         Brühe. Die klare Information des Tropfens wurde durch das stetige Vermischen komplett
         zerstört.
     </p>
-    <p class="mt-1">Genau dieses Prinzip wendet die KI auf Bilder an – nur
+    <p class="mt-1">Genau dieses Prinzip wendet die KI auf Bilder an, nur
         dass sie nicht mit Wasser und Tinte arbeitet, sondern mit <strong>Bildrauschen
             (Noise)</strong>. Stell dir Rauschen vor wie das graue, flimmernde "Ameisenbild" bei
         einem alten Röhrenfernseher ohne Empfang. Es sind einfach völlig zufällige Pixel ohne jeden
@@ -223,15 +224,13 @@ ob_start();
 
 <div class="ai-card mt-1">
     <ol class="ai-list">
-        <li>Wir zeigen der KI ein gestochen scharfes Foto von einer
-            Katze.</li>
+        <li>Wir zeigen der KI ein gestochen scharfes Foto von einem Hund.</li>
         <li class="mt-1">Wir fügen dem Bild eine winzig kleine Menge
-            Rauschen hinzu. Ein paar Pixel verändern zufällig ihre Farbe. Die Katze ist immer noch
+            Rauschen hinzu. Ein paar Pixel verändern zufällig ihre Farbe. Der Hund ist immer noch
             klar erkennbar, nur minimal körnig.</li>
-        <li class="mt-1">Diesen Schritt wiederholen wir extrem oft (z.
-            B. 1.000 Mal). Mit jedem Schritt wird das Bild verrauschter. Die Katze verschwindet im
+        <li class="mt-1">Diesen Schritt wiederholen wir sehr oft. Mit jedem Schritt wird das Bild verrauschter. Der Hund verschwindet im
             Chaos.</li>
-        <li class="mt-1">Bei Schritt 1.000 ist von der Katze absolut
+        <li class="mt-1">Bei Schritt 1.000 ist von dem Hund absolut
             nichts mehr übrig. Es ist nur noch rein zufälliges Pixel-Rauschen.</li>
     </ol>
 </div>
@@ -247,7 +246,7 @@ ob_start();
 
 <h3 class="c1-second mt-1">Phase 2: Die Zeit zurückdrehen (Reverse Diffusion)
 </h3>
-<p>Jetzt kommt die eigentliche Magie – die Generierung eines neuen Bildes. Wir
+<p>Jetzt kommt die eigentliche Magie: Die Generierung eines neuen Bildes. Wir
     drehen den Prozess um und spielen ihn rückwärts ab.</p>
 
 <div class="ai-grid-2 mt-1">
@@ -255,8 +254,7 @@ ob_start();
         <h4>1. Der Start im Chaos</h4>
         <p>Wenn du der KI sagst "Male mir eine Katze", nimmt sie nicht
             etwa einen Pinsel in die Hand. Sie erzeugt stattdessen ein komplett neues Bild aus 100%
-            purem, zufälligem Rauschen. Für uns Menschen sieht das aus wie das Flackern auf dem
-            alten Röhrenfernseher.</p>
+            purem, zufälligem Rauschen. Wie das Beispiel mit dem Röhrenmonitor.</p>
     </div>
     <div class="ai-card">
         <h4>2. Der Entrauscher (De-Noising)</h4>
@@ -274,7 +272,7 @@ ob_start();
         Text-Prompt gesteuert. Dein Satz "Eine flauschige Katze" zwingt das Netz dazu, beim
         Entfernen des Rauschens genau jene Pixel-Strukturen übrig zu lassen, die am Ende wie Fell,
         Ohren und Augen aussehen. Aus dem anfänglichen Chaos wird die Tinte sozusagen wieder in
-        einen perfekten Tropfen zurückverwandelt – aber diesmal in einen, den es in der echten Welt
+        einen perfekten Tropfen zurückverwandelt, nur diesmal in einen, den es in der echten Welt
         vorher nie gab.</p>
 </div>
 

@@ -39,7 +39,7 @@ ob_start();
 <hr>
 
 <h3 class="c1-second mt-1">Der Haken an der Sache: Theorie vs. Realität</h3>
-<p>Wenn das wahr ist, warum haben wir dann noch keine allwissende Super-KI, die jedes Problem der Menschheit löst? Hier kommt die Realität ins Spiel, die uns brutal auf den Boden der Tatsachen zurückholt:</p>
+<p>Wenn das wahr ist, warum haben wir dann noch keine allwissende Super-KI, die jedes Problem der Menschheit löst? Hier kommt die Realität ins Spiel, die uns auf den Boden der Tatsachen zurückholt:</p>
 
 <div class="ai-grid-2 mt-1">
     <div class="ai-card">
@@ -48,7 +48,7 @@ ob_start();
     </div>
     <div class="ai-card">
         <h4>Das Finden ist das Problem</h4>
-        <p>Das Theorem sagt uns leider <strong>nicht</strong>, wie wir diese Kiste finden. Das Anpassen von Milliarden Gewichten (Training) dauert ewig, verschlingt unfassbare Mengen an Strom, benötigt riesige Datensätze und bleibt oft im falschen Tal stecken (Local Minima).</p>
+        <p>Das Theorem sagt uns leider <strong>nicht</strong>, wie wir diese Kiste finden. Das Anpassen von Milliarden Gewichten (Training) dauert ewig, verschlingt unfassbare Mengen an Strom, benötigt riesige Datensätze und bleibt oft im falschen Tal stecken.</p>
     </div>
 </div>
 

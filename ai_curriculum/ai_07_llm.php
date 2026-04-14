@@ -14,8 +14,7 @@ ob_start();
 <p>Computer sind faszinierend, haben aber einen entscheidenden Fehler: Sie verstehen keine Wörter.
     Wenn Sie einem Computer das Wort "Apfel" geben, sieht es nichts als unverständliche Zeichen.
     Computer verstehen nur eines: Zahlen. Wie also bringt man einer Maschine das Lesen bei? <br>
-    Wenn du einen Prompt eingibst (ein Prompt ist ein Text, der das Modell anweist, was es tun
-    soll), durchläuft dein Satz einen streng mathematischen Prozess, bevor
+    Wenn du einen Prompt eingibst, durchläuft dein Satz einen streng mathematischen Prozess, bevor
     das Modell überhaupt zu "denken" beginnt.</p>
 <hr>
 
@@ -62,9 +61,9 @@ ob_start();
 <div class="ai-card--notice mt-1">
     <p><strong>Die Bedeutungskarte:</strong> Stellen Sie sich eine Stadtkarte vor. Alle Bäckereien
         liegen nah beieinander, während Auto-Werkstätten in einem ganz anderen Viertel sind. Genau
-        das macht die KI mit Wörtern: "Hund" und "Katze" bekommen Koordinaten, die sehr nah
-        beieinander liegen, weil es beides Haustiere sind. Das Wort "Auto" hingegen wird meilenweit
-        entfernt platziert.</p>
+        das macht die KI mit Wörtern: Wal und Hai bekommen in einer Dimension Koordinaten, die sehr nah
+        beieinander liegen, weil es beides Tiere sind, die im Wasser leben. In einer anderen Dimension
+        liegen sie weit voneinander entfernt, da ein Wal ein Säugetier und ein Hai ein Fisch ist.</p>
     <p class="mt-1">Dadurch fängt das Modell an, Konzepte zu "verstehen". Es weiß nicht, was ein
         Hund emotional <em>ist</em>, aber es weiß mathematisch ganz genau, in welcher Nachbarschaft
         der Bedeutungen es wohnt.</p>
@@ -73,7 +72,7 @@ ob_start();
 <hr>
 
 <h3 class="c1-second mt-1">Phase 3: Pre-Training (Das halbe Internet lesen)</h3>
-<p>Wie wird das Modell nun auf dieser Basis schlau? Durch brutale Mengen an Daten. Im sogenannten
+<p>Wie wird das Modell nun auf dieser Basis schlau? Durch riesige Mengen an Daten. Im sogenannten
     <strong>Pre-Training</strong> (Vortraining) bekommt das Modell Millionen von Büchern, Artikeln
     und Websites "zu lesen". Es hat dabei nur eine einzige, fast schon beängstigend simple Aufgabe:
 </p>
@@ -83,7 +82,8 @@ ob_start();
 <div class="bg-main2 p-1 mt-1">
     <p>Wenn das Modell den Satz liest: <em>"Der Himmel ist blau, und das Gras ist..."</em>, rechnet
         es fieberhaft alle Wahrscheinlichkeiten aus und tippt basierend auf seiner "Weltkarte" am
-        Ende auf "...grün".</p>
+        Ende auf "...grün". <br> Erstaunlich, oder? Ich würde wetten, wenn ich zu dir sage "Der Himmel ist
+        blau, und das Gras ist..." würdest du auch "...grün" sagen. Weil du es gelernt hast, genau wie ein LLM. Wo genau unterscheidet sich dann eigentlich dein Gedankengang von dem des LLMs? (Kleiner philosophischer Scherz am Rande)</p>
 </div>
 <p class="mt-1">Es macht das nicht einmal, sondern Milliarden Mal. Dadurch lernt das Modell aus
     reinem Kontext nicht nur Grammatik und Faktenwissen, sondern ein extrem tiefes Musterverständnis

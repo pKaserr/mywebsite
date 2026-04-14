@@ -87,13 +87,13 @@ ob_start();
     <li>
         <strong>Machine Learning (Maschinelles Lernen - ML):</strong>
         Der Teil der KI, der <em>lernt</em>. Algorithmen, die durch Erfahrung (Daten) besser
-        werden, ohne dass man jede Regel händisch ändert. Darunter zählen die drei Säulen Supervised Learning (SL), Unsupervised Learning (UL), Reinforcement Learning (RL) und alle Mischungen davon (z.B: Semi-Supervised Learning).
+        werden, ohne dass man jede Regel händisch ändert.
     </li>
     <li>
         <strong>Deep Learning (Tiefes Lernen - DL):</strong>
         Ein spezieller Teil von ML. Hier nutzen wir <strong>künstliche neuronale Netze</strong>
         (inspiriert vom Gehirn), um riesige Datenmengen zu verarbeiten. Das ist die Technologie
-        hinter dem aktuellen Hype (LLMs, Bildgeneratoren).
+        hinter dem aktuellen Hype (LLMs, Bildgeneratoren). Darunter zählen die drei Säulen Supervised Learning (SL), Unsupervised Learning (UL), Reinforcement Learning (RL) und alle Mischungen davon (z.B: Semi-Supervised Learning).
     </li>
 </ul>
 

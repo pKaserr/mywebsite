@@ -15,18 +15,17 @@ ob_start();
 <p>Die echte Welt ist aber nicht linear. Stell dir ein Koordinatensystem vor, bei dem in der Mitte ein roter Haufen Punkte (Katzen) liegt, der kreisförmig von blauen Dreiecken (Hunden) umringt ist. Wenn du nun versuchst, die Hunde von den Katzen mit einem geraden Lineal zu trennen, scheiterst du. Du durchschneidest immer beide Gruppen. Um die Daten sauber zu trennen, musst du das Lineal verbiegen können, du brauchst Kurven, Kanten und Kreise. <br> Die Welt der neuronalen Netze ist multidimensional. Ein large Language Model wie ChatGPT oder Gemini hat tausende Dimensionen um Sprache zu verstehen, da jedes Wort unterschiedliche Bedeutungen haben kann. Eine gerade Linie kann das nicht abbilden. Auch beim erkennen von Mustern in einem Bild ist sowas sehr wichtig.</p>
 
 
-<hr>
-
-<h3 class="c1-second mt-1">Die Lösung: Der Knick</h3>
-<p>Genau hier kommt die <strong>Aktivierungsfunktion</strong> ins Spiel. Sie sitzt ganz am Ausgang jedes Neurons und agiert wie ein Filter oder Türsteher. Sie entscheidet: <em>"Darf dieses Signal weitergegeben werden? Und wenn ja, in welcher Form?"</em></p>
-<p>Indem diese Funktion das Signal ab einer bestimmten Schwelle abschneidet, staucht oder abknickt, bricht sie die starre, gerade Linie auf. Sie bringt die sogenannte <strong>Nicht-Linearität</strong> ins Netz. Erst durch diese gezielten "Knicke" wird die KI fähig, ihre Linien wie ein Lasso um die komplexesten Datenpunkte zu werfen.</p>
-
 <div class="ai-img-wrapper mt-1 mb-1">
     <figure style="margin: 0;">
         <img src="../assets/png/activation_vs_linear.png" style="max-width: 50%;" alt="Vergleich: Lineare vs. Nicht-lineare Aktivierungsfunktion">
         <figcaption>Vergleich: Lineare vs. Nicht-lineare Aktivierungsfunktion. Links die lineare Funktion, die nur gerade Linien zeichnen kann. Damit ist es schwierig, komplexe Formen abzubilden und unterschiedliche Muster voneinander zu trennen. Rechts die nicht-lineare Funktion, die Kurven und komplexe Formen abbilden kann.</figcaption>
     </figure>
 </div>
+
+<h3 class="c1-second mt-1">Die Lösung: Der Knick</h3>
+<p>Genau hier kommt die <strong>Aktivierungsfunktion</strong> ins Spiel. Sie sitzt ganz am Ausgang jedes Neurons und agiert wie ein Filter oder Türsteher. Sie entscheidet: <em>"Darf dieses Signal weitergegeben werden? Und wenn ja, in welcher Form?"</em></p>
+<p>Indem diese Funktion das Signal ab einer bestimmten Schwelle abschneidet, staucht oder abknickt, bricht sie die starre, gerade Linie auf. Sie bringt die sogenannte <strong>Nicht-Linearität</strong> ins Netz. Erst durch diese gezielten "Knicke" wird die KI fähig, ihre Linien wie ein Lasso um die komplexesten Datenpunkte zu werfen.</p>
+
 
 
 <hr>

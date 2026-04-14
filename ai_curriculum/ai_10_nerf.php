@@ -4,17 +4,15 @@ $title = "Neural Radiance Fields (NeRF)";
 $page_headline = "10. Neural Radiance Fields (NeRF)";
 $prev_link = 'ai_09_xai.php';
 $prev_text = 'Zurück: Vertrauen & Transparenz';
-// $next_link = 'ai_11_anomaly.php';
-// $next_text = 'Weiter: Anomaly Detection';
-$next_link = 'ai_dashboard';
-$next_text = 'Zurück zur Übersicht';
+$next_link = 'ai_11_activation.php';
+$next_text = 'Weiter: Aktivierungsfunktionen';
 ob_start();
 ?>
 <h3 class="c1-second mt-1">Einleitung: Die Illusion von KI-Videos vs.
     echte 3D-Räume</h3>
 <p>Wenn wir heute atemberaubende, KI-generierte Videos sehen, wirken
     diese extrem räumlich. Doch das ist eine Illusion. Diese Videos sind letztlich nur sehr viele
-    flache 2D-Bilder, die schnell hintereinander abgespielt werden. Man kann das Video nicht
+    flache 2D-Bilder, die schnell hintereinander abgespielt werden, eben genauso wie einem Video. Man kann das Video jedoch nicht
     pausieren und virtuell um das generierte Objekt herumgehen. Es ist und bleibt eine flache
     Leinwand.</p>
 <p>Wollen wir jedoch KIs für Robotik, autonomes Fahren oder Virtual
@@ -30,7 +28,7 @@ ob_start();
         <video controls alt="Clustering">
             <source src="../assets/videos/zip_nerf_2023.mp4">
         </video>
-        <figcaption>Bei diesem Video handelt es sich nicht um einen Film, der gedeht wurde mit einer Kamera. Es handelt sich um ein Neuronales Netz, dass die Informationen des Ausschnitts (RGB) im Bezug auf die Perspektive berechnet. <br> <cite> (ZIP-NeRF: Jonathan T. Barron and Ben Mildenhall and Dor Verbin and Pratul P. Srinivasan and Peter Hedman, 2023, https://jonbarron.info/zipnerf/)</figcaption>
+        <figcaption>Bei diesem Video handelt es sich nicht um ein Video, das mit einer Kamera gedreht wurde. Es handelt sich um ein Neuronales Netz, dass die Informationen des Ausschnitts (RGB) im Bezug auf die Perspektive berechnet. <br> <cite> (ZIP-NeRF: Jonathan T. Barron and Ben Mildenhall and Dor Verbin and Pratul P. Srinivasan and Peter Hedman, 2023, https://jonbarron.info/zipnerf/)</figcaption>
     </figure>
 </div>
 
@@ -77,44 +75,21 @@ ob_start();
 
 <p class="mt-1">Entlang dieses Lichtstrahls messen wir nun in regelmäßigen Abständen (der sogenannten Abtastrate oder <em>Sampling Rate</em>),
     was sich an den jeweiligen Punkten befindet. Wir fragen das System: Welche Farbe (RGB) herrscht hier und befindet sich an dieser Stelle feste Materie (Density)?
-    Genau diese Informationen – Position, Richtung, Farbe und Dichte – sind es, die das neuronale Netz lernt und speichert.</p>
+    Genau diese Informationen, Position, Richtung, Farbe und Dichte, sind es, die das neuronale Netz lernt und speichert.</p>
 
 <hr>
 
 <h3 class="c1-second mt-1">Das mathematische Hindernis</h3>
-<p>Erinnern wir uns an Kapitel 04 (Learning). Damit ein Netz lernen kann, tiefste Stelle finden?) und Backpropagation. Diese Algorithmen benötigen zwingend die mathematische Ableitung. Die Mathematik muss fließend und
-    stufenlos(differenzierbar) sein.</p>
+<p>Erinnern wir uns an Kapitel 04 (Learning). Damit ein Netz lernen kann, muss es die tiefste Stelle finden und dazu verwendet es Backpropagation. Backpropagation benötigen zwingend die mathematische Ableitung. Die Mathematik muss fließend und
+    stufenlos (differenzierbar) sein.</p>
 <p>Wenn wir unsere Welt aus harten, festen 3D-Pixeln bauen würden,
     hätten wir ein Problem: Ein Pixel ist entweder "da" oder "nicht da". Das erzeugt mathematische
     Klippen, an denen die Ableitung scheitert. Die KI wüsste nicht, in welche Richtung sie ihre Gewichte anpassen soll. Wir brauchen einen weicheren Ansatz. Die Lösung dafür kommt aus der
-    Medizin und Computergrafik.</p>
-
-<button class="accordion accordion--bg mt-1 p-1 mb-0">Exkurs: Volumetrisches Rendering in der Medizin (Aufklappen)</button>
-<div class="panel">
-    <p>In der Medizin wird volumetrisches Rendering schon lange genutzt, um ins Innere des menschlichen Körpers zu blicken, zum Beispiel in das Gehirn. Das Gewebe besteht aus Masse unterschiedlicher Dichte. Wenn ein CT-Scanner einen Röntgenstrahl durch den Kopf schießt, nimmt die Intensität des Strahls an den Stellen ab, wo er auf Masse trifft.</p>
-    <p class="mt-1"><strong>Das Problem:</strong> Der Scanner misst nur das Endresultat auf der anderen Seite. Er weiß nicht, an welcher genauen Stelle im Kopf der Strahl wie stark blockiert wurde. Wir kennen lediglich die Start-Intensität und messen die Rest-Intensität am Ende.</p>
-
-    <p class="mt-1">Stellen wir uns das Gehirn zur Vereinfachung als ein Raster aus Zahlen vor (wie ein 3D-Gitter). An jeder Stelle, an der sich viel Masse befindet, ist der Zahlenwert höher. Wenn wir nun einen Strahl durch deinen Schädel schießen, und dieser Strahl hat am Anfang einen Wert von 10 und am Ende einen Wert von 5, wissen wir: Er hat auf seinem Weg Masse im Wert von 5 durchdrungen.</p>
-    <p class="mt-1">Indem wir diese Strahlen nun aus ganz vielen verschiedenen Winkeln durch das Raster schießen und die Verluste kreuz und quer miteinander verrechnen, können wir mathematisch genau auflösen, welches Kästchen welchen Wert haben muss.</p>
-
-    <p class="mt-1">Anbei ein kurzer Ausschnitt aus einer meiner Vorlesungen, in dem diese Methode veranschaulicht wird:</p>
-
-    <div class="ai-img-wrapper my-1">
-        <figure>
-            <video controls>
-                <source src="../assets/videos/Vorlesung_nerf_cut.mp4">
-            </video>
-            <figcaption>Ausschnitt einer Vorlesung die ich für Masterstudierende gehalten habe. Es zeigt, wie man aus den Messungen der CT-Scans das Innere des Gehirns rekonstruiert. Das Grundprinzip von volumetrischem Rendering, wie es auch bei NeRF verwendet wird.</figcaption>
-        </figure>
-    </div>
-
-    <p class="mb-1">Durch dieses clevere Verrechnen erhalten wir schichtweise eine exakte 3D-Darstellung der Dichte, und machen das Innere des Gehirns sichtbar.</p>
-</div>
-
+    Medizin und Computergrafik: Volumetrisches Rendering.</p>
 
 <hr>
 
-<h3 class="c1-second mt-1">Die Lösung: Volumetrisches Rendering</h3>
+<h3 class="c1-second mt-1">Volumetrisches Rendering</h3>
 <p>Beim <strong>volumetrischen Rendering</strong> behandeln wir die Welt
     nicht als leeren Raum mit harten Objekten, sondern eher wie ein Aquarium voller Nebel, der mal
     extrem dicht (ein Tisch) und mal extrem dünn (die Luft) ist. Ähnliche Verfahren kennen wir aus
@@ -140,6 +115,28 @@ ob_start();
     2D-Pixel zusammengerechnet. Weil dieser ganze Vorgang völlig fließend ist, kann die Mathematik
     den Fehler exakt berechnen und das Netz trainieren.</p>
 
+
+<button class="accordion accordion--bg mt-1 p-1 mb-0">Exkurs: Volumetrisches Rendering in der Medizin (Aufklappen)</button>
+<div class="panel">
+    <p>In der Medizin wird volumetrisches Rendering schon lange genutzt, um ins Innere des menschlichen Körpers zu blicken, zum Beispiel in das Gehirn. Das Gewebe besteht aus Masse unterschiedlicher Dichte. Wenn ein CT-Scanner einen Röntgenstrahl durch den Kopf schießt, nimmt die Intensität des Strahls an den Stellen ab, wo er auf Masse trifft.</p>
+    <p class="mt-1"><strong>Das Problem:</strong> Der Scanner misst nur das Endresultat auf der anderen Seite. Er weiß nicht, an welcher genauen Stelle im Kopf der Strahl wie stark blockiert wurde. Wir kennen lediglich die Start-Intensität und messen die Rest-Intensität am Ende.</p>
+
+    <p class="mt-1">Stellen wir uns das Gehirn zur Vereinfachung als ein Raster aus Zahlen vor (wie ein 3D-Gitter). An jeder Stelle, an der sich viel Masse befindet, ist der Zahlenwert höher. Wenn wir nun einen Strahl durch deinen Schädel schießen, und dieser Strahl hat am Anfang einen Wert von 10 und am Ende einen Wert von 5, wissen wir: Er hat auf seinem Weg Masse im Wert von 5 durchdrungen.</p>
+    <p class="mt-1">Indem wir diese Strahlen nun aus ganz vielen verschiedenen Winkeln durch das Raster schießen und die Verluste kreuz und quer miteinander verrechnen, können wir mathematisch genau auflösen, welches Kästchen welchen Wert haben muss.</p>
+
+    <p class="mt-1">Anbei ein kurzer Ausschnitt aus einer meiner Vorlesungen, in dem diese Methode veranschaulicht wird:</p>
+
+    <div class="ai-img-wrapper my-1">
+        <figure>
+            <video controls>
+                <source src="../assets/videos/Vorlesung_nerf_cut.mp4">
+            </video>
+            <figcaption>Ausschnitt einer Vorlesung die ich für Masterstudierende gehalten habe. Es zeigt, wie man aus den Messungen der CT-Scans das Innere des Gehirns rekonstruiert. Das Grundprinzip von volumetrischem Rendering, wie es auch bei NeRF verwendet wird.</figcaption>
+        </figure>
+    </div>
+
+    <p class="mb-1">Durch dieses clevere Verrechnen erhalten wir schichtweise eine exakte 3D-Darstellung der Dichte, und machen das Innere des Gehirns sichtbar.</p>
+</div>
 
 <hr>
 

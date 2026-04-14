@@ -29,7 +29,7 @@ ob_start();
 </div>
 
 <div class="ai-card--notice mt-1">
-    <p><strong>Labeling im Alltag</strong> <br> Hast du schon mal eine Beschwerde oder ein Anregung an ein Unternehmen geschrieben? Wie viele "Unterkategorien" hast du auswählen müssen bevor du dann am Ende auf "Sonstiges" geklickt hast oder auf ein Forum verwiesen wurdest? <br> Wusstest du, dass Googles eigenes Bot-Abwehrsystem (reCaptcha) nicht nur dazu dient, dass keine Bots mehr auf Webseiten zugreifen können (was es übrignes nicht gut macht), sondern auch um Bilder damit zu labeln? </p>
+    <p><strong>Labeling im Alltag</strong> <br> Hast du schon mal eine Beschwerde oder ein Anregung an ein Unternehmen geschrieben? Wie viele "Unterkategorien" hast du auswählen müssen bevor du dann am Ende auf "Sonstiges" geklickt hast oder auf ein Forum verwiesen wurdest? <br> Wusstest du, dass Googles eigenes Bot-Abwehrsystem (reCaptcha) nicht nur dazu dient, dass keine Bots mehr auf Webseiten zugreifen können (was es übrignes nicht gut macht), sondern auch um Bilder damit zu labeln? Also einem Bild eine "Unterschrift"geben: "Hier ist ein Auto" oder "Hier ist ein Fahrrad", was dann für das Training eines KI-Modells verwendet wird.</p>
 </div>
 
 <hr>

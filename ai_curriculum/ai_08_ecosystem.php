@@ -12,7 +12,7 @@ ob_start();
 <p>Ein Large Language Model (LLM) wie im vorherigen Kapitel beschrieben, ist wie ein
     hochintelligenter Gelehrter, der aber in einem fensterlosen Raum eingesperrt ist. Es hat
     tausende Bücher gelesen, aber sein Wissen endet genau an dem Tag, an dem sein Training (seine
-    "Lesezeit") abgeschlossen war. Fragt man es nach dem Wetter von heute, muss es raten – und KIs
+    "Lesezeit") abgeschlossen war. Fragt man es nach dem Wetter von heute, muss es raten. Und KIs
     raten leider so überzeugend, dass wir es oft glauben. Dieses Erfinden von Fakten nennt man
     <strong class="has-tooltip" data-tooltip="Bezeichnet das Phänomen, wenn eine KI überzeugend klingende, aber sachlich falsche oder erfundene Informationen ausgibt.">Halluzination</strong>.
 </p>
@@ -21,7 +21,7 @@ ob_start();
 
 <h3 class="c1-second mt-1">Phase 1: Retrieval-Augmented Generation (RAG)</h3>
 <p>Wie lösen wir das Problem, dass die KI nicht alles wissen kann und oft halluziniert? Wir geben
-    ihr eine Bibliothek und eine Suchmaschine! Dieses Konzept nennt sich <strong>RAG
+    ihr eine Bibliothek und eine Suchmaschine. Dieses Konzept nennt sich <strong>RAG
         (Retrieval-Augmented Generation)</strong>.</p>
 
 <div class="ai-grid-2 mt-1">

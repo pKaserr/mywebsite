@@ -42,7 +42,7 @@ $user_name = $_SESSION['user_name'];
                Im Rahmen meiner Tätigkeit als Fullstack-Entwickler war ich in den letzten sechs Monaten an der
                Entwicklung und Weiterentwicklung einer webbasierten Logistikplattform beteiligt. Aufgabe der Software
                ist die Echtzeitvisualisierung und Steuerung des Materialflusses in einem Lager. Meine Aufgaben umfassten
-               sowohl Backend- als auch Frontend-Entwicklung – von der Gestaltung nutzerfreundlicher Oberflächen bis hin
+               sowohl Backend- als auch Frontend-Entwicklung. Von der Gestaltung nutzerfreundlicher Oberflächen bis hin
                zur effizienten Datenverarbeitung und -bereitstellung. <br>
                Ein besonderer Fokus lag auf der Konzeption und Umsetzung von Prototypen für KI-gestützte Komponenten.
                Dazu zählte unter anderem die Konzeption und Weiterentwicklung eines Materialflussrechners und

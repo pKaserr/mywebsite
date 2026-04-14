@@ -26,7 +26,7 @@ ob_start();
         <h4>1. Input Layer (Eingabe)</h4>
         <p class="mt-1"><strong>Die
                 Sinnesorgane.</strong> Hier kommen die rohen Daten an. Bei einem kleinen
-            Schwarz-Weiß-Bild von 28x28 Pixeln hätte diese Schicht exakt 784 Neuronen – eines für
+            Schwarz-Weiß-Bild von 28x28 Pixeln hätte diese Schicht exakt 784 Neuronen: Eines für
             jeden Pixelwert. Hier wird noch nicht gerechnet oder "gedacht", die Daten werden nur ins
             Netz gespeist.</p>
     </div>
@@ -141,7 +141,7 @@ ob_start();
     <p>Bei sehr tiefen Netzen mit Milliarden
         Parametern können wir oft gar nicht mehr genau nachvollziehen, welches Neuron im Inneren
         eigentlich auf was genau reagiert. Das System wird zur <strong>Blackbox</strong>.</p>
-    <p>Dies bedeutet nicht – wie häufig angenommen – dass
+    <p>Dies bedeutet nicht, wie häufig angenommen, dass
         wir nicht wissen, was im Inneren des neuronalen Netzes berechnet wird. Es bedeutet, dass es
         so viele Rechenoperationen gibt, dass es zu komplex ist, sie manuell nachzuvollziehen.</p>
 </div>
@@ -154,7 +154,7 @@ ob_start();
         <em>warum</em> das Netz eine bestimmte Entscheidung getroffen hat.
     </p>
 
-    <!-- ═══ Interaktives XAI-Modul: Regenschirm ═══ -->
+    <!-- ═══ Interaktives XAI-Modul: Regenschirm ═══
     <div id="xai-module" class="ai-card--notice mt-1">
 
         <p>🔍 Interaktives XAI-Modul: Die Regenschirm-Analyse</p>
@@ -164,10 +164,9 @@ ob_start();
             Entscheidung erklärt.
         </p>
 
-        <!-- Eingabe-Toggles -->
+        Eingabe-Toggles -->
 
-        <div class="xai-grid">
-            <!-- X1: bewölkt -->
+        <!-- <div class="xai-grid">
             <div class="xai-input-card active" id="xai-card-0">
                 <span class="xai-emoji">☁️</span>
                 <span class="xai-label">X<sub>1</sub>: Bewölkt?</span>
@@ -177,7 +176,6 @@ ob_start();
                 </label>
                 <span class="xai-weight">W<sub>1</sub> = +0.8</span>
             </div>
-            <!-- X2: Dienstag -->
             <div class="xai-input-card active" id="xai-card-1">
                 <span class="xai-emoji">📅</span>
                 <span class="xai-label">X<sub>2</sub>: Dienstag?</span>
@@ -187,7 +185,6 @@ ob_start();
                 </label>
                 <span class="xai-weight">W<sub>2</sub> = 0.0</span>
             </div>
-            <!-- X3: Auto -->
             <div class="xai-input-card active" id="xai-card-2">
                 <span class="xai-emoji">🚗</span>
                 <span class="xai-label">X<sub>3</sub>: Auto?</span>
@@ -199,20 +196,19 @@ ob_start();
             </div>
         </div>
 
-        <!-- SHAP Waterfall Chart -->
         <div class="xai-waterfall">
             <div class="xai-bar-row" id="xai-row-0">
-                <span class="xai-bar-label">☁️ Bewölkt</span>
+                <span class="xai-bar-label">Bewölkt</span>
                 <div class="xai-bar-track"><span class="xai-bar-center"></span><span class="xai-bar-fill" id="xai-fill-0"></span></div>
                 <span class="xai-bar-value" id="xai-val-0"></span>
             </div>
             <div class="xai-bar-row" id="xai-row-1">
-                <span class="xai-bar-label">📅 Dienstag</span>
+                <span class="xai-bar-label">ienstag</span>
                 <div class="xai-bar-track"><span class="xai-bar-center"></span><span class="xai-bar-fill" id="xai-fill-1"></span></div>
                 <span class="xai-bar-value" id="xai-val-1"></span>
             </div>
             <div class="xai-bar-row" id="xai-row-2">
-                <span class="xai-bar-label">🚗 Auto</span>
+                <span class="xai-bar-label">Auto</span>
                 <div class="xai-bar-track"><span class="xai-bar-center"></span><span class="xai-bar-fill" id="xai-fill-2"></span></div>
                 <span class="xai-bar-value" id="xai-val-2"></span>
             </div>
@@ -223,10 +219,8 @@ ob_start();
             </div>
         </div>
 
-        <!-- Live Computation -->
         <div class="xai-computation" id="xai-comp"></div>
 
-        <!-- Result -->
         <div class="xai-result no" id="xai-result"></div>
 
         <hr>
@@ -238,9 +232,9 @@ ob_start();
             das Gesicht zu erkennen.
             Solche Visualisierungen nennt man <strong>Saliency Maps</strong> oder Heatmaps.
         </p>
-    </div>
+    </div> -->
 
-    <script>
+    <!-- <script>
         (function () {
             const W = [0.8, 0.0, -0.5];
             const BIAS = 0.1;
@@ -332,7 +326,7 @@ ob_start();
             // Initial render
             xaiUpdate();
         })();
-    </script>
+    </script> -->
 </div>
 
 <?php

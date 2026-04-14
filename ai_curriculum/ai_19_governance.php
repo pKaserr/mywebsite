@@ -4,16 +4,14 @@ $title = "AI Governance, Recht & Impact";
 $page_headline = "19. AI Governance, Recht & Impact";
 $prev_link = 'ai_18_mlops.php';
 $prev_text = 'MLOps & Modell-Lebenszyklus';
-$next_link = 'ai_dashboard.php';
-$next_text = 'Zurück zur Übersicht';
-// $next_link = 'ai_20_communication.php';
-// $next_text = 'Wissenschaftskommunikation & Stakeholder-Management';
+$next_link = 'ai_20_communication.php';
+$next_text = 'Wissenschaftskommunikation & Stakeholder-Management';
 
 ob_start();
 ?>
 
 <h3 class="c1-second mt-1">Risikomanagement: Wer bremst, wenn die KI versagt?</h3>
-<p>In Deutschland gibt es fünf Level des Autonomen Fahrens. Von einfachen Assistenzsystemen (Level 1) bis zum völlig freien, fahrerlosen Fahren (Level 5). Für jedes dieser Systeme gelten extrem strenge Bedingungen, Fallbacks und Sicherheitssysteme – denn es geht hier um Menschenleben. Mit jeder weiteren Stufe legen wir die Verantwortung der Fahrt immer weiter in die Hände künstlicher Systeme.</p>
+<p>In Deutschland gibt es fünf Level des Autonomen Fahrens. Von einfachen Assistenzsystemen (Level 1) bis zum völlig freien, fahrerlosen Fahren (Level 5). Für jedes dieser Systeme gelten extrem strenge Bedingungen, Fallbacks und Sicherheitssysteme. Denn es geht hier um Menschenleben. Mit jeder weiteren Stufe legen wir die Verantwortung der Fahrt immer weiter in die Hände künstlicher Systeme.</p>
 
 <p>Aber was passiert nun, wenn ein autonomes Fahrzeug einen Unfall verursacht? Schon ab Stufe 3 darf der Fahrer sich von der Fahrt und damit der direkten Verantwortung abwenden. Ist bei einem Crash dann der Mensch schuld, der nicht eingegriffen hat? Der Automobilhersteller? Oder der Programmierer des neuronalen Netzes?</p>
 
@@ -28,7 +26,7 @@ ob_start();
 <hr>
 
 <h3 class="c1-second mt-1">Die Checkliste: 5 Leitfragen für vertrauenswürdige KI</h3>
-<p>Um diese Risiken zu minimieren, gibt es international anerkannte Standards. Die Expertengruppe der Europäischen Kommission hat Leitlinien für "Trustworthy AI" (Vertrauenswürdige KI) definiert. Bevor du eine KI – oder generell eine tiefgreifende Software – in deinem Unternehmen einführst, solltest du diese fünf Kernfragen klären:</p>
+<p>Um diese Risiken zu minimieren, gibt es international anerkannte Standards. Die Expertengruppe der Europäischen Kommission hat Leitlinien für "Trustworthy AI" (Vertrauenswürdige KI) definiert. Bevor du eine KI, oder generell eine tiefgreifende Software, in deinem Unternehmen einführst, solltest du diese fünf Kernfragen klären:</p>
 
 <div class="ai-card mt-1">
     <ul class="ai-list">
@@ -76,7 +74,7 @@ ob_start();
 <h3 class="c1-second mt-1">Sustainability & Social Impact</h3>
 <p>Weißt du eigentlich, wie viel sauberes Trinkwasser große Sprachmodelle (LLMs) benötigen, nur um die Serverfarmen während des Trainings zu kühlen? Oder wie viele Monate tausende von Hochleistungs-Grafikkarten unter Volllast rechnen müssen, um ein solches Modell zu erschaffen?</p>
 
-<p>KI ist aktuell ein massiver Energiefresser. <strong>Aber warum eigentlich?</strong> Um ein Modell wie ChatGPT zu trainieren, muss die Mathematik Milliarden von Gewichten (Parametern) anpassen – und das für Billionen von Wörtern (Tokens), wieder und wieder, bis das Netz die Struktur unserer Sprache verstanden hat. Das sind schier unvorstellbare Mengen an Matrixmultiplikationen, die direkt in Stromverbrauch und Abwärme übersetzt werden. <br> Als Anwender solcher Technik ist es entsprechend wichtig, sich über die Auswirkungen im Klaren zu sein und das nicht nur aus rein ethischen Gründen, sondern auch aus wirtschaftlichen.</p>
+<p>KI ist aktuell ein massiver Energiefresser. <strong>Aber warum eigentlich?</strong> Um ein Modell wie ChatGPT zu trainieren, muss die Mathematik Milliarden von Gewichten (Parametern) anpassen, und das für Billionen von Wörtern (Tokens), wieder und wieder, bis das Netz die Struktur unserer Sprache verstanden hat. Das sind schier unvorstellbare Mengen an Matrixmultiplikationen, die direkt in Stromverbrauch und Abwärme übersetzt werden. <br> Als Anwender solcher Technik ist es entsprechend wichtig, sich über die Auswirkungen im Klaren zu sein und das nicht nur aus rein ethischen Gründen, sondern auch aus wirtschaftlichen.</p>
 
 <div class="ai-card--notice mt-1">
     <h4>Der gesellschaftliche Deal: Energie gegen Fortschritt</h4>

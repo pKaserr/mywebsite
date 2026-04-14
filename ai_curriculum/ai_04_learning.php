@@ -32,7 +32,7 @@ ob_start();
     Zahlen gefüllt.</p>
 <p>Geben wir unserem Regenschirm-Netz nun die Info "Es ist bewölkt
     (X<sub>1</sub>=1)", rechnet das Netz mit seinen zufälligen Gewichten vielleicht aus:
-    <em>"Wahrscheinlichkeit für Regen: 10% (0.1)"</em>. Du gehst ohne Schirm raus – und wirst
+    <em>"Wahrscheinlichkeit für Regen: 10% (0.1)"</em>. Du gehst ohne Schirm raus und wirst
     klatschnass. Das Netz lag komplett falsch.
 </p>
 
@@ -45,21 +45,20 @@ ob_start();
 <div class="ai-card mt-1">
     <ul class="ai-list">
         <li><strong>Die Vorhersage (Prediction):</strong> 0.1 (Nein, kein Schirm)</li>
-        <li><strong>Die Realität (Ground Truth):</strong> 1.0 (Es hat geregnet, du bist nass!)</li>
-        <li><strong>Der Fehler (Loss):</strong> Die Differenz zwischen Realität und Vorhersage. Das
-            Netz berechnet: <em>"Verdammt, ich war extrem weit weg von der Wahrheit."</em></li>
+        <li><strong>Die Realität (Ground Truth):</strong> 1.0 (Es hat geregnet, du bist nass)</li>
+        <li><strong>Der Fehler (Loss):</strong> Die Differenz zwischen Realität und Vorhersage (Prediction - Ground Truth). Das
+            Netz berechnet: <em>"Wie weit war ich von der Realität entfernt?"</em></li>
     </ul>
 </div>
-<p class="mt-1">Das absolute Ziel jedes Machine
-    Learning Modells ist simpel: Reduziere den Loss so stark wie möglich (am besten 0).
+<p class="mt-1">Das absolute Ziel ist simpel: Reduziere den Loss so stark wie möglich (am besten 0, jedoch ist dies in der Praxis kaum möglich).
 </p>
 
 <hr>
 
 <h3 class="c1-second mt-1">Phase 3: Der Weg ins Tal (Gradient Descent)</h3>
-<p>Stell dir den Fehler (Loss) als ein riesiges Gebirge vor. Ganz oben auf dem Berg
+<p>Stell dir den Fehler (Loss) als ein riesiges Gebirge vor, oder wenn du Mathematik mehr magst: eine Funktion in einem Graphen. Ganz oben auf dem Berg
     ist der Fehler gigantisch. Unten im Tal ist der Fehler null (perfekte Vorhersage). Das Netz
-    steht nun blind im Nebel auf diesem Berg und will ins Tal (das bedeutet, dasss das Netz lernen möchte. Also die Gewichte einer Entscheidung anpassen). Spingst es zu weit (die Learning
+    steht nun blind im Nebel auf diesem Berg und will ins Tal (das bedeutet, dasss das Netz lernen möchte. Also die Gewichte anpassen). Spingst es zu weit (die Learning
     Rate ist zu hoch), landest du hinter dem niedgrigsten Tal. Spingst es zu kurz, bleibst du davor
     stecken.</p>
 
@@ -67,7 +66,7 @@ ob_start();
 <div class="ai-img-wrapper ai-img-wrapper--small">
     <figure>
         <img src="../assets/png/gradient_descent.png" alt="Gradient Descent">
-        <figcaption>Darstellung es des Gradient Descent (Gradientenabstiegsverfahren). Wenn die Trainingrate zu gering ist, kann das Netz beim Training steckebleiben oder kaum vorankommen. Ist sie zu hoch, springt es über das Tal hinweg und überschreitet die Schwelle für die optimale Lösung.</figcaption>
+        <figcaption>Darstellung es des Gradient Descent (Gradientenabstiegsverfahren). Wenn die Trainingrate zu gering ist, kann das Netz beim Training steckebleiben oder kaum vorankommen. Ist sie zu hoch, springt es über das Tal hinweg und überschreitet die Schwelle für die optimale Lösung, der Loss wird wieder größer.</figcaption>
     </figure>
 </div>
 
@@ -137,7 +136,7 @@ ob_start();
     die es keine eindeutige mathematische Musterlösung gibt? Etwa beim Schachspielen oder beim
     Führen eines guten Gesprächs?</p>
 <p>Hier greift das <strong>Reinforcement Learning (Bestärkendes
-        Lernen)</strong>, eine weitere Hauptsäule des Machine Learning. Das Prinzip ähnelt der
+        Lernen)</strong>. Das Prinzip ähnelt der
     Hundeerziehung: Das Netz probiert Aktionen aus und bekommt dafür entweder ein Leckerli oder
     einen Tadel. <br> Anstatt den Fehler
     durch eine Loss-Function zu berechnen, bekommt die KI Punkte. +1 für einen guten Zug, -1

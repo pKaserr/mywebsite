@@ -24,7 +24,7 @@ ob_start();
     <p>Wenn ein RNN das fünfte Wort eines Satzes verarbeitete, musste es warten, bis die Berechnungen für die ersten vier Wörter abgeschlossen waren. Es baute eine Art internes Gedächtnis auf, das es von Schritt zu Schritt weiterreichte (die Rekursion).</p>
     <p>Das führte zu zwei massiven Problemen:</p>
     <ul class="ai-list mt-1">
-        <li><strong>Das Vergessen:</strong> Bei sehr langen Texten "verblasste" die Information der ersten Wörter. Wenn auf Seite 1 stand, dass der Protagonist "Thomas" heißt, wusste das Netz auf Seite 3 oft schon nicht mehr, auf wen sich das Wort "er" bezog.</li>
+        <li><strong>Das Vergessen:</strong> Bei sehr langen Texten "verblasste" die Information der ersten Wörter. Wenn auf Seite 1 stand, dass der Protagonist "Ben" heißt, wusste das Netz auf Seite 3 oft schon nicht mehr, auf wen sich das Wort "er" bezog.</li>
         <li><strong>Der Rechen-Stau:</strong> Moderne Grafikkarten (GPUs) sind unglaublich schnell, weil sie Tausende Rechnungen <em>gleichzeitig</em> (parallel) ausführen. Ein RNN zwingt die GPU aber zum Warten. Schritt 2 kann erst starten, wenn Schritt 1 fertig ist. Das Training dauerte ewig.</li>
     </ul>
 </div>
