@@ -1,6 +1,7 @@
 <?php
 // variables:
 $title = "AI Governance, Recht & Impact";
+$canonical = "ai_19_governance";
 $page_headline = "19. AI Governance, Recht & Impact";
 $prev_link = 'ai_18_mlops.php';
 $prev_text = 'MLOps & Modell-Lebenszyklus';

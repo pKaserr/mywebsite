@@ -1,9 +1,8 @@
 <?php
 // variables:
 $title = "Praktische Einführung";
+$canonical = "ai_15_backpropagation";
 $page_headline = "15. Backpropagation";
-// $prev_link = 'ai_12_business';
-// $prev_text = 'Zurück: Business';
 $prev_link = 'ai_14_cinema';
 $prev_text = 'Zurück: Kino oder Netflix';
 $next_link = 'ai_dashboard';

@@ -1,9 +1,8 @@
 <?php
 // variables:
 $title = "Praktische Einführung";
+$canonical = "ai_14_cinema";
 $page_headline = "14. Kino oder Netflix?";
-// $prev_link = 'ai_12_business';
-// $prev_text = 'Zurück: Business';
 $prev_link = 'ai_13_umbrella';
 $prev_text = 'Zurück: Der Regenschirm';
 $next_link = 'ai_15_backpropagation';

@@ -1,6 +1,7 @@
 <?php
 // variables:
-$title = "Die KI-Blase";
+$title = "Epilog: Die KI-Blase";
+$canonical = "ai_epilog";
 $page_headline = "Epilog: Die KI-Blase";
 $prev_link = 'ai_12_uat.php';
 $prev_text = 'Universal Approximation Theorem';

@@ -1,6 +1,7 @@
 <?php
 // variables:
 $title = "AI 02: Das Neuron";
+$canonical = 'ai_02_neuron';
 $page_headline = "02. Das Neuron: Die kleinste Einheit der KI";
 $prev_link = 'ai_01_big_picture';
 $prev_text = 'Zurück: Das Big Picture';

@@ -1,6 +1,7 @@
 <?php
 // variables:
 $title = "KI-Strategie & Use-Case-Evaluierung";
+$canonical = "ai_16_strategy";
 $page_headline = "16. KI-Strategie & Use-Case-Evaluierung";
 $prev_link = 'ai_dashboard.php';
 $prev_text = 'Zurück zur Übersicht';

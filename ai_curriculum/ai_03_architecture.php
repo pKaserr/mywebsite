@@ -1,6 +1,7 @@
 <?php
 // variables:
 $title = "AI 03: Die Architektur";
+$canonical = "ai_03_architecture";
 $page_headline = "03. Die Architektur: Wie Schichten 'denken'";
 $prev_link = 'ai_02_neuron';
 $prev_text = 'Zurück: Das Neuron';

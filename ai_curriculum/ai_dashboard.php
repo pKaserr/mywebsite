@@ -163,7 +163,7 @@
             <p class="ai-chapter-desc">Hier ein kleiner Einblick über die Management-Aspekte bei der Einführung und Arbeit mit KI in Unternehmen. Wichtig: Wie jedes andere Modul hier, sind die Bereiche in der Praxis deutlich ausführlicher und komplexer. Wer überlegt KI im Unternehmen einzuführen, sollte sich von qualifizierten Fachleuten beraten lassen.</p>
             <div class="boxWrapper mb-2">
                 <div class="ai-grid-container">
-                    <a href="./ai_16_strategie.php" class="ai-module-card" data-tags="Strategie, Use-Case, Evaluierung, Hype, Machbarkeit, Proof of Concept, PoC">
+                    <a href="./ai_16_strategy.php" class="ai-module-card" data-tags="Strategie, Use-Case, Evaluierung, Hype, Machbarkeit, Proof of Concept, PoC">
                         <span class="ai-module-number">16</span>
                         <span class="ai-module-title">KI-Strategie & Use-Case-Evaluierung</span>
                         <span class="ai-module-desc">Hype vs. Machbarkeit, Proof of Concept, Use-Case</span>

@@ -1,6 +1,7 @@
 <?php
 // variables:
 $title = "Neural Radiance Fields (NeRF)";
+$canonical = "ai_10_nerf";
 $page_headline = "10. Neural Radiance Fields (NeRF)";
 $prev_link = 'ai_09_xai.php';
 $prev_text = 'Zurück: Vertrauen & Transparenz';

@@ -1,6 +1,7 @@
 <?php
 // variables:
 $title = "LLMs & Reasoning";
+$canonical = "ai_07_llm";
 $page_headline = "07. LLMs & Reasoning";
 $prev_link = 'ai_06_transformer.php';
 $prev_text = 'Zurück: Transformer';

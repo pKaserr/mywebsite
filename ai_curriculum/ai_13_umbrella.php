@@ -1,9 +1,8 @@
 <?php
 // variables:
 $title = "Der Regenschirm";
+$canonical = "ai_13_umbrella";
 $page_headline = "13. Der Regenschirm";
-// $prev_link = 'ai_12_business';
-// $prev_text = 'Zurück: Business';
 $prev_link = 'ai_dashboard';
 $prev_text = 'Zurück zur Übersicht';
 $next_link = 'ai_14_cinema';

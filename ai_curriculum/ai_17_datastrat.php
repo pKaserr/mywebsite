@@ -1,8 +1,9 @@
 <?php
 // variables:
 $title = "KI-Strategie & Use-Case-Evaluierung";
+$canonical = "ai_17_datastrat";
 $page_headline = "17. KI-Strategie & Use-Case-Evaluierung";
-$prev_link = 'ai_16_strategie.php';
+$prev_link = 'ai_16_strategy.php';
 $prev_text = 'KI-Strategie & Use-Case-Evaluierung';
 $next_link = 'ai_18_mlops.php';
 $next_text = 'KI-Architektur & MLOps';

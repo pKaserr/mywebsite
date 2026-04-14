@@ -1,6 +1,7 @@
 <?php
 // variables:
 $title = "MLOps & Modell-Lebenszyklus";
+$canonical = "ai_18_mlops";
 $page_headline = "18. MLOps & Modell-Lebenszyklus";
 $prev_link = 'ai_17_datastrat.php';
 $prev_text = 'KI-Strategie & Use-Case-Evaluierung';

@@ -1,6 +1,7 @@
 <?php
 // variables:
-$title = "LLMs & Reasoning";
+$title = "Das Ökosystem";
+$canonical = "ai_08_ecosystem";
 $page_headline = "08. Das Ökosystem";
 $prev_link = 'ai_07_llm.php';
 $prev_text = 'Zurück: LLMs & Reasoning';

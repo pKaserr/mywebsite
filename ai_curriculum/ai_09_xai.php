@@ -1,6 +1,7 @@
 <?php
 // variables:
 $title = "Explainable AI: Vertrauen & Transparenz";
+$canonical = "ai_09_xai";
 $page_headline = "09. Explainable AI: Vertrauen & Transparenz";
 $prev_link = 'ai_08_ecosystem.php';
 $prev_text = 'Zurück: Das Ökosystem';

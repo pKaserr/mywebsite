@@ -2,6 +2,7 @@
     <title><?php echo $title; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="canonical" href="https://www.patrick-kaserer.de/ai_curriculum/<?php echo $canonical; ?>">
     <link rel="stylesheet" href="../style.css">
     <link href="../code.css" rel="stylesheet" />
     <link rel="stylesheet" href="../katex.css">

@@ -1,6 +1,7 @@
 <?php
 // variables:
 $title = "Die Transformer-Revolution";
+$canonical = "ai_06_transformer";
 $page_headline = "06. Die Transformer-Revolution";
 $prev_link = 'ai_05_vision.php';
 $prev_text = 'Zurück: Computer Vision';

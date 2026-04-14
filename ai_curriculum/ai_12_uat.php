@@ -1,6 +1,7 @@
 <?php
 // variables:
 $title = "Universelle Approximations Theorem";
+$canonical = "ai_12_uat";
 $page_headline = "12. Universeller Approximations Theorem";
 $prev_link = 'ai_11_activation.php';
 $prev_text = 'Aktivierungsfunktionen';

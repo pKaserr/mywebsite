@@ -1,6 +1,7 @@
 <?php
 // variables:
 $title = "AI 01: Das Big Picture";
+$canonical = "ai_01_big_picture";
 $page_headline = "01. Einführung: Was ist eigentlich KI?";
 $prev_link = 'ai_dashboard';
 $prev_text = 'Zurück: Dashboard';

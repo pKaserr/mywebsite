@@ -1,6 +1,7 @@
 <?php
 // variables:
 $title = "Wissenschaftskommunikation";
+$canonical = "ai_20_communication";
 $page_headline = "20. Wissenschaftskommunikation";
 $prev_link = 'ai_19_governance.php';
 $prev_text = 'AI Governance, Recht & Impact';

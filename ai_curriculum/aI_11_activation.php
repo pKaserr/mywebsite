@@ -1,6 +1,7 @@
 <?php
 // variables:
 $title = "AI 11: Aktivierungsfunktionen";
+$canonical = "ai_11_activation";
 $page_headline = "11. Aktivierungsfunktionen";
 $prev_link = 'ai_10_nerf';
 $prev_text = 'Zurück: NeRF & 3D Vision';

@@ -1,7 +1,8 @@
 <?php
 // variables:
 $title = "AI 04: Der Lernprozess";
-$page_headline = "03. Die Architektur: Wie Schichten 'denken'";
+$canonical = "ai_04_learning";
+$page_headline = "04. Der Lernprozess";
 $prev_link = 'ai_03_architecture';
 $prev_text = 'Zurück: Die Architektur';
 $next_link = 'ai_05_vision';

@@ -1,7 +1,8 @@
 <?php
 // variables:
-$title = "AI 03: Die Architektur";
-$page_headline = "06. Die Transformer-Revolution";
+$title = "AI 05: Computer Vision";
+$canonical = "ai_05_vision";
+$page_headline = "05. Computer Vision: Das Auge der KI";
 $prev_link = 'ai_04_learning.php';
 $prev_text = 'Zurück: Wie das Netz lernt';
 $next_link = 'ai_06_transformer.php';
